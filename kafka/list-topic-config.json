@@ -1,0 +1,16 @@
+{
+  "command": "listTopic",
+  "description": "List topic names",
+  "inputs" : [
+    {
+      "name" : "urls",
+      "type" : "text",
+      "label" : "Kafka urls: ",
+      "cache" : {
+        "active": true,
+        "qtd" : 5,
+        "newLabel" : "Type new urls. "
+      }
+    }
+  ]
+}
