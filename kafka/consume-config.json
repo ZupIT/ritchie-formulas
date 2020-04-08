@@ -1,0 +1,31 @@
+{
+  "command": "consume",
+  "description": "Consume messages from topic",
+  "inputs": [
+    {
+      "name": "urls",
+      "type": "text",
+      "label": "Kafka urls: ",
+      "cache" : {
+        "active": true,
+        "qtd" : 5,
+        "newLabel" : "Type new urls. "
+      }
+    },
+    {
+      "name": "topic",
+      "type": "text",
+      "label": "Topic: "
+    },
+    {
+      "name": "beginning",
+      "type": "bool",
+      "default": "true",
+      "items": [
+        "false",
+        "true"
+      ],
+      "label": "From beginning? "
+    }
+  ]
+}
