@@ -1,0 +1,26 @@
+{
+  "description": "Help you to merge your code with a deploy branch example qa branch.",
+  "inputs": [
+    {
+      "name": "branch",
+      "type": "text",
+      "label": "Select destination branch(default qa):",
+      "default": "qa",
+      "cache": {
+        "active": true,
+        "qtd": 100,
+        "newLabel": "Type new branch. "
+      }
+    },
+    {
+      "name": "push",
+      "type": "bool",
+      "label": "Push after merge ?",
+      "default": "yes",
+      "items": [
+        "yes",
+        "false"
+      ]
+    }
+  ]
+}
