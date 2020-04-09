@@ -17,8 +17,6 @@ type Inputs struct {
 	NoDelay bool
 }
 
-
-
 func GiveMeSomeCoffee(i Inputs) error {
 	if i.Name == "" {
 		return ErrNameIsRequired

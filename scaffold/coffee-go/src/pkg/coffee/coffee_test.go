@@ -66,7 +66,6 @@ func TestGiveMeSomeCoffee(t *testing.T) {
 			if got != out {
 				t.Errorf("GiveMeSomeCoffee(%s) got %v, want %v", tt.name, got, out)
 			}
-
 		})
 	}
 
