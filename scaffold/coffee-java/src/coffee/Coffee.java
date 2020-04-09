@@ -5,16 +5,21 @@ public class Coffee {
     private String owner;
     private String type;
     private boolean delivery;
+    private boolean noDelay;
 
     public void Prepare() throws Exception {
         System.out.printf("Preparing your coffee %s .....\n", owner);
-        Thread.sleep(1000);
+        if (!noDelay()
+            Thread.sleep(1000);
         System.out.println("......");
-        Thread.sleep(1000);
+        if (!noDelay()
+            Thread.sleep(1000);
         System.out.println("......");
-        Thread.sleep(1000);
+        if (!noDelay()
+            Thread.sleep(1000);
         System.out.println("......");
-        Thread.sleep(1000);
+        if (!noDelay()
+            Thread.sleep(1000);
         if (delivery) {
             System.out.printf("Your %s coffee is ready, enjoy your trip\n", type);
         } else {
@@ -22,10 +27,11 @@ public class Coffee {
         }
     }
 
-    public Coffee(String owner, String type, boolean delivery) {
+    public Coffee(String owner, String type, boolean delivery, boolean noDelay) {
         this.owner = owner;
         this.type = type;
         this.delivery = delivery;
+        this.noDelay = noDelay == null ? false : true;
     }
 
     public String getOwner() {
@@ -51,4 +57,13 @@ public class Coffee {
     public void setDelivery(boolean delivery) {
         this.delivery = delivery;
     }
+
+    public boolean noDelay() {
+            return noDelay;
+        }
+
+    public void setDelay(boolean noDelay) {
+        this.noDelay = noDelay;
+    }
+
 }
