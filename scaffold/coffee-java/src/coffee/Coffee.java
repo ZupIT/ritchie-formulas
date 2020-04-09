@@ -28,7 +28,7 @@ public class Coffee {
     }
 
     public void wait(value int) {
-        Thread.sleep(int);
+        Thread.sleep(value);
     }
 
     public Coffee(String owner, String type, boolean delivery, boolean noDelay) {
