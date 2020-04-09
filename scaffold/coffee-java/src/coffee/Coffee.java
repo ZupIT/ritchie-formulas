@@ -27,7 +27,7 @@ public class Coffee {
         }
     }
 
-    public void wait(value int) {
+    public void wait(int value) {
         Thread.sleep(value);
     }
 
