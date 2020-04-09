@@ -9,7 +9,12 @@ public class Coffee {
 
     public void Prepare() throws Exception {
         System.out.printf("Preparing your coffee %s .....\n", owner);
-        wait(noDelay)
+        System.out.println("......");
+        delay(noDelay);
+        System.out.println("......");
+        delay(noDelay);
+        System.out.println("......");
+        delay(noDelay);
         if (delivery) {
             System.out.printf("Your %s coffee is ready, enjoy your trip\n", type);
         } else {
@@ -17,18 +22,9 @@ public class Coffee {
         }
     }
 
-    public void wait(boolean noDelay) {
+    public void delay(boolean noDelay) {
         if (!noDelay)
-            Thread.sleep(1000);
-        System.out.println("......");
-        if (!noDelay)
-            Thread.sleep(1000);
-        System.out.println("......");
-        if (!noDelay)
-            Thread.sleep(1000);
-        System.out.println("......");
-        if (!noDelay)
-            Thread.sleep(1000);
+           Thread.sleep(1000);
     }
 
     public Coffee(String owner, String type, boolean delivery, boolean noDelay) {
