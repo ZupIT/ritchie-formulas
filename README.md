@@ -1,4 +1,6 @@
-<img class="special-img-class" src="/static/images/ritchie-banner.png" />
+<img class="special-img-class" src="/docs/img/ritchie-banner.png" />
+
+[Contribute to the Ritchie community](https://github.com/ZupIT/ritchie-formulas/blob/master/CONTRIBUTING.md)
 
 ## Documentation
 
