@@ -10,11 +10,11 @@ public class Coffee {
     public void Prepare() throws Exception {
         System.out.printf("Preparing your coffee %s .....\n", owner);
         System.out.println("......");
-        delay(noDelay);
+        delay();
         System.out.println("......");
-        delay(noDelay);
+        delay();
         System.out.println("......");
-        delay(noDelay);
+        delay();
         if (delivery) {
             System.out.printf("Your %s coffee is ready, enjoy your trip\n", type);
         } else {
@@ -22,7 +22,7 @@ public class Coffee {
         }
     }
 
-    public void delay(boolean noDelay) {
+    public void delay() {
         if (!noDelay)
            Thread.sleep(1000);
     }
