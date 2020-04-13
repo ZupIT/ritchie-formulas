@@ -1,27 +1,18 @@
 package coffee
 
 import (
-	"errors"
 	"log"
 	"time"
 )
 
-var   (
-	ErrNameIsRequired = errors.New("the customer name is required")
-)
-
 type Inputs struct {
-	Name string
+	Name       string
 	CoffeeType string
-	Delivery bool
-	NoDelay bool
+	Delivery   bool
+	NoDelay    bool
 }
 
 func GiveMeSomeCoffee(i Inputs) error {
-	if i.Name == "" {
-		return ErrNameIsRequired
-	}
-
 	log.Printf("Preparing your coffee %v .....\n", i.Name)
 	log.Println("......")
 	i.delay()

@@ -12,48 +12,43 @@ func TestGiveMeSomeCoffee(t *testing.T) {
 	}{
 		{
 			name: "espresso",
-			in:   Inputs{
+			in: Inputs{
 				Name:       "Dennis Ritchie",
 				CoffeeType: "espresso",
 				Delivery:   true,
-				NoDelay: true,
+				NoDelay:    true,
 			},
-			out:  nil,
+			out: nil,
 		},
 		{
 			name: "cappuccino",
-			in:   Inputs{
+			in: Inputs{
 				Name:       "Dennis Ritchie",
 				CoffeeType: "cappuccino",
 				Delivery:   false,
-				NoDelay: true,
+				NoDelay:    true,
 			},
-			out:  nil,
+			out: nil,
 		},
 		{
 			name: "macchiato",
-			in:   Inputs{
+			in: Inputs{
 				Name:       "Dennis Ritchie",
 				CoffeeType: "macchiato",
 				Delivery:   false,
-				NoDelay: true,
+				NoDelay:    true,
 			},
-			out:  nil,
+			out: nil,
 		},
 		{
 			name: "latte",
-			in:   Inputs{
+			in: Inputs{
 				Name:       "Dennis Ritchie",
 				CoffeeType: "latte",
 				Delivery:   false,
-				NoDelay: true,
+				NoDelay:    true,
 			},
-			out:  nil,
-		},
-		{
-			name: "name is required",
-			in:   Inputs{},
-			out:  ErrNameIsRequired,
+			out: nil,
 		},
 	}
 
