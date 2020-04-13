@@ -6,23 +6,31 @@ import (
 )
 
 type Inputs struct {
-	Name string
+	Name       string
 	CoffeeType string
-	Delivery bool
+	Delivery   bool
+	NoDelay    bool
 }
 
-func GiveMeSomeCoffee(inputs Inputs) {
-	log.Printf("Preparing your coffee %v .....\n", inputs.Name)
-	time.Sleep(time.Second * 1)
+func GiveMeSomeCoffee(i Inputs) error {
+	log.Printf("Preparing your coffee %v .....\n", i.Name)
 	log.Println("......")
-	time.Sleep(time.Second * 1)
+	i.delay()
 	log.Println("......")
-	time.Sleep(time.Second * 1)
+	i.delay()
 	log.Println("......")
-	time.Sleep(time.Second * 1)
-	if inputs.Delivery {
-		log.Printf("Your %v coffee is ready, enjoy your trip\n", inputs.CoffeeType)
+	i.delay()
+	if i.Delivery {
+		log.Printf("Your %v coffee is ready, enjoy your trip\n", i.CoffeeType)
 	} else {
-		log.Printf("Your %v coffee is ready, have a seat and enjoy your drink\n", inputs.CoffeeType)
+		log.Printf("Your %v coffee is ready, have a seat and enjoy your drink\n", i.CoffeeType)
+	}
+
+	return nil
+}
+
+func (i Inputs) delay() {
+	if !i.NoDelay {
+		time.Sleep(time.Second * 1)
 	}
 }
