@@ -7,7 +7,7 @@ $ rit scaffold generate coffee-go
 
 ### local test
 ```bash
-$ make test-local form= SC_COFFEE_GO
+$ make test-local form=SC_COFFEE_GO
 ```
 
 ### description

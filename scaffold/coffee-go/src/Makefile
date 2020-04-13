@@ -1,6 +1,7 @@
 # Go parameters
 GOCMD=go
 GOBUILD=$(GOCMD) build
+GOTEST=$(GOCMD) test
 BINARY_NAME=coffee
 CMD_PATH=./main.go
 DIST=../bin
@@ -17,3 +18,6 @@ build:
 	GOOS=darwin GOARCH=amd64 $(GOBUILD) -tags release -ldflags '-X $(MODULE)/cmd.Version=$(VERSION) -X $(MODULE)/cmd.BuildDate=$(DATE)' -o ./$(DIST_MAC) -v $(CMD_PATH)
 	#WINDOWS 64
 	GOOS=windows GOARCH=amd64 $(GOBUILD) -tags release -ldflags '-X $(MODULE)/cmd.Version=$(VERSION) -X $(MODULE)/cmd.BuildDate=$(DATE)' -o ./$(DIST_WIN) -v $(CMD_PATH)
+
+test:
+	$(GOTEST) -short `go list ./... | grep -v vendor/`
