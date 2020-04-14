@@ -16,7 +16,8 @@
       "formula": {
         "path": "aws/terraform",
         "bin": "terraform-cli-${so}",
-        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas/aws/terraform"
+        "downloadBundle": "{so}.zip",
+        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas"
       },
       "parent": "root_aws_apply"
     },
