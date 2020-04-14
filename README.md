@@ -4,7 +4,7 @@
 
 This repository contains the community formulas which can be executed by the [ritchie-cli](https://github.com/ZupIT/ritchie-cli).
 
-- [Gitbook](https://docs.ritchiecli.io/v/doc-english/)
+- [Gitbook](https://docs.ritchiecli.io)
 
 - [Zup Products](https://www.zup.com.br/en/about) 
 
