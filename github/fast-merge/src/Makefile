@@ -4,7 +4,7 @@ GOBUILD=$(GOCMD) build
 BINARY_NAME=fast-merge
 CMD_PATH=./main.go
 DIST=../bin
-DIST_MAC=$(DIST)/$(BINARY_NAME)-mac
+DIST_MAC=$(DIST)/$(BINARY_NAME)-darwin
 DIST_LINUX=$(DIST)/$(BINARY_NAME)-linux
 DIST_WIN=$(DIST)/$(BINARY_NAME)-windows.exe
 
