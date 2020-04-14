@@ -8,6 +8,8 @@
 
 /bin/
 **/bin/*
+/dist/
+**/dist/*
 /test/tests.*
 /test/coverage.*
 /go.sum

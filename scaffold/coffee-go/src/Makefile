@@ -4,10 +4,10 @@ GOBUILD=$(GOCMD) build
 GOTEST=$(GOCMD) test
 BINARY_NAME=coffee
 CMD_PATH=./main.go
-DIST=../bin
-DIST_MAC=$(DIST)/$(BINARY_NAME)-darwin
-DIST_LINUX=$(DIST)/$(BINARY_NAME)-linux
-DIST_WIN=$(DIST)/$(BINARY_NAME)-windows.exe
+DIST=../dist
+DIST_MAC=$(DIST)/darwin/bin/$(BINARY_NAME)-darwin
+DIST_LINUX=$(DIST)/linux/bin/$(BINARY_NAME)-linux
+DIST_WIN=$(DIST)/windows/bin/$(BINARY_NAME)-windows.exe
 
 build:
 	mkdir -p $(DIST)
