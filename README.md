@@ -28,8 +28,3 @@ Execute one of the following commands through the `ritchie-formulas/Makefile` fi
 4. Add your formulas to the repository and commit your implementation: `git commit -m '<commit_message>'`
 5. Push your branch: `git push origin <project_name>/<location>`
 6. Open a pull request on the repository for analysis.
-
-## License
-
-This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. 
-If a copy of the MPL was not distributed with this file, you can obtain one at https://mozilla.org/MPL/2.0/.
