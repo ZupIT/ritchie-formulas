@@ -3,16 +3,12 @@ TERRAFORM=aws/terraform
 NAVIGATE_HANDBOOK=github/navigate-handbook
 SEARCH_HANDBOOK=github/search-handbook
 SC_COFFEE_GO=scaffold/coffee-go
-SC_COFFEE_SHELL=scaffold/coffee-shell
-SC_COFFEE_JAVA=scaffold/coffee-java
-SC_COFFEE_NODE=scaffold/coffee-node
-SC_COFFEE_PYTHON=scaffold/coffee-python
 SC_SPRING_STARTER=scaffold/spring-starter
 KAFKA=kafka
 DOCKER=docker/compose
 KUBERNETES=kubernetes/core
 FAST_MERGE=github/fast-merge
-FORMULAS=$(TERRAFORM) $(SC_COFFEE_GO) $(SC_COFFEE_SHELL) $(SC_COFFEE_JAVA) $(SC_COFFEE_NODE) $(SC_COFFEE_PYTHON) $(SC_SPRING_STARTER) $(KAFKA) $(DOCKER) $(NAVIGATE_HANDBOOK) $(SEARCH_HANDBOOK) $(KUBERNETES) $(FAST_MERGE)
+FORMULAS=$(TERRAFORM) $(SC_COFFEE_GO) $(SC_SPRING_STARTER) $(KAFKA) $(DOCKER) $(NAVIGATE_HANDBOOK) $(SEARCH_HANDBOOK) $(KUBERNETES) $(FAST_MERGE)
 
 PWD_INITIAL=$(shell pwd)
 
