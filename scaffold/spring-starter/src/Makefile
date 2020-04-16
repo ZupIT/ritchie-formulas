@@ -12,7 +12,7 @@ build:
 	mkdir -p $(DIST)
 	export MODULE=$(GO111MODULE=on go list -m)
 	#LINUX
-	GOOS=linux GOARCH=amd64 $(GOBUILD) -tags release -ldflags '-X $(MODULE)/cmd.Version=$(VERSION) -X $(MODULE)/cmd.BuildDate=$(DATE)' -o ./$(DIST_LINUX) -v $(CMD_PATH)
+	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 $(GOBUILD) -tags release -ldflags '-X $(MODULE)/cmd.Version=$(VERSION) -X $(MODULE)/cmd.BuildDate=$(DATE)' -o ./$(DIST_LINUX) -v $(CMD_PATH)
 	#MAC
 	GOOS=darwin GOARCH=amd64 $(GOBUILD) -tags release -ldflags '-X $(MODULE)/cmd.Version=$(VERSION) -X $(MODULE)/cmd.BuildDate=$(DATE)' -o ./$(DIST_MAC) -v $(CMD_PATH)
 	#WINDOWS 64
