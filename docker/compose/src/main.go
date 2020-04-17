@@ -9,7 +9,7 @@ func main() {
 	var selectItems []string
 	selectItem := ""
 	var extParams = make(map[string]string)
-	items := []string{"awsclivl", "consul", "dynamoDB", "jaeger", "kafka", "mongo", "postgres", "redis", "stubby4j", "finish!"}
+	items := []string{"awsclivl", "consul", "dynamoDB", "jaeger", "kafka", "mongo", "postgres", "redis", "stubby4j", "rabbitmq", "finish!"}
 	for selectItem != "finish!" {
 		selectItem, _ = prompt.List("Select docker image: ", items)
 		if selectItem == "postgres" {
@@ -21,6 +21,11 @@ func main() {
 			extParams["mongoWebClientUser"], _ = prompt.String("Type Mongo WebClient user: ", true)
 			extParams["mongoWebClientPassword"], _ = prompt.StringPwd("Type Mongo WebClient password: ")
 		}
+		if selectItem == "rabbitmq" {
+            extParams["rabbitmqHost"], _ = prompt.String("Type Host name: ", true)
+            extParams["rabbitmqUser"], _ = prompt.String("Type RabbitMq user: ", true)
+            extParams["rabbitmqPassword"], _ = prompt.StringPwd("Type RabbitMq password: ")
+        }
 		selectItems = append(selectItems, selectItem)
 		for i, item := range items {
 			if item == selectItem { //Remove input to list
