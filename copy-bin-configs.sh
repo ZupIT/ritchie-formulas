@@ -35,9 +35,9 @@ compact_formula_bin_and_remove_them() {
       cd  ${bin_dir}/${binary}
       zip -r "${binary}.zip" "bin"
       mv "${binary}".zip ../../
-      cd -
-      rm -rf "${bin_dir}"
+      cd - || exit
     done;
+    rm -rf "${bin_dir}"
   done
 }
 
