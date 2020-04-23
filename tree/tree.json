@@ -104,7 +104,7 @@
       "help": "Generates a project by coffee template in Go",
       "formula": {
         "path": "scaffold/coffee-go",
-        "bin": "coffee-${so}",
+        "bin": "coffee-go-${so}",
         "bundle": "{so}.zip",
         "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas"
       },
