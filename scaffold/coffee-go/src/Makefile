@@ -1,8 +1,8 @@
 # Go parameters
+BINARY_NAME=coffee-go
 GOCMD=go
 GOBUILD=$(GOCMD) build
 GOTEST=$(GOCMD) test
-BINARY_NAME=coffee-go
 CMD_PATH=./main.go
 DIST=../dist
 DIST_MAC_DIR=$(DIST)/darwin/bin
@@ -16,7 +16,7 @@ build:
 	mkdir -p $(DIST_MAC_DIR) $(DIST_LINUX_DIR) $(DIST_WIN_DIR)
 	export MODULE=$(GO111MODULE=on go list -m)
 	#LINUX
-	GOOS=linux GOARCH=amd64 $(GOBUILD) -tags release -ldflags '-X $(MODULE)/cmd.Version=$(VERSION) -X $(MODULE)/cmd.BuildDate=$(DATE)' -o '$(DIST_LINUX_DIR)/$(BIN_LINUX)' -v $(CMD_PATH)
+	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 $(GOBUILD) -tags release -ldflags '-X $(MODULE)/cmd.Version=$(VERSION) -X $(MODULE)/cmd.BuildDate=$(DATE)' -o '$(DIST_LINUX_DIR)/$(BIN_LINUX)' -v $(CMD_PATH)
 	#MAC
 	GOOS=darwin GOARCH=amd64 $(GOBUILD) -tags release -ldflags '-X $(MODULE)/cmd.Version=$(VERSION) -X $(MODULE)/cmd.BuildDate=$(DATE)' -o '$(DIST_MAC_DIR)/$(BIN_MAC)' -v $(CMD_PATH)
 	#WINDOWS 64
