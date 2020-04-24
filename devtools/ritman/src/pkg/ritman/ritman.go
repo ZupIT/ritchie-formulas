@@ -19,12 +19,12 @@ import (
 // Input contaning command data
 type Input struct {
 	Duration string
-	Url      string
+	URL      string
 }
 
 var (
-	// Using Brian Goetz thread pool formula, assuming "wait time" (LAN service) to
-	// have a latency of 20ms and "Service time" latency of 5ms
+	// Using Brian Goetz thread pool formula.
+	// Assuming "wait time" to have a latency of 20ms and "Service time" latency of 5ms
 	// Number of threads = Number of Available Cores * (1 + Wait time / Service time)
 	defaultWorkers = runtime.NumCPU() * (1 + 20 + 5)
 	localAddr      = net.IPAddr{IP: net.IPv4zero}
@@ -70,7 +70,7 @@ type Ritman struct {
 	started time.Time
 }
 
-// LoadTesting creates the worker pool to test an givin service performance
+// LoadTesting creates the worker pool to test an given service performance
 func (r *Ritman) LoadTesting(req *http.Request, duration time.Duration) <-chan *Result {
 	var wg sync.WaitGroup
 
@@ -153,7 +153,7 @@ func (score *LoadBalanceTestScore) init() {
 	if score.Histogram == nil {
 		score.Histogram = make(map[int]Histogram)
 	}
-	// Add a bit number just to avoid always 0 as minimum latency
+	// Add a generic big number just to avoid always 0 as minimum latency
 	score.MinMs = 99999999
 }
 
@@ -199,7 +199,6 @@ func (h *Histogram) updateLatency(res Result) {
 }
 
 func (score *LoadBalanceTestScore) measureLatencyAndRps() {
-
 	score.EndAt = time.Now().Format(time.RFC3339)
 
 	if len(score.Histogram) > 0 {
@@ -284,20 +283,20 @@ func (in Input) Run() {
 		panic(fmt.Sprintf("Duration parameter is a integer field, error: %s", err.Error()))
 	}
 
-	if len(in.Url) < 15 {
-		panic(fmt.Sprintf("Invalid URL %s", in.Url))
+	if len(in.URL) < 15 {
+		panic(fmt.Sprintf("Invalid URL %s", in.URL))
 	}
 
-	var method, url = "GET", in.Url
+	var method = "GET"
 	duration := time.Duration(dur) * time.Second
 	ritman := NewRitman()
-	req := createRequest(method, url)
+	req := createRequest(method, in.URL)
 
 	var score LoadBalanceTestScore
 	score.init()
 	score.StartedAt = ritman.started.Format(time.RFC3339)
 
-	fmt.Printf("Starting test with duration of %d seconds, Target: %s - %s\n", int64(duration.Seconds()), method, url)
+	fmt.Printf("Starting test with duration of %d seconds, Target: %s - %s\n", int64(duration.Seconds()), method, in.URL)
 
 	for res := range ritman.LoadTesting(req, duration) {
 		score.Add(res)
