@@ -112,13 +112,12 @@ func (r *Ritman) doRequest(req *http.Request) *Result {
 	res.Latency = time.Since(started).Milliseconds()
 	res.Started = started.Unix()
 	res.Success = err == nil
-	res.StatusCode = resp.StatusCode
-
-	defer resp.Body.Close()
-	body, err := ioutil.ReadAll(resp.Body)
 
 	if err == nil {
-		res.Body = string(body)
+		res.StatusCode = resp.StatusCode
+	} else {
+		// Probably a socket timeout/socket err
+		res.StatusCode = -1
 	}
 
 	return &res
