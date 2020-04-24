@@ -26,7 +26,7 @@ var (
 	// Using Brian Goetz thread pool formula.
 	// Assuming "wait time" to have a latency of 20ms and "Service time" latency of 5ms
 	// Number of threads = Number of Available Cores * (1 + Wait time / Service time)
-	defaultWorkers = runtime.NumCPU() * (1 + 20 + 5)
+	defaultWorkers = runtime.NumCPU() * (1 + (20 / 5))
 	localAddr      = net.IPAddr{IP: net.IPv4zero}
 	dialer         = &net.Dialer{
 		LocalAddr: &net.TCPAddr{IP: localAddr.IP, Zone: localAddr.Zone},
