@@ -8,7 +8,8 @@ KAFKA=kafka
 DOCKER=docker/compose
 KUBERNETES=kubernetes/core
 FAST_MERGE=github/fast-merge
-FORMULAS=$(TERRAFORM) $(SC_COFFEE_GO) $(SC_SPRING_STARTER) $(KAFKA) $(DOCKER) $(NAVIGATE_HANDBOOK) $(SEARCH_HANDBOOK) $(KUBERNETES) $(FAST_MERGE)
+RITMAN=devtools/ritman
+FORMULAS=$(TERRAFORM) $(SC_COFFEE_GO) $(SC_SPRING_STARTER) $(KAFKA) $(DOCKER) $(NAVIGATE_HANDBOOK) $(SEARCH_HANDBOOK) $(KUBERNETES) $(FAST_MERGE) $(RITMAN)
 
 PWD_INITIAL=$(shell pwd)
 
@@ -34,20 +35,20 @@ test-local:
 ifneq ("$(FORM)", "")
 	@echo "Using form true: "  $(FORM_TO_UPPER)
 	$(MAKE) bin FORMULAS=$(FORM)
-	mkdir -p ~/.rit/formulas
-	rm -rf ~/.rit/formulas/$(FORM)
+	mkdir -p $(HOME)/.rit/formulas
+	rm -rf $(HOME)/.rit/formulas/$(FORM)
 	./unzip-bin-configs.sh
-	cp -r formulas/* ~/.rit/formulas
+	cp -r formulas/* $(HOME)/.rit/formulas
 	rm -rf formulas
 else
 	@echo "Use make test-local form=NAME_FORMULA for specific formula."
 	@echo "form false: ALL FORMULAS"
 	$(MAKE) bin
-	rm -rf ~/.rit/formulas
+	rm -rf $(HOME)/.rit/formulas
 	./unzip-bin-configs.sh
-	mv formulas ~/.rit
+	mv formulas $(HOME)/.rit
 endif
-	mkdir -p ~/.rit/repo/local
-	rm -rf ~/.rit/repo/local/tree.json
-	cp tree/tree.json  ~/.rit/repo/local/tree.json
+	mkdir -p $(HOME)/.rit/repo/local
+	rm -rf $(HOME)/.rit/repo/local/tree.json
+	cp tree/tree.json  $(HOME)/.rit/repo/local/tree.json
 
