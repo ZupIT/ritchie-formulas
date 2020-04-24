@@ -11,6 +11,6 @@ func main() {
 
 	ritman.Input{
 		Duration: duration,
-		Url:      url,
+		URL:      url,
 	}.Run()
 }
