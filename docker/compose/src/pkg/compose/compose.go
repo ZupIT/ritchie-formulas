@@ -130,6 +130,21 @@ services:`
 
   response:
     status: 200`
+
+	rabbitmqYml = ` rabbitmq:
+    image: rabbitmq:3.6-management-alpine
+    hostname: rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: {{RABBITMQ_DEFAULT_USER}}
+      RABBITMQ_DEFAULT_PASS: {{RABBITMQ_DEFAULT_PASS}}
+      RABBITMQ_DEFAULT_VHOST: {{RABBITMQ_DEFAULT_VHOST}}
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    labels:
+      NAME: "rabbitmq"
+    volumes:
+      - ./config/rabbitmq:/etc/rabbitmq/rabbitmq.config`
 )
 
 func GenerateYml(items []string, extParams map[string]string) {
@@ -166,6 +181,12 @@ func GenerateYml(items []string, extParams map[string]string) {
 				ymlString = fmt.Sprintf("%s%s\n\n", ymlString, redisYml)
 			case "consul":
 				ymlString = fmt.Sprintf("%s%s\n\n", ymlString, consulYml)
+			case "rabbitmq":
+				rabbitmqYmlString := rabbitmqYml
+				rabbitmqYmlString = strings.Replace(rabbitmqYmlString, "{{RABBITMQ_DEFAULT_USER}}", extParams["rabbitmqUser"], -1)
+				rabbitmqYmlString = strings.Replace(rabbitmqYmlString, "{{RABBITMQ_DEFAULT_PASS}}", extParams["rabbitmqPassword"], -1)
+				rabbitmqYmlString = strings.Replace(rabbitmqYmlString, "{{RABBITMQ_DEFAULT_VHOST}}", extParams["rabbitmqHost"], -1)
+				ymlString = fmt.Sprintf("%s%s\n\n", ymlString, rabbitmqYmlString)
 			}
 		}
 		writeFile("docker-compose.yml", []byte(ymlString))
