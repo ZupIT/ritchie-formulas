@@ -1,10 +1,8 @@
 # SH
-BINARY_NAME=coffee-shell
+BINARY_NAME=coffee-shell.sh
 DIST=../dist
-DIST_MAC_DIR=$(DIST)/darwin/bin
-DIST_LINUX_DIR=$(DIST)/linux/bin
-DIST_WIN_DIR=$(DIST)/windows/bin
+DIST_DIR=$(DIST)/commons/bin
 build:
-	mkdir -p $(DIST_MAC_DIR) $(DIST_LINUX_DIR) $(DIST_WIN_DIR)
-	cp main.sh $(DIST)/coffee.sh
-	chmod +x $(DIST)/coffee.sh
+	mkdir -p $(DIST_DIR)
+	cp main.sh $(DIST_DIR)/$(BINARY_NAME) && cp -r coffee $(DIST_DIR)
+	chmod +x $(DIST_DIR)/$(BINARY_NAME)

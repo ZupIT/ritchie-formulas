@@ -122,6 +122,17 @@
       "parent": "root_scaffold_generate"
     },
     {
+      "usage": "coffee-shell",
+      "help": "Generates a project by coffee template in Shell",
+      "formula": {
+        "path": "scaffold/coffee-shell",
+        "bin": "coffee-shell.sh",
+        "bundle": "commons.zip",
+        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas"
+      },
+      "parent": "root_scaffold_generate"
+    },
+    {
       "usage": "spring-starter",
       "help": "Generates a project Spring",
       "formula": {
