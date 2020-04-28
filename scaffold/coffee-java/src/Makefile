@@ -4,7 +4,7 @@ DIST=../dist
 DIST_DIR=$(DIST)/commons/bin
 
 build:
-	mkdir -p $(DIST_MAC_DIR) $(DIST_LINUX_DIR) $(DIST_WIN_DIR)
+	mkdir -p $(DIST_DIR)
 	javac *.java
 	echo "Main-Class: Main" > manifest.txt
 	jar cvfm Main.jar manifest.txt *.class coffee/*.class
