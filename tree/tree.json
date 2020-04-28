@@ -133,6 +133,17 @@
       "parent": "root_scaffold_generate"
     },
     {
+      "usage": "coffee-python",
+      "help": "Generates a project by coffee template in Python",
+      "formula": {
+        "path": "scaffold/coffee-python",
+        "bin": "coffee-python.py",
+        "bundle": "commons.zip",
+        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas"
+      },
+      "parent": "root_scaffold_generate"
+    },
+    {
       "usage": "spring-starter",
       "help": "Generates a project Spring",
       "formula": {
