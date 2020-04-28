@@ -116,7 +116,7 @@
       "formula": {
         "path": "scaffold/coffee-java",
         "bin": "coffee-java",
-        "bundle": "${so}.zip",
+        "bundle": "commons.zip",
         "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas"
       },
       "parent": "root_scaffold_generate"
@@ -138,6 +138,17 @@
       "formula": {
         "path": "scaffold/coffee-python",
         "bin": "coffee-python.py",
+        "bundle": "commons.zip",
+        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas"
+      },
+      "parent": "root_scaffold_generate"
+    },
+    {
+      "usage": "coffee-node",
+      "help": "Generates a project by coffee template in Node.js",
+      "formula": {
+        "path": "scaffold/coffee-node",
+        "bin": "coffee-node",
         "bundle": "commons.zip",
         "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas"
       },
