@@ -1,11 +1,8 @@
 # SH
-BINARY_NAME=coffee-python
+BINARY_NAME=coffee-python.py
 DIST=../dist
-DIST_MAC_DIR=$(DIST)/darwin/bin
-DIST_LINUX_DIR=$(DIST)/linux/bin
-DIST_WIN_DIR=$(DIST)/windows/bin
-
+DIST_DIR=$(DIST)/commons/bin
 build:
-	mkdir -p $(DIST_MAC_DIR) $(DIST_LINUX_DIR) $(DIST_WIN_DIR)
-	cp coffee.py $(DIST)/coffee.py
-	chmod +x $(DIST)/coffee.py
+	mkdir -p $(DIST_DIR)
+	cp main.py $(DIST_DIR)/$(BINARY_NAME) && cp -r coffee $(DIST_DIR)
+	chmod +x $(DIST_DIR)/$(BINARY_NAME)
