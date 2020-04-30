@@ -1,15 +1,15 @@
 # Make Run Node
-BINARY_NAME=coffee-node
+BINARY_NAME_UNIX=coffee-node.sh
+BINARY_NAME_WINDOWS=coffee-node.bat
 DIST=../dist
 DIST_DIR=$(DIST)/commons/bin
-DIST_LINUX_DIR=$(DIST)/linux/bin
-DIST_WIN_DIR=$(DIST)/windows/bin
 
 build:
 	mkdir -p $(DIST_DIR)
-	cp run_template $(BINARY_NAME) && chmod +x $(BINARY_NAME)
+	cp run_template $(BINARY_NAME_UNIX) && chmod +x $(BINARY_NAME_UNIX)
+	cp run_template $(BINARY_NAME_WINDOWS) && chmod +x $(BINARY_NAME_WINDOWS)
 
-	cp -r $(BINARY_NAME) index.js package.json coffee $(DIST_DIR)
+	cp -r $(BINARY_NAME_WINDOWS) $(BINARY_NAME_UNIX) index.js package.json coffee $(DIST_DIR)
 
 	#Clean files
-	rm $(BINARY_NAME)
+	rm $(BINARY_NAME_UNIX) $(BINARY_NAME_WINDOWS)
