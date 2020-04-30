@@ -10,7 +10,7 @@ build:
 	echo "Main-Class: Main" > manifest.txt
 	jar cvfm Main.jar manifest.txt *.class coffee/*.class
 	cp run_template $(BINARY_NAME_UNIX) && chmod +x $(BINARY_NAME_UNIX)
-	cp run_template $(BINARY_NAME_WINDOWS) && chmod +x $(BINARY_NAME_WINDOWS)
-	cp Main.jar $(BINARY_NAME_WINDOWS) $(BINARY_NAME_UNIX) $(DIST_DIR)
+	echo 'java -jar Main.jar' >> $(DIST_DIR)/$(BINARY_NAME_WINDOWS)
+	cp Main.jar $(BINARY_NAME_UNIX) $(DIST_DIR)
 	#Clean files
-	rm Main.jar manifest.txt *.class coffee/*.class $(BINARY_NAME_WINDOWS) $(BINARY_NAME_UNIX)
+	rm Main.jar manifest.txt *.class coffee/*.class $(BINARY_NAME_UNIX)
