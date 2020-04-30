@@ -116,7 +116,7 @@
       "formula": {
         "path": "scaffold/coffee-java",
         "bin": "coffee-java.sh",
-        "windowsBin": "coffee-java.bat",
+        "binWindows": "coffee-java.bat",
         "bundle": "commons.zip",
         "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas"
       },
@@ -139,7 +139,7 @@
       "formula": {
         "path": "scaffold/coffee-python",
         "bin": "coffee-python.py",
-        "windowsBin": "coffee.bat",
+        "binWindows": "coffee.bat",
         "bundle": "commons.zip",
         "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas"
       },
