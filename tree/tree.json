@@ -17,7 +17,7 @@
         "path": "aws/terraform",
         "bin": "terraform-cli-${so}",
         "bundle": "${so}.zip",
-        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       },
       "parent": "root_aws_apply"
     },
@@ -44,7 +44,7 @@
         "bin": "kafka-${so}",
         "bundle": "${so}.zip",
         "config": "list-topic-config.json",
-        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       },
       "parent": "root_kafka_list"
     },
@@ -56,7 +56,7 @@
         "bin": "kafka-${so}",
         "bundle": "${so}.zip",
         "config": "create-topic-config.json",
-        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       },
       "parent": "root_kafka_create"
     },
@@ -68,7 +68,7 @@
         "bin": "kafka-${so}",
         "bundle": "${so}.zip",
         "config": "consume-config.json",
-        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       },
       "parent": "root_kafka"
     },
@@ -80,7 +80,7 @@
         "bin": "kafka-${so}",
         "bundle": "${so}.zip",
         "config": "produce-config.json",
-        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       },
       "parent": "root_kafka"
     },
@@ -106,7 +106,7 @@
         "path": "scaffold/coffee-go",
         "bin": "coffee-go-${so}",
         "bundle": "${so}.zip",
-        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       },
       "parent": "root_scaffold_generate"
     },
@@ -118,7 +118,7 @@
         "bin": "coffee-java.sh",
         "binWindows": "coffee-java.bat",
         "bundle": "commons.zip",
-        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       },
       "parent": "root_scaffold_generate"
     },
@@ -129,7 +129,7 @@
         "path": "scaffold/coffee-shell",
         "bin": "coffee-shell.sh",
         "bundle": "commons.zip",
-        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       },
       "parent": "root_scaffold_generate"
     },
@@ -141,7 +141,7 @@
         "bin": "coffee-python.py",
         "binWindows": "coffee.bat",
         "bundle": "commons.zip",
-        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       },
       "parent": "root_scaffold_generate"
     },
@@ -153,7 +153,7 @@
         "bin": "coffee-node.sh",
         "binWindows": "coffee-node.bat",
         "bundle": "commons.zip",
-        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       },
       "parent": "root_scaffold_generate"
     },
@@ -165,7 +165,7 @@
         "bin": "spring-starter-${so}",
         "bundle": "${so}.zip",
         "config": "create-application-config.json",
-        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       },
       "parent": "root_scaffold_generate"
     },
@@ -177,7 +177,7 @@
         "bin": "spring-starter-${so}",
         "bundle": "${so}.zip",
         "config": "list-dependencies-config.json",
-        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       },
       "parent": "root_scaffold_show"
     },
@@ -203,7 +203,7 @@
         "path": "github/fast-merge",
         "bin": "fast-merge-${so}",
         "bundle": "${so}.zip",
-        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       },
       "parent": "root_github"
     },
@@ -214,7 +214,7 @@
         "path": "github/navigate-handbook",
         "bin": "navigate-handbook-${so}",
         "bundle": "${so}.zip",
-        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       },
       "parent": "root_github_navigate"
     },
@@ -225,7 +225,7 @@
         "path": "github/search-handbook",
         "bin": "search-handbook-${so}",
         "bundle": "${so}.zip",
-        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       },
       "parent": "root_github_search"
     },
@@ -246,7 +246,7 @@
         "path": "docker/compose",
         "bin": "docker-generate-compose-${so}",
         "bundle": "${so}.zip",
-        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       },
       "parent": "root_docker_generate"
     },
@@ -273,7 +273,7 @@
         "bin": "kubernetes-${so}",
         "bundle": "${so}.zip",
         "config": "logs-config.json",
-        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       },
       "parent": "root_k8s_show"
     },
@@ -285,7 +285,7 @@
         "bin": "kubernetes-${so}",
         "bundle": "${so}.zip",
         "config": "health-config.json",
-        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       },
       "parent": "root_k8s_show"
     },
@@ -297,10 +297,10 @@
         "bin": "kubernetes-${so}",
         "bundle": "${so}.zip",
         "config": "port-config.json",
-        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       },
       "parent": "root_k8s_create"
     }
   ],
-  "version": "1.0.0-dev"
+  "version": "1.0.0"
 }
