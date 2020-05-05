@@ -1,4 +1,5 @@
 {
+  "command": "httpTest",
   "description": "Ritman HTTP Performance Test Tool, please make sure to have a request.json file in the path you're running this command",
   "inputs" : [
     {
@@ -8,17 +9,17 @@
       "cache" : {
         "active": true,
         "qtd" : 5,
-        "newLabel" : "Previous test duration"
+        "newLabel" : "Previous test duration value"
       }
     },
     {
-      "name" : "test_url",
+      "name" : "max_threads",
       "type" : "text",
-      "label" : "Test target URL",
+      "label" : "Number of threads to be used in the test",
       "cache" : {
         "active": true,
-        "qtd" : 20,
-        "newLabel" : "Previous test url(s)"
+        "qtd" : 5,
+        "newLabel" : "Previous max threads value"
       }
     }
   ]

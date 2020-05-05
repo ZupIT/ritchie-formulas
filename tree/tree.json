@@ -21,20 +21,32 @@
       "parent": "root_aws_apply"
     },
     {
-			"usage": "devtools",
-      "help": "devtools development & testing tools",
-      "parent": "root"
-		},
-		{
-			"usage": "ritman",
-			"help": "devtools ritman HTTP performance test",
-			"formula": {
-				"path": "devtools/ritman",
-				"bin": "ritman-${so}",
-				"config": "ritman-service-test-config.json",
-      },
-      "parent": "root_devtools"
-		},
+		  "parent":"root",
+		  "usage":"devtools",
+		  "help":"devtools commands"
+	   },
+	   {
+		  "usage":"http-test",
+		  "help":"Ritman HTTP performance test",
+		  "formula":{
+			 "path":"devtools/ritman",
+			 "bin":"ritman-${so}",
+			 "config":"ritman-config.json",
+			 "repoUrl":""
+		  },
+		  "parent":"root_devtools"
+	   },
+	   {
+		  "usage":"template-generator",
+		  "help":"Generate config template for HTTP testing",
+		  "formula":{
+			 "path":"devtools/ritman",
+			 "bin":"ritman-${so}",
+			 "config":"template-config.json",
+			 "repoUrl":""
+		  },
+		  "parent":"root_devtools"
+	   },
     {
       "usage": "kafka",
       "help": "Kafka commands",

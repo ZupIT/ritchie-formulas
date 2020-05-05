@@ -14,17 +14,21 @@ import (
 	"strconv"
 	"sync"
 	"time"
+
+	"github.com/fatih/color"
 )
 
 // Input contaning command data
 type Input struct {
-	Duration string
-	URL      string
+	Duration   string
+	MaxThreads string
 }
 
+const testTargetFileName = "ritman-target.json"
+
 var (
-	// Using Brian Goetz thread pool formula.
-	// Assuming "wait time" to have a latency of 20ms and "Service time" latency of 5ms
+	// Using Brian Goetz thread pool formula, assuming "wait time" (LAN service) to
+	// have a latency of 20ms and "Service time" latency of 5ms
 	// Number of threads = Number of Available Cores * (1 + Wait time / Service time)
 	defaultWorkers = runtime.NumCPU() * (1 + (20 / 5))
 	localAddr      = net.IPAddr{IP: net.IPv4zero}
@@ -34,13 +38,20 @@ var (
 	}
 )
 
+//RequestTarget JSON Request target
+type RequestTarget struct {
+	Target  string                 `json:"target"`
+	Method  string                 `json:"method"`
+	Headers map[string]string      `json:"headers"`
+	Body    map[string]interface{} `json:"body"`
+}
+
 // Result of load balance test
 type Result struct {
 	Started    int64
-	Success    bool   `json:"success"`
-	Body       string `json:"body"`
-	StatusCode int    `json:"statusCode"`
-	Latency    int64  `json:"ms"`
+	Success    bool  `json:"success"`
+	StatusCode int   `json:"statusCode"`
+	Latency    int64 `json:"ms"`
 }
 
 // LoadBalanceTestScore computed test data
@@ -57,28 +68,38 @@ type LoadBalanceTestScore struct {
 
 // Histogram to organize data in a chart structure
 type Histogram struct {
-	Hits        int64       `json:"hits"`
-	AvgMs       int64       `json:"avgMs"`
-	MaxMs       int64       `json:"maxMs"`
-	MinMs       int64       `json:"minMs"`
-	StatusCodes map[int]int `json:"statusCodes"`
+	Hits       int64       `json:"hits"`
+	AvgMs      int64       `json:"avgMs"`
+	MaxMs      int64       `json:"maxMs"`
+	MinMs      int64       `json:"minMs"`
+	StatusCode map[int]int `json:"statusCode"`
 }
 
 // Ritman client for http load testing
 type Ritman struct {
-	client  http.Client
-	started time.Time
+	client     http.Client
+	started    time.Time
+	maxThreads int
 }
 
-// LoadTesting creates the worker pool to test an given service performance
-func (r *Ritman) LoadTesting(req *http.Request, duration time.Duration) <-chan *Result {
+// LoadTesting creates the worker pool to test an givin service performance
+func (r *Ritman) LoadTesting(request RequestTarget, duration time.Duration) <-chan *Result {
+	var workers int
 	var wg sync.WaitGroup
 
 	results := make(chan *Result)
 
-	for i := 0; i < defaultWorkers; i++ {
+	if r.maxThreads > 0 {
+		workers = r.maxThreads
+	} else {
+		workers = defaultWorkers
+	}
+
+	fmt.Printf("Spawning %d async workers\n", workers)
+
+	for i := 0; i < workers; i++ {
 		wg.Add(1)
-		go r.handle(req, &wg, duration, results)
+		go r.handle(request, &wg, duration, results)
 	}
 
 	go func() {
@@ -95,19 +116,19 @@ func (r *Ritman) LoadTesting(req *http.Request, duration time.Duration) <-chan *
 	return results
 }
 
-func (r *Ritman) handle(req *http.Request, wg *sync.WaitGroup, duration time.Duration, ch chan<- *Result) {
+func (r *Ritman) handle(request RequestTarget, wg *sync.WaitGroup, duration time.Duration, ch chan<- *Result) {
 	defer wg.Done()
 
 	for time.Since(r.started).Milliseconds() <= duration.Milliseconds() {
-		ch <- r.doRequest(req)
+		ch <- r.doRequest(request)
 	}
 }
 
-func (r *Ritman) doRequest(req *http.Request) *Result {
+func (r *Ritman) doRequest(request RequestTarget) *Result {
 	started := time.Now()
 	var res = Result{}
 
-	resp, err := r.client.Do(req)
+	resp, err := r.client.Do(request.createRequest())
 
 	res.Latency = time.Since(started).Milliseconds()
 	res.Started = started.Unix()
@@ -124,35 +145,35 @@ func (r *Ritman) doRequest(req *http.Request) *Result {
 }
 
 // NewRitman returns an default Ritman which will be used to test a given target
-func NewRitman() *Ritman {
+func NewRitman(threads int) *Ritman {
 	var httpClient = http.Client{
-		Timeout: 30 * time.Second,
+		Timeout: 60 * time.Second,
 		Transport: &http.Transport{
 			Proxy:               http.ProxyFromEnvironment,
 			Dial:                dialer.Dial,
 			TLSClientConfig:     &tls.Config{InsecureSkipVerify: true},
-			MaxIdleConns:        1024,
-			MaxIdleConnsPerHost: 10000,
+			MaxIdleConns:        2048,
+			MaxIdleConnsPerHost: 100000,
 			MaxConnsPerHost:     0,
 		},
 	}
 
-	return &Ritman{client: httpClient, started: time.Now()}
+	return &Ritman{client: httpClient, started: time.Now(), maxThreads: threads}
 }
 
 func newHistogram(res Result) Histogram {
-	statusCodes := make(map[int]int)
+	statusCode := make(map[int]int)
 
-	statusCodes[res.StatusCode] = 1
+	statusCode[res.StatusCode]++
 
-	return Histogram{Hits: 1, AvgMs: res.Latency, MaxMs: res.Latency, MinMs: res.Latency, StatusCodes: statusCodes}
+	return Histogram{Hits: 1, AvgMs: res.Latency, MaxMs: res.Latency, MinMs: res.Latency, StatusCode: statusCode}
 }
 
 func (score *LoadBalanceTestScore) init() {
 	if score.Histogram == nil {
 		score.Histogram = make(map[int]Histogram)
 	}
-	// Add a generic big number just to avoid always 0 as minimum latency
+	// Add a bit number just to avoid always 0 as minimum latency
 	score.MinMs = 99999999
 }
 
@@ -165,7 +186,8 @@ func (score *LoadBalanceTestScore) Add(res *Result) {
 	score.updateLatency(*res)
 	if histogram, ok := score.Histogram[key]; ok {
 		histogram.Hits++
-		histogram.StatusCodes[res.StatusCode]++
+
+		histogram.StatusCode[res.StatusCode]++
 
 		histogram.updateLatency(*res)
 
@@ -198,6 +220,7 @@ func (h *Histogram) updateLatency(res Result) {
 }
 
 func (score *LoadBalanceTestScore) measureLatencyAndRps() {
+
 	score.EndAt = time.Now().Format(time.RFC3339)
 
 	if len(score.Histogram) > 0 {
@@ -248,7 +271,7 @@ func printResultPath(fileName string) {
 
 	if err == nil {
 		path := filepath.FromSlash(mydir + "/" + fileName)
-		fmt.Println("Test results wrote in file: ", path)
+		color.Green(fmt.Sprintf("Test results wrote in file: %s\n", path))
 	} else {
 		panic(fmt.Sprintf("Could not get the results path: %s", err.Error()))
 	}
@@ -258,46 +281,85 @@ func getResultFileName() string {
 	return "ritman-test-result-" + strconv.FormatInt(time.Now().Unix(), 10) + ".json"
 }
 
-func createRequest(method string, url string) *http.Request {
-	var body []byte
-
-	req, err := http.NewRequest(method, url, bytes.NewReader(body))
+func (request RequestTarget) createRequest() *http.Request {
+	req, err := http.NewRequest(request.Method, request.Target, request.getBody())
 
 	if err != nil {
 		panic(fmt.Sprintf("Could not create HTTP Request: %s", err.Error()))
 	}
 
-	req.Header.Add("User-Agent", "RitmanLoadTesterRuntime/1.0.0b")
-	req.Header.Add("Accept", "application/json; charset=utf-8")
-	req.Header.Add("Accept-Encoding", "gzip, deflate, br")
-	req.Header.Add("Connection", "Keep-alive")
+	for key, value := range request.Headers {
+		req.Header.Add(key, value)
+	}
+
+	req.Header.Add("User-Agent", "RitmanLoadTesterRuntime/1.0.0-rc")
 
 	return req
 }
 
-// Ritman command runner
+func (request RequestTarget) getBody() *bytes.Reader {
+	var (
+		body []byte
+		err  error
+	)
+
+	switch request.Method {
+	case
+		"PUT",
+		"POST",
+		"PATCH":
+		body, err = json.Marshal(request.Body)
+		if err != nil {
+			panic(fmt.Sprintf("Error adding body: %s", err.Error()))
+		}
+	}
+
+	return bytes.NewReader(body)
+}
+
+// NewRequestTarget - Creates a new RequestTarget struct from test-target.json file
+func NewRequestTarget() RequestTarget {
+	var request RequestTarget
+	file, err := ioutil.ReadFile(testTargetFileName)
+
+	if err != nil {
+		color.Red(fmt.Sprintf("Could not find ritman config file, please run command: rit devtools template-generator and make sure the HTTP target, method, headers and body matches your test criteria."))
+		// ENOENT - No such file or directory
+		os.Exit(2)
+	}
+
+	if err := json.Unmarshal([]byte(file), &request); err != nil {
+		panic(err)
+	}
+
+	return request
+}
+
+// Run ritchie CLI integration
 func (in Input) Run() {
 	dur, err := strconv.Atoi(in.Duration)
+
 	if err != nil {
 		panic(fmt.Sprintf("Duration parameter is a integer field, error: %s", err.Error()))
 	}
 
-	if len(in.URL) < 15 {
-		panic(fmt.Sprintf("Invalid URL %s", in.URL))
+	maxThreads, err := strconv.Atoi(in.MaxThreads)
+
+	if err != nil {
+		panic(fmt.Sprintf("Max threads parameter is a integer field, error: %s", err.Error()))
 	}
 
-	var method = "GET"
+	ritman := NewRitman(maxThreads)
+	request := NewRequestTarget()
 	duration := time.Duration(dur) * time.Second
-	ritman := NewRitman()
-	req := createRequest(method, in.URL)
 
 	var score LoadBalanceTestScore
 	score.init()
 	score.StartedAt = ritman.started.Format(time.RFC3339)
 
-	fmt.Printf("Starting test with duration of %d seconds, Target: %s - %s\n", int64(duration.Seconds()), method, in.URL)
+	fmt.Printf("Starting test with duration of %d seconds, Target: %s - %s\n", int64(duration.Seconds()), request.Method, request.Target)
 
-	for res := range ritman.LoadTesting(req, duration) {
+	for res := range ritman.LoadTesting(request, duration) {
 		score.Add(res)
 	}
 

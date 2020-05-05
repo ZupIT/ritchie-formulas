@@ -1,0 +1,5 @@
+{
+  "command": "template",
+  "description": "Ritman config template generator",
+  "inputs" : []
+}

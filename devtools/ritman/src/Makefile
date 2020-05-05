@@ -8,6 +8,9 @@ DIST_MAC=$(DIST)/$(BINARY_NAME)-darwin
 DIST_LINUX=$(DIST)/$(BINARY_NAME)-linux
 DIST_WIN=$(DIST)/$(BINARY_NAME)-windows.exe
 
+FORM_PATH=C:\Users\zupper/ritchie-formulas-local/devtools/ritman
+PWD_INITIAL=$(shell pwd)
+
 build:
 	mkdir -p $(DIST)
 	export MODULE=$(GO111MODULE=on go list -m)
