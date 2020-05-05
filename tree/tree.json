@@ -16,7 +16,7 @@
       "formula": {
         "path": "aws/terraform",
         "bin": "terraform-cli-${so}",
-        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas/aws/terraform"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas/aws/terraform"
       },
       "parent": "root_aws_apply"
     },
@@ -42,7 +42,7 @@
         "path": "kafka",
         "bin": "kafka-${so}",
         "config": "list-topic-config.json",
-        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas/kafka"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas/kafka"
       },
       "parent": "root_kafka_list"
     },
@@ -53,7 +53,7 @@
         "path": "kafka",
         "bin": "kafka-${so}",
         "config": "create-topic-config.json",
-        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas/kafka"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas/kafka"
       },
       "parent": "root_kafka_create"
     },
@@ -64,7 +64,7 @@
         "path": "kafka",
         "bin": "kafka-${so}",
         "config": "consume-config.json",
-        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas/kafka"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas/kafka"
       },
       "parent": "root_kafka"
     },
@@ -75,7 +75,7 @@
         "path": "kafka",
         "bin": "kafka-${so}",
         "config": "produce-config.json",
-        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas/kafka"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas/kafka"
       },
       "parent": "root_kafka"
     },
@@ -100,7 +100,7 @@
       "formula": {
         "path": "scaffold/coffee-go",
         "bin": "coffee-${so}",
-        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas/scaffold/coffee-go"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas/scaffold/coffee-go"
       },
       "parent": "root_scaffold_generate"
     },
@@ -110,7 +110,7 @@
       "formula": {
         "path": "scaffold/coffee-shell",
         "bin": "coffee.sh",
-        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas/scaffold/coffee-shell"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas/scaffold/coffee-shell"
       },
       "parent": "root_scaffold_generate"
     },
@@ -120,7 +120,7 @@
       "formula": {
         "path": "scaffold/coffee-java",
         "bin": "coffee.run",
-        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas/scaffold/coffee-java"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas/scaffold/coffee-java"
       },
       "parent": "root_scaffold_generate"
     },
@@ -130,7 +130,7 @@
       "formula": {
         "path": "scaffold/coffee-node",
         "bin": "coffee-${so}",
-        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas/scaffold/coffee-node"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas/scaffold/coffee-node"
       },
       "parent": "root_scaffold_generate"
     },
@@ -140,7 +140,7 @@
       "formula": {
         "path": "scaffold/coffee-python",
         "bin": "coffee.py",
-        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas/scaffold/coffee-python"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas/scaffold/coffee-python"
       },
       "parent": "root_scaffold_generate"
     },
@@ -151,7 +151,7 @@
         "path": "scaffold/spring-starter",
         "bin": "spring-starter-${so}",
         "config": "create-application-config.json",
-        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas/scaffold/spring-starter"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas/scaffold/spring-starter"
       },
       "parent": "root_scaffold_generate"
     },
@@ -162,7 +162,7 @@
         "path": "scaffold/spring-starter",
         "bin": "spring-starter-${so}",
         "config": "list-dependencies-config.json",
-        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas/scaffold/spring-starter"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas/scaffold/spring-starter"
       },
       "parent": "root_scaffold_show"
     },
@@ -187,7 +187,7 @@
       "formula": {
         "path": "github/fast-merge",
         "bin": "fast-merge-${so}",
-        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas/github/fast-merge"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas/github/fast-merge"
       },
       "parent": "root_github"
     },
@@ -197,7 +197,7 @@
       "formula": {
         "path": "github/navigate-handbook",
         "bin": "navigate-handbook-${so}",
-        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas/github/navigate-handbook"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas/github/navigate-handbook"
       },
       "parent": "root_github_navigate"
     },
@@ -207,7 +207,7 @@
       "formula": {
         "path": "github/search-handbook",
         "bin": "search-handbook-${so}",
-        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas/github/search-handbook"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas/github/search-handbook"
       },
       "parent": "root_github_search"
     },
@@ -227,7 +227,7 @@
       "formula": {
         "path": "docker/compose",
         "bin": "docker-generate-compose-${so}",
-        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas/docker/compose"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas/docker/compose"
       },
       "parent": "root_docker_generate"
     },
@@ -253,7 +253,7 @@
         "path": "kubernetes/core",
         "bin": "kubernetes-${so}",
         "config": "logs-config.json",
-        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas/kubernetes/core"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas/kubernetes/core"
       },
       "parent": "root_k8s_show"
     },
@@ -264,7 +264,7 @@
         "path": "kubernetes/core",
         "bin": "kubernetes-${so}",
         "config": "health-config.json",
-        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas/kubernetes/core"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas/kubernetes/core"
       },
       "parent": "root_k8s_show"
     },
@@ -275,7 +275,7 @@
         "path": "kubernetes/core",
         "bin": "kubernetes-${so}",
         "config": "port-config.json",
-        "repoUrl": "http://ritchie-cli-bucket152849730126474.s3-website-sa-east-1.amazonaws.com/formulas/kubernetes/core"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas/kubernetes/core"
       },
       "parent": "root_k8s_create"
     }
