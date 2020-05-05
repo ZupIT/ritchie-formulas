@@ -26,7 +26,7 @@
 		  "help":"devtools commands"
 	   },
 	   {
-		  "usage":"http-test",
+		  "usage":"ritman-http-test",
 		  "help":"Ritman HTTP performance test",
 		  "formula":{
 			 "path":"devtools/ritman",
@@ -37,7 +37,7 @@
 		  "parent":"root_devtools"
 	   },
 	   {
-		  "usage":"template-generator",
+		  "usage":"ritman-config-generator",
 		  "help":"Generate config template for HTTP testing",
 		  "formula":{
 			 "path":"devtools/ritman",
