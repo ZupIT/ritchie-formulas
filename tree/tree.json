@@ -16,7 +16,8 @@
       "formula": {
         "path": "aws/terraform",
         "bin": "terraform-cli-${so}",
-        "repoUrl": "https://commons-repo.ritchiecli.io/formulas/aws/terraform"
+        "bundle": "${so}.zip",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       },
       "parent": "root_aws_apply"
     },
@@ -41,8 +42,9 @@
       "formula": {
         "path": "kafka",
         "bin": "kafka-${so}",
+        "bundle": "${so}.zip",
         "config": "list-topic-config.json",
-        "repoUrl": "https://commons-repo.ritchiecli.io/formulas/kafka"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       },
       "parent": "root_kafka_list"
     },
@@ -52,8 +54,9 @@
       "formula": {
         "path": "kafka",
         "bin": "kafka-${so}",
+        "bundle": "${so}.zip",
         "config": "create-topic-config.json",
-        "repoUrl": "https://commons-repo.ritchiecli.io/formulas/kafka"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       },
       "parent": "root_kafka_create"
     },
@@ -63,8 +66,9 @@
       "formula": {
         "path": "kafka",
         "bin": "kafka-${so}",
+        "bundle": "${so}.zip",
         "config": "consume-config.json",
-        "repoUrl": "https://commons-repo.ritchiecli.io/formulas/kafka"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       },
       "parent": "root_kafka"
     },
@@ -74,8 +78,9 @@
       "formula": {
         "path": "kafka",
         "bin": "kafka-${so}",
+        "bundle": "${so}.zip",
         "config": "produce-config.json",
-        "repoUrl": "https://commons-repo.ritchiecli.io/formulas/kafka"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       },
       "parent": "root_kafka"
     },
@@ -99,18 +104,9 @@
       "help": "Generates a project by coffee template in Go",
       "formula": {
         "path": "scaffold/coffee-go",
-        "bin": "coffee-${so}",
-        "repoUrl": "https://commons-repo.ritchiecli.io/formulas/scaffold/coffee-go"
-      },
-      "parent": "root_scaffold_generate"
-    },
-    {
-      "usage": "coffee-shell",
-      "help": "Generates a project by coffee template in Shell",
-      "formula": {
-        "path": "scaffold/coffee-shell",
-        "bin": "coffee.sh",
-        "repoUrl": "https://commons-repo.ritchiecli.io/formulas/scaffold/coffee-shell"
+        "bin": "coffee-go-${so}",
+        "bundle": "${so}.zip",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       },
       "parent": "root_scaffold_generate"
     },
@@ -119,18 +115,21 @@
       "help": "Generates a project by coffee template in Java",
       "formula": {
         "path": "scaffold/coffee-java",
-        "bin": "coffee.run",
-        "repoUrl": "https://commons-repo.ritchiecli.io/formulas/scaffold/coffee-java"
+        "bin": "coffee-java.sh",
+        "binWindows": "coffee-java.bat",
+        "bundle": "commons.zip",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       },
       "parent": "root_scaffold_generate"
     },
     {
-      "usage": "coffee-node",
-      "help": "Generates a project by coffee template in Node",
+      "usage": "coffee-shell",
+      "help": "Generates a project by coffee template in Shell",
       "formula": {
-        "path": "scaffold/coffee-node",
-        "bin": "coffee-${so}",
-        "repoUrl": "https://commons-repo.ritchiecli.io/formulas/scaffold/coffee-node"
+        "path": "scaffold/coffee-shell",
+        "bin": "coffee-shell.sh",
+        "bundle": "commons.zip",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       },
       "parent": "root_scaffold_generate"
     },
@@ -139,8 +138,22 @@
       "help": "Generates a project by coffee template in Python",
       "formula": {
         "path": "scaffold/coffee-python",
-        "bin": "coffee.py",
-        "repoUrl": "https://commons-repo.ritchiecli.io/formulas/scaffold/coffee-python"
+        "bin": "coffee-python.py",
+        "binWindows": "coffee.bat",
+        "bundle": "commons.zip",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      },
+      "parent": "root_scaffold_generate"
+    },
+    {
+      "usage": "coffee-node",
+      "help": "Generates a project by coffee template in Node.js",
+      "formula": {
+        "path": "scaffold/coffee-node",
+        "bin": "coffee-node.sh",
+        "binWindows": "coffee-node.bat",
+        "bundle": "commons.zip",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       },
       "parent": "root_scaffold_generate"
     },
@@ -150,8 +163,9 @@
       "formula": {
         "path": "scaffold/spring-starter",
         "bin": "spring-starter-${so}",
+        "bundle": "${so}.zip",
         "config": "create-application-config.json",
-        "repoUrl": "https://commons-repo.ritchiecli.io/formulas/scaffold/spring-starter"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       },
       "parent": "root_scaffold_generate"
     },
@@ -161,8 +175,9 @@
       "formula": {
         "path": "scaffold/spring-starter",
         "bin": "spring-starter-${so}",
+        "bundle": "${so}.zip",
         "config": "list-dependencies-config.json",
-        "repoUrl": "https://commons-repo.ritchiecli.io/formulas/scaffold/spring-starter"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       },
       "parent": "root_scaffold_show"
     },
@@ -187,7 +202,8 @@
       "formula": {
         "path": "github/fast-merge",
         "bin": "fast-merge-${so}",
-        "repoUrl": "https://commons-repo.ritchiecli.io/formulas/github/fast-merge"
+        "bundle": "${so}.zip",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       },
       "parent": "root_github"
     },
@@ -197,7 +213,8 @@
       "formula": {
         "path": "github/navigate-handbook",
         "bin": "navigate-handbook-${so}",
-        "repoUrl": "https://commons-repo.ritchiecli.io/formulas/github/navigate-handbook"
+        "bundle": "${so}.zip",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       },
       "parent": "root_github_navigate"
     },
@@ -207,7 +224,8 @@
       "formula": {
         "path": "github/search-handbook",
         "bin": "search-handbook-${so}",
-        "repoUrl": "https://commons-repo.ritchiecli.io/formulas/github/search-handbook"
+        "bundle": "${so}.zip",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       },
       "parent": "root_github_search"
     },
@@ -227,7 +245,8 @@
       "formula": {
         "path": "docker/compose",
         "bin": "docker-generate-compose-${so}",
-        "repoUrl": "https://commons-repo.ritchiecli.io/formulas/docker/compose"
+        "bundle": "${so}.zip",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       },
       "parent": "root_docker_generate"
     },
@@ -252,8 +271,9 @@
       "formula": {
         "path": "kubernetes/core",
         "bin": "kubernetes-${so}",
+        "bundle": "${so}.zip",
         "config": "logs-config.json",
-        "repoUrl": "https://commons-repo.ritchiecli.io/formulas/kubernetes/core"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       },
       "parent": "root_k8s_show"
     },
@@ -263,8 +283,9 @@
       "formula": {
         "path": "kubernetes/core",
         "bin": "kubernetes-${so}",
+        "bundle": "${so}.zip",
         "config": "health-config.json",
-        "repoUrl": "https://commons-repo.ritchiecli.io/formulas/kubernetes/core"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       },
       "parent": "root_k8s_show"
     },
@@ -274,11 +295,12 @@
       "formula": {
         "path": "kubernetes/core",
         "bin": "kubernetes-${so}",
+        "bundle": "${so}.zip",
         "config": "port-config.json",
-        "repoUrl": "https://commons-repo.ritchiecli.io/formulas/kubernetes/core"
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       },
       "parent": "root_k8s_create"
     }
   ],
-  "version": "1.0.0-dev"
+  "version": "1.0.0"
 }
