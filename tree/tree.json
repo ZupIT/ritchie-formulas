@@ -31,7 +31,7 @@
 		  "help":"Ritman HTTP performance test",
 		  "formula":{
 			 "path":"devtools/ritman",
-			 "bin":"ritman-http-test-${so}",
+			 "bin":"ritman-${so}",
 			 "config":"ritman-config.json",
 			 "repoUrl":""
 		  },
@@ -42,7 +42,7 @@
 		  "help":"Ritman config template generator for HTTP testing",
 		  "formula":{
 			 "path":"devtools/ritman",
-			 "bin":"ritman-config-generator-${so}",
+			 "bin":"ritman-${so}",
 			 "config":"template-config.json",
 			 "repoUrl":""
 		  },
