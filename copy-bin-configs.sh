@@ -17,24 +17,27 @@ copy_config_files() {
 }
 
 copy_formula_bin() {
-  cp -rf "$formula"/bin formulas/"$formula"
+  cp -rf "$formula"/dist formulas/"$formula"
 }
 
 rm_formula_bin() {
-  rm -rf "$formula"/bin
+  rm -rf "$formula"/dist
 }
 
 create_formula_checksum() {
-  find "${formula}"/bin -type f -exec md5sum {} \; | sort -k 2 | md5sum | cut -f1 -d ' ' > formulas/"${formula}.md5"
+  find "${formula}"/dist -type f -exec md5sum {} \; | sort -k 2 | md5sum | cut -f1 -d ' ' > formulas/"${formula}.md5"
 }
 
 
 compact_formula_bin_and_remove_them() {
-  for bin_dir in `find formulas/"$formula" -type d -name "bin"`; do
+  for bin_dir in `find formulas/"$formula" -type d -name "dist"`; do
     for binary in `ls -1 $bin_dir`; do
-      zip -j "${bin_dir}/${binary}.zip" "${bin_dir}/${binary}"
-      rm "${bin_dir}/${binary}"
+      cd  ${bin_dir}/${binary}
+      zip -r "${binary}.zip" "bin"
+      mv "${binary}".zip ../../
+      cd - || exit
     done;
+    rm -rf "${bin_dir}"
   done
 }
 

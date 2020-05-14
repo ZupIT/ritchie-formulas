@@ -145,6 +145,7 @@ func (r *Ritman) doRequest(request RequestTarget) *Result {
 }
 
 // NewRitman returns an default Ritman which will be used to test a given target
+// Http.Transport.MaxConnsPerHost = 0 - Not limit, the OS will manage the socket buffer size
 func NewRitman(threads int) *Ritman {
 	var httpClient = http.Client{
 		Timeout: 60 * time.Second,
@@ -152,8 +153,7 @@ func NewRitman(threads int) *Ritman {
 			Proxy:               http.ProxyFromEnvironment,
 			Dial:                dialer.Dial,
 			TLSClientConfig:     &tls.Config{InsecureSkipVerify: true},
-			MaxIdleConns:        2048,
-			MaxIdleConnsPerHost: 100000,
+			MaxIdleConnsPerHost: 10000,
 			MaxConnsPerHost:     0,
 		},
 	}
@@ -173,7 +173,7 @@ func (score *LoadBalanceTestScore) init() {
 	if score.Histogram == nil {
 		score.Histogram = make(map[int]Histogram)
 	}
-	// Add a bit number just to avoid always 0 as minimum latency
+	// Starts with big number just to avoid always 0 as minimum latency
 	score.MinMs = 99999999
 }
 
