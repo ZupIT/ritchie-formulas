@@ -110,6 +110,7 @@ func (r *Ritman) LoadTesting(request RequestTarget, duration time.Duration) <-ch
 			time.Sleep(1 * time.Second)
 			fmt.Printf(".")
 		}
+		fmt.Printf("\n")
 		fmt.Println("Done! Collecting results...")
 	}()
 

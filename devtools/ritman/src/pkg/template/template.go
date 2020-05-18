@@ -4,8 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
-	"os"
-	"path/filepath"
 
 	"github.com/fatih/color"
 )
@@ -57,9 +55,7 @@ func (fw fileWriter) getContent() fileWriter {
 
 func (fw fileWriter) writeToFile() {
 	if err := ioutil.WriteFile(defaultRitmanConfigFile, fw.fileContent, 0644); err == nil {
-		mydir, _ := os.Getwd()
-		path := filepath.FromSlash(mydir + "/" + defaultRitmanConfigFile)
-		color.Green(fmt.Sprintf("config file created: %s\n", path))
+		color.Green(fmt.Sprintf("config file created in your current directory"))
 	} else {
 		color.Red(fmt.Sprintf("could not write config file: %s\n", err))
 	}

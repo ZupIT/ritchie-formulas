@@ -21,8 +21,8 @@ func loadInputs() commandHandler {
 	switch command {
 	case ritmanCmd:
 		return ritman.Input{
-			Duration:   os.Getenv("test_duration"),
-			MaxThreads: os.Getenv("max_threads"),
+			Duration:   os.Getenv("TEST_DURATION"),
+			MaxThreads: os.Getenv("MAX_THREADS"),
 		}
 	case templateCmd:
 		return template.Input{}
