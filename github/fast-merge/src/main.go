@@ -13,6 +13,12 @@ import (
 func main() {
 	destinationBranch := os.Getenv("BRANCH")
 	push := os.Getenv("PUSH")
+	pwdEnv := os.Getenv("PWD")
+	err := os.Chdir(pwdEnv)
+	if err != nil {
+		log.Fatalf("Failed to chdir %s \n err: %v", pwdEnv, err)
+	}
+
 	currentBranch := execCommand("git rev-parse --abbrev-ref HEAD")
 
 	execCommand("git pull origin " + currentBranch)
@@ -35,7 +41,10 @@ func execCommand(value string) string {
 	stdout, _ := cmd.StdoutPipe()
 	var outError bytes.Buffer
 	cmd.Stderr = &outError
-	cmd.Start()
+	err := cmd.Start()
+	if err != nil {
+		log.Fatalf("Fail to start command %v\nParams: %v\nError: %v", command, params, err)
+	}
 	scanner := bufio.NewScanner(stdout)
 	scanner.Split(bufio.ScanLines)
 	commandResultMessage := ""
@@ -44,7 +53,7 @@ func execCommand(value string) string {
 		fmt.Println(m)
 		commandResultMessage += m
 	}
-	err := cmd.Wait()
+	err = cmd.Wait()
 	if err != nil {
 		log.Fatalf("Failed to execute command %v\nParams: %v\nError: %v", command, params, outError.String())
 	}
