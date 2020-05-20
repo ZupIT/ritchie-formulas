@@ -23,6 +23,7 @@ func loadInputs() commandHandler {
 		return ritman.Input{
 			Duration:   os.Getenv("TEST_DURATION"),
 			MaxThreads: os.Getenv("MAX_THREADS"),
+			Pwd:        os.Getenv("PWD"),
 		}
 	case templateCmd:
 		return template.Input{}

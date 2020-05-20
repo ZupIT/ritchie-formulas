@@ -22,6 +22,7 @@ import (
 type Input struct {
 	Duration   string
 	MaxThreads string
+	Pwd        string
 }
 
 const testTargetFileName = "ritman-target.json"
@@ -319,12 +320,12 @@ func (request RequestTarget) getBody() *bytes.Reader {
 }
 
 // NewRequestTarget - Creates a new RequestTarget struct from test-target.json file
-func NewRequestTarget() RequestTarget {
+func NewRequestTarget(filePath string) RequestTarget {
 	var request RequestTarget
-	file, err := ioutil.ReadFile(testTargetFileName)
+	file, err := ioutil.ReadFile(filePath)
 
 	if err != nil {
-		color.Red(fmt.Sprintf("Could not find ritman config file, please run command: rit devtools template-generator and make sure the HTTP target, method, headers and body matches your test criteria."))
+		color.Red(fmt.Sprintf("Could not find ritman config file, please run command: (rit http generate load-test) and make sure the HTTP target, method, headers and body matches your test criteria."))
 		// ENOENT - No such file or directory
 		os.Exit(2)
 	}
@@ -351,7 +352,7 @@ func (in Input) Run() {
 	}
 
 	ritman := NewRitman(maxThreads)
-	request := NewRequestTarget()
+	request := NewRequestTarget(fmt.Sprintf("%s/%s", in.Pwd, testTargetFileName))
 	duration := time.Duration(dur) * time.Second
 
 	var score LoadBalanceTestScore
