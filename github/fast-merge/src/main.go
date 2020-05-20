@@ -13,6 +13,11 @@ import (
 func main() {
 	destinationBranch := os.Getenv("BRANCH")
 	push := os.Getenv("PUSH")
+	pwdEnv := os.Getenv("PWD")
+	err := os.Chdir(pwdEnv)
+	if err != nil {
+		log.Fatalf("Failed to execute formula. Erro: %v", err)
+	}
 	currentBranch := execCommand("git rev-parse --abbrev-ref HEAD")
 
 	execCommand("git pull origin " + currentBranch)
