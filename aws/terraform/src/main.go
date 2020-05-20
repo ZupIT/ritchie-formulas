@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	terraform.Run(loadInputs())
+	loadInputs().Run()
 }
 
 func loadInputs() terraform.Inputs {
@@ -18,5 +18,6 @@ func loadInputs() terraform.Inputs {
 		GitToken:           os.Getenv("GIT_TOKEN"),
 		AwsAccessKeyId:     os.Getenv("AWS_ACCESS_KEY_ID"),
 		AwsSecretAccessKey: os.Getenv("AWS_SECRET_ACCESS_KEY"),
+		Pwd:                os.Getenv("PWD"),
 	}
 }

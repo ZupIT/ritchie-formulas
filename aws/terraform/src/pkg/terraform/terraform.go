@@ -13,42 +13,43 @@ import (
 )
 
 type Inputs struct {
-	Repository string
-	TerraformPath string
-	Environment string
-	GitUser string
-	GitToken string
-	AwsAccessKeyId string
+	Repository         string
+	TerraformPath      string
+	Environment        string
+	GitUser            string
+	GitToken           string
+	AwsAccessKeyId     string
 	AwsSecretAccessKey string
+	Pwd                string
 }
 
 const commonsVar  = "-var-file=./variables/common.tfvars"
 
-func Run(inputs Inputs) {
+func (in Inputs) Run() {
 	log.Println("Terraform starting...")
 	execCommand("terraform", "version")
-	split := strings.Split(inputs.Repository, "/")
+	split := strings.Split(in.Repository, "/")
 	dirRepo := strings.Replace(split[len(split)-1], ".git", "", -1)
-	pwd , _ := os.Getwd()
+	pwd := in.Pwd
 	split = strings.Split(pwd, "/")
 	pwd = split[len(split)-1]
 	if pwd == dirRepo {
-		err := inputs.pullRepo("")
+		err := in.pullRepo(in.Pwd)
 		if err != nil {
 			log.Fatal("Failed Pull repository. Error: ", err)
 		}
-		os.Chdir(inputs.TerraformPath)
+		os.Chdir(in.TerraformPath)
 	} else {
 		log.Println("Cloning repository...")
-		err := inputs.plainClone(dirRepo)
+		err := in.plainClone(dirRepo)
 		if err != nil {
 			log.Fatal("Failed cloning repository. Error: ", err)
 		}
-		os.Chdir(fmt.Sprint(dirRepo, "/", inputs.TerraformPath))
+		os.Chdir(fmt.Sprint(dirRepo, "/", in.TerraformPath))
 	}
 
-	varFile := fmt.Sprintf("-var-file=variables/%v.tfvars", inputs.Environment)
-	backendConfig := fmt.Sprintf("-backend-config=%v.tfbackend", inputs.Environment)
+	varFile := fmt.Sprintf("-var-file=variables/%v.tfvars", in.Environment)
+	backendConfig := fmt.Sprintf("-backend-config=%v.tfbackend", in.Environment)
 	//terraform init -var-file=./variables/common.tfvars -var-file=$(VARS) -reconfigure -backend-config=$(ENV).tfbackend
 	execCommand("terraform", "init", commonsVar, varFile, "-reconfigure", backendConfig)
 	//terraform plan -var-file=./variables/common.tfvars -var-file=$(VARS)
