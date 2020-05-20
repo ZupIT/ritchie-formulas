@@ -252,8 +252,7 @@ func (score LoadBalanceTestScore) toJSON() (string, error) {
 	return "", err
 }
 
-func (score LoadBalanceTestScore) writeToFile() {
-	fileName := getResultFileName()
+func (score LoadBalanceTestScore) writeToFile(fileName string) {
 	jsonData, err := json.MarshalIndent(score, "", "\t")
 
 	if err == nil {
@@ -269,14 +268,8 @@ func (score LoadBalanceTestScore) writeToFile() {
 }
 
 func printResultPath(fileName string) {
-	mydir, err := os.Getwd()
-
-	if err == nil {
-		path := filepath.FromSlash(mydir + "/" + fileName)
-		color.Green(fmt.Sprintf("Test results wrote in file: %s\n", path))
-	} else {
-		panic(fmt.Sprintf("Could not get the results path: %s", err.Error()))
-	}
+	path := filepath.FromSlash(fileName)
+	color.Green(fmt.Sprintf("Test results wrote in file: %s\n", path))
 }
 
 func getResultFileName() string {
@@ -367,5 +360,5 @@ func (in Input) Run() {
 
 	score.measureLatencyAndRps()
 
-	score.writeToFile()
+	score.writeToFile(getResultFileName())
 }
