@@ -300,6 +300,18 @@
         "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       },
       "parent": "root_k8s_create"
+    },
+    {
+      "parent": "root_aws",
+      "usage": "setcontext",
+      "help": "aws setcontext",
+      "formula": {
+        "path": "aws/setcontext",
+        "bin": "setcontext.sh",
+        "bundle": "${so}.zip",
+        "config": "config.json",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      }
     }
   ],
   "version": "1.0.0"
