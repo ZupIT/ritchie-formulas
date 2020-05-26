@@ -1,0 +1,15 @@
+{
+  "description": "AWS credential setter.",
+  "inputs" : [
+    {
+      "name" : "context_name",
+      "type" : "text",
+      "label" : "Which context you want to use : ",
+      "cache" : {
+        "active": true,
+        "qtd" : 6,
+        "newLabel" : "Type new value. "
+      }
+    }
+  ]
+}
