@@ -308,7 +308,7 @@
       "formula": {
         "path": "aws/setcontext",
         "bin": "setcontext.sh",
-        "bundle": "${so}.zip",
+        "bundle": "commons.zip",
         "config": "config.json",
         "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       }
