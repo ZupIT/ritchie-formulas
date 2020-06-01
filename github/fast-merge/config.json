@@ -8,7 +8,7 @@
       "default": "qa",
       "cache": {
         "active": true,
-        "qtd": 100,
+        "qty": 100,
         "newLabel": "Type new branch. "
       }
     },
