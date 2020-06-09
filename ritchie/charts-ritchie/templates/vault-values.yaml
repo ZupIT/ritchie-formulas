@@ -1,0 +1,97 @@
+global:
+  enabled: true
+  image: "vault:1.1.0"
+  imagePullPolicy: IfNotPresent
+  imagePullSecrets: []
+  tlsDisable: true
+server:
+  securityContext:
+    readOnlyRootFilesystem: true
+  resources:
+     requests:
+       memory: 256Mi
+       cpu: 250m
+     limits:
+       memory: 256Mi
+       cpu: 250m
+  ingress:
+    enabled: false
+    annotations: {}
+    hosts:
+      - host: chart-example.local
+        paths: []
+    tls: []
+  authDelegator:
+    enabled: false
+  extraEnvironmentVars: {}
+  extraSecretEnvironmentVars: []
+  extraVolumes: []
+  affinity: |
+    podAntiAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchLabels:
+              app.kubernetes.io/name: {{ template "vault.name" . }}
+              app.kubernetes.io/instance: "{{ .Release.Name }}"
+              component: server
+          topologyKey: kubernetes.io/hostname
+  tolerations: {}
+  nodeSelector: {}
+  extraLabels: {}
+  annotations: {}
+  service:
+    enabled: true
+    port: 8200
+    targetPort: 8200
+    annotations: {}
+  dataStorage:
+    enabled: true
+    size: 10Gi
+    storageClass: null
+    accessMode: ReadWriteOnce
+  auditStorage:
+    enabled: false
+    size: 10Gi
+    storageClass: null
+    accessMode: ReadWriteOnce
+  dev:
+    enabled: false
+  standalone:
+    enabled: false
+    config: |
+      ui = true
+
+      listener "tcp" {
+        tls_disable = 1
+        address = "[::]:8200"
+        cluster_address = "[::]:8201"
+      }
+      storage "file" {
+        path = "/vault/data"
+      }
+  ha:
+    enabled: true
+    replicas: 2
+    config: |
+      ui = true
+
+      listener "tcp" {
+        tls_disable = 1
+        address = "[::]:8200"
+        cluster_address = "[::]:8201"
+      }
+      storage "consul" {
+        path = "vault"
+        address = "{{ consulUrl }}:8500"
+      }
+    disruptionBudget:
+      enabled: true
+      maxUnavailable: null
+  serviceaccount:
+    annotations: {}
+ui:
+  enabled: false
+  serviceType: "ClusterIP"
+  serviceNodePort: null
+  externalPort: 8200
+  annotations: {}
