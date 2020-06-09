@@ -1,0 +1,15 @@
+{
+  "description": "Create terraform project with common structure.",
+  "inputs" : [
+	{
+	  "name" : "project_name",
+      "type" : "text",
+      "label" : "Type the project name: "
+	},
+    {
+      "name" : "project_repo",
+      "type" : "text",
+      "label" : "Type the path of the repo (e.g.: /home/user/github): "
+    }
+  ]
+}
