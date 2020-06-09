@@ -7,7 +7,7 @@
       "label" : "Type your name: ",
       "cache" : {
         "active": true,
-        "qtd" : 6,
+        "qty" : 6,
         "newLabel" : "Type new value. "
       }
     },
