@@ -1,0 +1,1 @@
+echo "Your ritchie-server is up and running, enjoy it!"
