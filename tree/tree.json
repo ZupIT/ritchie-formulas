@@ -312,6 +312,51 @@
         "config": "config.json",
         "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       }
+    },
+    {
+      "usage": "ritchie",
+      "help": "Manipulate Ritchie objects",
+      "parent": "root"
+    },
+    {
+      "usage": "generate",
+      "help": "Generate files to install ritchie",
+      "parent": "root_ritchie"
+    },
+    {
+      "usage": "files",
+      "help": "generate files for install ritchie",
+      "formula": {
+        "path": "ritchie/generate/files",
+        "bin": "files-${so}",
+        "binLinux": "files-${so}",
+        "binDarwin": "files-${so}",
+        "binWindows": "files-${so}.exe",
+        "bundle": "${so}.zip",
+        "config": "config.json",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      },
+      "parent": "root_ritchie_generate"
+    },
+    {
+      "usage": "install",
+      "help": "Install ritchie team",
+      "parent": "root_ritchie"
+    },
+    {
+      "usage": "ritchie-team",
+      "help": "install ritchie-team",
+      "formula": {
+        "path": "ritchie/install/ritchie",
+        "bin": "ritchie-${so}",
+        "binLinux": "ritchie-${so}",
+        "binDarwin": "ritchie-${so}",
+        "binWindows": "ritchie-${so}.exe",
+        "bundle": "${so}.zip",
+        "config": "config.json",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      },
+      "parent": "root_ritchie_install"
     }
   ],
   "version": "1.0.0"
