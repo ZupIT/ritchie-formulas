@@ -321,6 +321,38 @@
 			"Repo": ""
 		},
 		{
+			"parent": "root_scaffold_generate",
+			"usage": "terraform",
+			"help": "scaffold terraform",
+			"formula": {
+				"path": "",
+				"bin": "",
+				"binLinux": "",
+				"binDarwin": "",
+				"binWindows": "",
+				"bundle": "",
+				"config": "",
+				"repoUrl": ""
+			},
+			"Repo": ""
+		},
+		{
+			"parent": "root_scaffold_generate_terraform",
+			"usage": "aws",
+			"help": "terraform aws project",
+			"formula": {
+				"path": "scaffold/terraform/aws",
+				"bin": "aws-${so}",
+				"binLinux": "aws-${so}",
+				"binDarwin": "aws-${so}",
+				"binWindows": "aws-${so}.exe",
+				"bundle": "${so}.zip",
+				"config": "config.json",
+				"repoUrl": ""
+			},
+			"Repo": ""
+		}
+		{
 			"parent": "root",
 			"usage": "github",
 			"help": "Manipulate GitHub objects",
@@ -618,38 +650,6 @@
 				"binLinux": "vpc-${so}",
 				"binDarwin": "vpc-${so}",
 				"binWindows": "vpc-${so}.exe",
-				"bundle": "${so}.zip",
-				"config": "config.json",
-				"repoUrl": ""
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_terraform",
-			"usage": "create",
-			"help": "terraform create",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_terraform_create",
-			"usage": "project",
-			"help": "create project",
-			"formula": {
-				"path": "terraform/create/project",
-				"bin": "project-${so}",
-				"binLinux": "project-${so}",
-				"binDarwin": "project-${so}",
-				"binWindows": "project-${so}.exe",
 				"bundle": "${so}.zip",
 				"config": "config.json",
 				"repoUrl": ""

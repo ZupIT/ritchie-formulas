@@ -50,7 +50,7 @@ func Run(in Inputs) {
 		fmt.Errorf("executing template:\n", err)
 	}
 	fmt.Println()
-	color.Green(fmt.Sprintln("tf files generated successfully."))
-	color.Green(fmt.Sprintln("Localtion: ./build/2593f872-f430-463e-858a-34d2ef30c5bc"))
-	color.Green(fmt.Sprintln("Now, you can run [terraform plan|apply]"))
+	color.Green(fmt.Sprintln("vpc files generated successfully."))
+	color.Green(fmt.Sprintln("Location: ./build/2593f872-f430-463e-858a-34d2ef30c5bc"))
+	color.Green(fmt.Sprintln("Now, you can use terraform CLI running [terraform plan] to check the planning"))
 }

@@ -1,4 +1,4 @@
-module project
+module aws
 
 go 1.14
 

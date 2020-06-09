@@ -1,5 +1,5 @@
 # Go parameters
-BINARY_NAME=project
+BINARY_NAME=aws
 GOCMD=go
 GOBUILD=$(GOCMD) build
 GOTEST=$(GOCMD) test
