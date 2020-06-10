@@ -1,7 +1,6 @@
 package tpl
 
 const (
-	Readme = `
-		{{.ProjectName}}
+	Readme = `Scaffold terraform aws
 	`
 )

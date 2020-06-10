@@ -7,10 +7,10 @@ import (
 
 func main() {
 	name := os.Getenv("PROJECT_NAME")
-	repo := os.Getenv("PROJECT_REPO")
+	loc := os.Getenv("PROJECT_LOCATION")
 
 	aws.Input{
-		ProjectName: name,
-		ProjectPath: repo,
+		ProjectName:     name,
+		ProjectLocation: loc,
 	}.Run()
 }

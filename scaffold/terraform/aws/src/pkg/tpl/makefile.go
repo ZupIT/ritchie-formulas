@@ -1,8 +1,7 @@
 package tpl
 
 const (
-	Makefile = `
-.ONESHELL:
+	Makefile = `.ONESHELL:
 .SHELL := /usr/bin/bash
 .PHONY: apply plan prep
 ENV = $(ENVIRONMENT)

@@ -12,6 +12,7 @@ import (
 
 const (
 	dirFormat         = "%s/%s"
+	scaffoldFormat    = "%s/.scaffold"
 	readmeFormat      = "%s/README.md"
 	gitignoreFormat   = "%s/.gitignore"
 	jenkinsfileFormat = "%s/Jenkinsfile"
@@ -25,18 +26,18 @@ const (
 
 type Input struct {
 	ProjectName string
-	ProjectPath string
+	ProjectLocation string
 }
 
-func (in Input) RepoPath() string {
-	return fmt.Sprintf(dirFormat, in.ProjectPath, in.ProjectName)
+func (in Input) Path() string {
+	return fmt.Sprintf(dirFormat, in.ProjectLocation, in.ProjectName)
 }
 
 func (in Input) rollback(err error) {
 	if err != nil {
-		color.Red(fmt.Sprintf("failed to create project: '%s', error: '%s'", in.RepoPath(), err.Error()))
-		if err := os.RemoveAll(in.RepoPath()); err != nil {
-			color.Red(fmt.Sprintf("failed to rollback: '%s', error: '%s'", in.RepoPath(), err.Error()))
+		color.Red(fmt.Sprintf("failed to create project: '%s', error: '%s'", in.Path(), err.Error()))
+		if err := os.RemoveAll(in.Path()); err != nil {
+			color.Red(fmt.Sprintf("failed to rollback: '%s', error: '%s'", in.Path(), err.Error()))
 		}
 		os.Exit(1)
 	}
@@ -44,73 +45,78 @@ func (in Input) rollback(err error) {
 
 func (in Input) Run() {
 
-	if err := CreateDirIfNotExists(in.RepoPath(), 0755); err != nil {
+	if err := CreateDirIfNotExists(in.Path(), 0755); err != nil {
 		in.rollback(err)
 	}
 
-	readme := fmt.Sprintf(readmeFormat, in.RepoPath())
+	scaffold := fmt.Sprintf(scaffoldFormat, in.Path())
+	if err := CreateFileIfNotExist(scaffold, []byte(tpl.Scaffold)); err != nil {
+		in.rollback(err)
+	}
+
+	readme := fmt.Sprintf(readmeFormat, in.Path())
 	if err := CreateFileIfNotExist(readme, []byte(tpl.Readme)); err != nil {
 		in.rollback(err)
 	}
 
-	gitignore := fmt.Sprintf(gitignoreFormat, in.RepoPath())
+	gitignore := fmt.Sprintf(gitignoreFormat, in.Path())
 	if err := CreateFileIfNotExist(gitignore, []byte(tpl.GitIgnore)); err != nil {
 		in.rollback(err)
 	}
 
-	jenkinsfile := fmt.Sprintf(jenkinsfileFormat, in.RepoPath())
+	jenkinsfile := fmt.Sprintf(jenkinsfileFormat, in.Path())
 	if err := CreateFileIfNotExist(jenkinsfile, []byte(tpl.Jenkinsfile)); err != nil {
 		in.rollback(err)
 	}
 
-	src := fmt.Sprintf(srcDir, in.RepoPath())
+	src := fmt.Sprintf(srcDir, in.Path())
 	if err := CreateDirIfNotExists(src, 0755); err != nil {
 		in.rollback(err)
 	}
 
-	maintf := fmt.Sprintf(mainFormat, in.RepoPath())
+	maintf := fmt.Sprintf(mainFormat, in.Path())
 	if err := CreateFileIfNotExist(maintf, []byte(tpl.Maintf)); err != nil {
 		in.rollback(err)
 	}
 
-	makefile := fmt.Sprintf(makefileFormat, in.RepoPath())
+	makefile := fmt.Sprintf(makefileFormat, in.Path())
 	if err := CreateFileIfNotExist(makefile, []byte(tpl.Makefile)); err != nil {
 		in.rollback(err)
 	}
 
-	modules := fmt.Sprintf(modulesDir, in.RepoPath())
+	modules := fmt.Sprintf(modulesDir, in.Path())
 	if err := CreateDirIfNotExists(modules, 0755); err != nil {
 		in.rollback(err)
 	}
 
-	variables := fmt.Sprintf(variablesDir, in.RepoPath())
+	variables := fmt.Sprintf(variablesDir, in.Path())
 	if err := CreateDirIfNotExists(variables, 0755); err != nil {
 		in.rollback(err)
 	}
 
-	commonvar := fmt.Sprintf(varFilesFormat, in.RepoPath(), "common")
+	commonvar := fmt.Sprintf(varFilesFormat, in.Path(), "common")
 	if err := CreateFileIfNotExist(commonvar, []byte(tpl.Variable)); err != nil {
 		in.rollback(err)
 	}
 
-	prodvar := fmt.Sprintf(varFilesFormat, in.RepoPath(), "prod")
+	prodvar := fmt.Sprintf(varFilesFormat, in.Path(), "prod")
 	if err := CreateFileIfNotExist(prodvar, []byte(tpl.Variable)); err != nil {
 		in.rollback(err)
 	}
 
-	qavar := fmt.Sprintf(varFilesFormat, in.RepoPath(), "qa")
+	qavar := fmt.Sprintf(varFilesFormat, in.Path(), "qa")
 	if err := CreateFileIfNotExist(qavar, []byte(tpl.Variable)); err != nil {
 		in.rollback(err)
 	}
 
-	stgvar := fmt.Sprintf(varFilesFormat, in.RepoPath(), "stg")
+	stgvar := fmt.Sprintf(varFilesFormat, in.Path(), "stg")
 	if err := CreateFileIfNotExist(stgvar, []byte(tpl.Variable)); err != nil {
 		in.rollback(err)
 	}
 
-	color.Green(fmt.Sprintln("project created successfully."))
-	color.Green(fmt.Sprintln("Location:", in.RepoPath()))
-	color.Green(fmt.Sprintln("Run [rit terraform aws] and check the formulas module"))
+	color.Green(fmt.Sprintln("Project created successfully"))
+	color.Green(fmt.Sprintln("Location:", in.Path()))
+	color.Green(fmt.Sprintln("Now you can run [rit terraform aws] and check the options for your project"))
 
 }
 
