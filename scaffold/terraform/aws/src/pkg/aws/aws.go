@@ -43,67 +43,68 @@ func (in Input) rollback(err error) {
 }
 
 func (in Input) Run() {
-	if err := os.MkdirAll(in.RepoPath(), 0755); err != nil {
+
+	if err := CreateDirIfNotExists(in.RepoPath(), 0755); err != nil {
 		in.rollback(err)
 	}
 
 	readme := fmt.Sprintf(readmeFormat, in.RepoPath())
-	if err := ioutil.WriteFile(readme, []byte(tpl.Readme), 0755); err != nil {
+	if err := CreateFileIfNotExist(readme, []byte(tpl.Readme)); err != nil {
 		in.rollback(err)
 	}
 
 	gitignore := fmt.Sprintf(gitignoreFormat, in.RepoPath())
-	if err := ioutil.WriteFile(gitignore, []byte(tpl.GitIgnore), 0755); err != nil {
+	if err := CreateFileIfNotExist(gitignore, []byte(tpl.GitIgnore)); err != nil {
 		in.rollback(err)
 	}
 
 	jenkinsfile := fmt.Sprintf(jenkinsfileFormat, in.RepoPath())
-	if err := ioutil.WriteFile(jenkinsfile, []byte(tpl.Jenkinsfile), 0755); err != nil {
+	if err := CreateFileIfNotExist(jenkinsfile, []byte(tpl.Jenkinsfile)); err != nil {
 		in.rollback(err)
 	}
 
 	src := fmt.Sprintf(srcDir, in.RepoPath())
-	if err := os.MkdirAll(src, 0755); err != nil {
+	if err := CreateDirIfNotExists(src, 0755); err != nil {
 		in.rollback(err)
 	}
 
 	maintf := fmt.Sprintf(mainFormat, in.RepoPath())
-	if err := ioutil.WriteFile(maintf, []byte(tpl.Maintf), 0755); err != nil {
+	if err := CreateFileIfNotExist(maintf, []byte(tpl.Maintf)); err != nil {
 		in.rollback(err)
 	}
 
 	makefile := fmt.Sprintf(makefileFormat, in.RepoPath())
-	if err := ioutil.WriteFile(makefile, []byte(tpl.Makefile), 0755); err != nil {
+	if err := CreateFileIfNotExist(makefile, []byte(tpl.Makefile)); err != nil {
 		in.rollback(err)
 	}
 
 	modules := fmt.Sprintf(modulesDir, in.RepoPath())
-	if err := os.MkdirAll(modules, 0755); err != nil {
+	if err := CreateDirIfNotExists(modules, 0755); err != nil {
 		in.rollback(err)
 	}
 
 	variables := fmt.Sprintf(variablesDir, in.RepoPath())
-	if err := os.MkdirAll(variables, 0755); err != nil {
+	if err := CreateDirIfNotExists(variables, 0755); err != nil {
 		in.rollback(err)
 	}
 
 	commonvar := fmt.Sprintf(varFilesFormat, in.RepoPath(), "common")
-	if err := ioutil.WriteFile(commonvar, []byte(tpl.Variable), 0755); err != nil {
+	if err := CreateFileIfNotExist(commonvar, []byte(tpl.Variable)); err != nil {
 		in.rollback(err)
 	}
 
 	prodvar := fmt.Sprintf(varFilesFormat, in.RepoPath(), "prod")
-	if err := ioutil.WriteFile(prodvar, []byte(tpl.Variable), 0755); err != nil {
+	if err := CreateFileIfNotExist(prodvar, []byte(tpl.Variable)); err != nil {
 		in.rollback(err)
 	}
 
 	qavar := fmt.Sprintf(varFilesFormat, in.RepoPath(), "qa")
-	if err := ioutil.WriteFile(qavar, []byte(tpl.Variable), 0755); err != nil {
+	if err := CreateFileIfNotExist(qavar, []byte(tpl.Variable)); err != nil {
 		in.rollback(err)
 	}
 
 	stgvar := fmt.Sprintf(varFilesFormat, in.RepoPath(), "stg")
-	if err := ioutil.WriteFile(stgvar, []byte(tpl.Variable), 0755); err != nil {
+	if err := CreateFileIfNotExist(stgvar, []byte(tpl.Variable)); err != nil {
 		in.rollback(err)
 	}
 
@@ -111,4 +112,27 @@ func (in Input) Run() {
 	color.Green(fmt.Sprintln("Location:", in.RepoPath()))
 	color.Green(fmt.Sprintln("Run [rit terraform aws] and check the formulas module"))
 
+}
+
+func IsNotExist(name string) bool {
+	_, err := os.Stat(name)
+	return err != nil && os.IsNotExist(err)
+}
+
+func CreateDirIfNotExists(dir string, perm os.FileMode) error {
+	if IsNotExist(dir) {
+		if err := os.MkdirAll(dir, perm); err != nil {
+			return fmt.Errorf("failed to create directory: '%s', error: '%s'", dir, err.Error())
+		}
+	}
+	return nil
+}
+
+func CreateFileIfNotExist(file string, content []byte) error {
+	if IsNotExist(file) {
+		if err := ioutil.WriteFile(file, content, 0644); err != nil {
+			return err
+		}
+	}
+	return nil
 }
