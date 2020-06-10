@@ -1,0 +1,34 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "ritchie-server.fullname" . }}-conf 
+  labels:
+{{ include "ritchie-server.labels" . | indent 4 }}
+data:
+  ritchie.conf: |
+    {
+{{$orgLength := len .Values.ritchie.orgs }}
+{{$lastIndex := sub $orgLength 1}}
+{{- range $i, $e := .Values.ritchie.orgs }}
+      "{{ .name }}": {
+        "keycloak": {
+          "url": "{{ .keycloak.url }}",
+          "realm": "{{ .keycloak.realm }}",
+          "clientId": "{{ .keycloak.clientId }}",
+          "clientSecret": "{{ .keycloak.clientSecret }}"
+        },
+        "repositories":
+        {{- .repositories | nindent 8 }},
+        "cliVersionPath": {
+              "provider": "{{ .cliVersionPath.provider }}",
+              "url": "{{ .cliVersionPath.url }}"
+        },
+        "oauth" :{
+          "url" : "{{ .oauth.url }}",
+          "clientId" : "{{ .oauth.clientId }}"
+        },
+        "credentials":
+        {{- .credentials | nindent 8 }}
+      }{{ if ne $i $lastIndex  }},{{ end }}
+  {{end}}
+    }

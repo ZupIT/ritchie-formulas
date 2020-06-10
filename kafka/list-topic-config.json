@@ -8,7 +8,6 @@
       "label" : "Kafka urls: ",
       "cache" : {
         "active": true,
-        "qtd" : 5,
         "newLabel" : "Type new urls. "
       }
     }
