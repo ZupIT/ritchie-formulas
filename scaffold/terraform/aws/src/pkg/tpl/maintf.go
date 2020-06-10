@@ -1,8 +1,7 @@
 package tpl
 
 const (
-	Maintf = `
-variable "region" {
+	Maintf = `variable "region" {
   default = ""
 }
 provider "aws" {

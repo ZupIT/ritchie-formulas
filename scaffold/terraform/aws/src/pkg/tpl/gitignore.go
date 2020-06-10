@@ -1,9 +1,7 @@
 package tpl
 
 const (
-	GitIgnore = `
-	
-# Created by https://www.toptal.com/developers/gitignore/api/terraform,intellij,macos,visualstudiocode
+	GitIgnore = `# Created by https://www.toptal.com/developers/gitignore/api/terraform,intellij,macos,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=terraform,intellij,macos,visualstudiocode
 
 ### Intellij ###

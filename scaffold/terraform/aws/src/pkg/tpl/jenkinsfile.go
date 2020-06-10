@@ -1,8 +1,7 @@
 package tpl
 
 const (
-	Jenkinsfile = `
-	node {
+	Jenkinsfile = `node {
 	  try {
 	
 	    buildTerraformEnv {

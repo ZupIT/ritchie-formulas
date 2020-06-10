@@ -7,9 +7,9 @@
       "label" : "Type the project name: "
 	},
     {
-      "name" : "project_repo",
+      "name" : "project_location",
       "type" : "text",
-      "label" : "Type the path of the repo (e.g.: /home/user/github): "
+      "label" : "Type the location (e.g.: /home/user/github): "
     }
   ]
 }
