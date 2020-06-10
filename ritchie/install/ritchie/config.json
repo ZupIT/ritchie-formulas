@@ -1,0 +1,65 @@
+{
+  "description": "Ritchie team installation formula.",
+  "inputs" : [
+    {
+      "name" : "keycloak_release",
+      "type" : "text",
+      "label" : "Type the Keycloak's helm release name : ",
+      "cache" : {
+        "active": true,
+        "qtd" : 6,
+        "newLabel" : "Type new value. "
+      }
+    },
+    {
+      "name" : "consul_release",
+      "type" : "text",
+      "label" : "Type the Consul's helm release name : ",
+      "cache" : {
+        "active": true,
+        "qtd" : 6,
+        "newLabel" : "Type new value. "
+      }
+    },
+    {
+      "name": "vault_release",
+      "type": "text",
+      "label": "Type the Vault's helm release name : ",
+      "cache": {
+        "active": true,
+        "qtd": 6,
+        "newLabel": "Type new value. "
+      }
+    },
+    {
+      "name": "ritchie_release",
+      "type": "text",
+      "label": "Type the Ritchie's helm release name : ",
+      "cache": {
+        "active": true,
+        "qtd": 6,
+        "newLabel": "Type new value. "
+      }
+    },
+    {
+      "name" : "namespace",
+      "type" : "text",
+      "label" : "Type the k8s namespace where ritchie will be installed : ",
+      "cache" : {
+        "active": true,
+        "qtd" : 6,
+        "newLabel" : "Type new value. "
+      }
+    },
+    {
+      "name" : "values_dir",
+      "type" : "text",
+      "label" : "Type the path where the values files are located : ",
+      "cache" : {
+        "active": true,
+        "qtd" : 6,
+        "newLabel" : "Type new value. "
+      }
+    }
+  ]
+}
