@@ -25,7 +25,7 @@ const (
 )
 
 type Input struct {
-	ProjectName string
+	ProjectName     string
 	ProjectLocation string
 }
 

@@ -607,54 +607,6 @@
 				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
 			},
 			"Repo": ""
-		},
-		{
-			"parent": "root",
-			"usage": "terraform",
-			"help": "terraform commands",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_terraform",
-			"usage": "aws",
-			"help": "terraform aws",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_terraform_aws",
-			"usage": "vpc",
-			"help": "aws vpc",
-			"formula": {
-				"path": "terraform/aws/vpc",
-				"bin": "vpc-${so}",
-				"binLinux": "vpc-${so}",
-				"binDarwin": "vpc-${so}",
-				"binWindows": "vpc-${so}.exe",
-				"bundle": "${so}.zip",
-				"config": "config.json",
-				"repoUrl": ""
-			},
-			"Repo": ""
 		}
 	]
 }
