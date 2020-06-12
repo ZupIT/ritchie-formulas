@@ -170,6 +170,27 @@
       "parent": "root_scaffold_generate"
     },
     {
+      "parent": "root_scaffold_generate",
+      "usage": "terraform",
+      "help": "scaffold terraform"
+    },
+    {
+      "parent": "root_scaffold_generate_terraform",
+      "usage": "aws",
+      "help": "terraform aws project",
+      "formula": {
+        "path": "scaffold/terraform/aws",
+        "bin": "aws-${so}",
+        "binLinux": "aws-${so}",
+        "binDarwin": "aws-${so}",
+        "binWindows": "aws-${so}.exe",
+        "bundle": "${so}.zip",
+        "config": "config.json",
+        "repoUrl": ""
+      },
+      "Repo": ""
+    },
+    {
       "usage": "spring-starter-dependencies",
       "help": "List dependencies Spring",
       "formula": {
