@@ -172,18 +172,7 @@
     {
       "parent": "root_scaffold_generate",
       "usage": "terraform",
-      "help": "scaffold terraform",
-      "formula": {
-        "path": "",
-        "bin": "",
-        "binLinux": "",
-        "binDarwin": "",
-        "binWindows": "",
-        "bundle": "",
-        "config": "",
-        "repoUrl": ""
-      },
-      "Repo": ""
+      "help": "scaffold terraform"
     },
     {
       "parent": "root_scaffold_generate_terraform",
