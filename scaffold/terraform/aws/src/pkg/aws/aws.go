@@ -35,9 +35,9 @@ func (in Input) Path() string {
 
 func (in Input) rollback(err error) {
 	if err != nil {
-		color.Red(fmt.Sprintf("failed to create project: '%s', error: '%s'", in.Path(), err.Error()))
+		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", in.Path(), err.Error()))
 		if err := os.RemoveAll(in.Path()); err != nil {
-			color.Red(fmt.Sprintf("failed to rollback: '%s', error: '%s'", in.Path(), err.Error()))
+			color.Red(fmt.Sprintf("failed to rollback: %q, error: %q", in.Path(), err.Error()))
 		}
 		os.Exit(1)
 	}
@@ -128,7 +128,7 @@ func IsNotExist(name string) bool {
 func CreateDirIfNotExists(dir string, perm os.FileMode) error {
 	if IsNotExist(dir) {
 		if err := os.MkdirAll(dir, perm); err != nil {
-			return fmt.Errorf("failed to create directory: '%s', error: '%s'", dir, err.Error())
+			return fmt.Errorf("failed to create directory: %q, error: %q", dir, err)
 		}
 	}
 	return nil
