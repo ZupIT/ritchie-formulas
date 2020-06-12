@@ -5,9 +5,9 @@ import (
 	"testing"
 )
 
-func TestRepoPath(t *testing.T) {
+func TestPath(t *testing.T) {
 	input := Input{
-		ProjectName: "test",
+		ProjectName:     "test",
 		ProjectLocation: os.TempDir(),
 	}
 
@@ -20,7 +20,7 @@ func TestRepoPath(t *testing.T) {
 
 func TestRun(t *testing.T) {
 	input := Input{
-		ProjectName: "test",
+		ProjectName:     "test",
 		ProjectLocation: os.TempDir(),
 	}
 	input.Run()
