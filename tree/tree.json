@@ -311,6 +311,23 @@
       "parent": "root_k8s_show"
     },
     {
+      "usage": "clean",
+      "help": "Clean k8s objects",
+      "parent": "root_k8s"
+    },
+    {
+      "usage": "helm-configmap",
+      "help": "clean helm-configmap",
+      "formula": {
+        "path": "kubernetes/clean/helm-configmap",
+        "bin": "helm-configmap.sh",
+        "bundle": "${so}.zip",
+        "config": "config.json",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      },
+      "parent": "root_k8s_clean"
+    },
+    {
       "usage": "port-forward",
       "help": "Create k8s port forward",
       "formula": {
