@@ -321,9 +321,6 @@
       "formula": {
         "path": "kubernetes/clean/helm-configmap",
         "bin": "helm-configmap.sh",
-        "binLinux": "helm-configmap.sh",
-        "binDarwin": "helm-configmap.sh",
-        "binWindows": "helm-configmap.bat",
         "bundle": "${so}.zip",
         "config": "config.json",
         "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
