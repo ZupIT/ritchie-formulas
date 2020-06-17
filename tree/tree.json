@@ -723,18 +723,7 @@
 		{
 			"parent": "root",
 			"usage": "terraform",
-			"help": "terraform commands",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
+			"help": "terraform commands"
 		},
 		{
 			"parent": "root_terraform",
