@@ -1,0 +1,14 @@
+{
+  "command": "delete",
+  "description": "Delete bucket aws",
+  "inputs": [
+    {
+      "name" : "access_key",
+      "type" : "CREDENTIAL_AWS_ACCESSKEYID"
+    },
+    {
+      "name" : "secret_access_key",
+      "type" : "CREDENTIAL_AWS_SECRETACCESSKEY"
+    }
+  ]
+}
