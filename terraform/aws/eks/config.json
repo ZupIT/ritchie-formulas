@@ -1,0 +1,15 @@
+{
+  "description": "generate terraform aws eks",
+  "inputs": [
+    {
+      "name": "cluster_name",
+      "type": "text",
+      "label": "Type the cluster name:"
+    },
+    {
+      "name": "domain_name",
+      "type": "text",
+      "label": "Type the domain_name:"
+    }
+  ]
+}

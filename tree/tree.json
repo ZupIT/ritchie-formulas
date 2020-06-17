@@ -745,6 +745,22 @@
 				"repoUrl": ""
 			},
 			"Repo": ""
+		},
+		{
+			"parent": "root_terraform_aws",
+			"usage": "eks",
+			"help": "aws eks",
+			"formula": {
+				"path": "terraform/aws/eks",
+				"bin": "eks-${so}",
+				"binLinux": "eks-${so}",
+				"binDarwin": "eks-${so}",
+				"binWindows": "eks-${so}.exe",
+				"bundle": "${so}.zip",
+				"config": "config.json",
+				"repoUrl": ""
+			},
+			"Repo": ""
 		}
 	]
 }
