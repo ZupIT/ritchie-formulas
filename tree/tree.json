@@ -11,6 +11,57 @@
       "parent": "root_aws"
     },
     {
+      "usage": "list",
+      "help": "List Aws objects",
+      "parent": "root_aws"
+    },
+    {
+      "usage": "create",
+      "help": "Create Aws objects",
+      "parent": "root_aws"
+    },
+    {
+      "usage": "delete",
+      "help": "Delete Aws objects",
+      "parent": "root_aws"
+    },
+    {
+      "usage": "bucket",
+      "help": "Create bucket",
+      "formula": {
+        "path": "aws/bucket",
+        "bin": "aws-bucket-${so}",
+        "bundle": "${so}.zip",
+        "config": "create-config.json",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      },
+      "parent": "root_aws_create"
+    },
+    {
+      "usage": "bucket",
+      "help": "List bucket",
+      "formula": {
+        "path": "aws/bucket",
+        "bin": "aws-bucket-${so}",
+        "bundle": "${so}.zip",
+        "config": "list-config.json",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      },
+      "parent": "root_aws_list"
+    },
+    {
+      "usage": "bucket",
+      "help": "Delete bucket",
+      "formula": {
+        "path": "aws/bucket",
+        "bin": "aws-bucket-${so}",
+        "bundle": "${so}.zip",
+        "config": "delete-config.json",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      },
+      "parent": "root_aws_delete"
+    },
+    {
       "usage": "terraform",
       "help": "Apply Aws terraform objects",
       "formula": {
