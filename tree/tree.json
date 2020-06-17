@@ -739,18 +739,7 @@
 		{
 			"parent": "root_terraform",
 			"usage": "aws",
-			"help": "terraform aws",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
+			"help": "terraform aws"
 		},
 		{
 			"parent": "root_terraform_aws",
