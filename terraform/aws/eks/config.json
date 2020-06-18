@@ -9,7 +9,7 @@
     {
       "name": "domain_name",
       "type": "text",
-      "label": "Type the domain_name:"
+      "label": "Type the domain name:"
     }
   ]
 }
