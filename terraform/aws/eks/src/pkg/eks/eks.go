@@ -2,6 +2,8 @@ package eks
 
 import (
 	"fmt"
+	"github.com/hashicorp/hcl/v2"
+	"github.com/hashicorp/hcl/v2/hclwrite"
 	"html/template"
 	"os"
 	"path"
@@ -10,12 +12,12 @@ import (
 
 	"github.com/ZupIT/ritchie-cli/pkg/file/fileutil"
 	"github.com/fatih/color"
-	"github.com/hashicorp/terraform/configs"
 )
 
 const (
 	projectFile   = ".scaffold"
 	maintfFile    = "src/main.tf"
+	mainEKStfFile = "pkg/tpl/main.tf"
 	dnsZoneModule = "src/modules/dns_zone"
 	hemlDeps      = "src/modules/helm_deps"
 	iamK8SModule  = "src/modules/iam_k8s"
@@ -37,8 +39,11 @@ func Run(in Inputs) {
 		os.Exit(1)
 	}
 
-	parser := configs.NewParser(nil)
-	cfg, diags := parser.LoadConfigFile(path.Join(cdir, maintfFile))
+	// main.tf current
+
+	mfile := path.Join(cdir, maintfFile)
+	mb, _ := fileutil.ReadFile(mfile)
+	mcfg, diags := hclwrite.ParseConfig(mb, mfile, hcl.InitialPos)
 	if len(diags) != 0 {
 		color.Red("unexpected diagnostics")
 		for _, diag := range diags {
@@ -47,43 +52,75 @@ func Run(in Inputs) {
 		os.Exit(1)
 	}
 
-	exists := false
-	for _, m := range cfg.ModuleCalls {
-		if m.Name == "kubernetes_cluster" {
-			exists = true
-			break
+	// main.tk eks
+	dir, _ := os.Getwd()
+	efile := path.Join(dir, mainEKStfFile)
+	eb, _ := fileutil.ReadFile(efile)
+	ecfg, diags := hclwrite.ParseConfig(eb, efile, hcl.InitialPos)
+	if len(diags) != 0 {
+		color.Red("unexpected diagnostics")
+		for _, diag := range diags {
+			color.Red(fmt.Sprintf("- %s", diag))
+		}
+		os.Exit(1)
+	}
+
+	var reqblk *hclwrite.Block
+	mbody := mcfg.Body()
+	for _, block := range mbody.Blocks() {
+		if block.Type() == "terraform" {
+			for _, tf := range block.Body().Blocks() {
+				if tf.Type() == "required_providers" {
+					reqblk = tf
+					break
+				}
+			}
 		}
 	}
 
-	fmt.Println("main.tf:", cfg)
+	ebody := ecfg.Body()
+	for _, block := range ebody.Blocks() {
+		if block.Type() == "terraform" {
+			for _, tf := range block.Body().Blocks() {
+				if tf.Type() == "required_providers" {
+					for n, a := range tf.Body().Attributes() {
+						var tokens hclwrite.Tokens
+						tokens = a.BuildTokens(tokens)
+						reqblk.Body().SetAttributeRaw(n, tokens[2:len(tokens) -1])
+					}
+				}
+			}
+		}
+	}
 
-	if !exists {
-		// main.tf
-		mf, err := os.OpenFile(path.Join(cdir, maintfFile), os.O_APPEND|os.O_WRONLY, 0644)
-		if err != nil {
-			color.Red(fmt.Sprintf("error openning main.tf, detail: %q", err))
-			os.Exit(1)
-		}
-		defer mf.Close()
-		if _, err := mf.WriteString(tpl.Maintf); err != nil {
-			color.Red(fmt.Sprintf("error writing main.tf, detail: %q", err))
-			os.Exit(1)
-		}
+	fileutil.WriteFile(mfile, mcfg.Bytes())
 
-		// variables
-		t := template.Must(template.New("Var").Parse(tpl.Variable))
-		varf := path.Join(cdir, variableQA)
-		vf, err := os.OpenFile(varf, os.O_APPEND|os.O_WRONLY, 0644)
-		if err != nil {
-			color.Red(fmt.Sprintf("error openning %q, detail: %q", varf, err))
-			os.Exit(1)
-		}
-		defer vf.Close()
-		err = t.Execute(vf, in)
-		if err != nil {
-			color.Red(fmt.Sprintf("error writing %q, detail: %q", varf, err))
-			os.Exit(1)
-		}
+	// main.tf others
+	mf, err := os.OpenFile(mfile, os.O_APPEND|os.O_WRONLY, 0644)
+	if err != nil {
+		color.Red(fmt.Sprintf("error openning %q, detail: %q", mfile, err))
+		os.Exit(1)
+	}
+	defer mf.Close()
+	_, err = mf.Write([]byte(tpl.Maintf))
+	if err != nil {
+		color.Red(fmt.Sprintf("error appending file %q, detail: %q", mfile, err))
+		os.Exit(1)
+	}
+
+	// variables
+	t := template.Must(template.New("Var").Parse(tpl.Variable))
+	varf := path.Join(cdir, variableQA)
+	vf, err := os.OpenFile(varf, os.O_APPEND|os.O_WRONLY, 0644)
+	if err != nil {
+		color.Red(fmt.Sprintf("error openning %q, detail: %q", varf, err))
+		os.Exit(1)
+	}
+	defer vf.Close()
+	err = t.Execute(vf, in)
+	if err != nil {
+		color.Red(fmt.Sprintf("error writing %q, detail: %q", varf, err))
+		os.Exit(1)
 	}
 
 	// dns_zone
@@ -149,4 +186,7 @@ func Run(in Inputs) {
 		os.Exit(1)
 	}
 
+	fmt.Println()
+	color.Green(fmt.Sprintln("eks module configured successfully."))
+	color.Green(fmt.Sprintln("now, you can run [make plan] to check the terraform plan"))
 }
