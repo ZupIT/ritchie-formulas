@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"text/template"
 
-	"aws/pkg/tpl"
+	"project/pkg/tpl"
 
 	"github.com/fatih/color"
 )
 
 const (
 	dirFormat         = "%s/%s"
-	scaffold    = ".scaffold"
 	scaffoldFormat    = "%s/.scaffold"
 	readmeFormat      = "%s/README.md"
 	gitignoreFormat   = "%s/.gitignore"
@@ -24,11 +24,15 @@ const (
 	templatesDir        = "%s/src/templates"
 	variablesDir      = "%s/src/variables"
 	varFilesFormat    = "%s/src/variables/%s.tfvars"
+	QABackendtfFormat    = "%s/src/qa.backendtf"
+
 )
 
 type Input struct {
 	ProjectName     string
 	ProjectLocation string
+	BucketName string
+	BucketRegion string
 }
 
 func (in Input) Path() string {
@@ -121,9 +125,26 @@ func (in Input) Run() {
 		in.rollback(err)
 	}
 
+	//qa.backendtf
+	backendtf := fmt.Sprintf(QABackendtfFormat, in.Path())
+	if err := CreateFileIfNotExist(backendtf, []byte("")); err != nil {
+		in.rollback(err)
+	}
+
+	t := template.Must(template.New("QABackendtf").Parse(tpl.QABackendtf))
+	bfile, err := os.OpenFile(backendtf, os.O_APPEND|os.O_WRONLY, 0644)
+	if err != nil {
+		in.rollback(err)
+	}
+	defer bfile.Close()
+	err = t.Execute(bfile, in)
+	if err != nil {
+		in.rollback(err)
+	}
+
 	color.Green(fmt.Sprintln("project created successfully"))
 	color.Green(fmt.Sprintln("location:", in.Path()))
-	color.Green(fmt.Sprintln("now you can run [rit terraform aws] and check the options for your project"))
+	color.Green(fmt.Sprintln("go to the location and run [rit aws add] and check the options for your project"))
 
 }
 

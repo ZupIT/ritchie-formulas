@@ -7,22 +7,32 @@
     },
     {
       "usage": "apply",
-      "help": "Apply Aws objects",
+      "help": "Apply aws objects",
+      "parent": "root_aws"
+    },
+    {
+      "usage": "add",
+      "help": "Add aws objects",
       "parent": "root_aws"
     },
     {
       "usage": "list",
-      "help": "List Aws objects",
+      "help": "List aws objects",
       "parent": "root_aws"
     },
     {
       "usage": "create",
-      "help": "Create Aws objects",
+      "help": "Create aws objects",
+      "parent": "root_aws"
+    },
+    {
+      "usage": "generate",
+      "help": "Generate aws objects",
       "parent": "root_aws"
     },
     {
       "usage": "delete",
-      "help": "Delete Aws objects",
+      "help": "Delete aws objects",
       "parent": "root_aws"
     },
     {
@@ -62,15 +72,60 @@
       "parent": "root_aws_delete"
     },
     {
+      "parent": "root_aws_generate",
+      "usage": "terraform-project",
+      "help": "terraform aws project",
+      "formula": {
+        "path": "aws/terraform/project",
+        "bin": "aws-${so}",
+        "binLinux": "aws-${so}",
+        "binDarwin": "aws-${so}",
+        "binWindows": "aws-${so}.exe",
+        "bundle": "${so}.zip",
+        "config": "config.json",
+        "repoUrl": ""
+      }
+    },
+    {
       "usage": "terraform",
       "help": "Apply Aws terraform objects",
       "formula": {
-        "path": "aws/terraform",
+        "path": "aws/terraform/apply",
         "bin": "terraform-cli-${so}",
         "bundle": "${so}.zip",
         "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       },
       "parent": "root_aws_apply"
+    },
+    {
+      "parent": "root_aws_add",
+      "usage": "terraform-vpc",
+      "help": "aws vpc",
+      "formula": {
+        "path": "aws/terraform/vpc",
+        "bin": "vpc-${so}",
+        "binLinux": "vpc-${so}",
+        "binDarwin": "vpc-${so}",
+        "binWindows": "vpc-${so}.exe",
+        "bundle": "${so}.zip",
+        "config": "config.json",
+        "repoUrl": ""
+      }
+    },
+    {
+      "parent": "root_aws_add",
+      "usage": "terraform-eks",
+      "help": "aws eks",
+      "formula": {
+        "path": "aws/terraform/eks",
+        "bin": "eks-${so}",
+        "binLinux": "eks-${so}",
+        "binDarwin": "eks-${so}",
+        "binWindows": "eks-${so}.exe",
+        "bundle": "${so}.zip",
+        "config": "config.json",
+        "repoUrl": ""
+      }
     },
     {
       "usage": "kafka",
