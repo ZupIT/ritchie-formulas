@@ -83,7 +83,7 @@
         "binWindows": "aws-${so}.exe",
         "bundle": "${so}.zip",
         "config": "config.json",
-        "repoUrl": ""
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       }
     },
     {
@@ -109,7 +109,7 @@
         "binWindows": "vpc-${so}.exe",
         "bundle": "${so}.zip",
         "config": "config.json",
-        "repoUrl": ""
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       }
     },
     {
@@ -124,7 +124,7 @@
         "binWindows": "eks-${so}.exe",
         "bundle": "${so}.zip",
         "config": "config.json",
-        "repoUrl": ""
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       }
     },
     {
