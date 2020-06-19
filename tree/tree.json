@@ -446,6 +446,53 @@
         "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       },
       "parent": "root_ritchie_install"
+    },
+    {
+      "parent": "root",
+      "usage": "terraform",
+      "help": "terraform commands"
+    },
+    {
+      "parent": "root_terraform",
+      "usage": "aws",
+      "help": "terraform aws"
+    },
+    {
+      "parent": "root_terraform_aws",
+      "usage": "add",
+      "help": "terraform aws add"
+    },
+    {
+      "parent": "root_terraform_aws_add",
+      "usage": "vpc",
+      "help": "aws vpc",
+      "formula": {
+        "path": "terraform/aws/vpc",
+        "bin": "vpc-${so}",
+        "binLinux": "vpc-${so}",
+        "binDarwin": "vpc-${so}",
+        "binWindows": "vpc-${so}.exe",
+        "bundle": "${so}.zip",
+        "config": "config.json",
+        "repoUrl": ""
+      },
+      "Repo": ""
+    },
+    {
+      "parent": "root_terraform_aws_add",
+      "usage": "eks",
+      "help": "aws eks",
+      "formula": {
+        "path": "terraform/aws/eks",
+        "bin": "eks-${so}",
+        "binLinux": "eks-${so}",
+        "binDarwin": "eks-${so}",
+        "binWindows": "eks-${so}.exe",
+        "bundle": "${so}.zip",
+        "config": "config.json",
+        "repoUrl": ""
+      },
+      "Repo": ""
     }
   ],
   "version": "1.0.0"

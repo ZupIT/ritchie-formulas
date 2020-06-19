@@ -12,6 +12,7 @@ import (
 
 const (
 	dirFormat         = "%s/%s"
+	scaffold    = ".scaffold"
 	scaffoldFormat    = "%s/.scaffold"
 	readmeFormat      = "%s/README.md"
 	gitignoreFormat   = "%s/.gitignore"
@@ -20,6 +21,7 @@ const (
 	mainFormat        = "%s/src/main.tf"
 	makefileFormat    = "%s/src/Makefile"
 	modulesDir        = "%s/src/modules"
+	templatesDir        = "%s/src/templates"
 	variablesDir      = "%s/src/variables"
 	varFilesFormat    = "%s/src/variables/%s.tfvars"
 )
@@ -89,6 +91,11 @@ func (in Input) Run() {
 		in.rollback(err)
 	}
 
+	templates := fmt.Sprintf(templatesDir, in.Path())
+	if err := CreateDirIfNotExists(templates, 0755); err != nil {
+		in.rollback(err)
+	}
+
 	variables := fmt.Sprintf(variablesDir, in.Path())
 	if err := CreateDirIfNotExists(variables, 0755); err != nil {
 		in.rollback(err)
@@ -114,9 +121,9 @@ func (in Input) Run() {
 		in.rollback(err)
 	}
 
-	color.Green(fmt.Sprintln("Project created successfully"))
-	color.Green(fmt.Sprintln("Location:", in.Path()))
-	color.Green(fmt.Sprintln("Now you can run [rit terraform aws] and check the options for your project"))
+	color.Green(fmt.Sprintln("project created successfully"))
+	color.Green(fmt.Sprintln("location:", in.Path()))
+	color.Green(fmt.Sprintln("now you can run [rit terraform aws] and check the options for your project"))
 
 }
 
