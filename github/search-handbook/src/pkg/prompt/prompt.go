@@ -26,7 +26,7 @@ func String(name string, required bool) (string, error) {
 	return prompt.Run()
 }
 
-// List show a prompt with options and parse to string.
+// list show a prompt with options and parse to string.
 func List(name string, items []string) (string, error) {
 	prompt := promptui.Select{
 		Items:     items,

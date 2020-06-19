@@ -38,7 +38,7 @@ type Dependency struct {
 
 func (in Inputs) Run() {
 	fmt.Printf("Command: %v\n", in.Command)
-	log.Println("List dependencies")
+	log.Println("list dependencies")
 
 	resp, err := http.Get(listDependenciesURL)
 	if err != nil {
