@@ -6,7 +6,6 @@ import (
 	"path"
 	"strings"
 	"text/template"
-
 	"vpc/pkg/tpl"
 
 	"github.com/ZupIT/ritchie-cli/pkg/file/fileutil"
@@ -33,14 +32,46 @@ type Inputs struct {
 func Run(in Inputs) {
 	cdir := in.PWD
 
-	if !fileutil.Exists(path.Join(cdir, projectFile)) {
-		color.Red("seems that your current dir isn't a terraform project.")
-		color.Red("you can create one running [rit scaffold generate terraform aws]")
-		os.Exit(1)
+	in.checkIfProjectExist()
+
+	if !in.moduleExist() {
+		//main.tf
+		mainf, err := os.OpenFile(path.Join(cdir, maintfFile), os.O_APPEND|os.O_WRONLY, 0644)
+		if err != nil {
+			color.Yellow(fmt.Sprintf("error openning main.tf, detail: %q", err))
+			os.Exit(1)
+		}
+		defer mainf.Close()
+		if _, err := mainf.WriteString(tpl.Maintf); err != nil {
+			color.Red(fmt.Sprintf("error writing main.tf, detail: %q", err))
+			os.Exit(1)
+		}
+
+		// variables
+		in.parseAZS()
+		t := template.Must(template.New("Var").Parse(tpl.Variable))
+		varf := path.Join(cdir, variableQA)
+		vfile, err := os.OpenFile(varf, os.O_APPEND|os.O_WRONLY, 0644)
+		if err != nil {
+			color.Red(fmt.Sprintf("error openning %q, detail: %q", varf, err))
+			os.Exit(1)
+		}
+		defer vfile.Close()
+		err = t.Execute(vfile, in)
+		if err != nil {
+			color.Red(fmt.Sprintf("error writing %q, detail: %q", varf, err))
+			os.Exit(1)
+		}
 	}
 
+	fmt.Println()
+	color.Green(fmt.Sprintln("vpc module configured successfully"))
+	color.Green(fmt.Sprintln("now, you can run [make plan] to check the terraform plan"))
+}
+
+func (in Inputs) moduleExist() bool {
 	parser := configs.NewParser(nil)
-	cfg, diags := parser.LoadConfigFile(path.Join(cdir, maintfFile))
+	cfg, diags := parser.LoadConfigFile(path.Join(in.PWD, maintfFile))
 	if len(diags) != 0 {
 		color.Red("unexpected diagnostics")
 		for _, diag := range diags {
@@ -49,27 +80,15 @@ func Run(in Inputs) {
 		os.Exit(1)
 	}
 
-	exists := false
 	for _, m := range cfg.ModuleCalls {
 		if m.Name == "vpc" {
-			exists = true
-			break
+			return true
 		}
 	}
+	return false
+}
 
-	if !exists {
-		file, err := os.OpenFile(path.Join(cdir, maintfFile), os.O_APPEND|os.O_WRONLY, 0644)
-		if err != nil {
-			color.Yellow(fmt.Sprintf("error openning main.tf, detail: %q", err))
-			os.Exit(1)
-		}
-		defer file.Close()
-		if _, err := file.WriteString(tpl.Maintf); err != nil {
-			color.Red(fmt.Sprintf("error writing main.tf, detail: %q", err))
-			os.Exit(1)
-		}
-	}
-
+func (in Inputs) parseAZS() {
 	ss := strings.Split(in.VPCAZS, ",")
 	siz := len(ss) - 1
 	var azs string
@@ -81,23 +100,13 @@ func Run(in Inputs) {
 		}
 	}
 	in.VPCAZS = azs
-
-	t := template.Must(template.New("Var").Parse(tpl.Variable))
-
-	varf := path.Join(cdir, variableQA)
-	file, err := os.OpenFile(varf, os.O_APPEND|os.O_WRONLY, 0644)
-	if err != nil {
-		color.Red(fmt.Sprintf("error openning %q, detail: %q", varf, err))
-		os.Exit(1)
-	}
-	defer file.Close()
-	err = t.Execute(file, in)
-	if err != nil {
-		color.Red(fmt.Sprintf("error writing %q, detail: %q", varf, err))
-		os.Exit(1)
-	}
-
-	fmt.Println()
-	color.Green(fmt.Sprintln("vpc module configured successfully."))
-	color.Green(fmt.Sprintln("now, you can use terraform CLI running [terraform plan] to check the planning"))
 }
+
+func (in Inputs) checkIfProjectExist() {
+	if !fileutil.Exists(path.Join(in.PWD, projectFile)) {
+		color.Red("seems that your current dir isn't a terraform project.")
+		color.Red("you can create one running [rit scaffold generate terraform aws]")
+		os.Exit(1)
+	}
+}
+
