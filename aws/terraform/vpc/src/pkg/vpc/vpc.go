@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"path"
+	"strconv"
 	"strings"
 	"text/template"
 	"vpc/pkg/tpl"
@@ -14,7 +15,6 @@ import (
 )
 
 const (
-	vpcAZSFormat = "\"%s\"%s"
 	projectFile  = ".scaffold"
 	maintfFile   = "src/main.tf"
 	variableQA   = "src/variables/qa.tfvars"
@@ -66,7 +66,7 @@ func Run(in Inputs) {
 
 	fmt.Println()
 	color.Green(fmt.Sprintln("vpc module configured successfully"))
-	color.Green(fmt.Sprintln("now, you can run [make plan] to check the terraform plan"))
+	color.Green(fmt.Sprintln("go to the src dir and run [ENVIRONMENT=qa make plan] to check the terraform plan"))
 }
 
 func (in Inputs) moduleExist() bool {
@@ -88,15 +88,16 @@ func (in Inputs) moduleExist() bool {
 	return false
 }
 
-func (in Inputs) parseAZS() {
+func (in *Inputs) parseAZS() {
 	ss := strings.Split(in.VPCAZS, ",")
 	siz := len(ss) - 1
 	var azs string
 	for i, s := range ss {
+		sq := strconv.Quote(s)
 		if i < siz {
-			azs += fmt.Sprintf(vpcAZSFormat, s, ",")
+			azs += sq + ","
 		} else {
-			azs += fmt.Sprintf(vpcAZSFormat, s, "")
+			azs += sq
 		}
 	}
 	in.VPCAZS = azs
@@ -105,7 +106,7 @@ func (in Inputs) parseAZS() {
 func (in Inputs) checkIfProjectExist() {
 	if !fileutil.Exists(path.Join(in.PWD, projectFile)) {
 		color.Red("seems that your current dir isn't a terraform project.")
-		color.Red("you can create one running [rit scaffold generate terraform aws]")
+		color.Red("you can create one running [rit aws generate terraform-project]")
 		os.Exit(1)
 	}
 }

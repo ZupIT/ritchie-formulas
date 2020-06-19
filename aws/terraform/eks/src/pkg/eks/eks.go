@@ -50,7 +50,7 @@ func Run(in Inputs) {
 
 	fmt.Println()
 	color.Green(fmt.Sprintln("eks module configured successfully"))
-	color.Green(fmt.Sprintln("now, you can run [make plan] to check the terraform plan"))
+	color.Green(fmt.Sprintln("go to the src dir and run [ENVIRONMENT=qa make plan] to check the terraform plan"))
 }
 
 func (in Inputs) addIAMK8S() {
@@ -200,7 +200,7 @@ func (in Inputs) mergeMain() {
 func (in Inputs) checkIfProjectExist() {
 	if !fileutil.Exists(path.Join(in.PWD, projectFile)) {
 		color.Red("seems that your current dir isn't a terraform project.")
-		color.Red("you can create one running [rit scaffold generate terraform aws]")
+		color.Red("you can create one running [rit aws generate terraform-project]")
 		os.Exit(1)
 	}
 }
