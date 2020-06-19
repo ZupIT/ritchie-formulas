@@ -1,5 +1,7 @@
 #Makefiles
 TERRAFORM=aws/terraform
+AWS_SETCONTEXT=aws/setcontext
+AWS_BUCKET=aws/bucket
 NAVIGATE_HANDBOOK=github/navigate-handbook
 SEARCH_HANDBOOK=github/search-handbook
 SC_COFFEE_GO=scaffold/coffee-go
@@ -13,8 +15,13 @@ DOCKER=docker/compose
 KUBERNETES=kubernetes/core
 FAST_MERGE=github/fast-merge
 RITMAN=devtools/ritman
-FORMULAS=$(TERRAFORM) $(SC_COFFEE_GO) $(SC_COFFEE_JAVA) $(SC_COFFEE_SHELL) $(SC_COFFEE_PYTHON) $(SC_COFFEE_NODE) $(SC_SPRING_STARTER) $(KAFKA) $(DOCKER) $(NAVIGATE_HANDBOOK) $(SEARCH_HANDBOOK) $(KUBERNETES) $(FAST_MERGE) $(RITMAN)
-
+SC_TERRAFORM_AWS=scaffold/terraform/aws
+FILES_RITCHIE_TEAM=ritchie/generate/files
+RITCHIE_TEAM=ritchie/install/ritchie
+KUBERNETES_CLEANER=kubernetes/clean/helm-configmap
+TERRAFORM_AWS_VPC=terraform/aws/vpc
+TERRAFORM_AWS_EKS=terraform/aws/eks
+FORMULAS=$(TERRAFORM) $(SC_COFFEE_GO) $(SC_COFFEE_JAVA) $(SC_COFFEE_SHELL) $(SC_COFFEE_PYTHON) $(SC_COFFEE_NODE) $(SC_SPRING_STARTER) $(KAFKA) $(DOCKER) $(NAVIGATE_HANDBOOK) $(SEARCH_HANDBOOK) $(KUBERNETES) $(FAST_MERGE) $(AWS_SETCONTEXT) $(RITCHIE_TEAM) $(FILES_RITCHIE_TEAM) $(SC_TERRAFORM_AWS) $(KUBERNETES_CLEANER) $(AWS_BUCKET) $(TERRAFORM_AWS_VPC) $(TERRAFORM_AWS_EKS) $(RITMAN)
 
 PWD_INITIAL=$(shell pwd)
 
@@ -56,4 +63,3 @@ endif
 	mkdir -p $(HOME)/.rit/repo/local
 	rm -rf $(HOME)/.rit/repo/local/tree.json
 	cp tree/tree.json  $(HOME)/.rit/repo/local/tree.json
-

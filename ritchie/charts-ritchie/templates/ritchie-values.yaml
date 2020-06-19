@@ -1,0 +1,72 @@
+envVars:
+  - name: VAULT_ADDR
+    value: "http://{{ vault_address }}:8200"
+  - name: VAULT_AUTHENTICATION
+    value: "KUBERNETES"
+  - name: VAULT_K8S_ROLE
+    value: "ritchie_credential_role"
+  - name: FILE_CONFIG
+    value: "/data/conf/ritchie.conf"
+replicaCount: 1
+image:
+  repository: ritchie-server
+  tag: qa-160
+  pullPolicy: IfNotPresent
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+serviceaccount: vault-auth
+podSecurityContext: {}
+securityContext: {}
+resources:
+  limits:
+    cpu: 512m
+    memory: 1024Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+nodeSelector: {}
+tolerations: []
+affinity: {}
+livenessProbe:
+  enabled: true
+  failureThreshold: 3
+  httpGet:
+    path: /health
+    port: 3000
+    scheme: HTTP
+  initialDelaySeconds: 10
+  periodSeconds: 30
+  successThreshold: 1
+  timeoutSeconds: 1
+readinessProbe:
+  failureThreshold: 3
+  httpGet:
+    path: /health
+    port: 3000
+    scheme: HTTP
+  initialDelaySeconds: 5
+  periodSeconds: 10
+  successThreshold: 1
+  timeoutSeconds: 1
+service:
+  name: ritchie-server
+  type: NodePort
+  ports:
+  - name: http
+    port: 3000
+    target_port: 3000
+ritchie:
+  realm: "{{ keycloakRealm }}"
+  clientId: "{{ keycloakClientId }}"
+  clientSecret: "{{ keycloakClientSecret }}"
+  organization: "{{ ritchieOrganization }}"
+  cliversion:
+    provider: "{{ ritchieCliVersionProvider }}"
+    url: "{{ ritchieCliVersionURL }}"
+  address:
+    keycloak: "{{ keycloakAddress }}"
+  repositories: "{{ ritchieRepositories }}"
+imageCredentials:
+  registry: 237930432518.dkr.ecr.sa-east-1.amazonaws.com
+
