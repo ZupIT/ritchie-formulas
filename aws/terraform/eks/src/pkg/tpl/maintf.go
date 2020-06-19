@@ -89,53 +89,5 @@ module "helm_deps" {
 variable "namespace" {
 	default = ""
 }
-resource "helm_release" "matrix" {
-	name       = "matrix"
-	chart      = "${path.module}/charts/matrix"
-	namespace  = var.namespace
-	timeout = "600"
-	values = [data.template_file.matrix-extravars.rendered]
-
-	depends_on = [
-		module.helm_deps
-	]
-
-	force_update = true
-
-	recreate_pods = true
-
-}
-
-data "template_file" "matrix-extravars" {
-	template = file("${path.module}/templates/matrix-extravars.tpl")
-	vars = {
-		subnets         = join(", ", module.vpc.public_subnets)
-		certificate-arn-matrix = aws_acm_certificate.matrix.arn
-		matrix-address = "matrix.${var.domain_name}"
-		hostname        = var.domain_name
-	}
-
-	depends_on = [
-		aws_acm_certificate.matrix
-	]
-}
-
-resource "aws_acm_certificate" "matrix" {
-	domain_name       = "matrix.${var.domain_name}"
-	validation_method = "DNS"
-	lifecycle {
-		create_before_destroy = true
-	}
-}
-
-resource "aws_route53_record" "matrix-CNAME" {
-	name    = lookup(aws_acm_certificate.matrix.domain_validation_options[0], "resource_record_name")
-	type    = lookup(aws_acm_certificate.matrix.domain_validation_options[0], "resource_record_type")
-	ttl     = "300"
-	zone_id = module.dns.zone_id
-	records = [
-		lookup(aws_acm_certificate.matrix.domain_validation_options[0], "resource_record_value")
-	]
-}
 `
 )
