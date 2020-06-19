@@ -24,7 +24,7 @@ const (
 	templatesDir        = "%s/src/templates"
 	variablesDir      = "%s/src/variables"
 	varFilesFormat    = "%s/src/variables/%s.tfvars"
-	QABackendtfFormat    = "%s/src/qa.backendtf"
+	QABackendtfFormat    = "%s/src/qa.tfbackend"
 
 )
 
