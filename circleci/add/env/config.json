@@ -1,0 +1,29 @@
+{
+  "description": "set env for circleci project",
+  "inputs" : [
+    {
+      "name": "token",
+      "type": "CREDENTIAL_CIRCLECI_TOKEN"
+    },
+    {
+      "name" : "repo_owner",
+      "type" : "text",
+      "label" : "Type the repository owner: "
+    },
+    {
+      "name" : "repo_name",
+      "type" : "text",
+      "label" : "Type repository name: "
+    },
+    {
+      "name" : "env_name",
+      "type" : "text",
+      "label" : "Type the ENV name : "
+    },
+    {
+      "name" : "env_value",
+      "type" : "text",
+      "label" : "Type the ENV value : "
+    }
+  ]
+}
