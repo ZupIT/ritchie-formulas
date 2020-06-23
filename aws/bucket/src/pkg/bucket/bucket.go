@@ -7,17 +7,20 @@ import (
 	"github.com/aws/aws-sdk-go/aws/credentials"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/s3"
+	"github.com/jedib0t/go-pretty/table"
+	"os"
 )
 
 type Inputs struct {
 	Key        string
 	Secret     string
+	Region     string
 	BucketName string
 	Command    string
 }
 
 const (
-	list = "list"
+	list   = "list"
 	delete = "delete"
 	create = "create"
 )
@@ -28,7 +31,7 @@ func (in Inputs) Run() {
 		return
 	}
 	sess, err := session.NewSession(&aws.Config{
-		Region:      aws.String("us-east-1"),
+		Region:      aws.String(in.Region),
 		Credentials: credentials.NewStaticCredentials(in.Key, in.Secret, ""),
 	})
 	if err != nil {
@@ -86,7 +89,7 @@ func (in Inputs) runDelete(svc *s3.S3) {
 		fmt.Printf("Not found bucket to delete")
 		return
 	}
-	bSelect , _ := prompt.List("Select bucket to delete: ", bItems)
+	bSelect, _ := prompt.List("Select bucket to delete: ", bItems)
 	cItems := []string{"NO", "YES"}
 	c, _ := prompt.List(fmt.Sprintf("Confirm delete bucket name: %s", bSelect), cItems)
 	switch c {
@@ -114,9 +117,14 @@ func (in Inputs) list(svc *s3.S3) (*s3.ListBucketsOutput, error) {
 }
 
 func printList(r *s3.ListBucketsOutput) {
-	fmt.Println("Buckets: ")
-	for _, b := range r.Buckets {
-		fmt.Printf("* %s created on %s\n",
-			aws.StringValue(b.Name), aws.TimeValue(b.CreationDate))
+	t := table.NewWriter()
+	t.SetOutputMirror(os.Stdout)
+	t.AppendHeader(table.Row{"Count", "Bucket Name", "Creation"})
+	for i, b := range r.Buckets {
+		t.AppendRows([]table.Row{
+			{i+1, aws.StringValue(b.Name), aws.TimeValue(b.CreationDate)},
+		})
 	}
+	t.SetStyle(table.StyleLight)
+	t.Render()
 }
