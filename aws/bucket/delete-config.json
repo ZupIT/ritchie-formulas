@@ -9,6 +9,16 @@
     {
       "name" : "secret_access_key",
       "type" : "CREDENTIAL_AWS_SECRETACCESSKEY"
+    },
+    {
+      "name": "region",
+      "type": "text",
+      "label": "Type your region [ e.g us-east-1 ]: ",
+      "cache" : {
+        "active": true,
+        "qty" : 6,
+        "newLabel" : "Type new value. "
+      }
     }
   ]
 }
