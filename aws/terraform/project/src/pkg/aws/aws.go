@@ -4,35 +4,40 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"path"
 	"text/template"
 
 	"project/pkg/tpl"
 
 	"github.com/fatih/color"
+
+	"github.com/ZupIT/ritchie-cli/pkg/file/fileutil"
 )
 
 const (
-	dirFormat         = "%s/%s"
-	scaffoldFormat    = "%s/.scaffold"
-	readmeFormat      = "%s/README.md"
-	gitignoreFormat   = "%s/.gitignore"
-	jenkinsfileFormat = "%s/Jenkinsfile"
-	srcDir            = "%s/src"
-	mainFormat        = "%s/src/main.tf"
-	makefileFormat    = "%s/src/Makefile"
-	modulesDir        = "%s/src/modules"
-	templatesDir        = "%s/src/templates"
-	variablesDir      = "%s/src/variables"
-	varFilesFormat    = "%s/src/variables/%s.tfvars"
-	QABackendtfFormat    = "%s/src/qa.tfbackend"
-
+	dirFormat          = "%s/%s"
+	scaffoldFormat     = "%s/.scaffold"
+	readmeFormat       = "%s/README.md"
+	gitignoreFormat    = "%s/.gitignore"
+	jenkinsfileFormat  = "%s/Jenkinsfile"
+	srcDir             = "%s/src"
+	mainFormat         = "%s/src/main.tf"
+	makefileFormat     = "%s/src/Makefile"
+	modulesDir         = "%s/src/modules"
+	templatesDir       = "%s/src/templates"
+	variablesDir       = "%s/src/variables"
+	varFilesFormat     = "%s/src/variables/%s.tfvars"
+	QABackendtfFormat  = "%s/src/qa.tfbackend"
+	CircleCIPath       = "files/circleci-pipeline"
+	CircleCIConfigPath = "%s/.circleci/config.yml"
 )
 
 type Input struct {
 	ProjectName     string
 	ProjectLocation string
-	BucketName string
-	BucketRegion string
+	BucketName      string
+	BucketRegion    string
+	PWD             string
 }
 
 func (in Input) Path() string {
@@ -133,6 +138,34 @@ func (in Input) Run() {
 
 	t := template.Must(template.New("QABackendtf").Parse(tpl.QABackendtf))
 	bfile, err := os.OpenFile(backendtf, os.O_APPEND|os.O_WRONLY, 0644)
+	if err != nil {
+		in.rollback(err)
+	}
+	defer bfile.Close()
+	err = t.Execute(bfile, in)
+	if err != nil {
+		in.rollback(err)
+	}
+
+	color.Blue("Copying circleci pipeline files")
+
+	circleDir := path.Join(in.PWD, in.ProjectName, ".circleci")
+
+	if err := fileutil.CreateDirIfNotExists(circleDir, 0755); err != nil {
+		in.rollback(err)
+	}
+
+	if err = fileutil.CopyDirectory(CircleCIPath, circleDir); err != nil {
+		in.rollback(err)
+	}
+
+	circleciConfig := fmt.Sprintf(CircleCIConfigPath, in.Path())
+	if err := CreateFileIfNotExist(circleciConfig, []byte("")); err != nil {
+		in.rollback(err)
+	}
+
+	t = template.Must(template.New("circleciConfig").Parse(tpl.Circleciconfig))
+	bfile, err = os.OpenFile(circleciConfig, os.O_APPEND|os.O_WRONLY, 0644)
 	if err != nil {
 		in.rollback(err)
 	}
