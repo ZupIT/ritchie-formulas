@@ -14,7 +14,7 @@
     {
       "name" : "bucket_name",
       "type" : "text",
-      "label" : "Type the bucket name: "
+      "label" : "Type the terraform bucket name: "
     },
     {
       "name" : "bucket_region",
