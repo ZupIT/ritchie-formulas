@@ -8,12 +8,22 @@
     {
       "name" : "repo_owner",
       "type" : "text",
-      "label" : "Type the repository owner: "
+      "label" : "Type the repository owner: ",
+      "cache" : {
+        "active": true,
+        "qty" : 3,
+        "newLabel" : "Type new value. "
+      }
     },
     {
       "name" : "repo_name",
       "type" : "text",
-      "label" : "Type repository name: "
+      "label" : "Type repository name: ",
+      "cache" : {
+        "active": true,
+        "qty" : 3,
+        "newLabel" : "Type new value. "
+      }
     },
     {
       "name" : "env_name",
