@@ -13,7 +13,7 @@
     {
       "name": "region",
       "type": "text",
-      "label": "Type region: ",
+      "label": "Type your region [ e.g us-east-1 ]: ",
       "cache" : {
         "active": true,
         "qty" : 6,
