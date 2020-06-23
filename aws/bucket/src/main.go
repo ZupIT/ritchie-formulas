@@ -13,6 +13,7 @@ func loadInputs() bucket.Inputs {
 	return bucket.Inputs{
 		Key:        os.Getenv("ACCESS_KEY"),
 		Secret:     os.Getenv("SECRET_ACCESS_KEY"),
+		Region: 	os.Getenv("REGION"),
 		BucketName: os.Getenv("BUCKET"),
 		Command:    os.Getenv("COMMAND"),
 	}
