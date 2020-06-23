@@ -28,7 +28,7 @@ func(in Input)Run()  {
 		Value string `json:"value"`
 	}{
 		in.ENVName,
-		in.ENVName,
+		in.ENVValue,
 	}
 
 	b, err := json.Marshal(&env)
