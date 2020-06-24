@@ -32,7 +32,7 @@
     },
     {
       "name" : "env_value",
-      "type" : "text",
+      "type" : "password",
       "label" : "Type the ENV value : "
     }
   ]
