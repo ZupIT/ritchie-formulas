@@ -1,0 +1,19 @@
+{
+  "description": "Update forked repo",
+  "inputs" : [
+    {
+      "name" : "setupstream",
+      "type" : "bool",
+      "default" : "false",
+      "items" : ["false", "true"],
+      "label" : "Set upstream ? (only first time)"
+    },
+    {
+      "name" : "push",
+      "type" : "bool",
+      "default" : "false",
+      "items" : ["false", "true"],
+      "label" : "Push after update ?"
+    }
+  ]
+}
