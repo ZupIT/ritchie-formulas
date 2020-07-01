@@ -889,6 +889,27 @@
 				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
 			},
 			"Repo": ""
+		},
+		{
+			"parent": "root_github",
+			"usage": "update",
+			"help": "github update"
+		},
+		{
+			"parent": "root_github_update",
+			"usage": "fork",
+			"help": "update fork",
+			"formula": {
+				"path": "github/update/fork",
+				"bin": "fork.sh",
+				"binLinux": "fork.sh",
+				"binDarwin": "fork.sh",
+				"binWindows": "fork.bat",
+				"bundle": "${so}.zip",
+				"config": "config.json",
+				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+			},
+			"Repo": ""
 		}
 	]
 }
