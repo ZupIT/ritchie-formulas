@@ -15,6 +15,5 @@ func loadInputs() bucket.Inputs {
 		Secret:     os.Getenv("SECRET_ACCESS_KEY"),
 		Region: 	os.Getenv("REGION"),
 		BucketName: os.Getenv("BUCKET"),
-		Command:    os.Getenv("COMMAND"),
 	}
 }
