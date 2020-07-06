@@ -2,13 +2,9 @@
 
 ### command
 ```bash
-$ rit scaffold generate terraform aws
+$ rit aws generate terraform-project
 ```
 
-### local test
-```bash
-$ make test-local form=scaffold/terraform/aws
-```
 
 ### description
 This formula receives 2 inputs (project name, project location) and builds a terraform project with commons folders and files.
