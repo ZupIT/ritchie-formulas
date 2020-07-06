@@ -1,5 +1,4 @@
 {
-  "description": "Create terraform project with common structure.",
   "inputs" : [
 	{
 	  "name" : "project_name",
