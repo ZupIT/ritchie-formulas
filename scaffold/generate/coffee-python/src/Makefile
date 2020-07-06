@@ -1,10 +1,12 @@
 # SH
-BINARY_NAME=coffee-python.py
-BINARY_NAME_WINDOWS=coffee.bat
-DIST=../dist
-DIST_DIR=$(DIST)/commons/bin
+BINARY_NAME=run.sh
+BINARY_NAME_WINDOWS=run.bat
+DIST=../bin
+
 build:
-	mkdir -p $(DIST_DIR)
-	cp main.py $(DIST_DIR)/$(BINARY_NAME) && cp -r coffee $(DIST_DIR)
-	chmod +x $(DIST_DIR)/$(BINARY_NAME)
-	echo 'python coffee-python.py' >> $(DIST_DIR)/$(BINARY_NAME_WINDOWS)
+	mkdir -p $(DIST)
+	echo '#!/bin/sh' > $(DIST)/$(BINARY_NAME)
+	echo 'python main.py' >>  $(DIST)/$(BINARY_NAME)
+	cp main.py $(DIST)/ && cp -r coffee $(DIST)
+	chmod +x $(DIST)/$(BINARY_NAME)
+	echo 'python main.py' >> $(DIST)/$(BINARY_NAME_WINDOWS)
