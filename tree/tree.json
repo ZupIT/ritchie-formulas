@@ -867,12 +867,34 @@
 		{
 			"parent": "root",
 			"usage": "circleci",
-			"help": "circleci commands"
+			"help": "circleci commands",
+			"formula": {
+				"path": "",
+				"bin": "",
+				"binLinux": "",
+				"binDarwin": "",
+				"binWindows": "",
+				"bundle": "",
+				"config": "",
+				"repoUrl": ""
+			},
+			"Repo": ""
 		},
 		{
 			"parent": "root_circleci",
 			"usage": "add",
-			"help": "circleci add"
+			"help": "circleci add",
+			"formula": {
+				"path": "",
+				"bin": "",
+				"binLinux": "",
+				"binDarwin": "",
+				"binWindows": "",
+				"bundle": "",
+				"config": "",
+				"repoUrl": ""
+			},
+			"Repo": ""
 		},
 		{
 			"parent": "root_circleci_add",
@@ -893,7 +915,18 @@
 		{
 			"parent": "root_github",
 			"usage": "update",
-			"help": "github update"
+			"help": "github update",
+			"formula": {
+				"path": "",
+				"bin": "",
+				"binLinux": "",
+				"binDarwin": "",
+				"binWindows": "",
+				"bundle": "",
+				"config": "",
+				"repoUrl": ""
+			},
+			"Repo": ""
 		},
 		{
 			"parent": "root_github_update",
@@ -908,6 +941,38 @@
 				"bundle": "${so}.zip",
 				"config": "config.json",
 				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+			},
+			"Repo": ""
+		},
+		{
+			"parent": "root_github",
+			"usage": "create",
+			"help": "github create",
+			"formula": {
+				"path": "",
+				"bin": "",
+				"binLinux": "",
+				"binDarwin": "",
+				"binWindows": "",
+				"bundle": "",
+				"config": "",
+				"repoUrl": ""
+			},
+			"Repo": ""
+		},
+		{
+			"parent": "root_github_create",
+			"usage": "repo",
+			"help": "create repo",
+			"formula": {
+				"path": "github/create/repo",
+				"bin": "repo.sh",
+				"binLinux": "repo.sh",
+				"binDarwin": "repo.sh",
+				"binWindows": "repo.bat",
+				"bundle": "${so}.zip",
+				"config": "config.json",
+				"repoUrl": ""
 			},
 			"Repo": ""
 		}
