@@ -5,6 +5,6 @@ WORKDIR /app
 
 COPY . .
 
-RUN chmod +x run.sh
+RUN chmod +x main.sh
 
-ENTRYPOINT /app/run.sh
+ENTRYPOINT /app/main.sh
