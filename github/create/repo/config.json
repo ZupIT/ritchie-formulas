@@ -1,0 +1,30 @@
+{
+  "description": "Initialize a project with git and create a GitHub repository with README.md",
+  "inputs": [
+    {
+      "name": "project_name",
+      "type": "text",
+      "label": "Project name: "
+    },
+    {
+      "name": "project_description",
+      "type": "text",
+      "label": "Project description: "
+    },
+    {
+      "name": "private",
+      "type": "bool",
+      "default": "false",
+      "items": ["false", "true"],
+      "label": "Create a private repository?: "
+    },
+    {
+      "name": "username",
+      "type": "CREDENTIAL_GITHUB_USERNAME"
+    },
+    {
+      "name": "token",
+      "type": "CREDENTIAL_GITHUB_TOKEN"
+    }
+  ]
+}
