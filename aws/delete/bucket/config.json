@@ -1,6 +1,4 @@
 {
-  "command": "delete",
-  "description": "Delete bucket aws",
   "inputs": [
     {
       "name" : "access_key",

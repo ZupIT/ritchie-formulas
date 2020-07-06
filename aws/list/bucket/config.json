@@ -1,6 +1,4 @@
 {
-  "command": "create",
-  "description": "Create bucket aws",
   "inputs": [
     {
       "name" : "access_key",
@@ -19,11 +17,6 @@
         "qty" : 6,
         "newLabel" : "Type new value. "
       }
-    },
-    {
-      "name": "bucket",
-      "type": "text",
-      "label": "Type bucket name: "
     }
   ]
 }
