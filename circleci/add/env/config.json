@@ -1,5 +1,4 @@
 {
-  "description": "set env for circleci project",
   "inputs" : [
     {
       "name": "token",

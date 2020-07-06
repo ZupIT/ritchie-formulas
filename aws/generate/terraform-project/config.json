@@ -1,0 +1,24 @@
+{
+  "inputs" : [
+	{
+	  "name" : "project_name",
+      "type" : "text",
+      "label" : "Type the project name: "
+	},
+    {
+      "name" : "project_location",
+      "type" : "text",
+      "label" : "Type the location (e.g.: /home/user/projects): "
+    },
+    {
+      "name" : "bucket_name",
+      "type" : "text",
+      "label" : "Type the terraform bucket name: "
+    },
+    {
+      "name" : "bucket_region",
+      "type" : "text",
+      "label" : "Type the bucket region: "
+    }
+  ]
+}
