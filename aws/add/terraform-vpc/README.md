@@ -2,12 +2,7 @@
 
 ### command
 ```bash
-$ rit terraform aws add vpc
-```
-
-### local test
-```bash
-$ make test-local form=terraform/aws/vpc
+$ rit aws add terraform-vpc
 ```
 
 ### description
