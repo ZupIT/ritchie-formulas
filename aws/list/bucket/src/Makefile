@@ -28,8 +28,8 @@ go-build:
 	GOOS=windows GOARCH=amd64 $(GOBUILD) -o '$(BIN_WINDOWS)' -v $(CMD_PATH)
 
 sh-unix:
-	echo '#!/bin/sh' >> $(SH)
-	echo 'if [[ "$$OSTYPE" == "darwin"* ]]; then' >> $(SH)
+	echo '#!/bin/sh' > $(SH)
+	echo 'if [ $$(uname) = "Darwin" ]; then' >> $(SH)
 	echo '  ./darwin/$(BIN_NAME)' >> $(SH)
 	echo 'else' >> $(SH)
 	echo '  ./linux/$(BIN_NAME)' >> $(SH)
@@ -37,7 +37,7 @@ sh-unix:
 	chmod +x $(SH)
 
 bat-windows:
-	echo '@ECHO OFF' >> $(BAT)
+	echo '@ECHO OFF' > $(BAT)
 	echo 'cd windows' >> $(BAT)
 	echo 'start $(BIN_NAME).exe' >> $(BAT)
 
