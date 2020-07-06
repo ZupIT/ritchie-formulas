@@ -2,12 +2,7 @@
 
 ### command
 ```bash
-$ rit terraform aws add eks
-```
-
-### local test
-```bash
-$ make test-local form=terraform/aws/eks
+$ rit aws add terraform-eks
 ```
 
 ### description
