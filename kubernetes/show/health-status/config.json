@@ -1,6 +1,4 @@
 {
-  "command": "logs",
-  "description": "Show logs kubernetes",
   "inputs" : [
     {
       "name": "namespace",
