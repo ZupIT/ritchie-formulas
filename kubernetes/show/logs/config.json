@@ -1,6 +1,4 @@
 {
-  "command": "portForward",
-  "description": "Port Forward kubernetes pod",
   "inputs" : [
     {
       "name": "namespace",
@@ -14,14 +12,6 @@
       "name" : "pod_part_name",
       "type" : "text",
       "label": "Type name or part name of pod: ",
-      "cache": {
-        "active": true
-      }
-    },
-    {
-      "name" : "port",
-      "type" : "text",
-      "label": "Type port map of pod: ",
       "cache": {
         "active": true
       }
