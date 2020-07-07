@@ -1,6 +1,4 @@
 {
-  "command": "createTopic",
-  "description": "Create topic",
   "inputs": [
     {
       "name": "urls",

@@ -1,6 +1,4 @@
 {
-  "command": "consume",
-  "description": "Consume messages from topic",
   "inputs": [
     {
       "name": "urls",

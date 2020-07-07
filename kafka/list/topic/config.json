@@ -1,6 +1,4 @@
 {
-  "command": "listTopic",
-  "description": "List topic names",
   "inputs" : [
     {
       "name" : "urls",
