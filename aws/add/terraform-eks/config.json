@@ -1,5 +1,5 @@
 {
-  "description": "generate terraform aws eks",
+  "dockerImageBuilder": "cimg/go:1.14",
   "inputs": [
     {
       "name": "cluster_name",
