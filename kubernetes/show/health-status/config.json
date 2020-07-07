@@ -1,0 +1,24 @@
+{
+  "inputs" : [
+    {
+      "name": "namespace",
+      "type": "text",
+      "label": "Type kubernetes namespace: ",
+      "cache": {
+        "active": true
+      }
+    },
+    {
+      "name" : "pod_part_name",
+      "type" : "text",
+      "label": "Type name or part name of pod: ",
+      "cache": {
+        "active": true
+      }
+    },
+    {
+      "name" : "kubeconfig",
+      "type" : "CREDENTIAL_KUBECONFIG_BASE64CONFIG"
+    }
+  ]
+}

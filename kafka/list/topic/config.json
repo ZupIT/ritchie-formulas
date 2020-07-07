@@ -1,0 +1,13 @@
+{
+  "inputs" : [
+    {
+      "name" : "urls",
+      "type" : "text",
+      "label" : "Kafka urls: ",
+      "cache" : {
+        "active": true,
+        "newLabel" : "Type new urls. "
+      }
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 # SH
 BINARY_NAME=run.sh
 DIST=../bin
-FOLDER_SRC=fork
+FOLDER_SRC=coffee
 
 build:
 	mkdir -p $(DIST)
