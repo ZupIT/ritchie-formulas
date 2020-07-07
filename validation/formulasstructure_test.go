@@ -14,34 +14,31 @@ type Rule struct {
 	Folders  []string
 }
 
-func TestHandler(t *testing.T) {
+func TestFormulasContent(t *testing.T) {
 
-	root := "../circleci"
-
+	root := "../aws"
 	rules := createRules()
-
 	requiredFromRoot := getFullContentFromFormula(root)
 
-	for _, rule := range rules {
-		if strings.HasSuffix(requiredFromRoot["main"], rule.Extensions){
+	for key, value := range requiredFromRoot {
 
-			fmt.Println(strings.ReplaceAll(requiredFromRoot["root"], "/", " "))
-			fmt.Println(rule.Language)
+		fmt.Println(strings.ReplaceAll(key, "/", " "))
 
-			_, files := returnFilesFromFolder(requiredFromRoot["root"])
+		files, _ := returnFilesFromFolder(key)
 
-			errFiles := diff(rule.Files, files)
-			if len(errFiles) >= 1 {
-				t.Errorf("Missing an files = %v", errFiles)
-				return
-			}
-			errFolder := diff(rule.Folders, files)
-			if len(errFolder) >= 1 {
-				t.Errorf("Missing an folders = %v", errFolder )
-				return
-			}
+		fmt.Println(rules[value].Language)
 
+		errFiles := diff(rules[value].Files, files)
+		if len(errFiles) >= 1 {
+			t.Errorf("Missing an files = %v", errFiles)
+			return
 		}
+		errFolder := diff(rules[value].Folders, files)
+		if len(errFolder) >= 1 {
+			t.Errorf("Missing an folders = %v", errFolder)
+			return
+		}
+
 	}
 
 }
@@ -49,42 +46,46 @@ func TestHandler(t *testing.T) {
 func getFullContentFromFormula(root string) map[string]string{
 	required := map[string]string{}
 
-	err, files := returnFilesFromFolder(root)
+	files, err := returnFilesFromFolder(root)
 	if err != nil {
 		panic(err)
 	}
 	for _, file := range files {
-		if strings.HasSuffix(file, "src") {
-			required["root"] = strings.ReplaceAll(file, "/src", "")
-		}
-		if strings.Contains(file, "main") {
-			required["main"] = file
+		if strings.Contains(file, "src/main.") {
+			fileX :=  strings.Split(file, "/src/main.")
+			required[fileX[0]] = fileX[1]
 		}
 	}
 	return required
 }
 
-func returnFilesFromFolder(root string) (error, []string) {
+func returnFilesFromFolder(root string) ([]string, error) {
 	var files []string
 	err := filepath.Walk(root, func(path string, info os.FileInfo, err error) error {
 		files = append(files, path)
 		return nil
 	})
-	return err, files
+	return files, err
 }
 
-func createRules() []Rule {
-	return []Rule {
-		{
-			Language:   "go",
+func createRules() map[string]Rule {
+	return map[string]Rule{
+		"go" : {
+			Language:   "Golang",
 			Extensions: "go",
 			Files:      []string{"go.mod", "main.go", "README.md", "config.json"},
 			Folders:    []string{"src", "pkg"},
 		},
-		{
-			Language: "java",
+		"java" : {
+			Language: "Java",
 			Extensions: "java",
 			Files:      []string{"main.java", "README.md", "config.json"},
+			Folders:    []string{"src", "pkg"},
+		},
+		"sh" : {
+			Language: "shell script",
+			Extensions: "sh",
+			Files:      []string{"main.sh", "README.md", "config.json", "Makefile"},
 			Folders:    []string{"src", "pkg"},
 		}}
 }
@@ -94,6 +95,7 @@ func diff(a, b []string) []string {
 		return []string{"Empty Array"}
 	}
 	iFound := map[string]bool{}
+
 	for _, itemA := range a {
 		for _, itemB := range b {
 			if strings.HasSuffix(itemB, itemA){
