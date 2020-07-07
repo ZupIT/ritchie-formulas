@@ -1,5 +1,4 @@
 {
-  "description": "Update forked repo",
   "inputs" : [
     {
       "name" : "setupstream",

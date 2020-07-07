@@ -1,0 +1,25 @@
+{
+  "inputs": [
+    {
+      "name": "branch",
+      "type": "text",
+      "label": "Select destination branch(default qa):",
+      "default": "qa",
+      "cache": {
+        "active": true,
+        "qty": 100,
+        "newLabel": "Type new branch. "
+      }
+    },
+    {
+      "name": "push",
+      "type": "bool",
+      "label": "Push after merge ?",
+      "default": "yes",
+      "items": [
+        "yes",
+        "false"
+      ]
+    }
+  ]
+}

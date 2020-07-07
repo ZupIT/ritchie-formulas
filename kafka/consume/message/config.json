@@ -1,0 +1,32 @@
+{
+  "inputs": [
+    {
+      "name": "urls",
+      "type": "text",
+      "label": "Kafka urls: ",
+      "cache" : {
+        "active": true,
+        "newLabel" : "Type new urls. "
+      }
+    },
+    {
+      "name": "topic",
+      "type": "text",
+      "label": "Topic: ",
+      "cache" : {
+        "active": true,
+        "newLabel" : "Type new topic. "
+      }
+    },
+    {
+      "name": "beginning",
+      "type": "bool",
+      "default": "true",
+      "items": [
+        "false",
+        "true"
+      ],
+      "label": "From beginning? "
+    }
+  ]
+}
