@@ -13,7 +13,6 @@ const (
 )
 
 type Inputs struct {
-	Command string
 }
 
 type Result struct {
@@ -37,7 +36,6 @@ type Dependency struct {
 }
 
 func (in Inputs) Run() {
-	fmt.Printf("Command: %v\n", in.Command)
 	log.Println("list dependencies")
 
 	resp, err := http.Get(listDependenciesURL)

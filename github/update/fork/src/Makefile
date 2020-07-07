@@ -1,8 +1,9 @@
 # SH
-BINARY_NAME=fork.sh
-DIST=../dist
-DIST_DIR=$(DIST)/commons/bin
+BINARY_NAME=run.sh
+DIST=../bin
+FOLDER_SRC=fork
+
 build:
-	mkdir -p $(DIST_DIR)
-	cp main.sh $(DIST_DIR)/$(BINARY_NAME) && cp -r fork Dockerfile set_umask.sh $(DIST_DIR)
-	chmod +x $(DIST_DIR)/$(BINARY_NAME)
+	mkdir -p $(DIST)
+	cp main.sh $(DIST)/$(BINARY_NAME) && cp -r $(FOLDER_SRC) $(DIST)
+	chmod +x $(DIST)/$(BINARY_NAME)

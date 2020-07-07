@@ -1,5 +1,4 @@
 {
-  "description": "HandBook Application",
   "inputs": [
     {
       "name": "git_user",

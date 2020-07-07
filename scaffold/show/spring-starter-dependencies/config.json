@@ -1,6 +1,4 @@
 {
-    "command": "list",
-    "description": "List dependencies Spring Start. Use Id Dependencies",
     "inputs" : []
-  }
+}
   
