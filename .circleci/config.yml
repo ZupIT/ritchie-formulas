@@ -45,6 +45,10 @@ jobs:
     steps:
       - checkout
       - run:
+          name: install Shellcheck
+          command: |
+            apt-get install shellcheck
+      - run:
           name: Install pre-commit
           command: |
             pip install pre-commit
