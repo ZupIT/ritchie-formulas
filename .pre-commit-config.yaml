@@ -2,6 +2,7 @@
 repos:
   - repo: git://github.com/pre-commit/pre-commit-hooks
     rev: v2.5.0
+    verbose: true
     hooks:
       - id: check-json
       - id: check-merge-conflict
@@ -15,34 +16,31 @@ repos:
 
   - repo: git://github.com/igorshubovych/markdownlint-cli
     rev: v0.22.0
+    verbose: true
     hooks:
       - id: markdownlint
 
-  - repo: git://github.com/antonbabenko/pre-commit-terraform
-    rev: v1.29.0
-    hooks:
-      - id: terraform_docs
-      - id: terraform_fmt
-
   - repo: git://github.com/detailyang/pre-commit-shell
     rev: 1.0.5
+    verbose: true
     hooks:
       - id: shell-lint
 
   - repo: git://github.com/dnephin/pre-commit-golang
     rev: master
+    verbose: true
     hooks:
       - id: go-fmt
-      - id: go-vet
-      - id: go-lint
+#      - id: go-vet
+#      - id: go-lint
       - id: go-imports
-      - id: go-cyclo
-        args: [-over=15]
-      - id: validate-toml
-      - id: no-go-testing
-      - id: gometalinter
-      - id: golangci-lint
-      - id: go-critic
-      - id: go-unit-tests
-      - id: go-build
-      - id: go-mod-tidy
+#      - id: go-cyclo
+#        args: [-over=15]
+#      - id: validate-toml
+#      - id: no-go-testing
+#      - id: gometalinter
+#      - id: golangci-lint
+#      - id: go-critic
+#      - id: go-unit-tests
+#      - id: go-build
+#      - id: go-mod-tidy
