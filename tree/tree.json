@@ -1,980 +1,661 @@
 {
-	"commands": [
-		{
-			"parent": "root",
-			"usage": "aws",
-			"help": "Apply Aws objects",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_aws",
-			"usage": "apply",
-			"help": "Apply aws objects",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_aws",
-			"usage": "add",
-			"help": "Add aws objects",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_aws",
-			"usage": "list",
-			"help": "List aws objects",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_aws",
-			"usage": "create",
-			"help": "Create aws objects",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_aws",
-			"usage": "generate",
-			"help": "Generate aws objects",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_aws",
-			"usage": "delete",
-			"help": "Delete aws objects",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_aws_create",
-			"usage": "bucket",
-			"help": "Create bucket",
-			"formula": {
-				"path": "aws/bucket",
-				"bin": "aws-bucket-${so}",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "${so}.zip",
-				"config": "create-config.json",
-				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_aws_list",
-			"usage": "bucket",
-			"help": "List bucket",
-			"formula": {
-				"path": "aws/bucket",
-				"bin": "aws-bucket-${so}",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "${so}.zip",
-				"config": "list-config.json",
-				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_aws_delete",
-			"usage": "bucket",
-			"help": "Delete bucket",
-			"formula": {
-				"path": "aws/bucket",
-				"bin": "aws-bucket-${so}",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "${so}.zip",
-				"config": "delete-config.json",
-				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_aws_generate",
-			"usage": "terraform-project",
-			"help": "terraform aws project",
-			"formula": {
-				"path": "aws/terraform/project",
-				"bin": "aws-${so}",
-				"binLinux": "aws-${so}",
-				"binDarwin": "aws-${so}",
-				"binWindows": "aws-${so}.exe",
-				"bundle": "${so}.zip",
-				"config": "config.json",
-				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_aws_apply",
-			"usage": "terraform",
-			"help": "Apply Aws terraform objects",
-			"formula": {
-				"path": "aws/terraform/apply",
-				"bin": "terraform-cli-${so}",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "${so}.zip",
-				"config": "",
-				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_aws_add",
-			"usage": "terraform-vpc",
-			"help": "aws vpc",
-			"formula": {
-				"path": "aws/terraform/vpc",
-				"bin": "vpc-${so}",
-				"binLinux": "vpc-${so}",
-				"binDarwin": "vpc-${so}",
-				"binWindows": "vpc-${so}.exe",
-				"bundle": "${so}.zip",
-				"config": "config.json",
-				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_aws_add",
-			"usage": "terraform-eks",
-			"help": "aws eks",
-			"formula": {
-				"path": "aws/terraform/eks",
-				"bin": "eks-${so}",
-				"binLinux": "eks-${so}",
-				"binDarwin": "eks-${so}",
-				"binWindows": "eks-${so}.exe",
-				"bundle": "${so}.zip",
-				"config": "config.json",
-				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root",
-			"usage": "kafka",
-			"help": "Kafka commands",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_kafka",
-			"usage": "list",
-			"help": "Kafka list commands",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_kafka",
-			"usage": "create",
-			"help": "Kafka create commands",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_kafka_list",
-			"usage": "topic",
-			"help": "List kafka topics",
-			"formula": {
-				"path": "kafka",
-				"bin": "kafka-${so}",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "${so}.zip",
-				"config": "list-topic-config.json",
-				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_kafka_create",
-			"usage": "topic",
-			"help": "Create kafka topics",
-			"formula": {
-				"path": "kafka",
-				"bin": "kafka-${so}",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "${so}.zip",
-				"config": "create-topic-config.json",
-				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_kafka",
-			"usage": "consume",
-			"help": "Consume kafka messages",
-			"formula": {
-				"path": "kafka",
-				"bin": "kafka-${so}",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "${so}.zip",
-				"config": "consume-config.json",
-				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_kafka",
-			"usage": "produce",
-			"help": "Produce kafka messages",
-			"formula": {
-				"path": "kafka",
-				"bin": "kafka-${so}",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "${so}.zip",
-				"config": "produce-config.json",
-				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root",
-			"usage": "scaffold",
-			"help": "Manipulate scaffold objects",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_scaffold",
-			"usage": "generate",
-			"help": "Generates a scaffold by some template",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_scaffold",
-			"usage": "show",
-			"help": "List commands",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_scaffold_generate",
-			"usage": "coffee-go",
-			"help": "Generates a project by coffee template in Go",
-			"formula": {
-				"path": "scaffold/coffee-go",
-				"bin": "coffee-go-${so}",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "${so}.zip",
-				"config": "",
-				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_scaffold_generate",
-			"usage": "coffee-java",
-			"help": "Generates a project by coffee template in Java",
-			"formula": {
-				"path": "scaffold/coffee-java",
-				"bin": "coffee-java.sh",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "coffee-java.bat",
-				"bundle": "commons.zip",
-				"config": "",
-				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_scaffold_generate",
-			"usage": "coffee-shell",
-			"help": "Generates a project by coffee template in Shell",
-			"formula": {
-				"path": "scaffold/coffee-shell",
-				"bin": "coffee-shell.sh",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "commons.zip",
-				"config": "",
-				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_scaffold_generate",
-			"usage": "coffee-python",
-			"help": "Generates a project by coffee template in Python",
-			"formula": {
-				"path": "scaffold/coffee-python",
-				"bin": "coffee-python.py",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "coffee.bat",
-				"bundle": "commons.zip",
-				"config": "",
-				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_scaffold_generate",
-			"usage": "coffee-node",
-			"help": "Generates a project by coffee template in Node.js",
-			"formula": {
-				"path": "scaffold/coffee-node",
-				"bin": "coffee-node.sh",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "coffee-node.bat",
-				"bundle": "commons.zip",
-				"config": "",
-				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_scaffold_generate",
-			"usage": "spring-starter",
-			"help": "Generates a project Spring",
-			"formula": {
-				"path": "scaffold/spring-starter",
-				"bin": "spring-starter-${so}",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "${so}.zip",
-				"config": "create-application-config.json",
-				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_scaffold_show",
-			"usage": "spring-starter-dependencies",
-			"help": "List dependencies Spring",
-			"formula": {
-				"path": "scaffold/spring-starter",
-				"bin": "spring-starter-${so}",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "${so}.zip",
-				"config": "list-dependencies-config.json",
-				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root",
-			"usage": "github",
-			"help": "Manipulate GitHub objects",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_github",
-			"usage": "navigate",
-			"help": "Navigate a github by some handbook.",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_github",
-			"usage": "search",
-			"help": "Search a github by some handbook.",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_github",
-			"usage": "fast-merge",
-			"help": "Help you to merge your code with a deploy branch example qa branch.",
-			"formula": {
-				"path": "github/fast-merge",
-				"bin": "fast-merge-${so}",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "${so}.zip",
-				"config": "",
-				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_github_navigate",
-			"usage": "handbook",
-			"help": "Navigate in your handbook",
-			"formula": {
-				"path": "github/navigate-handbook",
-				"bin": "navigate-handbook-${so}",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "${so}.zip",
-				"config": "",
-				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_github_search",
-			"usage": "handbook",
-			"help": "Search in your handbook",
-			"formula": {
-				"path": "github/search-handbook",
-				"bin": "search-handbook-${so}",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "${so}.zip",
-				"config": "",
-				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root",
-			"usage": "docker",
-			"help": "Manipulate docker objects",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_docker",
-			"usage": "generate",
-			"help": "Generate Docker objects",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_docker_generate",
-			"usage": "compose",
-			"help": "Generate docker-compose.yml in current directory",
-			"formula": {
-				"path": "docker/compose",
-				"bin": "docker-generate-compose-${so}",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "${so}.zip",
-				"config": "",
-				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root",
-			"usage": "k8s",
-			"help": "Manipulate k8s objects",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_k8s",
-			"usage": "show",
-			"help": "Show k8s objects",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_k8s",
-			"usage": "create",
-			"help": "Create k8s objects",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_k8s_show",
-			"usage": "logs",
-			"help": "Show k8s logs",
-			"formula": {
-				"path": "kubernetes/core",
-				"bin": "kubernetes-${so}",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "${so}.zip",
-				"config": "logs-config.json",
-				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_k8s_show",
-			"usage": "health",
-			"help": "Show k8s health check",
-			"formula": {
-				"path": "kubernetes/core",
-				"bin": "kubernetes-${so}",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "${so}.zip",
-				"config": "health-config.json",
-				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_k8s",
-			"usage": "clean",
-			"help": "Clean k8s objects",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_k8s_clean",
-			"usage": "helm-configmap",
-			"help": "clean helm-configmap",
-			"formula": {
-				"path": "kubernetes/clean/helm-configmap",
-				"bin": "helm-configmap.sh",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "commons.zip",
-				"config": "config.json",
-				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_k8s_create",
-			"usage": "port-forward",
-			"help": "Create k8s port forward",
-			"formula": {
-				"path": "kubernetes/core",
-				"bin": "kubernetes-${so}",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "${so}.zip",
-				"config": "port-config.json",
-				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_aws",
-			"usage": "setcontext",
-			"help": "aws setcontext",
-			"formula": {
-				"path": "aws/setcontext",
-				"bin": "setcontext.sh",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "commons.zip",
-				"config": "config.json",
-				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root",
-			"usage": "ritchie",
-			"help": "Manipulate Ritchie objects",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_ritchie",
-			"usage": "generate",
-			"help": "Generate files to install ritchie",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_ritchie_generate",
-			"usage": "files",
-			"help": "generate files for install ritchie",
-			"formula": {
-				"path": "ritchie/generate/files",
-				"bin": "files-${so}",
-				"binLinux": "files-${so}",
-				"binDarwin": "files-${so}",
-				"binWindows": "files-${so}.exe",
-				"bundle": "${so}.zip",
-				"config": "config.json",
-				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_ritchie",
-			"usage": "install",
-			"help": "Install ritchie team",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_ritchie_install",
-			"usage": "ritchie-team",
-			"help": "install ritchie-team",
-			"formula": {
-				"path": "ritchie/install/ritchie",
-				"bin": "ritchie-${so}",
-				"binLinux": "ritchie-${so}",
-				"binDarwin": "ritchie-${so}",
-				"binWindows": "ritchie-${so}.exe",
-				"bundle": "${so}.zip",
-				"config": "config.json",
-				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root",
-			"usage": "circleci",
-			"help": "circleci commands",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_circleci",
-			"usage": "add",
-			"help": "circleci add",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_circleci_add",
-			"usage": "env",
-			"help": "add env",
-			"formula": {
-				"path": "circleci/add/env",
-				"bin": "env-${so}",
-				"binLinux": "env-${so}",
-				"binDarwin": "env-${so}",
-				"binWindows": "env-${so}.exe",
-				"bundle": "${so}.zip",
-				"config": "config.json",
-				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_github",
-			"usage": "update",
-			"help": "github update",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_github_update",
-			"usage": "fork",
-			"help": "update fork",
-			"formula": {
-				"path": "github/update/fork",
-				"bin": "fork.sh",
-				"binLinux": "fork.sh",
-				"binDarwin": "fork.sh",
-				"binWindows": "fork.bat",
-				"bundle": "${so}.zip",
-				"config": "config.json",
-				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_github",
-			"usage": "create",
-			"help": "github create",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
-		},
-		{
-			"parent": "root_github_create",
-			"usage": "repo",
-			"help": "create repo",
-			"formula": {
-				"path": "github/create/repo",
-				"bin": "repo.sh",
-				"binLinux": "repo.sh",
-				"binDarwin": "repo.sh",
-				"binWindows": "repo.bat",
-				"bundle": "${so}.zip",
-				"config": "config.json",
-				"repoUrl": ""
-			},
-			"Repo": ""
-		}
-	]
+  "commands": [
+    {
+      "parent": "root",
+      "usage": "aws",
+      "help": "Apply Aws objects"
+    },
+    {
+      "parent": "root_aws",
+      "usage": "apply",
+      "help": "Apply aws objects"
+    },
+    {
+      "parent": "root_aws",
+      "usage": "add",
+      "help": "Add aws objects"
+    },
+    {
+      "parent": "root_aws",
+      "usage": "list",
+      "help": "List aws objects"
+    },
+    {
+      "parent": "root_aws",
+      "usage": "create",
+      "help": "Create aws objects"
+    },
+    {
+      "parent": "root_aws",
+      "usage": "generate",
+      "help": "Generate aws objects"
+    },
+    {
+      "parent": "root_aws",
+      "usage": "delete",
+      "help": "Delete aws objects"
+    },
+    {
+      "parent": "root_aws_create",
+      "usage": "bucket",
+      "help": "Create bucket",
+      "formula": {
+        "path": "aws/bucket",
+        "bin": "aws-bucket-${so}",
+        "binLinux": "",
+        "binDarwin": "",
+        "binWindows": "",
+        "bundle": "${so}.zip",
+        "config": "create-config.json",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      },
+      "Repo": ""
+    },
+    {
+      "parent": "root_aws_list",
+      "usage": "bucket",
+      "help": "List bucket",
+      "formula": {
+        "path": "aws/bucket",
+        "bin": "aws-bucket-${so}",
+        "binLinux": "",
+        "binDarwin": "",
+        "binWindows": "",
+        "bundle": "${so}.zip",
+        "config": "list-config.json",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      },
+      "Repo": ""
+    },
+    {
+      "parent": "root_aws_delete",
+      "usage": "bucket",
+      "help": "Delete bucket",
+      "formula": {
+        "path": "aws/bucket",
+        "bin": "aws-bucket-${so}",
+        "binLinux": "",
+        "binDarwin": "",
+        "binWindows": "",
+        "bundle": "${so}.zip",
+        "config": "delete-config.json",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      },
+      "Repo": ""
+    },
+    {
+      "parent": "root_aws_generate",
+      "usage": "terraform-project",
+      "help": "terraform aws project",
+      "formula": {
+        "path": "aws/terraform/project",
+        "bin": "aws-${so}",
+        "binLinux": "aws-${so}",
+        "binDarwin": "aws-${so}",
+        "binWindows": "aws-${so}.exe",
+        "bundle": "${so}.zip",
+        "config": "config.json",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      },
+      "Repo": ""
+    },
+    {
+      "parent": "root_aws_apply",
+      "usage": "terraform",
+      "help": "Apply Aws terraform objects",
+      "formula": {
+        "path": "aws/terraform/apply",
+        "bin": "terraform-cli-${so}",
+        "binLinux": "",
+        "binDarwin": "",
+        "binWindows": "",
+        "bundle": "${so}.zip",
+        "config": "",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      },
+      "Repo": ""
+    },
+    {
+      "parent": "root_aws_add",
+      "usage": "terraform-vpc",
+      "help": "aws vpc",
+      "formula": {
+        "path": "aws/terraform/vpc",
+        "bin": "vpc-${so}",
+        "binLinux": "vpc-${so}",
+        "binDarwin": "vpc-${so}",
+        "binWindows": "vpc-${so}.exe",
+        "bundle": "${so}.zip",
+        "config": "config.json",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      },
+      "Repo": ""
+    },
+    {
+      "parent": "root_aws_add",
+      "usage": "terraform-eks",
+      "help": "aws eks",
+      "formula": {
+        "path": "aws/terraform/eks",
+        "bin": "eks-${so}",
+        "binLinux": "eks-${so}",
+        "binDarwin": "eks-${so}",
+        "binWindows": "eks-${so}.exe",
+        "bundle": "${so}.zip",
+        "config": "config.json",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      },
+      "Repo": ""
+    },
+    {
+      "parent": "root",
+      "usage": "kafka",
+      "help": "Kafka commands"
+    },
+    {
+      "parent": "root_kafka",
+      "usage": "list",
+      "help": "Kafka list commands"
+    },
+    {
+      "parent": "root_kafka",
+      "usage": "create",
+      "help": "Kafka create commands"
+    },
+    {
+      "parent": "root_kafka_list",
+      "usage": "topic",
+      "help": "List kafka topics",
+      "formula": {
+        "path": "kafka",
+        "bin": "kafka-${so}",
+        "binLinux": "",
+        "binDarwin": "",
+        "binWindows": "",
+        "bundle": "${so}.zip",
+        "config": "list-topic-config.json",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      },
+      "Repo": ""
+    },
+    {
+      "parent": "root_kafka_create",
+      "usage": "topic",
+      "help": "Create kafka topics",
+      "formula": {
+        "path": "kafka",
+        "bin": "kafka-${so}",
+        "binLinux": "",
+        "binDarwin": "",
+        "binWindows": "",
+        "bundle": "${so}.zip",
+        "config": "create-topic-config.json",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      },
+      "Repo": ""
+    },
+    {
+      "parent": "root_kafka",
+      "usage": "consume",
+      "help": "Consume kafka messages",
+      "formula": {
+        "path": "kafka",
+        "bin": "kafka-${so}",
+        "binLinux": "",
+        "binDarwin": "",
+        "binWindows": "",
+        "bundle": "${so}.zip",
+        "config": "consume-config.json",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      },
+      "Repo": ""
+    },
+    {
+      "parent": "root_kafka",
+      "usage": "produce",
+      "help": "Produce kafka messages",
+      "formula": {
+        "path": "kafka",
+        "bin": "kafka-${so}",
+        "binLinux": "",
+        "binDarwin": "",
+        "binWindows": "",
+        "bundle": "${so}.zip",
+        "config": "produce-config.json",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      },
+      "Repo": ""
+    },
+    {
+      "parent": "root",
+      "usage": "scaffold",
+      "help": "Manipulate scaffold objects"
+    },
+    {
+      "parent": "root_scaffold",
+      "usage": "generate",
+      "help": "Generates a scaffold by some template"
+    },
+    {
+      "parent": "root_scaffold",
+      "usage": "show",
+      "help": "List commands"
+    },
+    {
+      "parent": "root_scaffold_generate",
+      "usage": "coffee-go",
+      "help": "Generates a project by coffee template in Go",
+      "formula": {
+        "path": "scaffold/coffee-go",
+        "bin": "coffee-go-${so}",
+        "binLinux": "",
+        "binDarwin": "",
+        "binWindows": "",
+        "bundle": "${so}.zip",
+        "config": "",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      },
+      "Repo": ""
+    },
+    {
+      "parent": "root_scaffold_generate",
+      "usage": "coffee-java",
+      "help": "Generates a project by coffee template in Java",
+      "formula": {
+        "path": "scaffold/coffee-java",
+        "bin": "coffee-java.sh",
+        "binLinux": "",
+        "binDarwin": "",
+        "binWindows": "coffee-java.bat",
+        "bundle": "commons.zip",
+        "config": "",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      },
+      "Repo": ""
+    },
+    {
+      "parent": "root_scaffold_generate",
+      "usage": "coffee-shell",
+      "help": "Generates a project by coffee template in Shell",
+      "formula": {
+        "path": "scaffold/coffee-shell",
+        "bin": "coffee-shell.sh",
+        "binLinux": "",
+        "binDarwin": "",
+        "binWindows": "",
+        "bundle": "commons.zip",
+        "config": "",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      },
+      "Repo": ""
+    },
+    {
+      "parent": "root_scaffold_generate",
+      "usage": "coffee-python",
+      "help": "Generates a project by coffee template in Python",
+      "formula": {
+        "path": "scaffold/coffee-python",
+        "bin": "coffee-python.py",
+        "binLinux": "",
+        "binDarwin": "",
+        "binWindows": "coffee.bat",
+        "bundle": "commons.zip",
+        "config": "",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      },
+      "Repo": ""
+    },
+    {
+      "parent": "root_scaffold_generate",
+      "usage": "coffee-node",
+      "help": "Generates a project by coffee template in Node.js",
+      "formula": {
+        "path": "scaffold/coffee-node",
+        "bin": "coffee-node.sh",
+        "binLinux": "",
+        "binDarwin": "",
+        "binWindows": "coffee-node.bat",
+        "bundle": "commons.zip",
+        "config": "",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      },
+      "Repo": ""
+    },
+    {
+      "parent": "root_scaffold_generate",
+      "usage": "spring-starter",
+      "help": "Generates a project Spring",
+      "formula": {
+        "path": "scaffold/spring-starter",
+        "bin": "spring-starter-${so}",
+        "binLinux": "",
+        "binDarwin": "",
+        "binWindows": "",
+        "bundle": "${so}.zip",
+        "config": "create-application-config.json",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      },
+      "Repo": ""
+    },
+    {
+      "parent": "root_scaffold_show",
+      "usage": "spring-starter-dependencies",
+      "help": "List dependencies Spring",
+      "formula": {
+        "path": "scaffold/spring-starter",
+        "bin": "spring-starter-${so}",
+        "binLinux": "",
+        "binDarwin": "",
+        "binWindows": "",
+        "bundle": "${so}.zip",
+        "config": "list-dependencies-config.json",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      },
+      "Repo": ""
+    },
+    {
+      "parent": "root",
+      "usage": "github",
+      "help": "Manipulate GitHub objects"
+    },
+    {
+      "parent": "root_github",
+      "usage": "navigate",
+      "help": "Navigate a github by some handbook."
+    },
+    {
+      "parent": "root_github",
+      "usage": "search",
+      "help": "Search a github by some handbook."
+    },
+    {
+      "parent": "root_github",
+      "usage": "fast-merge",
+      "help": "Help you to merge your code with a deploy branch example qa branch.",
+      "formula": {
+        "path": "github/fast-merge",
+        "bin": "fast-merge-${so}",
+        "binLinux": "",
+        "binDarwin": "",
+        "binWindows": "",
+        "bundle": "${so}.zip",
+        "config": "",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      },
+      "Repo": ""
+    },
+    {
+      "parent": "root_github_navigate",
+      "usage": "handbook",
+      "help": "Navigate in your handbook",
+      "formula": {
+        "path": "github/navigate-handbook",
+        "bin": "navigate-handbook-${so}",
+        "binLinux": "",
+        "binDarwin": "",
+        "binWindows": "",
+        "bundle": "${so}.zip",
+        "config": "",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      },
+      "Repo": ""
+    },
+    {
+      "parent": "root_github_search",
+      "usage": "handbook",
+      "help": "Search in your handbook",
+      "formula": {
+        "path": "github/search-handbook",
+        "bin": "search-handbook-${so}",
+        "binLinux": "",
+        "binDarwin": "",
+        "binWindows": "",
+        "bundle": "${so}.zip",
+        "config": "",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      },
+      "Repo": ""
+    },
+    {
+      "parent": "root",
+      "usage": "docker",
+      "help": "Manipulate docker objects"
+    },
+    {
+      "parent": "root_docker",
+      "usage": "generate",
+      "help": "Generate Docker objects"
+    },
+    {
+      "parent": "root_docker_generate",
+      "usage": "compose",
+      "help": "Generate docker-compose.yml in current directory",
+      "formula": {
+        "path": "docker/compose",
+        "bin": "docker-generate-compose-${so}",
+        "binLinux": "",
+        "binDarwin": "",
+        "binWindows": "",
+        "bundle": "${so}.zip",
+        "config": "",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      },
+      "Repo": ""
+    },
+    {
+      "parent": "root",
+      "usage": "k8s",
+      "help": "Manipulate k8s objects"
+    },
+    {
+      "parent": "root_k8s",
+      "usage": "show",
+      "help": "Show k8s objects"
+    },
+    {
+      "parent": "root_k8s",
+      "usage": "create",
+      "help": "Create k8s objects"
+    },
+    {
+      "parent": "root_k8s_show",
+      "usage": "logs",
+      "help": "Show k8s logs",
+      "formula": {
+        "path": "kubernetes/core",
+        "bin": "kubernetes-${so}",
+        "binLinux": "",
+        "binDarwin": "",
+        "binWindows": "",
+        "bundle": "${so}.zip",
+        "config": "logs-config.json",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      },
+      "Repo": ""
+    },
+    {
+      "parent": "root_k8s_show",
+      "usage": "health",
+      "help": "Show k8s health check",
+      "formula": {
+        "path": "kubernetes/core",
+        "bin": "kubernetes-${so}",
+        "binLinux": "",
+        "binDarwin": "",
+        "binWindows": "",
+        "bundle": "${so}.zip",
+        "config": "health-config.json",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      },
+      "Repo": ""
+    },
+    {
+      "parent": "root_k8s",
+      "usage": "clean",
+      "help": "Clean k8s objects"
+    },
+    {
+      "parent": "root_k8s_clean",
+      "usage": "helm-configmap",
+      "help": "clean helm-configmap",
+      "formula": {
+        "path": "kubernetes/clean/helm-configmap",
+        "bin": "helm-configmap.sh",
+        "binLinux": "",
+        "binDarwin": "",
+        "binWindows": "",
+        "bundle": "commons.zip",
+        "config": "config.json",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      },
+      "Repo": ""
+    },
+    {
+      "parent": "root_k8s_create",
+      "usage": "port-forward",
+      "help": "Create k8s port forward",
+      "formula": {
+        "path": "kubernetes/core",
+        "bin": "kubernetes-${so}",
+        "binLinux": "",
+        "binDarwin": "",
+        "binWindows": "",
+        "bundle": "${so}.zip",
+        "config": "port-config.json",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      },
+      "Repo": ""
+    },
+    {
+      "parent": "root_aws",
+      "usage": "setcontext",
+      "help": "aws setcontext",
+      "formula": {
+        "path": "aws/setcontext",
+        "bin": "setcontext.sh",
+        "binLinux": "",
+        "binDarwin": "",
+        "binWindows": "",
+        "bundle": "commons.zip",
+        "config": "config.json",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      },
+      "Repo": ""
+    },
+    {
+      "parent": "root",
+      "usage": "ritchie",
+      "help": "Manipulate Ritchie objects"
+    },
+    {
+      "parent": "root_ritchie",
+      "usage": "generate",
+      "help": "Generate files to install ritchie"
+    },
+    {
+      "parent": "root_ritchie_generate",
+      "usage": "files",
+      "help": "generate files for install ritchie",
+      "formula": {
+        "path": "ritchie/generate/files",
+        "bin": "files-${so}",
+        "binLinux": "files-${so}",
+        "binDarwin": "files-${so}",
+        "binWindows": "files-${so}.exe",
+        "bundle": "${so}.zip",
+        "config": "config.json",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      },
+      "Repo": ""
+    },
+    {
+      "parent": "root_ritchie",
+      "usage": "install",
+      "help": "Install ritchie team"
+    },
+    {
+      "parent": "root_ritchie_install",
+      "usage": "ritchie-team",
+      "help": "install ritchie-team",
+      "formula": {
+        "path": "ritchie/install/ritchie",
+        "bin": "ritchie-${so}",
+        "binLinux": "ritchie-${so}",
+        "binDarwin": "ritchie-${so}",
+        "binWindows": "ritchie-${so}.exe",
+        "bundle": "${so}.zip",
+        "config": "config.json",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      },
+      "Repo": ""
+    },
+    {
+      "parent": "root",
+      "usage": "circleci",
+      "help": "circleci commands"
+    },
+    {
+      "parent": "root_circleci",
+      "usage": "add",
+      "help": "circleci add"
+    },
+    {
+      "parent": "root_circleci_add",
+      "usage": "env",
+      "help": "add env",
+      "formula": {
+        "path": "circleci/add/env",
+        "bin": "env-${so}",
+        "binLinux": "env-${so}",
+        "binDarwin": "env-${so}",
+        "binWindows": "env-${so}.exe",
+        "bundle": "${so}.zip",
+        "config": "config.json",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      },
+      "Repo": ""
+    },
+    {
+      "parent": "root_github",
+      "usage": "update",
+      "help": "github update"
+    },
+    {
+      "parent": "root_github_update",
+      "usage": "fork",
+      "help": "update fork",
+      "formula": {
+        "path": "github/update/fork",
+        "bin": "fork.sh",
+        "binLinux": "fork.sh",
+        "binDarwin": "fork.sh",
+        "binWindows": "fork.bat",
+        "bundle": "${so}.zip",
+        "config": "config.json",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      },
+      "Repo": ""
+    },
+    {
+      "parent": "root_github",
+      "usage": "create",
+      "help": "github create"
+    },
+    {
+      "parent": "root_github_create",
+      "usage": "repo",
+      "help": "create repo",
+      "formula": {
+        "path": "github/create/repo",
+        "bin": "repo.sh",
+        "binLinux": "repo.sh",
+        "binDarwin": "repo.sh",
+        "binWindows": "repo.bat",
+        "bundle": "${so}.zip",
+        "config": "config.json",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      },
+      "Repo": ""
+    }
+  ]
 }
