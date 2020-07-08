@@ -562,7 +562,8 @@
 				"binDarwin": "collaborator.sh",
 				"binWindows": "collaborator.bat",
 				"bundle": "${so}.zip",
-				"config": "config.json"
+				"config": "config.json",
+				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
 			}
 		}
 	]
