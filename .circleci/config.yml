@@ -6,6 +6,7 @@ orbs:
 references:
   images:
     go: &GOLANG_IMAGE cimg/go:1.14
+    python: &PYTHON_IMAGE circleci/python:2.7-stretch
 
   paths:
     test-results: &TEST_RESULTS_DIR bin
@@ -32,7 +33,26 @@ executors:
         user: root
     working_directory: /workspace
 
+  static-executor:
+    docker:
+      - image: *PYTHON_IMAGE
+        user: root
+    working_directory: /workspace
+
 jobs:
+  pre-commit:
+    executor: static-executor
+    steps:
+      - checkout
+      - run:
+          name: Install pre-commit
+          command: |
+            pip install pre-commit
+      - run:
+          name: pre-commit
+          command: |
+            pre-commit run --all-files
+
   lint:
     executor: ritchie-executor
     steps:
@@ -74,9 +94,13 @@ workflows:
       - lint:
           filters:
             <<: *FILTERS_CHECK_CODE
+      - pre-commit:
+          filters:
+            <<: *FILTERS_CHECK_CODE
       - unit_test:
           name: unit-test
           filters:
             <<: *FILTERS_CHECK_CODE
           requires:
             - lint
+            - pre-commit
