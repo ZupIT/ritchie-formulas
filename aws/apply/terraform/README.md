@@ -1,6 +1,7 @@
-## terraform aws apply
+# Terraform aws apply
 
-### command
+## command
+
 ```bash
-$ rit aws apply terraform
+rit aws apply terraform
 ```

@@ -1,5 +1,6 @@
 <!--
-Customized from the template (https://github.com/docker/cli/blob/master/.github/PULL_REQUEST_TEMPLATE.md)
+Customized from the template
+(https://github.com/docker/cli/blob/master/.github/PULL_REQUEST_TEMPLATE.md)
 
 Please make sure you've read and understood our contributing guidelines;
 https://github.com/ZupIT/ritchie-formulas/blob/master/CONTRIBUTING.md
@@ -10,13 +11,17 @@ guide https://docs.ritchiecli.io/community
 Please provide the following information:
 -->
 
-**- What I did**
+<!-- markdownlint-disable MD018 -->
 
-**- How I did it**
+# Pull Request
 
-**- How to verify it**
+####- What I did
 
-**- Description for the changelog**
+####- How I did it
+
+####- How to verify it
+
+####- Description for the changelog
 <!--
 Write a short (one line) summary that describes the changes in this
 pull request for inclusion in the changelog:
