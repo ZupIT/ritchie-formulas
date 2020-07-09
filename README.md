@@ -8,7 +8,7 @@ This repository contains the community formulas which can be executed by the [ri
 
 - [Gitbook](https://docs.ritchiecli.io)
 
-- [Zup Products](https://www.zup.com.br/en/about) 
+- [Zup Products](https://www.zup.com.br/en/about)
 
 ## Build and test formulas locally
 

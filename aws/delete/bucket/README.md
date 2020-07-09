@@ -22,7 +22,7 @@ $ make test-local form=AWS_BUCKET
 ### description
 For use this formula run before:
 ```bash
-rit set credential 
+rit set credential
 ```
 for add AWS credential.
 

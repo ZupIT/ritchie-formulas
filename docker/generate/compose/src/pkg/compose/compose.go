@@ -123,7 +123,7 @@ services:`
 
   response:
     status: 200
-    
+
 - request:
     method: POST
     url: ^/$
