@@ -11,7 +11,7 @@ def Run(datapoints_amount, category, labeled_data):
 
     if category == "false":
         algorithm = "regression"
-    elif labeled_data == "supervised":
+    elif labeled_data == "true":
         algorithm = "classification"
     else:
         algorithm = "clustering"
