@@ -4,12 +4,13 @@ import (
 	"bufio"
 	"bytes"
 	"fmt"
-	"gopkg.in/src-d/go-git.v4"
-	"gopkg.in/src-d/go-git.v4/plumbing/transport/http"
 	"log"
 	"os"
 	"os/exec"
 	"strings"
+
+	"gopkg.in/src-d/go-git.v4"
+	"gopkg.in/src-d/go-git.v4/plumbing/transport/http"
 )
 
 type Inputs struct {
@@ -23,7 +24,7 @@ type Inputs struct {
 	Pwd                string
 }
 
-const commonsVar  = "-var-file=./variables/common.tfvars"
+const commonsVar = "-var-file=./variables/common.tfvars"
 
 func (in Inputs) Run() {
 	log.Println("Terraform starting...")

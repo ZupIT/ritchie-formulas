@@ -4,12 +4,13 @@ import (
 	"encoding/base64"
 	"encoding/json"
 	"fmt"
-	"github.com/gookit/color"
 	"handbook/pkg/prompt"
 	"io/ioutil"
 	"log"
 	"net/http"
 	"strings"
+
+	"github.com/gookit/color"
 )
 
 const (
@@ -17,15 +18,15 @@ const (
 )
 
 type Archive struct {
-	Name string `json:"name"`
-	Url string `json:"url"`
-	Path string `json:"path"`
+	Name    string `json:"name"`
+	Url     string `json:"url"`
+	Path    string `json:"path"`
 	Content string `json:"content"`
 }
 
-type ResultSearch struct{
-	TotalCount int `json:"total_count"`
-	Items []Archive    `json:"items"`
+type ResultSearch struct {
+	TotalCount int       `json:"total_count"`
+	Items      []Archive `json:"items"`
 }
 
 type Inputs struct {
@@ -40,10 +41,10 @@ func (in Inputs) Run() {
 	word := readWord()
 
 	url := strings.ReplaceAll(zupGitSearchUrl, "{{REPOSITORY}}", repository)
-	url = strings.ReplaceAll(url,"{{WORD}}",word)
+	url = strings.ReplaceAll(url, "{{WORD}}", word)
 
 	resultSearch := in.searchRepository(url)
-	if resultSearch.TotalCount <= 0  {
+	if resultSearch.TotalCount <= 0 {
 		log.Fatal("Not Found!")
 		return
 	}
@@ -54,7 +55,7 @@ func (in Inputs) Run() {
 
 }
 
-func (in Inputs)showContent(strSelect, word string, resultSearch ResultSearch) {
+func (in Inputs) showContent(strSelect, word string, resultSearch ResultSearch) {
 	a := stringToArchive(strSelect, resultSearch)
 
 	req, err := http.NewRequest("GET", a.Url, nil)
@@ -80,7 +81,7 @@ func (in Inputs)showContent(strSelect, word string, resultSearch ResultSearch) {
 }
 
 func stringToArchive(strSelect string, resultSearch ResultSearch) Archive {
-	for _,r := range resultSearch.Items{
+	for _, r := range resultSearch.Items {
 		if r.Path == strSelect {
 			return r
 		}
@@ -101,9 +102,9 @@ func decodeContent(str string) string {
 func resultSearchToString(rs ResultSearch) []string {
 	var str []string
 
-		for _,x := range rs.Items {
-			str = append(str, x.Path )
-		}
+	for _, x := range rs.Items {
+		str = append(str, x.Path)
+	}
 
 	return str
 }

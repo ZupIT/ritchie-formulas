@@ -2,8 +2,9 @@ package prompt
 
 import (
 	"errors"
-	"github.com/manifoldco/promptui"
 	"strings"
+
+	"github.com/manifoldco/promptui"
 )
 
 // String show a password and parse to string.
@@ -36,7 +37,6 @@ func String(name string, required bool) (string, error) {
 
 	return prompt.Run()
 }
-
 
 // list show a prompt with options and parse to string.
 func List(name string, items []string) (string, error) {
