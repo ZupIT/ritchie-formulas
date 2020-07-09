@@ -587,7 +587,8 @@
       "binDarwin": "main.py",
       "binWindows": "template.bat",
       "bundle": "${so}.zip",
-      "config": "config.json"
+      "config": "config.json",
+	  "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
     }
   }
 	]
