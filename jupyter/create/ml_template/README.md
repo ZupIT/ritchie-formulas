@@ -2,11 +2,11 @@
 
 ## Command
 
-`$ rit jupyter machine_learning template`
+`$ rit jupyter create ml_template`
 
 Example with stdin
 
-`$ echo '{"DATAPOINTS_AMOUNT": "<10k", "CATEGORY": "true", "LABELED_DATA": "true"}' | jupyter machine_learning template --stdin`
+`$ echo '{"DATAPOINTS_AMOUNT": "<10k", "CATEGORY": "true", "LABELED_DATA": "true"}' | jupyter create ml_template --stdin`
 
 ## Requirements
 

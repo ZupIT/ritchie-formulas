@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import json
-from template.notebook_template import Estimator, render_template
+from ml_template.notebook_template import Estimator, render_template
 
 
 def Run(datapoints_amount, category, labeled_data):

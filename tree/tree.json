@@ -565,32 +565,31 @@
 				"config": "config.json",
 				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
 			}
-    	},
-    	{
+		},
+		{
 			"parent": "root",
 			"usage": "jupyter",
 			"help": "jupyter commands"
 		},
 		{
 			"parent": "root_jupyter",
-			"usage": "machine_learning",
-			"help": "machine learning related commands"
+			"usage": "create",
+			"help": "create different jupyter assets"
 		},
 		{
-			"parent": "root_jupyter_machine_learning",
-			"usage": "template",
-			"help": "creates a jupyter notebook with different machine learning estimators based on your data traits",
+			"parent": "root_jupyter_create",
+			"usage": "ml_template",
+			"help": "creates a machine learning template based on your data characteristics",
 			"formula": {
-              	"path": "jupyter/machine_learning/template",
-				"bin": "main.py", 
+				"path": "jupyter/create/ml_template",
+				"bin": "main.py",
 				"binLinux": "main.py",
 				"binDarwin": "main.py",
-				"binWindows": "template.bat",
-				"bundle": "${so}.zip",
+				"binWindows": "ml_template.bat",
+				"bundle": "commons.zip",
 				"config": "config.json",
 				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+			}
 		}
-	  }
 	]
 }
-  

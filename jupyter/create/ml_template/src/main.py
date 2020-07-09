@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import os
 
-from template import template
+from ml_template import ml_template
 
 datapoints_amount = os.environ.get('DATAPOINTS_AMOUNT')
 category = os.environ.get('CATEGORY')
