@@ -26,8 +26,8 @@ const addCollab = (user, repo, collaborator, token) => {
         }
     }
     axios(config)
-        .then((resposta) => {
-            if (resposta.status === 204) throw console.log('User is already a collaborator.')
+        .then((response) => {
+            if (response.status === 204) throw console.log('User is already a collaborator.')
             console.log(`Collaborator: ${collaborator} was invited to repository: ${repo}`)
         })
         .catch((error) => {
