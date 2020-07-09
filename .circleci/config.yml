@@ -1,0 +1,110 @@
+version: 2.1
+
+orbs:
+  windows: circleci/windows@2.4.0
+
+references:
+  images:
+    go: &GOLANG_IMAGE cimg/go:1.14
+    python: &PYTHON_IMAGE circleci/python:2.7-stretch
+
+  paths:
+    test-results: &TEST_RESULTS_DIR bin
+
+  environment: &ENVIRONMENT
+    TEST_RESULTS_DIR: *TEST_RESULTS_DIR
+    GIT_EMAIL : "zup-ci@zup.com.br"
+    GIT_USERNAME: "zup-ci"
+    GIT_NAME: "Zup CI"
+    BUILD_IMAGE: *GOLANG_IMAGE
+
+  filters-checks-pr: &FILTERS_CHECK_CODE
+    branches:
+      only:
+        - /^pull\/.*$/
+        - /^feature.*/
+        - /^fix.*/
+        - master
+
+executors:
+  ritchie-executor:
+    docker:
+      - image: *GOLANG_IMAGE
+        user: root
+    working_directory: /workspace
+
+  static-executor:
+    docker:
+      - image: *PYTHON_IMAGE
+        user: root
+    working_directory: /workspace
+
+jobs:
+  pre-commit:
+    executor: static-executor
+    steps:
+      - checkout
+      - run:
+          name: install Shellcheck
+          command: |
+            apt-get install shellcheck
+      - run:
+          name: Install pre-commit
+          command: |
+            pip install pre-commit
+      - run:
+          name: pre-commit
+          command: |
+            pre-commit run --all-files
+
+  lint:
+    executor: ritchie-executor
+    steps:
+      - checkout
+      - run:
+          name: Install golangci-lint
+          command: |
+            download=https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh
+            wget -O- -q $download | sh -s -- -b /go/bin/ v1.24.0
+      - run:
+          name: lint
+          command: |
+            go mod download
+            /go/bin/golangci-lint run --issues-exit-code 0
+
+  unit_test:
+    executor: ritchie-executor
+    environment:
+      <<: *ENVIRONMENT
+    steps:
+      - checkout
+      - run:
+          name: Running Unit tests
+          command: |
+            go test -v .../validation/...
+
+      - store_test_results:
+          path: *TEST_RESULTS_DIR
+      - store_artifacts:
+          path: *TEST_RESULTS_DIR
+      - run:
+          name: codecov upload
+          when: always
+          command: bash <(curl -s https://codecov.io/bash)
+
+workflows:
+  build-for-requests:
+    jobs:
+      - lint:
+          filters:
+            <<: *FILTERS_CHECK_CODE
+      - pre-commit:
+          filters:
+            <<: *FILTERS_CHECK_CODE
+      - unit_test:
+          name: unit-test
+          filters:
+            <<: *FILTERS_CHECK_CODE
+          requires:
+            - lint
+            - pre-commit
