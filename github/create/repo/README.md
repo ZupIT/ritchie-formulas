@@ -2,7 +2,17 @@
 
 ## Command
 
+### Prompt
+
 `$ rit github create repo`
+
+### Stdin Unix
+
+`$ echo "{\"project_name\":\"your_project_name\", \"project_description\":\"your_description\", \"private\":\"false or true\"}" | rit github create repo --stdin`
+
+### Stdin Windows PowerShell
+
+`$ echo '{"project_name":"your_project_name", "project_description":"your_description", "private":"false or true"}' | rit github create repo --stdin`
 
 ## Requirements
 
