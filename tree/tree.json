@@ -565,32 +565,32 @@
 				"config": "config.json",
 				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
 			}
-    },
-    {
-      "parent": "root",
-      "usage": "jupyter",
-      "help": "jupyter commands"
-  },
-  {
-    "parent": "root_jupyter",
-    "usage": "machine_learning",
-    "help": "machine learning related commands"
-  },
-  {
-    "parent": "root_jupyter_machine_learning",
-    "usage": "template",
-    "help": "creates a jupyter notebook with different machine learning estimators based on your data traits",
-    "formula": {
-      "path": "jupyter/machine_learning/template",
-      "bin": "main.py",
-      "binLinux": "main.py",
-      "binDarwin": "main.py",
-      "binWindows": "template.bat",
-      "bundle": "${so}.zip",
-      "config": "config.json",
-	  "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-    }
-  }
+    	},
+    	{
+			"parent": "root",
+			"usage": "jupyter",
+			"help": "jupyter commands"
+		},
+		{
+			"parent": "root_jupyter",
+			"usage": "machine_learning",
+			"help": "machine learning related commands"
+		},
+		{
+			"parent": "root_jupyter_machine_learning",
+			"usage": "template",
+			"help": "creates a jupyter notebook with different machine learning estimators based on your data traits",
+			"formula": {
+              	"path": "jupyter/machine_learning/template",
+				"bin": "main.py", 
+				"binLinux": "main.py",
+				"binDarwin": "main.py",
+				"binWindows": "template.bat",
+				"bundle": "${so}.zip",
+				"config": "config.json",
+				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+		}
+	  }
 	]
 }
   
