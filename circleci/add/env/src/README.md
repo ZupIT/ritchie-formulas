@@ -1,9 +1,12 @@
-## circleci add env
+# CircleCI add env
 
-### command
+## command
+
 ```bash
-$ rit circleci add env
+rit circleci add env
 ```
 
-### description
-This formula receives 5 inputs (token, repo owner, repo name, env name, env value) and adds a new env to circle ci project.
+## description
+
+This formula receives 5 inputs (token, repo owner, repo name, env name, env value)
+and adds a new env to circle ci project.
