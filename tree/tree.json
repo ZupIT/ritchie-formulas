@@ -4,113 +4,43 @@
 			"parent": "root",
 			"usage": "aws",
 			"help": "Apply Aws objects",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
+			"formula": {}
 		},
 		{
 			"parent": "root_aws",
 			"usage": "apply",
 			"help": "Apply aws objects",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
+			"formula": {}
 		},
 		{
 			"parent": "root_aws",
 			"usage": "add",
 			"help": "Add aws objects",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
+			"formula": {}
 		},
 		{
 			"parent": "root_aws",
 			"usage": "list",
 			"help": "List aws objects",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
+			"formula": {}
 		},
 		{
 			"parent": "root_aws",
 			"usage": "create",
 			"help": "Create aws objects",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
+			"formula": {}
 		},
 		{
 			"parent": "root_aws",
 			"usage": "generate",
 			"help": "Generate aws objects",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
+			"formula": {}
 		},
 		{
 			"parent": "root_aws",
 			"usage": "delete",
 			"help": "Delete aws objects",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
+			"formula": {}
 		},
 		{
 			"parent": "root_aws_create",
@@ -119,14 +49,10 @@
 			"formula": {
 				"path": "aws/bucket",
 				"bin": "aws-bucket-${so}",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
 				"bundle": "${so}.zip",
 				"config": "create-config.json",
 				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
+			}
 		},
 		{
 			"parent": "root_aws_list",
@@ -135,14 +61,10 @@
 			"formula": {
 				"path": "aws/bucket",
 				"bin": "aws-bucket-${so}",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
 				"bundle": "${so}.zip",
 				"config": "list-config.json",
 				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
+			}
 		},
 		{
 			"parent": "root_aws_delete",
@@ -151,14 +73,10 @@
 			"formula": {
 				"path": "aws/bucket",
 				"bin": "aws-bucket-${so}",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
 				"bundle": "${so}.zip",
 				"config": "delete-config.json",
 				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
+			}
 		},
 		{
 			"parent": "root_aws_generate",
@@ -173,8 +91,7 @@
 				"bundle": "${so}.zip",
 				"config": "config.json",
 				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
+			}
 		},
 		{
 			"parent": "root_aws_apply",
@@ -183,14 +100,9 @@
 			"formula": {
 				"path": "aws/terraform/apply",
 				"bin": "terraform-cli-${so}",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
 				"bundle": "${so}.zip",
-				"config": "",
 				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
+			}
 		},
 		{
 			"parent": "root_aws_add",
@@ -205,8 +117,7 @@
 				"bundle": "${so}.zip",
 				"config": "config.json",
 				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
+			}
 		},
 		{
 			"parent": "root_aws_add",
@@ -221,56 +132,25 @@
 				"bundle": "${so}.zip",
 				"config": "config.json",
 				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
+			}
 		},
 		{
 			"parent": "root",
 			"usage": "kafka",
 			"help": "Kafka commands",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
+			"formula": {}
 		},
 		{
 			"parent": "root_kafka",
 			"usage": "list",
 			"help": "Kafka list commands",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
+			"formula": {}
 		},
 		{
 			"parent": "root_kafka",
 			"usage": "create",
 			"help": "Kafka create commands",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
+			"formula": {}
 		},
 		{
 			"parent": "root_kafka_list",
@@ -279,14 +159,10 @@
 			"formula": {
 				"path": "kafka",
 				"bin": "kafka-${so}",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
 				"bundle": "${so}.zip",
 				"config": "list-topic-config.json",
 				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
+			}
 		},
 		{
 			"parent": "root_kafka_create",
@@ -295,14 +171,10 @@
 			"formula": {
 				"path": "kafka",
 				"bin": "kafka-${so}",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
 				"bundle": "${so}.zip",
 				"config": "create-topic-config.json",
 				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
+			}
 		},
 		{
 			"parent": "root_kafka",
@@ -311,14 +183,10 @@
 			"formula": {
 				"path": "kafka",
 				"bin": "kafka-${so}",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
 				"bundle": "${so}.zip",
 				"config": "consume-config.json",
 				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
+			}
 		},
 		{
 			"parent": "root_kafka",
@@ -327,62 +195,28 @@
 			"formula": {
 				"path": "kafka",
 				"bin": "kafka-${so}",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
 				"bundle": "${so}.zip",
 				"config": "produce-config.json",
 				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
+			}
 		},
 		{
 			"parent": "root",
 			"usage": "scaffold",
 			"help": "Manipulate scaffold objects",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
+			"formula": {}
 		},
 		{
 			"parent": "root_scaffold",
 			"usage": "generate",
 			"help": "Generates a scaffold by some template",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
+			"formula": {}
 		},
 		{
 			"parent": "root_scaffold",
 			"usage": "show",
 			"help": "List commands",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
+			"formula": {}
 		},
 		{
 			"parent": "root_scaffold_generate",
@@ -391,14 +225,9 @@
 			"formula": {
 				"path": "scaffold/coffee-go",
 				"bin": "coffee-go-${so}",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
 				"bundle": "${so}.zip",
-				"config": "",
 				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
+			}
 		},
 		{
 			"parent": "root_scaffold_generate",
@@ -407,14 +236,10 @@
 			"formula": {
 				"path": "scaffold/coffee-java",
 				"bin": "coffee-java.sh",
-				"binLinux": "",
-				"binDarwin": "",
 				"binWindows": "coffee-java.bat",
 				"bundle": "commons.zip",
-				"config": "",
 				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
+			}
 		},
 		{
 			"parent": "root_scaffold_generate",
@@ -423,14 +248,9 @@
 			"formula": {
 				"path": "scaffold/coffee-shell",
 				"bin": "coffee-shell.sh",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
 				"bundle": "commons.zip",
-				"config": "",
 				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
+			}
 		},
 		{
 			"parent": "root_scaffold_generate",
@@ -439,14 +259,10 @@
 			"formula": {
 				"path": "scaffold/coffee-python",
 				"bin": "coffee-python.py",
-				"binLinux": "",
-				"binDarwin": "",
 				"binWindows": "coffee.bat",
 				"bundle": "commons.zip",
-				"config": "",
 				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
+			}
 		},
 		{
 			"parent": "root_scaffold_generate",
@@ -455,14 +271,10 @@
 			"formula": {
 				"path": "scaffold/coffee-node",
 				"bin": "coffee-node.sh",
-				"binLinux": "",
-				"binDarwin": "",
 				"binWindows": "coffee-node.bat",
 				"bundle": "commons.zip",
-				"config": "",
 				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
+			}
 		},
 		{
 			"parent": "root_scaffold_generate",
@@ -471,14 +283,10 @@
 			"formula": {
 				"path": "scaffold/spring-starter",
 				"bin": "spring-starter-${so}",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
 				"bundle": "${so}.zip",
 				"config": "create-application-config.json",
 				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
+			}
 		},
 		{
 			"parent": "root_scaffold_show",
@@ -487,62 +295,28 @@
 			"formula": {
 				"path": "scaffold/spring-starter",
 				"bin": "spring-starter-${so}",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
 				"bundle": "${so}.zip",
 				"config": "list-dependencies-config.json",
 				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
+			}
 		},
 		{
 			"parent": "root",
 			"usage": "github",
 			"help": "Manipulate GitHub objects",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
+			"formula": {}
 		},
 		{
 			"parent": "root_github",
 			"usage": "navigate",
 			"help": "Navigate a github by some handbook.",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
+			"formula": {}
 		},
 		{
 			"parent": "root_github",
 			"usage": "search",
 			"help": "Search a github by some handbook.",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
+			"formula": {}
 		},
 		{
 			"parent": "root_github",
@@ -551,14 +325,9 @@
 			"formula": {
 				"path": "github/fast-merge",
 				"bin": "fast-merge-${so}",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
 				"bundle": "${so}.zip",
-				"config": "",
 				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
+			}
 		},
 		{
 			"parent": "root_github_navigate",
@@ -567,14 +336,9 @@
 			"formula": {
 				"path": "github/navigate-handbook",
 				"bin": "navigate-handbook-${so}",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
 				"bundle": "${so}.zip",
-				"config": "",
 				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
+			}
 		},
 		{
 			"parent": "root_github_search",
@@ -583,46 +347,21 @@
 			"formula": {
 				"path": "github/search-handbook",
 				"bin": "search-handbook-${so}",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
 				"bundle": "${so}.zip",
-				"config": "",
 				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
+			}
 		},
 		{
 			"parent": "root",
 			"usage": "docker",
 			"help": "Manipulate docker objects",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
+			"formula": {}
 		},
 		{
 			"parent": "root_docker",
 			"usage": "generate",
 			"help": "Generate Docker objects",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
+			"formula": {}
 		},
 		{
 			"parent": "root_docker_generate",
@@ -631,62 +370,27 @@
 			"formula": {
 				"path": "docker/compose",
 				"bin": "docker-generate-compose-${so}",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
 				"bundle": "${so}.zip",
-				"config": "",
 				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
+			}
 		},
 		{
 			"parent": "root",
 			"usage": "k8s",
 			"help": "Manipulate k8s objects",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
+			"formula": {}
 		},
 		{
 			"parent": "root_k8s",
 			"usage": "show",
 			"help": "Show k8s objects",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
+			"formula": {}
 		},
 		{
 			"parent": "root_k8s",
 			"usage": "create",
 			"help": "Create k8s objects",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
+			"formula": {}
 		},
 		{
 			"parent": "root_k8s_show",
@@ -695,14 +399,10 @@
 			"formula": {
 				"path": "kubernetes/core",
 				"bin": "kubernetes-${so}",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
 				"bundle": "${so}.zip",
 				"config": "logs-config.json",
 				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
+			}
 		},
 		{
 			"parent": "root_k8s_show",
@@ -711,30 +411,16 @@
 			"formula": {
 				"path": "kubernetes/core",
 				"bin": "kubernetes-${so}",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
 				"bundle": "${so}.zip",
 				"config": "health-config.json",
 				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
+			}
 		},
 		{
 			"parent": "root_k8s",
 			"usage": "clean",
 			"help": "Clean k8s objects",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
+			"formula": {}
 		},
 		{
 			"parent": "root_k8s_clean",
@@ -743,14 +429,10 @@
 			"formula": {
 				"path": "kubernetes/clean/helm-configmap",
 				"bin": "helm-configmap.sh",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
 				"bundle": "commons.zip",
 				"config": "config.json",
 				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
+			}
 		},
 		{
 			"parent": "root_k8s_create",
@@ -759,14 +441,10 @@
 			"formula": {
 				"path": "kubernetes/core",
 				"bin": "kubernetes-${so}",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
 				"bundle": "${so}.zip",
 				"config": "port-config.json",
 				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
+			}
 		},
 		{
 			"parent": "root_aws",
@@ -775,46 +453,22 @@
 			"formula": {
 				"path": "aws/setcontext",
 				"bin": "setcontext.sh",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
 				"bundle": "commons.zip",
 				"config": "config.json",
 				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
+			}
 		},
 		{
 			"parent": "root",
 			"usage": "ritchie",
 			"help": "Manipulate Ritchie objects",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
+			"formula": {}
 		},
 		{
 			"parent": "root_ritchie",
 			"usage": "generate",
 			"help": "Generate files to install ritchie",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
+			"formula": {}
 		},
 		{
 			"parent": "root_ritchie_generate",
@@ -829,24 +483,13 @@
 				"bundle": "${so}.zip",
 				"config": "config.json",
 				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
+			}
 		},
 		{
 			"parent": "root_ritchie",
 			"usage": "install",
 			"help": "Install ritchie team",
-			"formula": {
-				"path": "",
-				"bin": "",
-				"binLinux": "",
-				"binDarwin": "",
-				"binWindows": "",
-				"bundle": "",
-				"config": "",
-				"repoUrl": ""
-			},
-			"Repo": ""
+			"formula": {}
 		},
 		{
 			"parent": "root_ritchie_install",
@@ -861,8 +504,7 @@
 				"bundle": "${so}.zip",
 				"config": "config.json",
 				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
+			}
 		},
 		{
 			"parent": "root",
@@ -887,8 +529,7 @@
 				"bundle": "${so}.zip",
 				"config": "config.json",
 				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
+			}
 		},
 		{
 			"parent": "root_github",
@@ -908,8 +549,31 @@
 				"bundle": "${so}.zip",
 				"config": "config.json",
 				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
-			},
-			"Repo": ""
+			}
+		},
+		{
+			"parent": "root",
+			"usage": "jupyter",
+			"help": "jupyter commands"
+		},
+		{
+			"parent": "root_jupyter",
+			"usage": "machine_learning",
+			"help": "machine learning related commands"
+		},
+		{
+			"parent": "root_jupyter_machine_learning",
+			"usage": "template",
+			"help": "creates a jupyter notebook with different machine learning estimators based on your data traits",
+			"formula": {
+				"path": "jupyter/machine_learning/template",
+				"bin": "main.py",
+				"binLinux": "main.py",
+				"binDarwin": "main.py",
+				"binWindows": "template.bat",
+				"bundle": "${so}.zip",
+				"config": "config.json"
+			}
 		}
 	]
 }
