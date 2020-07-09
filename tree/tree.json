@@ -521,7 +521,7 @@
 				"binLinux": "fork.sh",
 				"binDarwin": "fork.sh",
 				"binWindows": "fork.bat",
-				"bundle": "${so}.zip",
+				"bundle": "commons.zip",
 				"config": "config.json",
 				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
 			}
@@ -541,7 +541,7 @@
 				"binLinux": "repo.sh",
 				"binDarwin": "repo.sh",
 				"binWindows": "repo.bat",
-				"bundle": "${so}.zip",
+				"bundle": "commons.zip",
 				"config": "config.json",
 				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
 			}
@@ -561,7 +561,7 @@
 				"binLinux": "collaborator.sh",
 				"binDarwin": "collaborator.sh",
 				"binWindows": "collaborator.bat",
-				"bundle": "${so}.zip",
+				"bundle": "commons.zip",
 				"config": "config.json",
 				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
 			}
