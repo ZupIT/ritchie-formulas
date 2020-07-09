@@ -1,7 +1,7 @@
 #!/bin/bash
 
 checkCommand() {
-  if ! command -v $1 >/dev/null; then
+  if ! command -v "$1" >/dev/null; then
     echo "Error: $1 command required"
     exit 1
   fi
@@ -35,22 +35,22 @@ run() {
 
   PROJECT_NAME=$(checkSpace "$PROJECT_NAME")
 
-  checkProjectName $PROJECT_NAME
+  checkProjectName "$PROJECT_NAME"
 
-  echo $PROJECT_NAME
+  echo "$PROJECT_NAME"
 
-  mkdir $PROJECT_NAME
-  cd $PROJECT_NAME
+  mkdir "$PROJECT_NAME"
+  cd "$PROJECT_NAME" || exit
 
   git init
-  echo $PROJECT_DESCRIPTION >> README.md
+  echo "$PROJECT_DESCRIPTION" >> README.md
 
   git add .
   git commit -m "Initial Commit"
 
-  curl -H 'Authorization: token '$TOKEN https://api.github.com/user/repos -d '{"name":"'$PROJECT_NAME'", "private":'$PRIVATE'}'
+  curl -H 'Authorization: token '"$TOKEN" https://api.github.com/user/repos -d '{"name":"'"$PROJECT_NAME"'", "private":'"$PRIVATE"'}'
 
-  git push https://$USERNAME:$TOKEN@github.com/$USERNAME/$PROJECT_NAME.git HEAD
+  git push https://"$USERNAME":"$TOKEN"@github.com/"$USERNAME"/"$PROJECT_NAME".git HEAD
 
-  git remote add origin https://github.com/$USERNAME/$PROJECT_NAME
+  git remote add origin https://github.com/"$USERNAME"/"$PROJECT_NAME"
 }

@@ -1,5 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
-. $PWD/fork/fork.sh --source-only
+# shellcheck source=/dev/null
+. "$PWD"/fork/fork.sh --source-only
 
-run $PUSH $SETUPSTREAM
+run "$PUSH" "$SETUPSTREAM"
