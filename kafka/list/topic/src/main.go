@@ -1,8 +1,9 @@
 package main
 
 import (
-	listTopic "github.com/ZupIT/ritchie-formulas/kafka/src/pkg/list/topic"
 	"os"
+
+	listTopic "github.com/ZupIT/ritchie-formulas/kafka/src/pkg/list/topic"
 )
 
 func main() {

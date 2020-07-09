@@ -22,10 +22,10 @@ func main() {
 			extParams["mongoWebClientPassword"], _ = prompt.StringPwd("Type Mongo WebClient password: ")
 		}
 		if selectItem == "rabbitmq" {
-            extParams["rabbitmqHost"], _ = prompt.String("Type Host name: ", true)
-            extParams["rabbitmqUser"], _ = prompt.String("Type RabbitMq user: ", true)
-            extParams["rabbitmqPassword"], _ = prompt.StringPwd("Type RabbitMq password: ")
-        }
+			extParams["rabbitmqHost"], _ = prompt.String("Type Host name: ", true)
+			extParams["rabbitmqUser"], _ = prompt.String("Type RabbitMq user: ", true)
+			extParams["rabbitmqPassword"], _ = prompt.StringPwd("Type RabbitMq password: ")
+		}
 		selectItems = append(selectItems, selectItem)
 		for i, item := range items {
 			if item == selectItem { //Remove input to list

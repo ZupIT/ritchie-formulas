@@ -9,7 +9,7 @@ type Inputs struct {
 	Namespace   string
 	PodPartName string
 	Kubeconfig  string
-	PortMap		string
+	PortMap     string
 }
 
 func (in Inputs) Run() {

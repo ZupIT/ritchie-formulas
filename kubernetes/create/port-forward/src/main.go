@@ -14,7 +14,7 @@ func loadInputs() CommandHandler {
 		Namespace:   os.Getenv("NAMESPACE"),
 		PodPartName: os.Getenv("POD_PART_NAME"),
 		Kubeconfig:  os.Getenv("KUBECONFIG"),
-		PortMap:	 os.Getenv("PORT"),
+		PortMap:     os.Getenv("PORT"),
 	}
 }
 

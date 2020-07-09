@@ -3,6 +3,7 @@ package bucket
 import (
 	"aws/bucket/pkg/prompt"
 	"fmt"
+
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/credentials"
 	"github.com/aws/aws-sdk-go/aws/session"
@@ -10,9 +11,9 @@ import (
 )
 
 type Inputs struct {
-	Key        string
-	Secret     string
-	Region     string
+	Key    string
+	Secret string
+	Region string
 }
 
 func (in Inputs) Run() {

@@ -4,10 +4,11 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"github.com/fatih/color"
 	"io/ioutil"
 	"net/http"
 	"os"
+
+	"github.com/fatih/color"
 )
 
 const (
@@ -15,16 +16,16 @@ const (
 )
 
 type Input struct {
-	Token string
+	Token     string
 	RepoOwner string
-	RepoName string
-	ENVName string
-	ENVValue string
+	RepoName  string
+	ENVName   string
+	ENVValue  string
 }
 
-func(in Input)Run()  {
+func (in Input) Run() {
 	env := struct {
-		Name string `json:"name"`
+		Name  string `json:"name"`
 		Value string `json:"value"`
 	}{
 		in.ENVName,
