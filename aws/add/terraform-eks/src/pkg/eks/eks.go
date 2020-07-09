@@ -39,7 +39,7 @@ func Run(in Inputs) {
 	in.checkIfProjectExist()
 
 	in.mergeMain()
-	
+
 	in.addVariables()
 
 	in.addDNSZone()
