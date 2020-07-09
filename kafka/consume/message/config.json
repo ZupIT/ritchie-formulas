@@ -1,32 +1,32 @@
 {
   "inputs": [
     {
-      "name": "urls",
-      "type": "text",
+      "cache": {
+        "active": true,
+        "newLabel": "Type new urls. "
+      },
       "label": "Kafka urls: ",
-      "cache" : {
-        "active": true,
-        "newLabel" : "Type new urls. "
-      }
+      "name": "urls",
+      "type": "text"
     },
     {
-      "name": "topic",
-      "type": "text",
+      "cache": {
+        "active": true,
+        "newLabel": "Type new topic. "
+      },
       "label": "Topic: ",
-      "cache" : {
-        "active": true,
-        "newLabel" : "Type new topic. "
-      }
+      "name": "topic",
+      "type": "text"
     },
     {
-      "name": "beginning",
-      "type": "bool",
       "default": "true",
       "items": [
         "false",
         "true"
       ],
-      "label": "From beginning? "
+      "label": "From beginning? ",
+      "name": "beginning",
+      "type": "bool"
     }
   ]
 }

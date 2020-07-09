@@ -1,8 +1,6 @@
 {
   "inputs": [
     {
-      "name": "region",
-      "type": "text",
       "default": "us-east-1",
       "items": [
         "us-east-1",
@@ -27,27 +25,29 @@
         "me-south-1",
         "sa-east-1"
       ],
-      "label": "Pick the region: "
+      "label": "Pick the region: ",
+      "name": "region",
+      "type": "text"
     },
     {
+      "label": "Type the vpc name:",
       "name": "vpc_name",
-      "type": "text",
-      "label": "Type the vpc name:"
+      "type": "text"
     },
     {
+      "label": "Type the vpc_cidr [e.g.: 10.0.0.0/16]:",
       "name": "vpc_cidr",
-      "type": "text",
-      "label": "Type the vpc_cidr [e.g.: 10.0.0.0/16]:"
+      "type": "text"
     },
     {
+      "label": "Type your vpc_azs [e.g.: us-west-1a, us-west-1c]:",
       "name": "vpc_azs",
-      "type": "text",
-      "label": "Type your vpc_azs [e.g.: us-west-1a, us-west-1c]:"
+      "type": "text"
     },
     {
+      "label": "Type the customer name:",
       "name": "customer_name",
-      "type": "text",
-      "label": "Type the customer name:"
+      "type": "text"
     }
   ]
 }

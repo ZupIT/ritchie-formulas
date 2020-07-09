@@ -1,38 +1,38 @@
 {
-  "inputs" : [
+  "inputs": [
     {
       "name": "token",
       "type": "CREDENTIAL_CIRCLECI_TOKEN"
     },
     {
-      "name" : "repo_owner",
-      "type" : "text",
-      "label" : "Type the repository owner: ",
-      "cache" : {
+      "cache": {
         "active": true,
-        "qty" : 3,
-        "newLabel" : "Type new value. "
-      }
+        "newLabel": "Type new value. ",
+        "qty": 3
+      },
+      "label": "Type the repository owner: ",
+      "name": "repo_owner",
+      "type": "text"
     },
     {
-      "name" : "repo_name",
-      "type" : "text",
-      "label" : "Type repository name: ",
-      "cache" : {
+      "cache": {
         "active": true,
-        "qty" : 3,
-        "newLabel" : "Type new value. "
-      }
+        "newLabel": "Type new value. ",
+        "qty": 3
+      },
+      "label": "Type repository name: ",
+      "name": "repo_name",
+      "type": "text"
     },
     {
-      "name" : "env_name",
-      "type" : "text",
-      "label" : "Type the ENV name : "
+      "label": "Type the ENV name : ",
+      "name": "env_name",
+      "type": "text"
     },
     {
-      "name" : "env_value",
-      "type" : "password",
-      "label" : "Type the ENV value : "
+      "label": "Type the ENV value : ",
+      "name": "env_value",
+      "type": "password"
     }
   ]
 }
