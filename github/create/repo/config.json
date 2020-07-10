@@ -1,5 +1,5 @@
 {
-  "description": "Initialize a project with git and create a GitHub repository with README.md",
+  "dockerImageBuilder": "cimg/base:stable-20.04",
   "inputs": [
     {
       "label": "Project name: ",

@@ -1,1 +1,3 @@
-{}
+{
+  "dockerImageBuilder": "cimg/go:1.14"
+}

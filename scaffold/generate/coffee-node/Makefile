@@ -8,5 +8,5 @@ build:
 	echo '#!/bin/sh' > $(DIST)/$(BINARY_NAME_UNIX)
 	echo 'node index.js' >>  $(DIST)/$(BINARY_NAME_UNIX)
 	echo 'node index.js' > $(DIST)/$(BINARY_NAME_WINDOWS)
-	cp -r index.js package.json coffee $(DIST)
+	cp -r src/* $(DIST)
 	chmod +x $(DIST)/$(BINARY_NAME_UNIX)

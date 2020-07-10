@@ -1,4 +1,5 @@
 {
+  "dockerImageBuilder": "cimg/go:1.14",
   "inputs": [
     {
       "cache": {
