@@ -2,21 +2,24 @@
   "dockerImageBuilder": "cimg/base:stable-20.04",
   "inputs": [
     {
+      "label": "Project name: ",
       "name": "project_name",
-      "type": "text",
-      "label": "Project name: "
+      "type": "text"
     },
     {
+      "label": "Project description: ",
       "name": "project_description",
-      "type": "text",
-      "label": "Project description: "
+      "type": "text"
     },
     {
-      "name": "private",
-      "type": "bool",
       "default": "false",
-      "items": ["false", "true"],
-      "label": "Create a private repository?: "
+      "items": [
+        "false",
+        "true"
+      ],
+      "label": "Create a private repository?: ",
+      "name": "private",
+      "type": "bool"
     },
     {
       "name": "username",

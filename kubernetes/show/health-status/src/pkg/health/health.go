@@ -28,7 +28,7 @@ func (in Inputs) Run() {
 		containersItems = append(containersItems, fmt.Sprint(i, " - ", container.Name))
 	}
 	containerSelectString, _ := prompt.List("Select container: ", containersItems)
-	ind, _:= strconv.Atoi(strings.Split(containerSelectString, " - ")[0])
+	ind, _ := strconv.Atoi(strings.Split(containerSelectString, " - ")[0])
 	containerSelect := podSelect.Spec.Containers[ind]
 	if containerSelect.LivenessProbe == nil || containerSelect.LivenessProbe.Handler.HTTPGet == nil {
 		log.Fatal("LivenessProbe not configured to http.")
@@ -62,4 +62,3 @@ func (in Inputs) Run() {
 	log.Println("Health Check response: ")
 	log.Println(string(bodyBytes))
 }
-

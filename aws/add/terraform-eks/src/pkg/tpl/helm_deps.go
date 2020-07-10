@@ -181,6 +181,6 @@ variable "dns_zone_id" {
 
 variable "vpc_id" {
   default = ""
-}	 
+}
 	`
 )

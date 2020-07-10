@@ -45,6 +45,10 @@ jobs:
     steps:
       - checkout
       - run:
+          name: install Java
+          command: |
+            apt-get install default-jdk
+      - run:
           name: install Shellcheck
           command: |
             apt-get install shellcheck
@@ -70,7 +74,7 @@ jobs:
           name: lint
           command: |
             go mod download
-            /go/bin/golangci-lint run --issues-exit-code 0
+            /go/bin/golangci-lint run
 
   unit_test:
     executor: ritchie-executor

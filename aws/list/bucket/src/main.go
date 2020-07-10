@@ -11,8 +11,8 @@ func main() {
 
 func loadInputs() bucket.Inputs {
 	return bucket.Inputs{
-		Key:        os.Getenv("ACCESS_KEY"),
-		Secret:     os.Getenv("SECRET_ACCESS_KEY"),
-		Region: 	os.Getenv("REGION"),
+		Key:    os.Getenv("ACCESS_KEY"),
+		Secret: os.Getenv("SECRET_ACCESS_KEY"),
+		Region: os.Getenv("REGION"),
 	}
 }

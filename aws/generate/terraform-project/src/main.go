@@ -1,8 +1,8 @@
 package main
 
 import (
-	"project/pkg/aws"
 	"os"
+	"project/pkg/aws"
 )
 
 func main() {
@@ -15,8 +15,8 @@ func main() {
 	aws.Input{
 		ProjectName:     name,
 		ProjectLocation: loc,
-		BucketName: bucketName,
-		BucketRegion: bucketRegion,
-		PWD: pwd,
+		BucketName:      bucketName,
+		BucketRegion:    bucketRegion,
+		PWD:             pwd,
 	}.Run()
 }

@@ -16,14 +16,14 @@ const (
 )
 
 type Archive struct {
-	Name string `json:"name"`
-	Type string `json:"type"`
+	Name    string `json:"name"`
+	Type    string `json:"type"`
 	Content string `json:"content"`
 }
 
 type Inputs struct {
-	GitUser        string
-	GitToken       string
+	GitUser  string
+	GitToken string
 }
 
 func (in Inputs) Run() {
@@ -34,14 +34,14 @@ func (in Inputs) Run() {
 	archives := in.scanRepository(url)
 
 	strSelect, _ := prompt.List("Escolha", archivesToString(archives))
-	in.navigateGit(archives,strSelect,url)
+	in.navigateGit(archives, strSelect, url)
 }
 
-func (in Inputs)navigateGit(archives []Archive,strSelect ,url  string ){
-	x := verifyTypeFile(archives,strSelect)
+func (in Inputs) navigateGit(archives []Archive, strSelect, url string) {
+	x := verifyTypeFile(archives, strSelect)
 
 	if x {
-		url = fmt.Sprint(url,"/"+strSelect)
+		url = fmt.Sprint(url, "/"+strSelect)
 		req, err := http.NewRequest("GET", url, nil)
 		if err != nil {
 			log.Fatal("Error to git Repository Request: ", err)
@@ -56,13 +56,13 @@ func (in Inputs)navigateGit(archives []Archive,strSelect ,url  string ){
 		var a Archive
 		err = json.Unmarshal(bodyBytes, &a)
 		if err != nil {
-		log.Fatal("Error proccess convert json to struct:", err)
+			log.Fatal("Error proccess convert json to struct:", err)
 		}
 
 		log.Println(decodeContent(a.Content))
 		return
 	}
-	url = fmt.Sprint(url,"/"+strSelect)
+	url = fmt.Sprint(url, "/"+strSelect)
 
 	archives = in.scanRepository(url)
 	strSelect, _ = prompt.List("Escolha", archivesToString(archives))
@@ -117,9 +117,9 @@ func (in Inputs) scanRepository(url string) []Archive {
 	return archives
 }
 
-func verifyTypeFile(archives []Archive, str string) bool{
+func verifyTypeFile(archives []Archive, str string) bool {
 
-	for _,a := range archives  {
+	for _, a := range archives {
 		if a.Name == str {
 			switch a.Type {
 			case "file":

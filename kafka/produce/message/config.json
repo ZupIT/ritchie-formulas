@@ -2,22 +2,22 @@
   "dockerImageBuilder": "cimg/go:1.14",
   "inputs": [
     {
-      "name": "urls",
-      "type": "text",
-      "label": "Kafka urls: ",
-      "cache" : {
+      "cache": {
         "active": true,
-        "newLabel" : "Type new urls. "
-      }
+        "newLabel": "Type new urls. "
+      },
+      "label": "Kafka urls: ",
+      "name": "urls",
+      "type": "text"
     },
     {
-      "name": "topic",
-      "type": "text",
-      "label": "Topic: ",
-      "cache" : {
+      "cache": {
         "active": true,
-        "newLabel" : "Type new topic. "
-      }
+        "newLabel": "Type new topic. "
+      },
+      "label": "Topic: ",
+      "name": "topic",
+      "type": "text"
     }
   ]
 }
