@@ -1,6 +1,6 @@
 {
   "dockerImageBuilder": "cimg/base:stable-20.04",
-  "inputs" : [
+  "inputs": [
     {
       "default": "false",
       "items": [
