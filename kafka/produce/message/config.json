@@ -1,6 +1,5 @@
 {
-  "command": "produce",
-  "description": "Produce messages for kafka",
+  "dockerImageBuilder": "cimg/go:1.14",
   "inputs": [
     {
       "name": "urls",
