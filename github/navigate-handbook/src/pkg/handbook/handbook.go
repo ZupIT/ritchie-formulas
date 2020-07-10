@@ -33,7 +33,7 @@ func (in Inputs) Run() {
 	url := strings.ReplaceAll(zupGitListUrl, "{{REPOSITORY}}", repository)
 	archives := in.scanRepository(url)
 
-	strSelect, _ := prompt.List("Escolha", archivesToString(archives))
+	strSelect, _ := prompt.List("Choose:", archivesToString(archives))
 	in.navigateGit(archives,strSelect,url)
 }
 
@@ -44,19 +44,19 @@ func (in Inputs)navigateGit(archives []Archive,strSelect ,url  string ){
 		url = fmt.Sprint(url,"/"+strSelect)
 		req, err := http.NewRequest("GET", url, nil)
 		if err != nil {
-			log.Fatal("Error to git Repository Request: ", err)
+			log.Fatal("Error to git Repository Request:", err)
 		}
 		req.SetBasicAuth(in.GitUser, in.GitToken)
 		resp, err := http.DefaultClient.Do(req)
 		if err != nil {
-			log.Fatal("Error process git Repository: ", err)
+			log.Fatal("Error process git Repository:", err)
 		}
 		defer resp.Body.Close()
 		bodyBytes, err := ioutil.ReadAll(resp.Body)
 		var a Archive
 		err = json.Unmarshal(bodyBytes, &a)
 		if err != nil {
-		log.Fatal("Error proccess convert json to struct:", err)
+		log.Fatal("Error process convert json to struct:", err)
 		}
 
 		log.Println(decodeContent(a.Content))
@@ -65,7 +65,7 @@ func (in Inputs)navigateGit(archives []Archive,strSelect ,url  string ){
 	url = fmt.Sprint(url,"/"+strSelect)
 
 	archives = in.scanRepository(url)
-	strSelect, _ = prompt.List("Escolha", archivesToString(archives))
+	strSelect, _ = prompt.List("Choose:", archivesToString(archives))
 	in.navigateGit(archives, strSelect, url)
 }
 
@@ -88,7 +88,7 @@ func archivesToString(archives []Archive) []string {
 }
 
 func readRepository() string {
-	repository, err := prompt.String("Type name of application repository: ", false)
+	repository, err := prompt.String("Type application repository name:", false)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -99,12 +99,12 @@ func (in Inputs) scanRepository(url string) []Archive {
 
 	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {
-		log.Fatal("Error to scan Repository Request: ", err)
+		log.Fatal("Error to scan Repository Request:", err)
 	}
 	req.SetBasicAuth(in.GitUser, in.GitToken)
 	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
-		log.Fatal("Error process scan Repository: ", err)
+		log.Fatal("Error scanning Repository:", err)
 	}
 	defer resp.Body.Close()
 
@@ -112,7 +112,7 @@ func (in Inputs) scanRepository(url string) []Archive {
 	bodyBytes, _ := ioutil.ReadAll(resp.Body)
 	err = json.Unmarshal(bodyBytes, &archives)
 	if err != nil {
-		log.Fatal("Error proccess convert json to struct:", err)
+		log.Fatal("Error converting json to struct:", err)
 	}
 	return archives
 }
@@ -127,7 +127,7 @@ func verifyTypeFile(archives []Archive, str string) bool{
 			case "dir":
 				return false
 			default:
-				log.Fatal("Type GitHub is not valid.")
+				log.Fatal("GitHub type not valid.")
 			}
 		}
 	}
