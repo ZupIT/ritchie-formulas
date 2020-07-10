@@ -14,6 +14,10 @@ repos:
       - id: trailing-whitespace
       - id: detect-private-key
 
+      - id: flake8
+      - id: check-ast
+      - id: end-of-file-fixer
+
   - repo: git://github.com/igorshubovych/markdownlint-cli
     rev: v0.22.0
     verbose: true
@@ -31,16 +35,16 @@ repos:
     verbose: true
     hooks:
       - id: go-fmt
-#      - id: go-vet
-#      - id: go-lint
       - id: go-imports
-#      - id: go-cyclo
-#        args: [-over=15]
-#      - id: validate-toml
-#      - id: no-go-testing
-#      - id: gometalinter
-#      - id: golangci-lint
-#      - id: go-critic
-#      - id: go-unit-tests
-#      - id: go-build
-#      - id: go-mod-tidy
+
+  - repo: git://github.com/ambv/black
+    rev: stable
+    hooks:
+      - id: black
+        language_version: python3.8.2
+
+  - repo: git://github.com/macisamuele/language-formatters-pre-commit-hooks
+    rev: v1.5.0
+    hooks:
+      - id: pretty-format-java
+        args: [--autofix]

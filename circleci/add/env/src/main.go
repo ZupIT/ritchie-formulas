@@ -13,10 +13,10 @@ func main() {
 	envValue := os.Getenv("ENV_VALUE")
 
 	env.Input{
-    	Token:    token,
-    	RepoOwner:    repoOwner,
-    	RepoName: repoName,
-    	ENVName: envName,
-    	ENVValue: envValue,
-    }.Run()
+		Token:     token,
+		RepoOwner: repoOwner,
+		RepoName:  repoName,
+		ENVName:   envName,
+		ENVValue:  envValue,
+	}.Run()
 }

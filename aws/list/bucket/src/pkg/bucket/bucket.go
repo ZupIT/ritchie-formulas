@@ -2,20 +2,20 @@ package bucket
 
 import (
 	"fmt"
+	"os"
+
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/credentials"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/s3"
 	"github.com/jedib0t/go-pretty/table"
-	"os"
 )
 
 type Inputs struct {
-	Key        string
-	Secret     string
-	Region     string
+	Key    string
+	Secret string
+	Region string
 }
-
 
 func (in Inputs) Run() {
 	if in.Key == "" || in.Secret == "" {
@@ -57,7 +57,7 @@ func printList(r *s3.ListBucketsOutput) {
 	t.AppendHeader(table.Row{"Count", "Bucket Name", "Creation"})
 	for i, b := range r.Buckets {
 		t.AppendRows([]table.Row{
-			{i+1, aws.StringValue(b.Name), aws.TimeValue(b.CreationDate)},
+			{i + 1, aws.StringValue(b.Name), aws.TimeValue(b.CreationDate)},
 		})
 	}
 	t.SetStyle(table.StyleLight)

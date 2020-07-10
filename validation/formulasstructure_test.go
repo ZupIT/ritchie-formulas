@@ -6,7 +6,6 @@ import (
 	"testing"
 )
 
-
 func TestFormulasContent(t *testing.T) {
 
 	root := "../aws"
@@ -35,4 +34,3 @@ func TestFormulasContent(t *testing.T) {
 	}
 
 }
-

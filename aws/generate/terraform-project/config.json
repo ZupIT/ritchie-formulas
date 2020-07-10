@@ -1,25 +1,25 @@
 {
   "dockerImageBuilder": "cimg/go:1.14",
   "inputs" : [
-	{
-	  "name" : "project_name",
-      "type" : "text",
-      "label" : "Type the project name: "
-	},
     {
-      "name" : "project_location",
-      "type" : "text",
-      "label" : "Type the location (e.g.: /home/user/projects): "
+      "label": "Type the project name: ",
+      "name": "project_name",
+      "type": "text"
     },
     {
-      "name" : "bucket_name",
-      "type" : "text",
-      "label" : "Type the terraform bucket name: "
+      "label": "Type the location (e.g.: /home/user/projects): ",
+      "name": "project_location",
+      "type": "text"
     },
     {
-      "name" : "bucket_region",
-      "type" : "text",
-      "label" : "Type the bucket region: "
+      "label": "Type the terraform bucket name: ",
+      "name": "bucket_name",
+      "type": "text"
+    },
+    {
+      "label": "Type the bucket region: ",
+      "name": "bucket_region",
+      "type": "text"
     }
   ]
 }

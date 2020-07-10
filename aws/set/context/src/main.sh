@@ -1,5 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
-. ./setcontext/setcontext.sh --source-only
+# shellcheck source=/dev/null
+. "$PWD"/setcontext/setcontext.sh --source-only
 
-run $CONTEXT_NAME
+run "$CONTEXT_NAME"

@@ -9,4 +9,4 @@ build:
 	echo 'python3 main.py' >>  $(DIST)/$(BINARY_NAME)
 	cp -r src/* $(DIST)
 	chmod +x $(DIST)/$(BINARY_NAME)
-	echo 'python3 main.py' >> $(DIST)/$(BINARY_NAME_WINDOWS)
+	echo 'python main.py' >> $(DIST)/$(BINARY_NAME_WINDOWS)

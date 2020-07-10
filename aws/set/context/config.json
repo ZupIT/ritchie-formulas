@@ -2,14 +2,14 @@
   "dockerImageBuilder": "cimg/base:stable-20.04",
   "inputs" : [
     {
-      "name" : "context_name",
-      "type" : "text",
-      "label" : "Which context you want to use : ",
-      "cache" : {
+      "cache": {
         "active": true,
-        "qty" : 6,
-        "newLabel" : "Type new value. "
-      }
+        "newLabel": "Type new value. ",
+        "qty": 6
+      },
+      "label": "Which context you want to use : ",
+      "name": "context_name",
+      "type": "text"
     }
   ]
 }

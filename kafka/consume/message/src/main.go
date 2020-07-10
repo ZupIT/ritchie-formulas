@@ -7,7 +7,6 @@ import (
 	"github.com/ZupIT/ritchie-formulas/kafka/src/pkg/consume"
 )
 
-
 func main() {
 	if command := commandResolver(); command != nil {
 		command.Run()

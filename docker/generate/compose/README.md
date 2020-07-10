@@ -1,9 +1,11 @@
-## Generate compose
+# Generate compose
 
-### Command
+## Command
+
 ```bash
-$ rit docker generate compose
+rit docker generate compose
 ```
 
-### Description
+## Description
+
 Generate docker-compose.yml in current directory.
