@@ -1,5 +1,5 @@
 {
-  "description": "HandBook Application",
+  "dockerImageBuilder": "cimg/go:1.14",
   "inputs": [
     {
       "name": "git_user",
