@@ -1,5 +1,5 @@
 {
-  "description": "AWS credential setter.",
+  "dockerImageBuilder": "cimg/base:stable-20.04",
   "inputs" : [
     {
       "name" : "context_name",
