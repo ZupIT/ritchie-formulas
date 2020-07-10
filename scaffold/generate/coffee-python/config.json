@@ -1,6 +1,6 @@
 {
   "dockerImageBuilder": "cimg/python:3.8",
-  "inputs" : [
+  "inputs": [
     {
       "cache": {
         "active": true,
