@@ -15,7 +15,7 @@ BIN_FOLDER_WINDOWS=../$(BIN_FOLDER)/windows
 BIN_WINDOWS=$(BIN_FOLDER_WINDOWS)/$(BIN_NAME).exe
 
 
-build: go-build sh-unix bat-windows
+build: go-build sh-unix bat-windows docker
 
 go-build:
 	$(shell cd src; mkdir -p $(BIN_FOLDER_DARWIN) $(BIN_FOLDER_LINUX) $(BIN_FOLDER_WINDOWS))
@@ -39,6 +39,9 @@ bat-windows:
 	echo '@ECHO OFF' > $(BAT)
 	echo 'cd windows' >> $(BAT)
 	echo 'start /B /WAIT $(BIN_NAME).exe' >> $(BAT)
+
+docker:
+	cp Dockerfile set_umask.sh $(BIN_FOLDER)
 
 test:
 	$(GOTEST) -short `go list ./... | grep -v vendor/`

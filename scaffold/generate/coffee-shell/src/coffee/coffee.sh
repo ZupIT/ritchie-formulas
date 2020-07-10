@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 run() {
   echo "Preparing your coffee $NAME ....."
   sleep 1
