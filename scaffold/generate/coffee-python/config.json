@@ -1,5 +1,5 @@
 {
-  "description": "Give coffee to someone",
+  "dockerImageBuilder": "cimg/python:3.8",
   "inputs" : [
     {
       "name" : "name",

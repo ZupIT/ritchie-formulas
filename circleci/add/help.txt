@@ -1,1 +1,1 @@
-Add env for circle ci project
+Add command for circle ci project

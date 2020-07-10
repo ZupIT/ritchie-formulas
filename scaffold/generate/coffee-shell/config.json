@@ -1,5 +1,5 @@
 {
-  "description": "Give coffee to someone",
+  "dockerImageBuilder": "cimg/base:stable-20.04",
   "inputs" : [
     {
       "name" : "name",
