@@ -1,61 +1,81 @@
 {
-    "dockerImageBuilder": "cimg/go:1.14",
-    "inputs" : [
-      {
-        "name" : "type",
-        "type" : "text",
-        "label" : "Select type project: ",
-        "default": "maven-project",
-        "items": ["maven-project", "gradle-project"]
-      },
-      {
-        "name" : "language",
-        "type" : "text",
-        "label" : "Select language project: ",
-        "default": "kotlin",
-        "items": ["java", "kotlin", "groovy"]
-      },
-      {
-        "name" : "boot_version",
-        "type" : "text",
-        "label" : "Select Spring Boot version: ",
-        "default": "2.2.4.RELEASE",
-        "items": ["2.3.0.M2", "2.3.0.BUILD-SNAPSHOT", "2.2.5.BUILD-SNAPSHOT", "2.2.4.RELEASE", "2.1.13.BUILD-SNAPSHOT", "2.1.12.RELEASE"]
-      },
-      {
-        "name" : "group_id",
-        "type" : "text",
-        "label" : "Type your groupId[ex.: br.com.zup]: "
-      },
-      {
-        "name" : "artifact_id",
-        "type" : "text",
-        "label" : "Type your artifactId[ex.: demo]: "
-      },
-      {
-        "name" : "description",
-        "type" : "text",
-        "label" : "Type the project`s description [ex.: project demo]: "
-      },
-      {
-        "name" : "packaging",
-        "type" : "text",
-        "label" : "Pick your packaging type: ",
-        "default": "jar",
-        "items": ["war", "jar"]
-      },
-      {
-        "name" : "java_version",
-        "type" : "text",
-        "label" : "Pick your java version: ",
-        "default" : "11",
-        "items": ["13", "11", "1.8"]
-      },
-      {
-        "name" : "dependencies",
-        "type" : "text",
-        "label" : "Enter the dependencies ids [ex.: web,postgresql]. For list dependencies: 'rit scaffold show spring-starter-dependencies' : "
-      }
-    ]
-  }
-  
+  "dockerImageBuilder": "cimg/go:1.14",
+  "inputs": [
+    {
+      "default": "maven-project",
+      "items": [
+        "maven-project",
+        "gradle-project"
+      ],
+      "label": "Select type project: ",
+      "name": "type",
+      "type": "text"
+    },
+    {
+      "default": "kotlin",
+      "items": [
+        "java",
+        "kotlin",
+        "groovy"
+      ],
+      "label": "Select language project: ",
+      "name": "language",
+      "type": "text"
+    },
+    {
+      "default": "2.2.4.RELEASE",
+      "items": [
+        "2.3.0.M2",
+        "2.3.0.BUILD-SNAPSHOT",
+        "2.2.5.BUILD-SNAPSHOT",
+        "2.2.4.RELEASE",
+        "2.1.13.BUILD-SNAPSHOT",
+        "2.1.12.RELEASE"
+      ],
+      "label": "Select Spring Boot version: ",
+      "name": "boot_version",
+      "type": "text"
+    },
+    {
+      "label": "Type your groupId[ex.: br.com.zup]: ",
+      "name": "group_id",
+      "type": "text"
+    },
+    {
+      "label": "Type your artifactId[ex.: demo]: ",
+      "name": "artifact_id",
+      "type": "text"
+    },
+    {
+      "label": "Type the project`s description [ex.: project demo]: ",
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "default": "jar",
+      "items": [
+        "war",
+        "jar"
+      ],
+      "label": "Pick your packaging type: ",
+      "name": "packaging",
+      "type": "text"
+    },
+    {
+      "default": "11",
+      "items": [
+        "13",
+        "11",
+        "1.8"
+      ],
+      "label": "Pick your java version: ",
+      "name": "java_version",
+      "type": "text"
+    },
+    {
+      "label": "Enter the dependencies ids [ex.: web,postgresql]. For list dependencies: 'rit scaffold show spring-starter-dependencies' : ",
+      "name": "dependencies",
+      "type": "text"
+    }
+  ]
+}

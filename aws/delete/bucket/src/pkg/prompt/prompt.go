@@ -19,4 +19,3 @@ func defaultSelectTemplate(label string) *promptui.SelectTemplates {
 		Label: label,
 	}
 }
-

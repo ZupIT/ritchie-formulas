@@ -15,9 +15,9 @@ import (
 )
 
 const (
-	projectFile  = ".scaffold"
-	maintfFile   = "src/main.tf"
-	variableQA   = "src/variables/qa.tfvars"
+	projectFile = ".scaffold"
+	maintfFile  = "src/main.tf"
+	variableQA  = "src/variables/qa.tfvars"
 )
 
 type Inputs struct {
@@ -110,4 +110,3 @@ func (in Inputs) checkIfProjectExist() {
 		os.Exit(1)
 	}
 }
-

@@ -6,7 +6,7 @@ import (
 	"strconv"
 )
 
-func main(){
+func main() {
 	coffee.GiveMeSomeCoffee(loadInputs())
 }
 
@@ -15,8 +15,8 @@ func loadInputs() coffee.Inputs {
 	name := os.Getenv("NAME")
 	coffeeType := os.Getenv("COFFEE_TYPE")
 	return coffee.Inputs{
-		Name: name,
+		Name:       name,
 		CoffeeType: coffeeType,
-		Delivery: delivery,
+		Delivery:   delivery,
 	}
 }

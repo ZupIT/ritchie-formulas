@@ -4,6 +4,13 @@ import (
 	"bytes"
 	"encoding/base64"
 	"fmt"
+	"kubernetes/core/pkg/prompt"
+	"log"
+	"net/http"
+	"net/url"
+	"strconv"
+	"strings"
+
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes"
@@ -11,12 +18,6 @@ import (
 	"k8s.io/client-go/tools/clientcmd"
 	"k8s.io/client-go/tools/portforward"
 	"k8s.io/client-go/transport/spdy"
-	"kubernetes/core/pkg/prompt"
-	"log"
-	"net/http"
-	"net/url"
-	"strconv"
-	"strings"
 )
 
 func LoadClientSet(configBase64 string) (*kubernetes.Clientset, *rest.Config) {
@@ -36,7 +37,7 @@ func LoadClientSet(configBase64 string) (*kubernetes.Clientset, *rest.Config) {
 	if err != nil {
 		log.Fatalln("Failed to create kubernetes client.")
 	}
-	return client ,config
+	return client, config
 }
 
 func GetPod(client *kubernetes.Clientset, filter string, namespace string) v1.Pod {

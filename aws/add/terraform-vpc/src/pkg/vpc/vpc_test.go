@@ -5,7 +5,7 @@ import "testing"
 func TestParseAZS(t *testing.T) {
 	want := "\"us-east-1a\",\"us-east-1b\""
 	in := Inputs{
-		VPCAZS:       "us-east-1a,us-east-1b",
+		VPCAZS: "us-east-1a,us-east-1b",
 	}
 
 	in.parseAZS()

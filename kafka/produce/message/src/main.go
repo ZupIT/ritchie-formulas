@@ -1,8 +1,9 @@
 package main
 
 import (
-	"github.com/ZupIT/ritchie-formulas/kafka/src/pkg/produce"
 	"os"
+
+	"github.com/ZupIT/ritchie-formulas/kafka/src/pkg/produce"
 )
 
 func main() {
