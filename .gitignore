@@ -16,6 +16,7 @@
 **/go.sum
 /pkg/*
 /formulas/*
+target/
 
 # Test binary, built with `go test -c`
 *.test
