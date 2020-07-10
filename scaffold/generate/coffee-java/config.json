@@ -1,6 +1,6 @@
 {
   "dockerImageBuilder": "cimg/openjdk:14.0",
-  "inputs" : [
+  "inputs": [
     {
       "cache": {
         "active": true,
