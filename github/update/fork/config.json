@@ -1,19 +1,25 @@
 {
   "dockerImageBuilder": "cimg/base:stable-20.04",
-  "inputs" : [
+  "inputs": [
     {
-      "name" : "setupstream",
-      "type" : "bool",
-      "default" : "false",
-      "items" : ["false", "true"],
-      "label" : "Set upstream ? (only first time)"
+      "default": "false",
+      "items": [
+        "false",
+        "true"
+      ],
+      "label": "Set upstream ? (only first time)",
+      "name": "setupstream",
+      "type": "bool"
     },
     {
-      "name" : "push",
-      "type" : "bool",
-      "default" : "false",
-      "items" : ["false", "true"],
-      "label" : "Push after update ?"
+      "default": "false",
+      "items": [
+        "false",
+        "true"
+      ],
+      "label": "Push after update ?",
+      "name": "push",
+      "type": "bool"
     }
   ]
 }

@@ -9,8 +9,7 @@ func main() {
 }
 
 func loadInputs() CommandHandler {
-	return list.Inputs{
-	}
+	return list.Inputs{}
 }
 
 type CommandHandler interface {

@@ -24,7 +24,7 @@ references:
         - /^pull\/.*$/
         - /^feature.*/
         - /^fix.*/
-        - master
+        - ritchie-2.0.0
 
 executors:
   ritchie-executor:
@@ -44,6 +44,10 @@ jobs:
     executor: static-executor
     steps:
       - checkout
+      - run:
+          name: install Java
+          command: |
+            apt-get install default-jdk
       - run:
           name: install Shellcheck
           command: |
@@ -70,7 +74,7 @@ jobs:
           name: lint
           command: |
             go mod download
-            /go/bin/golangci-lint run --issues-exit-code 0
+            /go/bin/golangci-lint run
 
   unit_test:
     executor: ritchie-executor

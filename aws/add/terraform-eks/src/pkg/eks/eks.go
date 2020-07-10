@@ -2,11 +2,12 @@ package eks
 
 import (
 	"fmt"
-	"github.com/hashicorp/hcl/v2"
-	"github.com/hashicorp/hcl/v2/hclwrite"
 	"html/template"
 	"os"
 	"path"
+
+	"github.com/hashicorp/hcl/v2"
+	"github.com/hashicorp/hcl/v2/hclwrite"
 
 	"eks/pkg/tpl"
 
@@ -28,7 +29,6 @@ const (
 	terraform = "terraform"
 )
 
-
 type Inputs struct {
 	ClusterName string
 	DomainName  string
@@ -39,7 +39,7 @@ func Run(in Inputs) {
 	in.checkIfProjectExist()
 
 	in.mergeMain()
-	
+
 	in.addVariables()
 
 	in.addDNSZone()

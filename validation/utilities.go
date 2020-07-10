@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-func getFullContentFromFormula(root string) map[string]string{
+func getFullContentFromFormula(root string) map[string]string {
 	required := map[string]string{}
 
 	files, err := returnFilesFromFolder(root)
@@ -15,7 +15,7 @@ func getFullContentFromFormula(root string) map[string]string{
 	}
 	for _, file := range files {
 		if strings.Contains(file, "src/main.") {
-			fileX :=  strings.Split(file, "/src/main.")
+			fileX := strings.Split(file, "/src/main.")
 			required[fileX[0]] = fileX[1]
 		}
 	}
@@ -32,14 +32,14 @@ func returnFilesFromFolder(root string) ([]string, error) {
 }
 
 func diff(a, b []string) []string {
-	if len(a) < 1  || len(b) < 1{
+	if len(a) < 1 || len(b) < 1 {
 		return []string{"Empty Array"}
 	}
 	iFound := map[string]bool{}
 
 	for _, itemA := range a {
 		for _, itemB := range b {
-			if strings.HasSuffix(itemB, itemA){
+			if strings.HasSuffix(itemB, itemA) {
 				iFound[itemA] = true
 				break
 			} else {
@@ -60,4 +60,3 @@ func diff(a, b []string) []string {
 
 	return failed
 }
-

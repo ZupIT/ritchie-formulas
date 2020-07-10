@@ -1,10 +1,12 @@
-## terraform aws project
+# Terraform aws project
 
-### command
+## command
+
 ```bash
-$ rit aws generate terraform-project
+rit aws generate terraform-project
 ```
 
+## description
 
-### description
-This formula receives 2 inputs (project name, project location) and builds a terraform project with commons folders and files.
+This formula receives 2 inputs (project name, project location)
+and builds a terraform project with commons folders and files.

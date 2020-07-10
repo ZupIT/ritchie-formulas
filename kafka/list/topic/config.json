@@ -1,14 +1,14 @@
 {
   "dockerImageBuilder": "cimg/go:1.14",
-  "inputs" : [
+  "inputs": [
     {
-      "name" : "urls",
-      "type" : "text",
-      "label" : "Kafka urls: ",
-      "cache" : {
+      "cache": {
         "active": true,
-        "newLabel" : "Type new urls. "
-      }
+        "newLabel": "Type new urls. "
+      },
+      "label": "Kafka urls: ",
+      "name": "urls",
+      "type": "text"
     }
   ]
 }

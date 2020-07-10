@@ -1,6 +1,7 @@
-<!-- Contributing from template (https://github.com/docker/docker.github.io/blob/master/CONTRIBUTING.md) -->
+<!-- Contributing from template
+(https://github.com/docker/docker.github.io/blob/master/CONTRIBUTING.md) -->
 
-## Contributing
+# Contributing
 
 We value your contributions, and we want to make it as easy
 as possible to work in this repository. One of the first things to decide is
@@ -9,17 +10,17 @@ help. If a reviewer realizes you have based your work on the wrong branch, we'll
 let you know so that you can rebase it.
 
 >**Note**: To contribute code to Ritchie projects, see the
-[Ritchie community guidelines](https://docs.ritchiecli.io/community) as well as the 
-[Open source contribution guidelines](https://opensource.guide/how-to-contribute/) and our 
+[Ritchie community guidelines](https://docs.ritchiecli.io/community) as well as the
+[Open source contribution guidelines](https://opensource.guide/how-to-contribute/)
+>and our
 [Code of Conduct](https://github.com/ZupIT/ritchie-formulas/blob/master/CODE_OF_CONDUCT.md).
 
 ## New features for the project
 
-Ritchie is composed of 3 projects which release at different times. 
+Ritchie is composed of 3 projects which release at different times.
 
-**Always base your work on the project's `master` branch, naming your new branch according to the following guide :**
-
-<img class="special-img-class" src="/docs/img/git-branchs.png" /> 
+**Always base your work on the project's `master` branch, naming your new branch
+according to the following guide :**
 
 **Examples : `feature/name` or `fix/name`**
 
@@ -34,8 +35,9 @@ given file in the **Files** view.
 If a PR consists of multiple small addendum commits on top of a more significant
 one, the commit will usually be "squash-merged", so that only one commit is
 merged in. On occasion this is not appropriate and all commits will be kept
-separate when merging.ficant one, the commit will usually be "squash-merged", so that only one commit is merged in. 
-On occasion this is not appropriate and all commits will be kept separate when merging.
+separate when merging.ficant one, the commit will usually be "squash-merged",
+so that only one commit is merged in. On occasion this is not appropriate
+and all commits will be kept separate when merging.
 
 ## Pull request guidelines
 
