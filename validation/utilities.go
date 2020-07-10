@@ -60,4 +60,3 @@ func diff(a, b []string) []string {
 
 	return failed
 }
-
