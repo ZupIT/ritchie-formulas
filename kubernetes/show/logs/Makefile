@@ -6,26 +6,25 @@ BIN_NAME=main
 GOCMD=go
 GOBUILD=$(GOCMD) build
 GOTEST=$(GOCMD) test
-CMD_PATH=src/main.go
-BIN_FOLDER_DARWIN=$(BIN_FOLDER)/darwin
+CMD_PATH=main.go
+BIN_FOLDER_DARWIN=../$(BIN_FOLDER)/darwin
 BIN_DARWIN=$(BIN_FOLDER_DARWIN)/$(BIN_NAME)
-BIN_FOLDER_LINUX=$(BIN_FOLDER)/linux
+BIN_FOLDER_LINUX=../$(BIN_FOLDER)/linux
 BIN_LINUX=$(BIN_FOLDER_LINUX)/$(BIN_NAME)
-BIN_FOLDER_WINDOWS=$(BIN_FOLDER)/windows
+BIN_FOLDER_WINDOWS=../$(BIN_FOLDER)/windows
 BIN_WINDOWS=$(BIN_FOLDER_WINDOWS)/$(BIN_NAME).exe
 
 
 build: go-build sh-unix bat-windows
 
 go-build:
-	mkdir -p $(BIN_FOLDER_DARWIN) $(BIN_FOLDER_LINUX) $(BIN_FOLDER_WINDOWS)
-	export MODULE=$(GO111MODULE=on go list -m)
+	$(shell cd src; mkdir -p $(BIN_FOLDER_DARWIN) $(BIN_FOLDER_LINUX) $(BIN_FOLDER_WINDOWS))
 	#LINUX
-	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 $(GOBUILD) -o '$(BIN_LINUX)' -v $(CMD_PATH)
+	$(shell cd src; CGO_ENABLED=0 GOOS=linux GOARCH=amd64 $(GOBUILD) -o '$(BIN_LINUX)' -v $(CMD_PATH))
 	#MAC
-	GOOS=darwin GOARCH=amd64 $(GOBUILD) -o '$(BIN_DARWIN)' -v $(CMD_PATH)
+	$(shell cd src; GOOS=darwin GOARCH=amd64 $(GOBUILD) -o '$(BIN_DARWIN)' -v $(CMD_PATH))
 	#WINDOWS 64
-	GOOS=windows GOARCH=amd64 $(GOBUILD) -o '$(BIN_WINDOWS)' -v $(CMD_PATH)
+	$(shell cd src; GOOS=windows GOARCH=amd64 $(GOBUILD) -o '$(BIN_WINDOWS)' -v $(CMD_PATH))
 
 sh-unix:
 	echo '#!/bin/sh' > $(SH)

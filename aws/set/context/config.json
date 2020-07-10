@@ -1,6 +1,6 @@
 {
-  "description": "AWS credential setter.",
-  "inputs": [
+  "dockerImageBuilder": "cimg/base:stable-20.04",
+  "inputs" : [
     {
       "cache": {
         "active": true,

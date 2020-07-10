@@ -1,5 +1,7 @@
 {
-  "inputs": [
+
+  "dockerImageBuilder": "cimg/go:1.14",
+  "inputs" : [
     {
       "default": "https://github.com/zupit/iti-stack-core",
       "items": [

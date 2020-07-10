@@ -1,5 +1,6 @@
 {
-  "inputs": [
+  "dockerImageBuilder": "cimg/go:1.14",
+  "inputs" : [
     {
       "name": "token",
       "type": "CREDENTIAL_CIRCLECI_TOKEN"
