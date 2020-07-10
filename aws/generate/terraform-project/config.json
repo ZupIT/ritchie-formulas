@@ -1,6 +1,6 @@
 {
   "dockerImageBuilder": "cimg/go:1.14",
-  "inputs" : [
+  "inputs": [
     {
       "label": "Type the project name: ",
       "name": "project_name",
