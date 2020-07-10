@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 . ./coffee/coffee.sh --source-only
 #In sh for receive inputs of CLI use: $NAME, $COFFEE_TYPE and $DELIVERY for this exemple
