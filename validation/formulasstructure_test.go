@@ -8,7 +8,7 @@ import (
 
 func TestFormulasContent(t *testing.T) {
 
-	root := "../aws"
+	root := "../"
 	rules := createRules()
 	requiredFromRoot := getFullContentFromFormula(root)
 
