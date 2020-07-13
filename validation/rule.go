@@ -13,18 +13,18 @@ func createRules() map[string]Rule {
 			Language:   "Golang",
 			Extensions: "go",
 			Files:      []string{"go.mod", "main.go", "README.md", "config.json", "help.txt"},
-			Folders:    []string{"src", "pkg"},
+			Folders:    []string{"src"},
 		},
 		"java": {
 			Language:   "Java",
 			Extensions: "java",
 			Files:      []string{"main.java", "README.md", "config.json", "help.txt"},
-			Folders:    []string{"src", "pkg"},
+			Folders:    []string{"src"},
 		},
 		"sh": {
 			Language:   "shell script",
 			Extensions: "sh",
 			Files:      []string{"main.sh", "README.md", "config.json", "Makefile", "help.txt"},
-			Folders:    []string{"src", "pkg"},
+			Folders:    []string{"src"},
 		}}
 }
