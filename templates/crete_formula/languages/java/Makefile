@@ -14,6 +14,7 @@ java-build:
 	mkdir -p $(BIN_FOLDER)
 	$(BUILD)
 	mv $(TARGET)/$(JAR_FILE) $(BIN_FOLDER)
+	rm -Rf $(TARGET)
 
 sh-unix:
 	echo '#!/bin/sh' > $(SH)
