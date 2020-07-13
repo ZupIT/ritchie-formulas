@@ -6,7 +6,7 @@ orbs:
 references:
   images:
     go: &GOLANG_IMAGE cimg/go:1.14
-    python: &PYTHON_IMAGE circleci/python:2.7-stretch
+    python: &PYTHON_IMAGE circleci/python:3.8.2
 
   paths:
     test-results: &TEST_RESULTS_DIR bin
