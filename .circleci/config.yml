@@ -47,11 +47,11 @@ jobs:
       - run:
           name: install Java
           command: |
-            apt-get install default-jdk
+            apt-get install -y default-jdk
       - run:
           name: install Shellcheck
           command: |
-            apt-get install shellcheck
+            apt-get install -y shellcheck
       - run:
           name: Install pre-commit
           command: |
