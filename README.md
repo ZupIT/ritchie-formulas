@@ -1,5 +1,6 @@
 <!-- markdownlint-disable MD041 MD033 -->
 [![CircleCI](https://circleci.com/gh/ZupIT/ritchie-formulas/tree/ritchie-2.0.0.svg?style=shield)](https://circleci.com/gh/ZupIT/ritchie-formulas)
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 
 <img class="special-img-class" src="/docs/img/ritchie-banner.png" />
 
