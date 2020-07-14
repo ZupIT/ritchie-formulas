@@ -6,7 +6,7 @@ orbs:
 references:
   images:
     go: &GOLANG_IMAGE cimg/go:1.14
-    python: &PYTHON_IMAGE circleci/python:2.7-stretch
+    python: &PYTHON_IMAGE circleci/python:3.8.2
 
   paths:
     test-results: &TEST_RESULTS_DIR bin
@@ -47,11 +47,12 @@ jobs:
       - run:
           name: install Java
           command: |
-            apt-get install default-jdk
+            apt-get update --fix-missing
+            apt-get install -y default-jdk
       - run:
           name: install Shellcheck
           command: |
-            apt-get install shellcheck
+            apt-get install -y shellcheck
       - run:
           name: Install pre-commit
           command: |

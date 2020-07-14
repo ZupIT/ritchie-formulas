@@ -40,7 +40,10 @@ func execCommand(value string) string {
 	stdout, _ := cmd.StdoutPipe()
 	var outError bytes.Buffer
 	cmd.Stderr = &outError
-	cmd.Start()
+	errS := cmd.Start()
+	if errS != nil {
+		log.Fatalf("Error to start command")
+	}
 	scanner := bufio.NewScanner(stdout)
 	scanner.Split(bufio.ScanLines)
 	commandResultMessage := ""
