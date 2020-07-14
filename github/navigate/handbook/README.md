@@ -1,4 +1,4 @@
-# Github navigate handbook 
+# Github navigate handbook
 
 ## Command
 

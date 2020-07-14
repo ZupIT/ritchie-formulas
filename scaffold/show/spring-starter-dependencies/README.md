@@ -8,4 +8,4 @@ rit scaffold show spring-starter-dependencies
 
 ## description
 
-This formula do 
+This formula do

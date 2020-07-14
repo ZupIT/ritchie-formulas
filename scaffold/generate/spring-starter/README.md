@@ -8,4 +8,4 @@ rit scaffold generate spring-starter
 
 ## description
 
-This formula do 
+This formula do
