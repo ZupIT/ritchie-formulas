@@ -14,7 +14,7 @@ run() {
     git remote add upstream $originalrepo
   fi
   git checkout master
-  echo -e '\e[0;32m✔ \e[1;30mChecktou master\e[0m'
+  echo -e '\e[0;32m✔ \e[1;30mCheckout master\e[0m'
   git fetch upstream
   echo -e '\e[0;32m✔ \e[1;30mFetch upstream\e[0m'
   git rebase upstream/master master
