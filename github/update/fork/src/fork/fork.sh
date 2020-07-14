@@ -5,7 +5,7 @@ run() {
   cd "$CURRENT_PWD" || exit
   status=$(git status | grep "nothing to commit")
   if [ "$status" != "nothing to commit, working tree clean" ] ;then
-    echo -e "✘️ \e[91mError: \e[0mis Commit or discard changes in working directory";exit 1;
+    echo -e "✘️ \\e[91mError: \\e[0mis Commit or discard changes in working directory";exit 1;
     exit 1;
   fi
   if $SETUPSTREAM; then
