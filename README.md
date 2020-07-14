@@ -1,3 +1,8 @@
+<!-- markdownlint-disable MD041 MD033 -->
+[![CircleCI](https://circleci.com/gh/ZupIT/ritchie-formulas/tree/ritchie-2.0.0.svg?style=shield)](https://circleci.com/gh/ZupIT/ritchie-formulas)
+
+<img class="special-img-class" src="/docs/img/ritchie-banner.png" />
+
 # Documentation
 
 This repository contains the community formulas which can be executed by the [ritchie-cli](https://github.com/ZupIT/ritchie-cli).
