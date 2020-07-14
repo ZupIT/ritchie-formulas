@@ -10,7 +10,7 @@ This repository contains rit formulas which can be executed by the [ritchie-cli]
 
 ## Build and test formulas locally
 
-````bash
+```bash
 $ rit build formula
 ```
 
