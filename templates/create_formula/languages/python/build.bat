@@ -7,9 +7,6 @@ SET BAT_FILE=%BIN_FOLDER%\run.bat
     rmdir /Q /S %BIN_FOLDER%
     mkdir %BIN_FOLDER%
     xcopy /E /I src %BIN_FOLDER%
-    cd %BIN_FOLDER%
-    call npm install
-    cd ..
     GOTO BAT_WINDOWS
     GOTO CP_DOCKER
     GOTO DONE
@@ -17,7 +14,7 @@ SET BAT_FILE=%BIN_FOLDER%\run.bat
 :BAT_WINDOWS
     echo @ECHO OFF > %BAT_FILE%
     echo SET mypath=%%~dp0 >> %BAT_FILE%
-    echo start /B /WAIT node %%mypath:~0,-1%%/index.js >> %BAT_FILE%
+    echo start /B /WAIT python %%mypath:~0,-1%%/main.py >> %BAT_FILE%
 
 :CP_DOCKER
     copy Dockerfile %BIN_FOLDER%
