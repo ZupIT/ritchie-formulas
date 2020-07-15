@@ -1,4 +1,4 @@
-FROM cimg/go:1.14
+FROM cimg/base:stable-20.04
 
 USER root
 

@@ -1,4 +1,4 @@
-FROM cimg/go:1.14
+FROM cimg/python:3.8
 
 USER root
 
