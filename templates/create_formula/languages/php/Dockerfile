@@ -1,4 +1,4 @@
-FROM cimg/go:1.14
+FROM cimg/php:7.4
 
 USER root
 

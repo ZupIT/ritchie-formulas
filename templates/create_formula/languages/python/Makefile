@@ -1,12 +1,17 @@
 # SH
 BINARY_NAME=run.sh
 BINARY_NAME_WINDOWS=run.bat
-DIST=bin
+BIN_FOLDER=bin
 
-build:
-	mkdir -p $(DIST)
-	echo '#!/bin/sh' > $(DIST)/$(BINARY_NAME)
-	echo 'python3 main.py' >>  $(DIST)/$(BINARY_NAME)
-	cp -r src/* $(DIST)
-	chmod +x $(DIST)/$(BINARY_NAME)
-	echo 'python main.py' >> $(DIST)/$(BINARY_NAME_WINDOWS)
+build: python-build docker
+
+python-build:
+	mkdir -p $(BIN_FOLDER)
+	echo '#!/bin/sh' > $(BIN_FOLDER)/$(BINARY_NAME)
+	echo 'python3 "$$(dirname "$$0")"/main.py' >>  $(BIN_FOLDER)/$(BINARY_NAME)
+	cp -r src/* $(BIN_FOLDER)
+	chmod +x $(BIN_FOLDER)/$(BINARY_NAME)
+	echo 'python main.py' >> $(BIN_FOLDER)/$(BINARY_NAME_WINDOWS)
+
+docker:
+	cp Dockerfile set_umask.sh $(BIN_FOLDER)

@@ -7,7 +7,7 @@ CLEAN=mvn clean
 JAR_FILE=Main.jar
 TARGET=target
 
-build: java-build sh-unix bat-windows
+build: java-build sh-unix bat-windows docker
 	$(CLEAN)
 
 java-build:
@@ -18,9 +18,15 @@ java-build:
 
 sh-unix:
 	echo '#!/bin/sh' > $(SH)
-	echo 'java -jar $(JAR_FILE)' >> $(SH)
+	echo 'java -jar "$$(dirname "$$0")"/$(JAR_FILE)' >> $(SH)
 	chmod +x $(SH)
 
 bat-windows:
 	echo '@ECHO OFF' > $(BAT)
 	echo 'java -jar $(JAR_FILE)' >> $(BAT)
+
+test:
+	mvn clean install
+
+docker:
+	cp Dockerfile set_umask.sh $(BIN_FOLDER)

@@ -1,4 +1,4 @@
-FROM cimg/go:1.14
+FROM cimg/node:14.0
 
 USER root
 

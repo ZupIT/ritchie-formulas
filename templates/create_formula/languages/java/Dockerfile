@@ -1,4 +1,4 @@
-FROM cimg/go:1.14
+FROM cimg/openjdk:8.0
 
 USER root
 

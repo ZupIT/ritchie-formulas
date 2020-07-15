@@ -29,9 +29,9 @@ go-build:
 sh-unix:
 	echo '#!/bin/sh' > $(SH)
 	echo 'if [ $$(uname) = "Darwin" ]; then' >> $(SH)
-	echo '  ./darwin/$(BIN_NAME)' >> $(SH)
+	echo '  "$$(dirname "$$0")"//darwin/$(BIN_NAME)' >> $(SH)
 	echo 'else' >> $(SH)
-	echo '  ./linux/$(BIN_NAME)' >> $(SH)
+	echo '  "$$(dirname "$$0")"//linux/$(BIN_NAME)' >> $(SH)
 	echo 'fi' >> $(SH)
 	chmod +x $(SH)
 

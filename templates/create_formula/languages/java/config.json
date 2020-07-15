@@ -1,5 +1,5 @@
 {
-  "dockerImageBuilder": "cimg/openjdk:14.0",
+  "dockerImageBuilder": "cimg/openjdk:8.0",
   "inputs" : [
     {
       "name" : "sample_text",
