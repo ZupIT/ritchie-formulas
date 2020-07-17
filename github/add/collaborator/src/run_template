@@ -1,10 +1,6 @@
 #!/bin/sh
 
-<<<<<<< HEAD
 echo 'Checking dependencies...'
-=======
-xecho 'Checking dependencies...'
->>>>>>> ff214d2f73a2f6700a8af8bc523a5d2b84c572e4
 
 checkCommand npm
 checkCommand node
