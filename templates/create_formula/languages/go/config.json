@@ -1,29 +1,37 @@
 {
   "dockerImageBuilder": "cimg/go:1.14",
-  "inputs" : [
+  "inputs": [
     {
-      "name" : "sample_text",
-      "type" : "text",
-      "label" : "Type : ",
-      "cache" : {
+      "cache": {
         "active": true,
-        "qty" : 6,
-        "newLabel" : "Type new value. "
-      }
+        "newLabel": "Type new value. ",
+        "qty": 6
+      },
+      "label": "Type : ",
+      "name": "sample_text",
+      "type": "text"
     },
     {
-      "name" : "sample_list",
-      "type" : "text",
-      "default" : "in1",
-      "items" : ["in_list1", "in_list2", "in_list3", "in_listN"],
-      "label" : "Pick your : "
+      "default": "in1",
+      "items": [
+        "in_list1",
+        "in_list2",
+        "in_list3",
+        "in_listN"
+      ],
+      "label": "Pick your : ",
+      "name": "sample_list",
+      "type": "text"
     },
     {
-      "name" : "sample_bool",
-      "type" : "bool",
-      "default" : "false",
-      "items" : ["false", "true"],
-      "label" : "Pick: "
+      "default": "false",
+      "items": [
+        "false",
+        "true"
+      ],
+      "label": "Pick: ",
+      "name": "sample_bool",
+      "type": "bool"
     }
   ]
 }
