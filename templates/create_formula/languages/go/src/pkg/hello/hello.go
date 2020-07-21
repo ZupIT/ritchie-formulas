@@ -2,8 +2,9 @@ package hello
 
 import (
 	"fmt"
-	"github.com/gookit/color"
 	"io"
+
+	"github.com/gookit/color"
 )
 
 type Hello struct {
