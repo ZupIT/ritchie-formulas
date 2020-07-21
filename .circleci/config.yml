@@ -62,20 +62,20 @@ jobs:
           command: |
             pre-commit run --all-files
 
-  lint:
-    executor: ritchie-executor
-    steps:
-      - checkout
-      - run:
-          name: Install golangci-lint
-          command: |
-            download=https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh
-            wget -O- -q $download | sh -s -- -b /go/bin/ v1.24.0
-      - run:
-          name: lint
-          command: |
-            go mod download
-            /go/bin/golangci-lint run
+#  lint:
+#    executor: ritchie-executor
+#    steps:
+#      - checkout
+#      - run:
+#          name: Install golangci-lint
+#          command: |
+#            download=https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh
+#            wget -O- -q $download | sh -s -- -b /go/bin/ v1.24.0
+#      - run:
+#          name: lint
+#          command: |
+#            go mod download
+#            /go/bin/golangci-lint run
 
   unit_test:
     executor: ritchie-executor
@@ -100,9 +100,9 @@ jobs:
 workflows:
   build-for-requests:
     jobs:
-      - lint:
-          filters:
-            <<: *FILTERS_CHECK_CODE
+#      - lint:
+#          filters:
+#            <<: *FILTERS_CHECK_CODE
       - pre-commit:
           filters:
             <<: *FILTERS_CHECK_CODE
@@ -111,5 +111,4 @@ workflows:
           filters:
             <<: *FILTERS_CHECK_CODE
           requires:
-            - lint
             - pre-commit
