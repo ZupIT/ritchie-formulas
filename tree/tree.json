@@ -611,7 +611,7 @@
         "binLinux": "android.sh",
         "binDarwin": "android.sh",
         "binWindows": "android.bat",
-        "bundle": "${so}.zip",
+        "bundle": "commons.zip",
         "config": "config.json",
         "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       }
