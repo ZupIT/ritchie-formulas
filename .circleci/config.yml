@@ -47,8 +47,8 @@ jobs:
       - run:
           name: install Java
           command: |
-            apt update --fix-missing
-            apt install -y openjdk-8-jdk
+            apt-get update --fix-missing
+            apt-get install -y default-jdk
       - run:
           name: install Shellcheck
           command: |
