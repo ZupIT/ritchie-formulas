@@ -1,0 +1,6 @@
+#!/bin/sh
+
+echo 'Installing dependencies...'
+
+npm install > /dev/null 2>&1
+node index.js

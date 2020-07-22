@@ -20,7 +20,7 @@ pipeline{
               stage('master') {
                   when {
                       expression {
-                          return branch_name =~ /^master/
+                          return branch_name =~ /^legacy-1.0.0/
                       }
                   }
                   steps {

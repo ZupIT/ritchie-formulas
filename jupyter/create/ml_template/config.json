@@ -1,0 +1,26 @@
+{
+  "description": "Sample inputs in Ritchie.",
+  "inputs" : [
+    {
+      "name" : "datapoints_amount",
+      "type" : "text",
+      "default" : "",
+      "items" : ["<50", "<10k", "<100k", ">100k"],
+      "label" : "How many datapoints do you have?"
+    },
+    {
+      "name" : "category",
+      "type" : "bool",
+      "default" : "true",
+      "items" : ["true", "false"],
+      "label" : "Are you predicting a category?"
+    },
+    {
+      "name" : "labeled_data",
+      "type" : "bool",
+      "default" : "true",
+      "items" : ["true", "false"],
+      "label" : "Do you have labeled data (supervised learning)?"
+    }
+  ]
+}

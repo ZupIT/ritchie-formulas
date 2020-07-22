@@ -149,7 +149,7 @@ services:`
 
 func GenerateYml(items []string, extParams map[string]string) {
 	ymlString := headYml + "\n"
-	if len(items) == 1 {
+	if len(items) < 1 {
 		fmt.Println("No docker image selected")
 	} else {
 		for _, item := range items {
