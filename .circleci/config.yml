@@ -86,7 +86,7 @@ jobs:
       - run:
           name: Running Unit tests
           command: |
-            go test -v .../.circleci/validation/...
+            go test -v ./.circleci/validation/...
 
       - store_test_results:
           path: *TEST_RESULTS_DIR
