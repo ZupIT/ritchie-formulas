@@ -1,7 +1,11 @@
 package validation
 
 import (
+	"bytes"
+	"fmt"
+	"io/ioutil"
 	"os"
+	"os/exec"
 	"path/filepath"
 	"strings"
 )
@@ -9,7 +13,13 @@ import (
 func getFullContentFromFormula(root string) map[string]string {
 	required := map[string]string{}
 
-	files, err := returnFilesFromFolder(root)
+	err := os.Chdir(root)
+	check(err)
+
+	pwd, err := os.Getwd()
+	check(err)
+
+	files, err := returnFilesFromFolder(pwd)
 	if err != nil {
 		panic(err)
 	}
@@ -59,4 +69,46 @@ func diff(a, b []string) []string {
 	}
 
 	return failed
+}
+
+func check(err error) {
+	if err != nil {
+		fmt.Printf("Erro: %v\n", err)
+	}
+}
+
+func validateMakefile(path string) {
+	files, err := ioutil.ReadDir(path)
+	check(err)
+
+	for _, file := range files {
+		if file.Name() == "Makefile" {
+			runBuild(path)
+		}
+	}
+}
+
+func runBuild(path string) {
+	var cmd *exec.Cmd
+	var stderr, stdout bytes.Buffer
+
+	err := os.Chdir(path)
+	check(err)
+
+	cmd = exec.Command("make", "build")
+	cmd.Stderr = &stderr
+	cmd.Stdout = &stdout
+
+	if err := cmd.Run(); err != nil {
+		if stderr.Bytes() != nil {
+			fmt.Sprintf("Build failed: \n%s \n%s", stderr.String(), err)
+		}
+	}
+
+	if stderr.String() != "" {
+		fmt.Printf("Build failed: %s\n", stderr.String())
+		os.Exit(1)
+	}
+
+	fmt.Printf("Build success: %s\n", path)
 }
