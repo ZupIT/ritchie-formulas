@@ -1,6 +1,16 @@
 #!/bin/sh
 
-echo 'Installing dependencies...'
+echo 'Checking dependencies...'
 
+checkCommand npm
+checkCommand node
+
+echo 'Installing NODE dependencies...'
 npm install > /dev/null 2>&1
 node index.js
+
+checkCommand () {
+    if ! command -v $1 >/dev/null; then
+      echo -e "✘️ \e[91mError: \e[33;1m$1 \e[0mis required";exit 1;
+    fi
+}
