@@ -1,0 +1,16 @@
+{
+  "tags": [
+    "generate",
+    "coffee-shell"
+  ],
+  "execution": [
+    "local"
+  ],
+  "os": {
+    "support": [
+      "mac",
+      "linux"
+    ],
+    "deps": []
+  }
+}

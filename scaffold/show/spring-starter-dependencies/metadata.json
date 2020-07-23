@@ -1,0 +1,13 @@
+{
+  "tags": ["show", "spring-starter-dependencies"],
+  "execution": [
+    "local"
+  ],
+  "os": {
+    "support": [
+      "mac",
+      "linux"
+    ],
+    "deps": []
+  }
+}

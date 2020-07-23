@@ -1,0 +1,14 @@
+{
+  "tags": [#rit-replace{formulaTags}],
+  "execution": [
+    "local",
+    "docker"
+  ],
+  "os": {
+    "support": [
+      "mac",
+      "linux"
+    ],
+    "deps": []
+  }
+}

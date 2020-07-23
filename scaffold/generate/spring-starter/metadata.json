@@ -1,0 +1,13 @@
+{
+  "tags": ["generate", "spring-starter"],
+  "execution": [
+    "local"
+  ],
+  "os": {
+    "support": [
+      "mac",
+      "linux"
+    ],
+    "deps": []
+  }
+}

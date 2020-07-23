@@ -1,0 +1,19 @@
+{
+  "tags": [
+    "generate",
+    "coffee-java"
+  ],
+  "execution": [
+    "local"
+  ],
+  "os": {
+    "support": [
+      "windows",
+      "mac",
+      "linux"
+    ],
+    "deps": [
+      "maven"
+    ]
+  }
+}
