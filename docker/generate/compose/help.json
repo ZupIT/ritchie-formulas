@@ -1,0 +1,4 @@
+{
+  "long": "Generate docker-compose.yml in current directory",
+  "short": "Generate docker-compose.yml in current directory"
+}
