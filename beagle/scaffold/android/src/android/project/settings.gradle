@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "Base Beagle"
+rootProject.name = "${project_name}"

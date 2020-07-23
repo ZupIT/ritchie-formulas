@@ -71,6 +71,8 @@ run() {
 
   cd $CURRENT_PWD/$slug_name
   
+  cat settings.gradle | sed -e "s,\${project_name},$PROJECT_NAME," -i settings.gradle
+
   cat app/src/main/res/values/strings.xml | sed -e "s,\${project_name},$PROJECT_NAME," -i app/src/main/res/values/strings.xml
 
   cat app/build.gradle | sed -e "s,\${beagle_version},$BEAGLE_VERSION," -i app/build.gradle
