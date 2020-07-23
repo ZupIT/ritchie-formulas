@@ -1,0 +1,18 @@
+{
+  "tags": [
+    "generate",
+    "coffee-go"
+  ],
+  "execution": [
+    "local",
+    "docker"
+  ],
+  "os": {
+    "support": [
+      "windows",
+      "mac",
+      "linux"
+    ],
+    "deps": []
+  }
+}
