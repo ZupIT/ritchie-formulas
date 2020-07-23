@@ -1,17 +1,17 @@
 {
-  "tags": [
-    "generate",
-    "coffee-node"
-  ],
   "execution": [
     "local"
   ],
   "os": {
+    "deps": [],
     "support": [
       "windows",
       "mac",
       "linux"
-    ],
-    "deps": []
-  }
+    ]
+  },
+  "tags": [
+    "generate",
+    "coffee-node"
+  ]
 }

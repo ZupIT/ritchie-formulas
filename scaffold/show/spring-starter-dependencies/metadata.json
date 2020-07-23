@@ -1,13 +1,16 @@
 {
-  "tags": ["show", "spring-starter-dependencies"],
   "execution": [
     "local"
   ],
   "os": {
+    "deps": [],
     "support": [
       "mac",
       "linux"
-    ],
-    "deps": []
-  }
+    ]
+  },
+  "tags": [
+    "show",
+    "spring-starter-dependencies"
+  ]
 }

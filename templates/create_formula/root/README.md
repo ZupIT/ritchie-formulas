@@ -14,9 +14,7 @@ This repository contains rit formulas which can be executed by the [ritchie-cli]
 
 ```bash
  rit add repo
- 
 ```
-
 
 ## Build and test formulas locally
 
