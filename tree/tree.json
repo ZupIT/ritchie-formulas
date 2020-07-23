@@ -590,6 +590,63 @@
 				"config": "config.json",
 				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
 			}
+		},
+		{
+			"parent": "root",
+			"usage": "utils",
+			"help": "utils commands"
+		},
+		{
+			"parent": "root_utils",
+			"usage": "keypair",
+			"help": "utils keypair"
+		},
+		{
+			"parent": "root_utils_keypair",
+			"usage": "replace",
+			"help": "keypair replace",
+			"formula": {
+				"path": "utils/keypair/replace",
+				"bin": "replace.sh",
+				"binLinux": "replace.sh",
+				"binDarwin": "replace.sh",
+				"binWindows": "replace.bat",
+				"bundle": "${so}.zip",
+				"config": "config.json"
+			}
+		},
+		{
+			"parent": "root_utils",
+			"usage": "replace",
+			"help": "utils replace"
+		},
+		{
+			"parent": "root_utils_replace",
+			"usage": "keypair",
+			"help": "replace keypair",
+			"formula": {
+				"path": "utils/replace/keypair",
+				"bin": "keypair.sh",
+				"binLinux": "keypair.sh",
+				"binDarwin": "keypair.sh",
+				"binWindows": "keypair.bat",
+				"bundle": "${so}.zip",
+				"config": "config.json"
+			}
+		},
+		{
+			"parent": "root_utils_replace",
+			"usage": "keyvalue",
+			"help": "replace keyvalue",
+			"formula": {
+				"path": "utils/replace/keyvalue",
+				"bin": "keyvalue.sh",
+				"binLinux": "keyvalue.sh",
+				"binDarwin": "keyvalue.sh",
+				"binWindows": "keyvalue.bat",
+				"bundle": "${so}.zip",
+				"config": "config.json"
+			}
 		}
 	]
 }
