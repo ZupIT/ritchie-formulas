@@ -1,11 +1,14 @@
 # SH
 BINARY_NAME=run.sh
-DIST=bin
+BIN_FOLDER=bin
 
-build: shell-build
+build: bash-build docker
 
-shell-build:
-	mkdir -p $(DIST)
-	cp -r src/* $(DIST)
-	mv $(DIST)/main.sh $(DIST)/$(BINARY_NAME)
-	chmod +x $(DIST)/$(BINARY_NAME)
+bash-build:
+	mkdir -p $(BIN_FOLDER)
+	cp -r src/* $(BIN_FOLDER)
+	mv $(BIN_FOLDER)/main.sh $(BIN_FOLDER)/$(BINARY_NAME)
+	chmod +x $(BIN_FOLDER)/$(BINARY_NAME)
+
+docker:
+	cp Dockerfile set_umask.sh $(BIN_FOLDER)

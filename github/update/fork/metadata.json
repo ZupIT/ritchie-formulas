@@ -1,0 +1,17 @@
+{
+  "execution": [
+    "local"
+  ],
+  "os": {
+    "deps": [],
+    "support": [
+      "mac",
+      "linux"
+    ]
+  },
+  "tags": [
+    "github",
+    "update",
+    "fork"
+  ]
+}

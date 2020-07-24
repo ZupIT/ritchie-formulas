@@ -1,18 +1,11 @@
+FROM cimg/go:1.14
 
-FROM golang:alpine AS builder
+USER root
 
-ADD . /app
-WORKDIR /app/src
-RUN go build -o main -v main.go
-
-FROM alpine:latest
-
-
-COPY --from=builder /app/src/main main
-COPY --from=builder /app/set_umask.sh set_umask.sh
-RUN chmod +x main
-RUN chmod +x set_umask.sh
+RUN mkdir /rit
+COPY . /rit
+RUN chmod +x /rit/set_umask.sh
 
 WORKDIR /app
-ENTRYPOINT ["/set_umask.sh"]
-CMD ["/main"]
+ENTRYPOINT ["/rit/set_umask.sh"]
+CMD ["/rit/run.sh"]

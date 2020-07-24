@@ -9,7 +9,6 @@ rit github merge branch
 ## Requirements
 
 - git installed
-- set github username and token credentials using `$ rit set credential`
 
 ## How to generate personal access token
 
@@ -17,4 +16,16 @@ To generate a personal access token click [here](https://github.com/settings/tok
 
 ## How it works
 
-![gif](https://media.giphy.com/media/U5bfisA8omNg52kEG1/giphy.gif)
+```bash
+git pull origin {{current_branch}}
+git fetch
+git branch -D {{dest_branch}}
+git checkout {{dest_branch}}
+git pull origin {{current_branch}}
+```
+
+```bash
+if push:
+ git push
+ git checkout {{current_branch}}
+```
