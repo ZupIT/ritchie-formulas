@@ -43,4 +43,3 @@ bat-windows:
 
 test:
 	$(GOTEST) -short `go list ./... | grep -v vendor/`
-
