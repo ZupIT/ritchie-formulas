@@ -99,7 +99,6 @@ Temporary Items
 
 ### Node ###
 # Logs
-logs
 *.log
 npm-debug.log*
 yarn-debug.log*

@@ -25,20 +25,21 @@ go-build:
 	$(shell cd src; GOOS=darwin GOARCH=amd64 $(GOBUILD) -o '$(BIN_DARWIN)' -v $(CMD_PATH))
 	#WINDOWS 64
 	$(shell cd src; GOOS=windows GOARCH=amd64 $(GOBUILD) -o '$(BIN_WINDOWS)' -v $(CMD_PATH))
+	cp -r src/files $(BIN_FOLDER)/files
 
 sh-unix:
 	echo '#!/bin/sh' > $(SH)
 	echo 'if [ $$(uname) = "Darwin" ]; then' >> $(SH)
-	echo '  ./darwin/$(BIN_NAME)' >> $(SH)
+	echo '  "$$(dirname "$$0")"/darwin/$(BIN_NAME)' >> $(SH)
 	echo 'else' >> $(SH)
-	echo '  ./linux/$(BIN_NAME)' >> $(SH)
+	echo '  "$$(dirname "$$0")"/linux/$(BIN_NAME)' >> $(SH)
 	echo 'fi' >> $(SH)
 	chmod +x $(SH)
 
 bat-windows:
 	echo '@ECHO OFF' > $(BAT)
-	echo 'cd windows' >> $(BAT)
-	echo 'start /B /WAIT $(BIN_NAME).exe' >> $(BAT)
+	echo 'SET mypath=%~dp0' >> $(BAT)
+	echo 'start /B /WAIT %mypath:~0,-1%/windows/main.exe' >> $(BAT)
 
 test:
 	$(GOTEST) -short `go list ./... | grep -v vendor/`

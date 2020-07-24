@@ -10,6 +10,16 @@ This repository contains rit formulas which can be executed by the [ritchie-cli]
 
 - [Gitbook](https://docs.ritchiecli.io)
 
+## Use Formulas
+
+```bash
+ rit add repo
+ Repository name: {{some_repo_name}}
+ Is a private repository?
+ > no
+ Repository URL: {{this_repo_url}}
+```
+
 ## Build and test formulas locally
 
 ```bash
