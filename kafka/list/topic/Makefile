@@ -20,11 +20,11 @@ build: go-build sh-unix bat-windows
 go-build:
 	$(shell cd src; mkdir -p $(BIN_FOLDER_DARWIN) $(BIN_FOLDER_LINUX) $(BIN_FOLDER_WINDOWS))
 	#LINUX
-	$(shell cd src; CGO_ENABLED=0 GOOS=linux GOARCH=amd64 $(GOBUILD) -o '$(BIN_LINUX)' -v $(CMD_PATH))
+	$(shell cd src; CGO_ENABLED=0 GOOS=linux GOARCH=amd64 $(GOBUILD) -o '$(BIN_LINUX)' $(CMD_PATH))
 	#MAC
-	$(shell cd src; GOOS=darwin GOARCH=amd64 $(GOBUILD) -o '$(BIN_DARWIN)' -v $(CMD_PATH))
+	$(shell cd src; GOOS=darwin GOARCH=amd64 $(GOBUILD) -o '$(BIN_DARWIN)' $(CMD_PATH))
 	#WINDOWS 64
-	$(shell cd src; GOOS=windows GOARCH=amd64 $(GOBUILD) -o '$(BIN_WINDOWS)' -v $(CMD_PATH))
+	$(shell cd src; GOOS=windows GOARCH=amd64 $(GOBUILD) -o '$(BIN_WINDOWS)' $(CMD_PATH))
 
 sh-unix:
 	echo '#!/bin/sh' > $(SH)
