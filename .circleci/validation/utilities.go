@@ -2,6 +2,7 @@ package validation
 
 import (
 	"bytes"
+	"errors"
 	"fmt"
 	"io/ioutil"
 	"os"
@@ -77,38 +78,54 @@ func check(err error) {
 	}
 }
 
-func validateMakefile(path string) {
+func validateMakefile(path string) (string, bool) {
+	var success string
+
 	files, err := ioutil.ReadDir(path)
 	check(err)
 
 	for _, file := range files {
 		if file.Name() == "Makefile" {
-			runBuild(path)
+			fail, err := runBuild(path)
+			if fail {
+				errMsg := fmt.Sprintf("Build failed: %s\n%s", path, err)
+
+				return errMsg, true
+			}
+
+			path = strings.ReplaceAll(path, "/", " ")
+			success = fmt.Sprintf("Build success: %s", path)
 		}
 	}
+
+	return success, false
 }
 
-func runBuild(path string) {
+func runBuild(path string) (bool, error) {
 	var cmd *exec.Cmd
-	var stderr, stdout bytes.Buffer
+	var stderr bytes.Buffer
 
-	err := os.Chdir(path)
-	check(err)
+	if err := os.Chdir(path); err != nil {
+		return true, err
+	}
 
 	cmd = exec.Command("make", "build")
 	cmd.Stderr = &stderr
-	cmd.Stdout = &stdout
-
 	if err := cmd.Run(); err != nil {
 		if stderr.Bytes() != nil {
-			fmt.Sprintf("Build failed: \n%s \n%s", stderr.String(), err)
+			errMsg := fmt.Sprintf("Build failed: \n%s \n%s", stderr.String(), err)
+
+			return true, errors.New(errMsg)
 		}
+
+		return true, err
 	}
 
 	if stderr.String() != "" {
-		fmt.Printf("Build failed: %s\n", stderr.String())
-		os.Exit(1)
+		errMsg := fmt.Sprintf("Build failed: %s", stderr.String())
+
+		return true, errors.New(errMsg)
 	}
 
-	fmt.Printf("Build success: %s\n", path)
+	return false, nil
 }
