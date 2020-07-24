@@ -25,6 +25,7 @@ go-build:
 	$(shell cd src; GOOS=darwin GOARCH=amd64 $(GOBUILD) -o '$(BIN_DARWIN)' -v $(CMD_PATH))
 	#WINDOWS 64
 	$(shell cd src; GOOS=windows GOARCH=amd64 $(GOBUILD) -o '$(BIN_WINDOWS)' -v $(CMD_PATH))
+	cp -r src/files $(BIN_FOLDER)/files
 
 sh-unix:
 	echo '#!/bin/sh' > $(SH)
