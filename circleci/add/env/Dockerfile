@@ -1,8 +1,11 @@
-FROM alpine:latest
+FROM cimg/go:1.14
 
-ADD . .
-RUN chmod +x set_umask.sh
+USER root
+
+RUN mkdir /rit
+COPY . /rit
+RUN chmod +x /rit/set_umask.sh
 
 WORKDIR /app
-ENTRYPOINT ["/set_umask.sh"]
-CMD ["/linux/main"]
+ENTRYPOINT ["/rit/set_umask.sh"]
+CMD ["/rit/run.sh"]
