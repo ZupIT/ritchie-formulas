@@ -1,6 +1,7 @@
 {
   "execution": [
-    "local"
+    "local",
+    "docker"
   ],
   "os": {
     "deps": [],
@@ -11,6 +12,7 @@
     ]
   },
   "tags": [
+    "scaffold",
     "generate",
     "coffee-python"
   ]
