@@ -1,0 +1,32 @@
+{
+  "description": "Search and replace a key-value format recursively.",
+  "inputs" : [
+    {
+      "name" : "format",
+      "type" : "text",
+      "default" : "yml",
+      "items" : ["yml", "hcl"],
+      "label" : "In which format is your key-value?"
+    },
+    {
+      "name" : "key",
+      "type" : "text",
+      "label" : "Enter your key name:",
+      "cache" : {
+        "active": true,
+        "qty" : 6,
+        "newLabel" : "Type new value. "
+      }
+    },
+    {
+      "name" : "value",
+      "type" : "text",
+      "label" : "Enter your new value:",
+      "cache" : {
+        "active": true,
+        "qty" : 6,
+        "newLabel" : "Type new value. "
+      }
+    }
+  ]
+}
