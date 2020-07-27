@@ -85,18 +85,39 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Running Unit tests
+          name: Running unit tests
           command: |
-            go test -v ./.circleci/validation/...
+            go test -v ./.circleci/validation/structure/...
 
       - store_test_results:
           path: *TEST_RESULTS_DIR
       - store_artifacts:
           path: *TEST_RESULTS_DIR
       - run:
-          name: codecov upload
+          name: Codecov upload
           when: always
           command: bash <(curl -s https://codecov.io/bash)
+
+    make_tests:
+    executor: ritchie-executor
+    environment:
+      <<: *ENVIRONMENT
+    steps:
+      - checkout
+      - run:
+          name: Running make build e make test
+          command: |
+            go test -v ./.circleci/validation/make/...
+
+      - store_test_results:
+          path: *TEST_RESULTS_DIR
+      - store_artifacts:
+          path: *TEST_RESULTS_DIR
+      - run:
+          name: Codecov upload
+          when: always
+          command: bash <(curl -s https://codecov.io/bash)
+
 workflows:
   build-for-requests:
     jobs:
