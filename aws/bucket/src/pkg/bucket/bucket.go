@@ -23,6 +23,7 @@ const (
 	list   = "list"
 	delete = "delete"
 	create = "create"
+	clean  = "clean"
 )
 
 func (in Inputs) Run() {
@@ -46,6 +47,8 @@ func (in Inputs) Run() {
 		in.runCreate(svc)
 	case delete:
 		in.runDelete(svc)
+	case clean:
+		in.runClean(svc)
 	default:
 		fmt.Printf("Command (%s) not found\n", in.Command)
 	}
@@ -105,6 +108,55 @@ func (in Inputs) runDelete(svc *s3.S3) {
 			return
 		}
 		fmt.Printf("Bucket %s deleted.\n", bSelect)
+	}
+}
+
+func (in Inputs) runClean(svc *s3.S3) {
+	res, err := in.list(svc)
+	if err != nil {
+		fmt.Printf("Error list bucket to clean, error: %v", err)
+	}
+	var bItems []string
+	for _, b := range res.Buckets {
+		bItems = append(bItems, aws.StringValue(b.Name))
+	}
+	if len(bItems) == 0 {
+		fmt.Printf("Not found bucket to clean")
+		return
+	}
+	bSelect, _ := prompt.List("Select bucket to clean: ", bItems)
+	confirm, _ := prompt.List(fmt.Sprintf("Confirm clean bucket name: %s", bSelect), []string{"NO", "YES"})
+	switch confirm {
+	case "NO":
+		fmt.Printf("Bucket %s not cleaned\n", bSelect)
+	case "YES":
+		fmt.Printf("Cleaning...")
+		listObjectsInput := &s3.ListObjectsInput{
+			Bucket: aws.String(bSelect),
+			MaxKeys: aws.Int64(20),
+		}
+
+		pageNum := 0
+		svc.ListObjectsPages(listObjectsInput, func(page *s3.ListObjectsOutput, lastPage bool) bool {
+			pageNum++
+			for _, value := range page.Contents {
+				deleteObjectInput := &s3.DeleteObjectInput{
+					Bucket: aws.String(bSelect),
+					Key: value.Key,
+				}
+
+				_, err := svc.DeleteObject(deleteObjectInput)
+				if err != nil {
+					fmt.Printf("Error on delete object %s, error: %v\n", err)
+					return false
+				}
+
+				fmt.Println("Deleted object: ", *value.Key)
+			}
+			return true
+		})
+
+		fmt.Printf("Bucket %s cleaned.\n", bSelect)
 	}
 }
 
