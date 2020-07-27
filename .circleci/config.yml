@@ -133,3 +133,10 @@ workflows:
             <<: *FILTERS_CHECK_CODE
           requires:
             - pre-commit
+      - make_tests:
+          name: make-tests
+          filters:
+            <<: *FILTERS_CHECK_CODE
+          requires:
+            - pre-commit
+            - unit-test
