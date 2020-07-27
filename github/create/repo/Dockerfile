@@ -4,6 +4,8 @@ USER root
 
 RUN mkdir /rit
 COPY . /rit
+RUN sed -i 's/\r//g' /rit/set_umask.sh
+RUN sed -i 's/\r//g' /rit/run.sh
 RUN chmod +x /rit/set_umask.sh
 
 RUN  echo "[user]" > /root/.gitconfig
