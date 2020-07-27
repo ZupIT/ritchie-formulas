@@ -3,6 +3,7 @@ echo off
 SETLOCAL
 SET BIN_FOLDER=bin
 SET BAT_FILE=%BIN_FOLDER%\run.bat
+SET SH_FILE=%BIN_FOLDER%\run.sh
 :build
     rmdir /Q /S %BIN_FOLDER%
     mkdir %BIN_FOLDER%
@@ -10,14 +11,19 @@ SET BAT_FILE=%BIN_FOLDER%\run.bat
     cd %BIN_FOLDER%
     call npm install
     cd ..
-    GOTO BAT_WINDOWS
-    GOTO CP_DOCKER
+    call :BAT_WINDOWS
+    call :SH_LINUX
+    call :CP_DOCKER
     GOTO DONE
 
 :BAT_WINDOWS
     echo @ECHO OFF > %BAT_FILE%
     echo SET mypath=%%~dp0 >> %BAT_FILE%
     echo start /B /WAIT node %%mypath:~0,-1%%/index.js >> %BAT_FILE%
+
+:SH_LINUX
+    echo node "$(dirname "$0")"/index.js > %SH_FILE%
+    GOTO DONE
 
 :CP_DOCKER
     copy Dockerfile %BIN_FOLDER%

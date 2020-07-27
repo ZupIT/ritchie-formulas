@@ -7,8 +7,10 @@ SET GOBUILD=%GOCMD% build
 SET CMD_PATH=main.go
 SET BIN_FOLDER=..\bin
 SET DIST_WIN_DIR=%BIN_FOLDER%\windows
+SET DIST_LINUX_DIR=%BIN_FOLDER%\linux
 SET BIN_WIN=%BINARY_NAME%.exe
 SET BAT_FILE=%BIN_FOLDER%\run.bat
+SET SH_FILE=%BIN_FOLDER%\run.sh
 
 :build
     cd src
@@ -16,6 +18,7 @@ SET BAT_FILE=%BIN_FOLDER%\run.bat
     SET GO111MODULE=on
     for /f %%i in ('go list -m') do set MODULE=%%i
     CALL :windows
+    CALL :linux
     GOTO CP_DOCKER
     GOTO DONE
     cd ..
@@ -28,6 +31,14 @@ SET BAT_FILE=%BIN_FOLDER%\run.bat
     echo @ECHO OFF > %BAT_FILE%
     echo SET mypath=%%~dp0 >> %BAT_FILE%
     echo start /B /WAIT %%mypath:~0,-1%%/windows/main.exe >> %BAT_FILE%
+    GOTO DONE
+
+:linux
+    SET CGO_ENABLED=0
+	SET GOOS=linux
+    SET GOARCH=amd64
+    %GOBUILD% -tags release -o %DIST_LINUX_DIR%\%BINARY_NAME% -v %CMD_PATH%
+    echo "$(dirname "$0")"/linux/%BINARY_NAME% > %SH_FILE%
     GOTO DONE
 
 :CP_DOCKER
