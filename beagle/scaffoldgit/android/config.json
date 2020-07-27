@@ -1,0 +1,75 @@
+{
+  "description": "Initialize an android project with beagle and github",
+  "inputs": [
+    {
+      "name": "project_name",
+      "type": "text",
+      "label": "Project name: "
+    },
+    {
+      "name": "package_name",
+      "type": "text",
+      "label": "Package name: (ex: com.example)",
+      "cache": {
+        "active": true,
+        "qty": 4,
+        "newLabel": "Type new value."
+      }
+    },
+    {
+      "name": "beagle_version",
+      "type": "text",
+      "label": "Beagle version: (ex: 1.0.0)",
+      "cache": {
+        "active": true,
+        "qty": 4,
+        "newLabel": "Type new value."
+      }
+    },
+    {
+      "name": "beagle_url",
+      "type": "text",
+      "label": "BFF url: (ex: https://URL)",
+      "cache": {
+        "active": true,
+        "qty": 4,
+        "newLabel": "Type new value."
+      }
+    },
+    {
+      "name": "min_sdk",
+      "type": "text",
+      "label": "Min version SDK android: (ex: 21)",
+      "cache": {
+        "active": true,
+        "qty": 4,
+        "newLabel": "Type new value."
+      }
+    },
+    {
+      "name": "target_sdk",
+      "type": "text",
+      "label": "Target version SDK: (ex: 29)",
+      "cache": {
+        "active": true,
+        "qty": 4,
+        "newLabel": "Type new value."
+      }
+    },
+    {
+      "name": "repository",
+      "type": "bool",
+      "default": "false",
+      "items": ["false", "true"],
+      "label": "Create a github repository?: "
+    },
+    {
+      "name": "username",
+      "type": "CREDENTIAL_GITHUB_USERNAME"
+    },
+    {
+      "name": "token",
+      "type": "CREDENTIAL_GITHUB_TOKEN"
+    }
+  ]
+}
