@@ -98,15 +98,15 @@ jobs:
           when: always
           command: bash <(curl -s https://codecov.io/bash)
 
-    make_tests:
+  make_tests:
     executor: ritchie-executor
     environment:
       <<: *ENVIRONMENT
     steps:
       - checkout
       - run:
-          name: Running make build e make test
-          command: |
+        name: Running make build e make test
+        command: |
             go test -v ./.circleci/validation/make/...
 
       - store_test_results:
