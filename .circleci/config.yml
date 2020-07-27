@@ -107,7 +107,7 @@ jobs:
       - run:
         name: Running make build e make test
         command: |
-            go test -v ./.circleci/validation/make/...
+          go test -v ./.circleci/validation/make/...
 
       - store_test_results:
           path: *TEST_RESULTS_DIR
