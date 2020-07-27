@@ -153,9 +153,7 @@ func (in Inputs) runClean(svc *s3.S3) {
 			MaxKeys: aws.Int64(20),
 		}
 
-		pageNum := 0
 		svc.ListObjectsPages(listObjectsInput, func(page *s3.ListObjectsOutput, lastPage bool) bool {
-			pageNum++
 			for _, value := range page.Contents {
 				deleteObjectInput := &s3.DeleteObjectInput{
 					Bucket: aws.String(bSelect),
