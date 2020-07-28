@@ -58,6 +58,7 @@ func validateMakefile(path string) (string, bool) {
 		if file.Name() == "Makefile" {
 			fail, err := runBuild(path)
 			if fail {
+				path = strings.ReplaceAll(path, "/", " ")
 				errMsg := fmt.Sprintf("Build failed: %s\n%s", path, err)
 
 				return errMsg, true
@@ -89,12 +90,6 @@ func runBuild(path string) (bool, error) {
 		}
 
 		return true, err
-	}
-
-	if stderr.String() != "" {
-		errMsg := fmt.Sprintf("Build failed: %s", stderr.String())
-
-		return true, errors.New(errMsg)
 	}
 
 	return false, nil
