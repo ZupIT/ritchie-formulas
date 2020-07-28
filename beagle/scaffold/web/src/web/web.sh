@@ -36,17 +36,21 @@ run() {
     cd $CURRENT_PWD/$slug_name
 
     sed "s,\${bff_url},$BFF_URL," -i src/beagle/beagle-service.ts
-    sed "s,\${project_name},$PROJECT_NAME," -i package.json
   else
     cp -r web/beagle-angular/* $CURRENT_PWD/$slug_name
 
     cd $CURRENT_PWD/$slug_name
 
     sed "s,\${bff_url},$BFF_URL," -i src/app/beagle.module.ts
-    sed "s,\${project_name},$PROJECT_NAME," -i package.json
   fi
+
+  sed "s,\${project_name},$PROJECT_NAME," -i package.json
+  sed "s,\${beagle_version},$BEAGLE_VERSION," -i package.json
 
   if [[ $DOCKER_EXECUTION ]]; then
     chown 1000:1000 -R $CURRENT_PWD/$slug_name
   fi
+
+  echo "Project successfully created!!"
+  echo "📁  ./$slug_name"
 }
