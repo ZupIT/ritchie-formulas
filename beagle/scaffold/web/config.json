@@ -1,0 +1,27 @@
+{
+  "description": "Initialize a web project with beagle",
+  "inputs": [
+    {
+      "name": "project_name",
+      "type": "text",
+      "label": "Project name: "
+    },
+    {
+      "name": "framework",
+      "type": "text",
+      "default": "ReactJS",
+      "items": ["ReactJS", "Angular"],
+      "label": "Choose: "
+    },
+    {
+      "name": "bff_url",
+      "type": "text",
+      "label": "BFF url: (ex: https://URL)",
+      "cache": {
+        "active": true,
+        "qty": 4,
+        "newLabel": "Type new value."
+      }
+    }
+  ]
+}

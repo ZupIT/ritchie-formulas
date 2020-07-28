@@ -616,29 +616,44 @@
         "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       }
     },
-	{
-		"parent": "root",
-		"usage": "utils",
-		"help": "utils commands"
-	},
-	{
-		"parent": "root_utils",
-		"usage": "replace",
-		"help": "utils replace"
-	},
-	{
-		"parent": "root_utils_replace",
-		"usage": "keyvalue",
-		"help": "replace keyvalue",
-		"formula": {
-			"path": "utils/replace/keyvalue",
-			"bin": "keyvalue.sh",
-			"binLinux": "keyvalue.sh",
-			"binDarwin": "keyvalue.sh",
-			"binWindows": "keyvalue.bat",
-			"bundle": "${so}.zip",
-			"config": "config.json"
-		}
-	}
+    {
+      "parent": "root",
+      "usage": "utils",
+      "help": "utils commands"
+    },
+    {
+      "parent": "root_utils",
+      "usage": "replace",
+      "help": "utils replace"
+    },
+    {
+      "parent": "root_utils_replace",
+      "usage": "keyvalue",
+      "help": "replace keyvalue",
+      "formula": {
+        "path": "utils/replace/keyvalue",
+        "bin": "keyvalue.sh",
+        "binLinux": "keyvalue.sh",
+        "binDarwin": "keyvalue.sh",
+        "binWindows": "keyvalue.bat",
+        "bundle": "${so}.zip",
+        "config": "config.json"
+      }
+    },
+    {
+      "parent": "root_beagle_scaffold",
+      "usage": "web",
+      "help": "scaffold web",
+      "formula": {
+        "path": "beagle/scaffold/web",
+        "bin": "web.sh",
+        "binLinux": "web.sh",
+        "binDarwin": "web.sh",
+        "binWindows": "web.bat",
+        "bundle": "commons.zip",
+        "config": "config.json",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      }
+    }
   ]
 }
