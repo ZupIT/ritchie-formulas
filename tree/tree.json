@@ -36,6 +36,11 @@
       "help": "Delete aws objects"
     },
     {
+      "parent": "root_aws",
+      "usage": "clean",
+      "help": "Clean aws objects"
+    },
+    {
       "parent": "root_aws_create",
       "usage": "bucket",
       "help": "Create bucket",
