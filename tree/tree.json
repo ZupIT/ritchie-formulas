@@ -60,6 +60,18 @@
       }
     },
     {
+      "parent": "root_aws_clean",
+      "usage": "bucket",
+      "help": "Clean bucket",
+      "formula": {
+        "path": "aws/bucket",
+        "bin": "aws-bucket-${so}",
+        "bundle": "${so}.zip",
+        "config": "clean-config.json",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      }
+    },
+    {
       "parent": "root_aws_delete",
       "usage": "bucket",
       "help": "Delete bucket",
