@@ -2,23 +2,25 @@ package make
 
 import (
 	"fmt"
+	"strings"
 	"testing"
 )
 
-var root = "../../../"
+const root = "../../../"
 
 func TestBuild(t *testing.T) {
 	dirs := getFullContentFromFormula(root)
 
 	for dir, language := range dirs {
 		if language == "go" {
-			message, err := validateMakefile(dir)
+			err := validateMakefile(dir)
 
-			if err {
-				t.Errorf(message)
+			if err != nil {
+				t.Errorf("%s", err)
 			}
 
-			fmt.Println(message)
+			path := strings.ReplaceAll(dir, "/", " ")
+			fmt.Printf("Build success: %s\n", path)
 		}
 	}
 }

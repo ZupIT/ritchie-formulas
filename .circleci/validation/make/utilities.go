@@ -48,36 +48,31 @@ func returnFilesFromFolder(root string) ([]string, error) {
 	return files, err
 }
 
-func validateMakefile(path string) (string, bool) {
-	var success string
-
+func validateMakefile(path string) error {
 	files, err := ioutil.ReadDir(path)
 	check(err)
 
 	for _, file := range files {
 		if file.Name() == "Makefile" {
-			fail, err := runBuild(path)
-			if fail {
+			err := runBuild(path)
+			if err != nil {
 				path = strings.ReplaceAll(path, "/", " ")
 				errMsg := fmt.Sprintf("Build failed: %s\n%s", path, err)
 
-				return errMsg, true
+				return errors.New(errMsg)
 			}
-
-			path = strings.ReplaceAll(path, "/", " ")
-			success = fmt.Sprintf("Build success: %s", path)
 		}
 	}
 
-	return success, false
+	return nil
 }
 
-func runBuild(path string) (bool, error) {
+func runBuild(path string) error {
 	var cmd *exec.Cmd
 	var stderr bytes.Buffer
 
 	if err := os.Chdir(path); err != nil {
-		return true, err
+		return err
 	}
 
 	cmd = exec.Command("make", "build")
@@ -86,11 +81,11 @@ func runBuild(path string) (bool, error) {
 		if stderr.Bytes() != nil {
 			errMsg := fmt.Sprintf("Build failed: \n%s \n%s", stderr.String(), err)
 
-			return true, errors.New(errMsg)
+			return errors.New(errMsg)
 		}
 
-		return true, err
+		return err
 	}
 
-	return false, nil
+	return nil
 }
