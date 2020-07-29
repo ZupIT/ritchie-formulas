@@ -46,18 +46,15 @@ createPackage() {
 }
 
 replacePackageName() {
-  cat app/src/main/AndroidManifest.xml | sed -e "s,\${package_name},$1," -i app/src/main/AndroidManifest.xml
+  package_name=$1
+  shift
 
-  cat app/build.gradle | sed -e "s,\${package_name},$1," -i app/build.gradle
-
-  cat app/src/androidTest/java/$2/ExampleInstrumentedTest.kt | sed -e "s,\${package_name},$1," -i app/src/androidTest/java/$2/ExampleInstrumentedTest.kt
-  
-  cat app/src/main/java/$2/MainActivity.kt | sed -e "s,\${package_name},$1," -i app/src/main/java/$2/MainActivity.kt
-  cat app/src/main/java/$2/activities/AppBeagleActivity.kt | sed -e "s,\${package_name},$1," -i app/src/main/java/$2/activities/AppBeagleActivity.kt
-  cat app/src/main/java/$2/config/AppAplication.kt | sed -e "s,\${package_name},$1," -i app/src/main/java/$2/config/AppAplication.kt
-  cat app/src/main/java/$2/config/AppBeagleConfig.kt | sed -e "s,\${package_name},$1," -i app/src/main/java/$2/config/AppBeagleConfig.kt
-
-  cat app/src/test/java/$2/ExampleUnitTest.kt | sed -e "s,\${package_name},$1," -i app/src/test/java/$2/ExampleUnitTest.kt
+  local arr=("$@")
+  for file in "${arr[@]}"
+  do
+    echo $file
+    sed "s/\${package_name}/$package_name/" -i $file
+  done
 }
 
 run() {
@@ -71,22 +68,33 @@ run() {
 
   cd $CURRENT_PWD/$slug_name
   
-  cat settings.gradle | sed -e "s,\${project_name},$PROJECT_NAME," -i settings.gradle
+  sed "s,\${project_name},$PROJECT_NAME," -i settings.gradle
 
-  cat app/src/main/res/values/strings.xml | sed -e "s,\${project_name},$PROJECT_NAME," -i app/src/main/res/values/strings.xml
+  sed "s,\${project_name},$PROJECT_NAME," -i app/src/main/res/values/strings.xml
 
-  cat app/build.gradle | sed -e "s,\${beagle_version},$BEAGLE_VERSION," -i app/build.gradle
+  sed "s,\${beagle_version},$BEAGLE_VERSION," -i app/build.gradle
 
   formatted_package_name=$(formatPackageName $PACKAGE_NAME)
   createPackage $formatted_package_name
 
-  cat app/src/main/java/$formatted_package_name/config/AppBeagleConfig.kt | sed -e "s,\${beagle_url},$BEAGLE_URL," -i app/src/main/java/$formatted_package_name/config/AppBeagleConfig.kt
+  sed "s,\${beagle_url},$BEAGLE_URL," -i app/src/main/java/$formatted_package_name/config/AppBeagleConfig.kt
 
-  cat app/build.gradle | sed -e "s,\${min_sdk},$MIN_SDK," -i app/build.gradle
+  sed "s,\${min_sdk},$MIN_SDK," -i app/build.gradle
 
-  cat app/build.gradle | sed -e "s,\${target_sdk},$TARGET_SDK," -i app/build.gradle
+  sed "s,\${target_sdk},$TARGET_SDK," -i app/build.gradle
 
-  replacePackageName $PACKAGE_NAME $formatted_package_name
+  files=(
+    app/src/main/AndroidManifest.xml
+    app/build.gradle
+    app/src/androidTest/java/$formatted_package_name/ExampleInstrumentedTest.kt
+    app/src/main/java/$formatted_package_name/MainActivity.kt
+    app/src/main/java/$formatted_package_name/activities/AppBeagleActivity.kt
+    app/src/main/java/$formatted_package_name/config/AppAplication.kt
+    app/src/main/java/$formatted_package_name/config/AppBeagleConfig.kt
+    app/src/test/java/$formatted_package_name/ExampleUnitTest.kt
+  )
+
+  replacePackageName $PACKAGE_NAME "${files[@]}"
 
   if [[ $DOCKER_EXECUTION ]]; then
     chown 1000:1000 -R $CURRENT_PWD/$slug_name
