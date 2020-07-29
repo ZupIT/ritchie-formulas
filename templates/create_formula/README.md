@@ -76,8 +76,8 @@ Caso você adicione o campo *dockerImageBuilder* no **config.json**, o
  ritchie vai tentar fazer o build utilizando o docker.
  Com isso, ele vai rodar o arquivo **Makefile** dentro de um docker com a
  imagem do campo **dockerImageBuilder**. O build com docker deve gerar
- a mesma pasta bin que um build local, sendo que a grande vantagem do build com 
- docker é que o usuário não precisar ter as ferramentas necessárias para 
+ a mesma pasta bin que um build local, sendo que a grande vantagem do build com
+ docker é que o usuário não precisar ter as ferramentas necessárias para
  o build instaladas na máquina.
 
 ### Run com Docker
