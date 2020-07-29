@@ -44,7 +44,7 @@ run() {
     sed "s,\${bff_url},$BFF_URL," -i src/app/beagle.module.ts
   fi
 
-  sed "s,\${project_name},$PROJECT_NAME," -i package.json
+  sed "s,\${project_name},$slug_name," -i package.json
   sed "s,\${beagle_version},$BEAGLE_VERSION," -i package.json
 
   if [[ $DOCKER_EXECUTION ]]; then
