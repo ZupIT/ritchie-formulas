@@ -3,7 +3,7 @@
   "inputs": [
     {
       "name": "access_key",
-      "type": "CREDENTIAL_AWS_ACCESSKEYID"
+      "type": "CREDENTIAL_AWS_ACCESSKEY"
     },
     {
       "name": "secret_access_key",
