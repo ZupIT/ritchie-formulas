@@ -1,0 +1,74 @@
+{
+  "description": "Initialize a backend project with beagle",
+  "inputs": [
+    {
+      "name": "project_name",
+      "type": "text",
+      "label": "Project name: "
+    },
+    {
+      "name": "package_name",
+      "type": "text",
+      "label": "Package name: (ex: com.example)",
+      "cache": {
+        "active": true,
+        "qty": 4,
+        "newLabel": "Type new value."
+      }
+    },
+    {
+      "name": "jdk",
+      "type": "text",
+      "label": "JDK version(8+): (ex: 13)",
+      "cache": {
+        "active": true,
+        "qty": 4,
+        "newLabel": "Type new value."
+      }
+    },
+    {
+      "name": "kotlin_version",
+      "type": "text",
+      "label": "Kotlin version(1.3+): (ex: 1.3.72)",
+      "cache": {
+        "active": true,
+        "qty": 4,
+        "newLabel": "Type new value."
+      }
+    },
+    {
+      "name": "beagle_version",
+      "type": "text",
+      "label": "Beagle version: (ex: 1.0.2)",
+      "cache": {
+        "active": true,
+        "qty": 4,
+        "newLabel": "Type new value."
+      }
+    },
+    {
+      "name": "bff_url",
+      "type": "text",
+      "label": "BFF url: (ex: https://URL)",
+      "cache": {
+        "active": true,
+        "qty": 4,
+        "newLabel": "Type new value."
+      }
+    },
+    {
+      "name": "framework",
+      "type": "text",
+      "default": "Spring",
+      "items": ["Spring", "Micronaut"],
+      "label": "Choose: "
+    },
+    {
+      "name": "cors",
+      "type": "bool",
+      "default": "true",
+      "items": ["true", "false"],
+      "label": "Configure Cors? "
+    }
+  ]
+}
