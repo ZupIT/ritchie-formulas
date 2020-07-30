@@ -2,4 +2,4 @@
 
 . $PWD/fork/fork.sh --source-only
 
-run $PUSH $SETUPSTREAM
+run $BRANCH $PUSH $SETUPSTREAM
