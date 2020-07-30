@@ -52,8 +52,7 @@ replacePackageName() {
   local arr=("$@")
   for file in "${arr[@]}"
   do
-    echo $file
-    sed "s/\${package_name}/$package_name/" -i $file
+    sed -i -e "s/\${package_name}/$package_name/" $file
   done
 }
 
@@ -68,20 +67,20 @@ run() {
 
   cd $CURRENT_PWD/$slug_name
   
-  sed "s,\${project_name},$PROJECT_NAME," -i settings.gradle
+  sed -i -e "s,\${project_name},$PROJECT_NAME," settings.gradle
 
-  sed "s,\${project_name},$PROJECT_NAME," -i app/src/main/res/values/strings.xml
+  sed -i -e "s,\${project_name},$PROJECT_NAME," app/src/main/res/values/strings.xml
 
-  sed "s,\${beagle_version},$BEAGLE_VERSION," -i app/build.gradle
+  sed -i -e "s,\${beagle_version},$BEAGLE_VERSION," app/build.gradle
 
   formatted_package_name=$(formatPackageName $PACKAGE_NAME)
   createPackage $formatted_package_name
 
-  sed "s,\${beagle_url},$BEAGLE_URL," -i app/src/main/java/$formatted_package_name/config/AppBeagleConfig.kt
+  sed -i -e "s,\${beagle_url},$BEAGLE_URL," app/src/main/java/$formatted_package_name/config/AppBeagleConfig.kt
 
-  sed "s,\${min_sdk},$MIN_SDK," -i app/build.gradle
+  sed -i -e "s,\${min_sdk},$MIN_SDK," app/build.gradle
 
-  sed "s,\${target_sdk},$TARGET_SDK," -i app/build.gradle
+  sed -i -e "s,\${target_sdk},$TARGET_SDK," app/build.gradle
 
   files=(
     app/src/main/AndroidManifest.xml
