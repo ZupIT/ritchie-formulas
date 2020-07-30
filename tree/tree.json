@@ -36,6 +36,11 @@
       "help": "Delete aws objects"
     },
     {
+      "parent": "root_aws",
+      "usage": "clean",
+      "help": "Clean aws objects"
+    },
+    {
       "parent": "root_aws_create",
       "usage": "bucket",
       "help": "Create bucket",
@@ -56,6 +61,18 @@
         "bin": "aws-bucket-${so}",
         "bundle": "${so}.zip",
         "config": "list-config.json",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      }
+    },
+    {
+      "parent": "root_aws_clean",
+      "usage": "bucket",
+      "help": "Clean bucket",
+      "formula": {
+        "path": "aws/bucket",
+        "bin": "aws-bucket-${so}",
+        "bundle": "${so}.zip",
+        "config": "clean-config.json",
         "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       }
     },
@@ -638,6 +655,21 @@
         "binWindows": "keyvalue.bat",
         "bundle": "${so}.zip",
         "config": "config.json"
+      }
+    },
+    {
+      "parent": "root_beagle_scaffold",
+      "usage": "backend",
+      "help": "scaffold backend",
+      "formula": {
+        "path": "beagle/scaffold/backend",
+        "bin": "backend.sh",
+        "binLinux": "backend.sh",
+        "binDarwin": "backend.sh",
+        "binWindows": "backend.bat",
+        "bundle": "commons.zip",
+        "config": "config.json",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       }
     },
     {

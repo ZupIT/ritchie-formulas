@@ -1,0 +1,20 @@
+micronaut:
+  application:
+    name: ${app_name}
+
+    beagle:
+    cache:
+    endpoint: exclude=/action
+
+    jackson:
+    serializationInclusion: NON_NULL
+    serialization.indentOutput: true
+
+    micronaut:
+    enabled: true
+    server:
+    cors:
+    configurations:
+    allowedOrigins: ${cors_url}
+    allowedMethods: GET, PUT, POST
+    allowedHeaders: Cache-Control
