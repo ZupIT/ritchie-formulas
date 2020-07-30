@@ -62,7 +62,7 @@ replacePackageName() {
   local arr=("$@")
   for file in "${arr[@]}"
   do
-    sed "s/\${package_name}/$package_name/" -i $file
+    sed -i -e "s/\${package_name}/$package_name/" $file
   done
 }
 
@@ -78,10 +78,10 @@ run() {
 
     cd $CURRENT_PWD/$slug_name
 
-    sed "s/\${artifact_name}/$slug_name/" -i pom.xml
-    sed "s/\${jdk}/$JDK/" -i pom.xml
-    sed "s/\${kotlin_version}/$KOTLIN_VERSION/" -i pom.xml
-    sed "s/\${beagle_version}/$BEAGLE_VERSION/" -i pom.xml
+    sed -i -e "s/\${artifact_name}/$slug_name/" pom.xml
+    sed -i -e "s/\${jdk}/$JDK/" pom.xml
+    sed -i -e "s/\${kotlin_version}/$KOTLIN_VERSION/" pom.xml
+    sed -i -e "s/\${beagle_version}/$BEAGLE_VERSION/" pom.xml
 
     formatted_package_name=$(formatPackageName $PACKAGE_NAME)
     createSpringPackage $formatted_package_name
@@ -99,7 +99,7 @@ run() {
 
     if [[ $CORS == "true" ]]; then
       read -p "Allowed origin url: (ex: https://localhost:3000) " url
-      sed "s,\${cors_url},$url," -i src/main/kotlin/$formatted_package_name/config/CorsConfig.kt
+      sed -i -e "s,\${cors_url},$url," src/main/kotlin/$formatted_package_name/config/CorsConfig.kt
     else
       rm -rf src/main/kotlin/$formatted_package_name/config
     fi
@@ -108,11 +108,11 @@ run() {
 
     cd $CURRENT_PWD/$slug_name
 
-    sed "s/\${app_name}/$slug_name/" -i src/main/resources/application.yml
-    sed "s/\${artifact_name}/$slug_name/" -i pom.xml
-    sed "s/\${jdk}/$JDK/" -i pom.xml
-    sed "s/\${kotlin_version}/$KOTLIN_VERSION/" -i pom.xml
-    sed "s/\${beagle_version}/$BEAGLE_VERSION/" -i pom.xml
+    sed -i -e "s/\${app_name}/$slug_name/" src/main/resources/application.yml
+    sed -i -e "s/\${artifact_name}/$slug_name/" pom.xml
+    sed -i -e "s/\${jdk}/$JDK/" pom.xml
+    sed -i -e "s/\${kotlin_version}/$KOTLIN_VERSION/" pom.xml
+    sed -i -e "s/\${beagle_version}/$BEAGLE_VERSION/" pom.xml
 
     formatted_package_name=$(formatPackageName $PACKAGE_NAME)
     createMicronautPackage $formatted_package_name
@@ -130,13 +130,13 @@ run() {
 
     if [[ $CORS == "true" ]]; then
       read -p "Allowed origin url: (ex: https://localhost:3000) " url
-      sed "s,\${cors_url},$url," -i src/main/resources/application.yml
+      sed -i -e "s,\${cors_url},$url," src/main/resources/application.yml
     else
-      sed "s/cors://" -i src/main/resources/application.yml
-      sed "s/configurations://" -i src/main/resources/application.yml
-      sed "s/allowedOrigins: \${cors_url}//" -i src/main/resources/application.yml
-      sed "s/allowedMethods: GET, PUT, POST//" -i src/main/resources/application.yml
-      sed "s/allowedHeaders: Cache-Control//" -i src/main/resources/application.yml
+      sed -i -e "s/cors://" src/main/resources/application.yml
+      sed -i -e "s/configurations://" src/main/resources/application.yml
+      sed -i -e "s/allowedOrigins: \${cors_url}//" src/main/resources/application.yml
+      sed -i -e "s/allowedMethods: GET, PUT, POST//" src/main/resources/application.yml
+      sed -i -e "s/allowedHeaders: Cache-Control//" src/main/resources/application.yml
     fi
   fi
 
