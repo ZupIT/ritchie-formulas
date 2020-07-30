@@ -1,11 +1,10 @@
-:: Java parameters
+:: Php parameters
 echo off
 SETLOCAL
 SET BIN_FOLDER=bin
 SET BAT_FILE=%BIN_FOLDER%\run.bat
 SET SH_FILE=%BIN_FOLDER%\run.sh
 :build
-    rmdir /Q /S %BIN_FOLDER%
     mkdir %BIN_FOLDER%
     xcopy /E /I src %BIN_FOLDER%
     CALL :BAT_WINDOWS

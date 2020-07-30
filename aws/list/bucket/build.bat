@@ -27,7 +27,7 @@ SET SH_FILE=%BIN_FOLDER%\run.sh
     SET CGO_ENABLED=
 	SET GOOS=windows
     SET GOARCH=amd64
-    %GOBUILD% -tags release -o %DIST_WIN_DIR%\%BIN_WIN% -v %CMD_PATH%
+    %GOBUILD% -tags release -o %DIST_WIN_DIR%\%BIN_WIN% %CMD_PATH%
     echo @ECHO OFF > %BAT_FILE%
     echo SET mypath=%%~dp0 >> %BAT_FILE%
     echo start /B /WAIT %%mypath:~0,-1%%/windows/main.exe >> %BAT_FILE%
@@ -37,7 +37,7 @@ SET SH_FILE=%BIN_FOLDER%\run.sh
     SET CGO_ENABLED=0
 	SET GOOS=linux
     SET GOARCH=amd64
-    %GOBUILD% -tags release -o %DIST_LINUX_DIR%\%BINARY_NAME% -v %CMD_PATH%
+    %GOBUILD% -tags release -o %DIST_LINUX_DIR%\%BINARY_NAME% %CMD_PATH%
     echo "$(dirname "$0")"/linux/%BINARY_NAME% > %SH_FILE%
     GOTO DONE
 
