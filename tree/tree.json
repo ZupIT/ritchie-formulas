@@ -671,6 +671,21 @@
         "config": "config.json",
         "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
       }
+    },
+    {
+      "parent": "root_beagle_scaffold",
+      "usage": "web",
+      "help": "scaffold web",
+      "formula": {
+        "path": "beagle/scaffold/web",
+        "bin": "web.sh",
+        "binLinux": "web.sh",
+        "binDarwin": "web.sh",
+        "binWindows": "web.bat",
+        "bundle": "commons.zip",
+        "config": "config.json",
+        "repoUrl": "https://commons-repo.ritchiecli.io/formulas"
+      }
     }
   ]
 }
