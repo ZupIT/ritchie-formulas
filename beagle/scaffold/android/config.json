@@ -19,7 +19,8 @@
     {
       "name": "beagle_version",
       "type": "text",
-      "label": "Beagle version: (ex: 1.0.0)",
+      "default": "1.0.0",
+      "label": "Beagle version: (default 1.0.0)",
       "cache": {
         "active": true,
         "qty": 4,
@@ -39,7 +40,8 @@
     {
       "name": "min_sdk",
       "type": "text",
-      "label": "Min version SDK android: (ex: 21)",
+      "default": "21",
+      "label": "Min version SDK android: (default 21)",
       "cache": {
         "active": true,
         "qty": 4,
@@ -49,7 +51,8 @@
     {
       "name": "target_sdk",
       "type": "text",
-      "label": "Target version SDK: (ex: 29)",
+      "default": "29",
+      "label": "Target version SDK: (default 29)",
       "cache": {
         "active": true,
         "qty": 4,
