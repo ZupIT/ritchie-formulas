@@ -19,7 +19,8 @@
     {
       "name": "jdk",
       "type": "text",
-      "label": "JDK version(8+): (ex: 13)",
+      "default": "13",
+      "label": "JDK version(8+): (default 13)",
       "cache": {
         "active": true,
         "qty": 4,
@@ -29,7 +30,8 @@
     {
       "name": "kotlin_version",
       "type": "text",
-      "label": "Kotlin version(1.3+): (ex: 1.3.72)",
+      "default": "1.3.72",
+      "label": "Kotlin version(1.3+): (default 1.3.72)",
       "cache": {
         "active": true,
         "qty": 4,
@@ -39,7 +41,8 @@
     {
       "name": "beagle_version",
       "type": "text",
-      "label": "Beagle version: (ex: 1.0.2)",
+      "default": "1.3.72",
+      "label": "Beagle version: (default 1.0.2)",
       "cache": {
         "active": true,
         "qty": 4,
