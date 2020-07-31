@@ -18,13 +18,11 @@ BIN_WINDOWS=$(BIN_FOLDER_WINDOWS)/$(BIN_NAME).exe
 build: go-build sh-unix bat-windows docker
 
 go-build:
-	$(shell cd src; mkdir -p $(BIN_FOLDER_DARWIN) $(BIN_FOLDER_LINUX) $(BIN_FOLDER_WINDOWS))
+	cd src; mkdir -p $(BIN_FOLDER_DARWIN) $(BIN_FOLDER_LINUX) $(BIN_FOLDER_WINDOWS)
 	#LINUX
-	$(shell cd src; CGO_ENABLED=0 GOOS=linux GOARCH=amd64 $(GOBUILD) -o '$(BIN_LINUX)' $(CMD_PATH))
+	cd src; CGO_ENABLED=0 GOOS=linux GOARCH=amd64 $(GOBUILD) -o '$(BIN_LINUX)' $(CMD_PATH)
 	#MAC
-	$(shell cd src; GOOS=darwin GOARCH=amd64 $(GOBUILD) -o '$(BIN_DARWIN)' $(CMD_PATH))
-	#WINDOWS 64
-	$(shell cd src; GOOS=windows GOARCH=amd64 $(GOBUILD) -o '$(BIN_WINDOWS)' $(CMD_PATH))
+	cd src; GOOS=darwin GOARCH=amd64 $(GOBUILD) -o '$(BIN_DARWIN)' $(CMD_PATH)
 
 sh-unix:
 	echo '#!/bin/sh' > $(SH)
