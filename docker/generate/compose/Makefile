@@ -23,7 +23,8 @@ go-build:
 	cd src; CGO_ENABLED=0 GOOS=linux GOARCH=amd64 $(GOBUILD) -o '$(BIN_LINUX)' $(CMD_PATH)
 	#MAC
 	cd src; GOOS=darwin GOARCH=amd64 $(GOBUILD) -o '$(BIN_DARWIN)' $(CMD_PATH)
-	#WINDOWS 64	cd src; GOOS=windows GOARCH=amd64 $(GOBUILD) -o '$(BIN_WINDOWS)' $(CMD_PATH)
+	#WINDOWS 64
+	cd src; GOOS=windows GOARCH=amd64 $(GOBUILD) -o '$(BIN_WINDOWS)' $(CMD_PATH)
 
 sh-unix:
 	echo '#!/bin/sh' > $(SH)
