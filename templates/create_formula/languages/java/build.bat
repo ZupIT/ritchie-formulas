@@ -6,7 +6,8 @@ SET BIN_NAME=Main.jar
 SET BAT_FILE=%BIN_FOLDER%\run.bat
 SET SH_FILE=%BIN_FOLDER%\run.sh
 :build
-    call mvn clean install
+    call mvn clean install 1>&2
+    if %errorlevel% neq 0 exit /b %errorlevel%
     mkdir %BIN_FOLDER%
     copy target\%BIN_NAME% %BIN_FOLDER%\%BIN_NAME%
     rmdir /Q /S target
