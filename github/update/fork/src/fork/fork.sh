@@ -2,27 +2,58 @@
 
 run() {
   checkCommand git
-  echo "Updating repo local: $CURRENT_PWD"
-  echo "Updating Branch: $BRANCH"
-  cd $CURRENT_PWD
+  echo -e '\e[0;32m✔ \e[1;30mUpdating repo local: '$CURRENT_PWD'\e[0m';
+  echo -e '\e[0;32m✔ \e[1;30mUpdating branch : '$BRANCH'\e[0m';
+  cd "$CURRENT_PWD" || exit
   status=$(git status | grep "nothing to commit\|nada a submeter")
-  if [ "$status" != "nothing to commit, working tree clean" && "$status" != "nada a submeter, diretório de trabalho vazio" ] ;then
+  if [ "$status" != "nothing to commit, working tree clean" ] && [ "$status" != "nada a submeter, diretório de trabalho vazio" ] ;then
     echo -e "✘️ \e[91mError: \e[0mis Commit or discard changes in working directory";
     exit 1;
   fi
+
   if $SETUPSTREAM; then
     read -p "Type original repo: (https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git) " originalrepo
     git remote add upstream $originalrepo
+    if $? != 0; then
+      echo -e "✘️ \e[91mError: \e[0mis Fail $ git remote add upstream $originalrepo";
+      exit 1;
+    else
+      echo -e '\e[0;32m✔ \e[1;30mRemote upstream added\e[0m';
+    fi
   fi
+
   git checkout $BRANCH
-  echo -e '\e[0;32m✔ \e[1;30mCheckout '$BRANCH'\e[0m'
+  if [ $? != 0 ]; then
+    echo -e "✘️ \e[91mError: \e[0mis Fail $ git checkout $BRANCH";
+    exit 1;
+  else
+    echo -e '\e[0;32m✔ \e[1;30mCheckout '$BRANCH' done\e[0m';
+  fi
+
   git fetch upstream
-  echo -e '\e[0;32m✔ \e[1;30mFetch upstream\e[0m'
+  if [ $? != 0 ]; then
+    echo -e "✘️ \e[91mError: \e[0mis Fail $ git fetch upstream";
+    exit 1;
+  else
+    echo -e '\e[0;32m✔ \e[1;30mFetch upstream done\e[0m';
+  fi
+
   git rebase upstream/$BRANCH $BRANCH
-  echo -e '\e[0;32m✔ \e[1;30mRebase upstream/'$BRANCH' '$BRANCH'\e[0m'
+  if [ $? != 0 ]; then
+    echo -e "✘️ \e[91mError: \e[0mis Fail $ git rebase upstream/$BRANCH $BRANCH";
+    exit 1;
+  else
+    echo -e '\e[0;32m✔ \e[1;30mRebase upstream/'$BRANCH' '$BRANCH' done\e[0m';
+  fi
+
   if $PUSH; then
     git push
-    echo -e '\e[0;32m✔ \e[1;30mPush\e[0m'
+    if [ $? != 0 ]; then
+      echo -e "✘️ \e[91mError: \e[0mis Fail $ git push";
+      exit 1;
+    else
+      echo -e '\e[0;32m✔ \e[1;30mPush done\e[0m';
+    fi
   fi
 }
 
