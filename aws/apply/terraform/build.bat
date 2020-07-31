@@ -19,6 +19,7 @@ SET SH_FILE=%BIN_FOLDER%\run.sh
     for /f %%i in ('go list -m') do set MODULE=%%i
     CALL :windows
     CALL :linux
+    if %errorlevel% neq 0 exit /b %errorlevel%
     GOTO CP_DOCKER
     GOTO DONE
     cd ..
