@@ -24,7 +24,7 @@ go-build:
 	#MAC
 	cd src; GOOS=darwin GOARCH=amd64 $(GOBUILD) -o '$(BIN_DARWIN)' $(CMD_PATH)
 	#WINDOWS 64
-    cd src; GOOS=windows GOARCH=amd64 $(GOBUILD) -o '$(BIN_WINDOWS)' $(CMD_PATH)
+	cd src; GOOS=windows GOARCH=amd64 $(GOBUILD) -o '$(BIN_WINDOWS)' $(CMD_PATH)
 
 	cp -r src/files $(BIN_FOLDER)/files
 
