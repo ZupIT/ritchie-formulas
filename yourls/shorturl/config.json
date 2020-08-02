@@ -1,0 +1,15 @@
+{
+  "description": "Formula to shorten an url",
+  "inputs" : [
+    {
+      "name" : "url_to_shorten",
+      "type" : "text",
+      "label" : "Enter the url to shorten : "
+    },
+    {
+      "name" : "keyword",
+      "type" : "text",
+      "label" : "Short url keyword [OPTIONAL]"
+    }
+  ]
+}
