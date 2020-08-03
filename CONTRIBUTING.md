@@ -1,6 +1,6 @@
 <!-- Contributing from template (https://github.com/docker/docker.github.io/blob/master/CONTRIBUTING.md) -->
 
-## Contributing
+# Contributing
 
 We value your contributions, and we want to make it as easy
 as possible to work in this repository. One of the first things to decide is
