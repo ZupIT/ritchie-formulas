@@ -76,10 +76,11 @@ Instead of "change this code",go for more like
 "what do you think about implementing this way?"
 
 - Explain why you suggested such correction, a change without meaning might not
-be productive.The author has all the right to counterargue a comment if she
-thinks it is for the best of the project.Provide a clear technical or business
-justification and even links or references if possible.Everybody loves to
-learn something new about coding to become a better developer.
+be productive. The author has all the right to counterargue a comment if she
+thinks it is for the best of the project. Provide a clear justification
+technical or business and even links or references if possible.
+Everybody loves to learn something new about coding to become a better
+developer.
 
 - Sometimes the literal answer might not be necessary. Instead of pasting the
 solution _in verbatim_, provide the right direction
@@ -89,8 +90,9 @@ and let the author figure out.
 because they are trying to help us.
 
 - If a debate gets more heated in a review,
-try to set a call or meeting to clarify points. Letting it get out of hand
-might affect the Ritchie community in general.
+try to set a call or meeting to clarify points, because in a meeting it is
+possible to talk and understand each other better than with texts in a
+pr review.
 
 - Requesting changes sometimes is perceived as a harsh action
 for some engineers. Try to do it with parsimony, usually when you spot a
