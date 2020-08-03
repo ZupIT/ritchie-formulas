@@ -4,49 +4,37 @@
 
 <img class="special-img-class" src="/docs/img/ritchie-banner.png" />
 
-# Ritchie commons formula repository
+# Ritchie's commons formula repository
 
 This repository contains the community formulas which can be executed by the [ritchie-cli](https://github.com/ZupIT/ritchie-cli).
 
-## Contribute to the Repository with your formulas
+## Create a new formula
 
 1. Fork the repository.
-2. Create a branch: 
-```bash
-    git checkout -b <branch_name>
-``` 
-3. Create a new formula, using the forked repository as a Ritchie workspace:
-```bash
-    rit create formula
-```
-4. Build and use the new formula:
-```bash
-    rit build formula
-```
-or use watch to watch changes on formula code
-```bash
-    rit build formula --watch
-```
-5. Commit your implementation:
-```bash
-    git add *
-    git commit -m '<commit_message>'
-```
-6. Push your branch: 
-```bash
-    git push origin
-```
-7. Open a pull request on the repository for analysis.
+1. Create a branch:`git checkout -b <branch_name>`
+1. Create a new formula, using the
+ forked repository as a Ritchie workspace: `rit create formula`
+1. Build and use the new formula: `rit build formula`
+ or use --watch to watch changes on formula code: `rit build formula --watch`
+1. Commit your implementation.
+1. Push your branch.
+1. Open a pull request on the repository for analysis.
+
+## Add support to other languages on create formula
+
+The rit create formula command use the folder `/templates/create_formula`
+to list the languages options. If you like to edit some language template
+or to add more language to create formula command please access
+the following tutorial:
+[LanguagesTemplateTutorial](https://github.com/zupIt/ritchie-formulas)
 
 ## Full Documentation
 
 - [Gitbook](https://docs.ritchiecli.io)
 
-
 ## Contributing
 
 [Contribute to the Ritchie community](https://github.com/ZupIT/ritchie-cli/blob/master/CONTRIBUTING.md)
-
 
 ## Zup Products
 
