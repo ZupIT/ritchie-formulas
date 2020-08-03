@@ -590,6 +590,39 @@
 				"config": "config.json",
 				"repoUrl": "https://commons-repo.ritchiecli.io/formulas"
 			}
+		},
+		{
+			"parent": "root",
+			"usage": "yourls",
+			"help": "yourls commands"
+		},
+		{
+			"parent": "root_yourls",
+			"usage": "shorturl",
+			"help": "yourls shorturl",
+			"formula": {
+				"path": "yourls/shorturl",
+				"bin": "shorturl.sh",
+				"binLinux": "shorturl.sh",
+				"binDarwin": "shorturl.sh",
+				"binWindows": "shorturl.bat",
+				"bundle": "${so}.zip",
+				"config": "config.json"
+			}
+		},
+		{
+			"parent": "root_yourls",
+			"usage": "init",
+			"help": "yourls init",
+			"formula": {
+				"path": "yourls/init",
+				"bin": "init.sh",
+				"binLinux": "init.sh",
+				"binDarwin": "init.sh",
+				"binWindows": "init.bat",
+				"bundle": "${so}.zip",
+				"config": "config.json"
+			}
 		}
 	]
 }
