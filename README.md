@@ -21,7 +21,7 @@ This repository contains the community formulas which can be executed by the [ri
 1. Push your branch.
 1. Open a pull request on the repository for analysis.
 
-## Add support to other languages on create formula
+## Add support to other languages on create formula command
 
 The rit create formula command use the folder `/templates/create_formula`
 to list the languages options. If you like to edit some language template
