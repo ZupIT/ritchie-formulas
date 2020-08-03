@@ -4,36 +4,50 @@
 
 <img class="special-img-class" src="/docs/img/ritchie-banner.png" />
 
-# Documentation
+# Ritchie commons formula repository
 
 This repository contains the community formulas which can be executed by the [ritchie-cli](https://github.com/ZupIT/ritchie-cli).
 
+## Contribute to the Repository with your formulas
+
+1. Fork the repository.
+2. Create a branch: 
+```bash
+    git checkout -b <branch_name>
+``` 
+3. Create a new formula, using the forked repository as a Ritchie workspace:
+```bash
+    rit create formula
+```
+4. Build and use the new formula:
+```bash
+    rit build formula
+```
+or use watch to watch changes on formula code
+```bash
+    rit build formula --watch
+```
+5. Commit your implementation:
+```bash
+    git add *
+    git commit -m '<commit_message>'
+```
+6. Push your branch: 
+```bash
+    git push origin
+```
+7. Open a pull request on the repository for analysis.
+
+## Full Documentation
+
 - [Gitbook](https://docs.ritchiecli.io)
 
-- [Zup Products](https://www.zup.com.br/en/about)
 
-[Contribute to the Ritchie community](https://github.com/ZupIT/ritchie-formulas/blob/master/CONTRIBUTING.md)
+## Contributing
 
-## Build and test formulas locally
+[Contribute to the Ritchie community](https://github.com/ZupIT/ritchie-cli/blob/master/CONTRIBUTING.md)
 
-Execute one of the following commands through the
-`ritchie-formulas/Makefile` file :
 
-- `make test-local`: Build all formulas and add them to the `~/.rit/formulas` folder.
+## Zup Products
 
-- `make test-local form={FORMULA_NAME}`: Build the specific formula and add
-it to the `~/.rit/formulas` folder.
-
-**The formula(s) can then be tested locally through the terminal using the
-associated ritchie command.**
-
-## Contribute to the Ritchie community with your formulas
-
-1. Fork the repository
-2. Create a branch: `git checkout -b <branch_name>`
-3. Check the step by step of
-[how to create formulas](https://docs.ritchiecli.io/getting-started/creating-formulas)
-4. Add your formulas to the repository and commit your implementation:
-`git commit -m '<commit_message>'`
-5. Push your branch: `git push origin <project_name>/<location>`
-6. Open a pull request on the repository for analysis.
+- [Zup open source](https://opensource.zup.com.br)
