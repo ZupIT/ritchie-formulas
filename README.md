@@ -14,6 +14,7 @@ This repository contains the community formulas which can be executed by the [ri
 1. Create a branch:`git checkout -b <branch_name>`
 1. Create a new formula, using the
  forked repository as a Ritchie workspace: `rit create formula`
+ if you need help please visit [how to create formulas on Ritchie](https://docs.ritchiecli.io/getting-started/creating-formulas)
 1. Build and use the new formula: `rit build formula`
  or use --watch to watch changes on formula code: `rit build formula --watch`
 1. Commit your implementation.
