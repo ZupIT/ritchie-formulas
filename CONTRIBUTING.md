@@ -10,7 +10,8 @@ help. If a reviewer realizes you have based your work on the wrong branch, we'll
 let you know so that you can rebase it.
 
 >**Note**: To contribute code to Ritchie projects, see the
-[Ritchie community guidelines](https://docs.ritchiecli.io/community) as well as the
+[Ritchie community guidelines](https://docs.ritchiecli.io/community)
+>as well as the
 [Open source contribution guidelines](https://opensource.guide/how-to-contribute/)
 >and our
 [Code of Conduct](https://github.com/ZupIT/ritchie-formulas/blob/master/CODE_OF_CONDUCT.md).
@@ -21,6 +22,8 @@ Ritchie is composed of 3 projects which release at different times.
 
 **Always base your work on the project's `master` branch, naming your new branch
 according to the following guide :**
+
+![Rit branchs](/docs/img/git-branchs.png)
 
 **Examples : `feature/name` or `fix/name`**
 
@@ -36,8 +39,9 @@ If a PR consists of multiple small addendum commits on top of a more significant
 one, the commit will usually be "squash-merged", so that only one commit is
 merged in. On occasion this is not appropriate and all commits will be kept
 separate when merging.ficant one, the commit will usually be "squash-merged",
-so that only one commit is merged in. On occasion this is not appropriate
-and all commits will be kept separate when merging.
+so that only one commit is merged in.
+On occasion this is not appropriate and all commits will be kept separate
+when merging.
 
 ## Pull request guidelines
 
@@ -45,14 +49,55 @@ Help us review your PRs more quickly by following these guidelines.
 
 - Try not to touch a large number of files in a single PR if possible.
 
+- Provide a clear description of the motivation of your PR, this is a large
+  project, so context is important
+
 - Don't change whitespace or line wrapping in parts of a file you are not
   editing for other reasons. Make sure your text editor is not configured to
   automatically reformat the whole file when saving.
 
-- Reviewers will check the staging site and contact you to fix eventual problems.
+- Reviewers will check the staging site and contact you to
+fix eventual problems.
+
+- If you agree with the suggested comment, just resolve or emoji it.
+No need to write a confirmation.
+The code owner's mailbox will thank you later :D
 
 If you can think of other ways we could streamline the review process, let us
 know.
+
+## Pull review guidelines
+
+For those wanting to contribute on the quality of the incoming code, try to
+follow these suggestions for a happy community =]
+
+- Be suggestive, never impose a correction or criticize your peer.
+Instead of "change this code",go for more like
+"what do you think about implementing this way?"
+
+- Explain why you suggested such correction, a change without meaning might not
+be productive. The author has all the right to counterargue a comment if she
+thinks it is for the best of the project. Provide a clear justification
+technical or business and even links or references if possible.
+Everybody loves to learn something new about coding to become a better
+developer.
+
+- Sometimes the literal answer might not be necessary. Instead of pasting the
+solution _in verbatim_, provide the right direction
+and let the author figure out.
+
+- Always have a sense of community and try to help others,
+because they are trying to help us.
+
+- If a debate gets more heated in a review,
+try to set a call or meeting to clarify points, because in a meeting it is
+possible to talk and understand each other better than with texts in a
+pr review.
+
+- Requesting changes sometimes is perceived as a harsh action
+for some engineers. Try to do it with parsimony, usually when you spot a
+production-breaking change or to prevent an already approved PR to be merged
+without that last important touch on code.
 
 ## Style guide
 
