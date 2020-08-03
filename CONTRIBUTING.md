@@ -24,6 +24,7 @@ Ritchie is composed of 3 projects which release at different times.
 according to the following guide :**
 
 ![Rit branchs](/docs/img/git-branchs.png)
+
 **Examples : `feature/name` or `fix/name`**
 
 ## Collaborate on a pull request
