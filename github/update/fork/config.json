@@ -2,6 +2,17 @@
   "description": "Update forked repo",
   "inputs" : [
     {
+      "name": "branch",
+      "type": "text",
+      "label": "Select destination branch(default master):",
+      "default": "master",
+      "cache": {
+        "active": true,
+        "qty": 10,
+        "newLabel": "Type new branch. "
+      }
+    },
+    {
       "name" : "setupstream",
       "type" : "bool",
       "default" : "false",
