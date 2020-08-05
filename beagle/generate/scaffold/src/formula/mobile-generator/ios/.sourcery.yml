@@ -1,0 +1,8 @@
+sources:
+  - ${project_name}
+  - Pods/Beagle/iOS/Sources/Beagle/CodeGeneration/SourceryProtocols.swift
+templates:
+  - Pods/Beagle/iOS/Sources/Beagle/CodeGeneration/Templates
+output: ${project_name}/Generated
+args:
+  shouldNotImportBeagleUI: 0
