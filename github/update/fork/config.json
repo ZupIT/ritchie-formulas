@@ -13,18 +13,24 @@
       }
     },
     {
-      "name" : "setupstream",
-      "type" : "bool",
-      "default" : "false",
-      "items" : ["false", "true"],
-      "label" : "Set upstream ? (only first time)"
+      "name": "setupstream",
+      "type": "bool",
+      "default": "false",
+      "items": [
+        "false",
+        "true"
+      ],
+      "label": "Set upstream ? (only first time)"
     },
     {
-      "name" : "push",
-      "type" : "bool",
-      "default" : "false",
-      "items" : ["false", "true"],
-      "label" : "Push after update ?"
+      "name": "push",
+      "type": "bool",
+      "default": "false",
+      "items": [
+        "false",
+        "true"
+      ],
+      "label": "Push after update ?"
     }
   ]
 }
