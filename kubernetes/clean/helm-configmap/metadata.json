@@ -1,0 +1,18 @@
+{
+  "execution": [
+    "local"
+  ],
+  "os": {
+    "deps": [],
+    "support": [
+      "mac",
+      "linux"
+    ]
+  },
+  "tags": [
+    "kubernetes",
+    "clean",
+    "helm",
+    "configmap"
+  ]
+}

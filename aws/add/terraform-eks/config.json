@@ -1,0 +1,15 @@
+{
+  "dockerImageBuilder": "cimg/go:1.14",
+  "inputs": [
+    {
+      "label": "Type the cluster name:",
+      "name": "cluster_name",
+      "type": "text"
+    },
+    {
+      "label": "Type the domain name:",
+      "name": "domain_name",
+      "type": "text"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "dockerImageBuilder": "cimg/go:1.14",
+  "inputs": [
+    {
+      "cache": {
+        "active": true,
+        "newLabel": "Type new urls. ",
+        "qty": 5
+      },
+      "label": "Kafka urls: ",
+      "name": "urls",
+      "type": "text"
+    },
+    {
+      "label": "Topic name: ",
+      "name": "name",
+      "type": "text"
+    },
+    {
+      "label": "Replication-factor: ",
+      "name": "replication",
+      "type": "text"
+    },
+    {
+      "label": "Partitions: ",
+      "name": "partitions",
+      "type": "text"
+    }
+  ]
+}

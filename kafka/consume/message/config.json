@@ -1,0 +1,33 @@
+{
+  "dockerImageBuilder": "cimg/go:1.14",
+  "inputs": [
+    {
+      "cache": {
+        "active": true,
+        "newLabel": "Type new urls. "
+      },
+      "label": "Kafka urls: ",
+      "name": "urls",
+      "type": "text"
+    },
+    {
+      "cache": {
+        "active": true,
+        "newLabel": "Type new topic. "
+      },
+      "label": "Topic: ",
+      "name": "topic",
+      "type": "text"
+    },
+    {
+      "default": "true",
+      "items": [
+        "false",
+        "true"
+      ],
+      "label": "From beginning? ",
+      "name": "beginning",
+      "type": "bool"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "dockerImageBuilder": "cimg/node:14.0",
+  "inputs": [
+    {
+      "cache": {
+        "active": true,
+        "newLabel": "Type new value. ",
+        "qty": 6
+      },
+      "label": "Type your name: ",
+      "name": "name",
+      "type": "text"
+    },
+    {
+      "default": "espresso",
+      "items": [
+        "espresso",
+        "cappuccino",
+        "macchiato",
+        "latte"
+      ],
+      "label": "Pick your coffee: ",
+      "name": "coffee_type",
+      "type": "text"
+    },
+    {
+      "default": "false",
+      "items": [
+        "false",
+        "true"
+      ],
+      "label": "Delivery? ",
+      "name": "delivery",
+      "type": "bool"
+    }
+  ]
+}

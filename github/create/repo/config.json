@@ -1,0 +1,33 @@
+{
+  "dockerImageBuilder": "cimg/base:stable-20.04",
+  "inputs": [
+    {
+      "label": "Project name: ",
+      "name": "project_name",
+      "type": "text"
+    },
+    {
+      "label": "Project description: ",
+      "name": "project_description",
+      "type": "text"
+    },
+    {
+      "default": "false",
+      "items": [
+        "false",
+        "true"
+      ],
+      "label": "Create a private repository?: ",
+      "name": "private",
+      "type": "bool"
+    },
+    {
+      "name": "username",
+      "type": "CREDENTIAL_GITHUB_USERNAME"
+    },
+    {
+      "name": "token",
+      "type": "CREDENTIAL_GITHUB_TOKEN"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "dockerImageBuilder": "cimg/go:1.14",
+  "inputs": [
+    {
+      "name": "git_user",
+      "type": "CREDENTIAL_GITHUB_USERNAME"
+    },
+    {
+      "name": "git_token",
+      "type": "CREDENTIAL_GITHUB_TOKEN"
+    }
+  ]
+}

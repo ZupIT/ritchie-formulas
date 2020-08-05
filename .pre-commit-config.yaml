@@ -1,0 +1,50 @@
+#https://pre-commit.com/hooks.html
+repos:
+  - repo: git://github.com/pre-commit/pre-commit-hooks
+    rev: v2.5.0
+    verbose: true
+    hooks:
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-yaml
+      - id: detect-private-key
+      - id: pretty-format-json
+        args:
+          - --autofix
+      - id: trailing-whitespace
+      - id: detect-private-key
+
+      - id: flake8
+      - id: check-ast
+      - id: end-of-file-fixer
+
+  - repo: git://github.com/igorshubovych/markdownlint-cli
+    rev: v0.22.0
+    verbose: true
+    hooks:
+      - id: markdownlint
+
+  - repo: git://github.com/detailyang/pre-commit-shell
+    rev: 1.0.5
+    verbose: true
+    hooks:
+      - id: shell-lint
+
+  - repo: git://github.com/dnephin/pre-commit-golang
+    rev: master
+    verbose: true
+    hooks:
+      - id: go-fmt
+      - id: go-imports
+
+  - repo: git://github.com/ambv/black
+    rev: stable
+    hooks:
+      - id: black
+        language_version: python3.8.2
+
+#  - repo: git://github.com/macisamuele/language-formatters-pre-commit-hooks
+#    rev: v1.5.0
+#    hooks:
+#      - id: pretty-format-java
+#        args: [--autofix]

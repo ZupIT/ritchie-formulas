@@ -1,0 +1,33 @@
+{
+  "dockerImageBuilder": "cimg/go:1.14",
+  "inputs": [
+    {
+      "cache": {
+        "active": true
+      },
+      "label": "Type kubernetes namespace: ",
+      "name": "namespace",
+      "type": "text"
+    },
+    {
+      "cache": {
+        "active": true
+      },
+      "label": "Type name or part name of pod: ",
+      "name": "pod_part_name",
+      "type": "text"
+    },
+    {
+      "cache": {
+        "active": true
+      },
+      "label": "Type port map of pod: ",
+      "name": "port",
+      "type": "text"
+    },
+    {
+      "name": "kubeconfig",
+      "type": "CREDENTIAL_KUBECONFIG_BASE64CONFIG"
+    }
+  ]
+}

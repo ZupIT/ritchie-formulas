@@ -1,0 +1,15 @@
+{
+  "dockerImageBuilder": "cimg/base:stable-20.04",
+  "inputs": [
+    {
+      "cache": {
+        "active": true,
+        "newLabel": "Type new value. ",
+        "qty": 6
+      },
+      "label": "Which context you want to use : ",
+      "name": "context_name",
+      "type": "text"
+    }
+  ]
+}

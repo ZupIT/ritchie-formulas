@@ -1,0 +1,26 @@
+{
+  "dockerImageBuilder": "cimg/go:1.14",
+  "inputs": [
+    {
+      "cache": {
+        "active": true,
+        "newLabel": "Type new branch. ",
+        "qty": 100
+      },
+      "default": "qa",
+      "label": "Select destination branch(default qa):",
+      "name": "branch",
+      "type": "text"
+    },
+    {
+      "default": "yes",
+      "items": [
+        "yes",
+        "false"
+      ],
+      "label": "Push after merge ?",
+      "name": "push",
+      "type": "bool"
+    }
+  ]
+}

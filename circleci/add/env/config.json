@@ -1,0 +1,39 @@
+{
+  "dockerImageBuilder": "cimg/go:1.14",
+  "inputs": [
+    {
+      "name": "token",
+      "type": "CREDENTIAL_CIRCLECI_TOKEN"
+    },
+    {
+      "cache": {
+        "active": true,
+        "newLabel": "Type new value. ",
+        "qty": 3
+      },
+      "label": "Type the repository owner: ",
+      "name": "repo_owner",
+      "type": "text"
+    },
+    {
+      "cache": {
+        "active": true,
+        "newLabel": "Type new value. ",
+        "qty": 3
+      },
+      "label": "Type repository name: ",
+      "name": "repo_name",
+      "type": "text"
+    },
+    {
+      "label": "Type the ENV name : ",
+      "name": "env_name",
+      "type": "text"
+    },
+    {
+      "label": "Type the ENV value : ",
+      "name": "env_value",
+      "type": "password"
+    }
+  ]
+}

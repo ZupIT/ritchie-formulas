@@ -1,0 +1,42 @@
+{
+  "dockerImageBuilder": "cimg/go:1.14",
+  "inputs": [
+    {
+      "default": "https://github.com/zupit/iti-stack-core",
+      "items": [
+        "https://github.com/zupit/iti-stack-core",
+        "https://github.com/zupit/iti-stack-tools"
+      ],
+      "label": "Select your repository URL: ",
+      "name": "repository",
+      "type": "text"
+    },
+    {
+      "default": "src",
+      "label": "Type your terraform files path [src]: ",
+      "name": "terraform_path",
+      "type": "text"
+    },
+    {
+      "label": "Type your environment name: [ex.: qa, prod]",
+      "name": "environment",
+      "type": "text"
+    },
+    {
+      "name": "git_user",
+      "type": "CREDENTIAL_GITHUB_USERNAME"
+    },
+    {
+      "name": "git_token",
+      "type": "CREDENTIAL_GITHUB_TOKEN"
+    },
+    {
+      "name": "aws_access_key_id",
+      "type": "CREDENTIAL_AWS_ACCESSKEYID"
+    },
+    {
+      "name": "aws_secret_access_key",
+      "type": "CREDENTIAL_AWS_SECRETACCESSKEY"
+    }
+  ]
+}
