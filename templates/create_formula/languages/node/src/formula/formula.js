@@ -8,5 +8,5 @@ function Run(input1, input2, input3) {
     console.log(clc.yellow("You receive "+ input3 +" in boolean."));
 }
 
-const hello = Run
-module.exports = hello
+const formula = Run
+module.exports = formula
