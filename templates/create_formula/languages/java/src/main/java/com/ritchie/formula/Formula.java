@@ -1,6 +1,6 @@
 package com.ritchie.formula;
 
-public class Hello {
+public class Formula {
 
   private String input1;
   private String input2;
@@ -15,7 +15,7 @@ public class Hello {
         input1, input2, input3);
   }
 
-  public Hello(String input1, String input2, boolean input3) {
+  public Formula(String input1, String input2, boolean input3) {
     this.input1 = input1;
     this.input2 = input2;
     this.input3 = input3;

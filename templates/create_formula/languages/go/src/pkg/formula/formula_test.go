@@ -1,4 +1,4 @@
-package hello
+package formula
 
 import (
 	"bytes"
@@ -8,7 +8,7 @@ import (
 	"github.com/gookit/color"
 )
 
-func TestHello_Run(t *testing.T) {
+func TestFormula_Run(t *testing.T) {
 	type fields struct {
 		Text    string
 		List    string
@@ -36,7 +36,7 @@ func TestHello_Run(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			h := Hello{
+			h := Formula{
 				Text:    tt.fields.Text,
 				List:    tt.fields.List,
 				Boolean: tt.fields.Boolean,
