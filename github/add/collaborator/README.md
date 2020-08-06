@@ -16,4 +16,4 @@ This formula allows adding a new collaborator by typing only two parameters.
 
 ```bash
 echo '{"collaborator_user":"value", "repository_name":"value"}' | rit github add collaborator --stdin
-```
+``` 
