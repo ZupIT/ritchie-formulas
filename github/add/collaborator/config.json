@@ -1,0 +1,32 @@
+{
+  "dockerImageBuilder": "cimg/node:14.0",
+  "inputs": [{
+    "name": "collaborator_user",
+    "type": "text",
+    "label": "Type collaborator username: ",
+    "cache": {
+      "active": true,
+      "qty": 3,
+      "newLabel": "Type new value. "
+    }
+  },
+  {
+    "name": "repository_name",
+    "type": "text",
+    "label": "Type repository name: ",
+    "cache": {
+      "active": true,
+      "qty": 3,
+      "newLabel": "Type new value. "
+    }
+  },
+  {
+    "name": "owner_username",
+    "type": "CREDENTIAL_GITHUB_USERNAME"
+  },
+  {
+    "name": "owner_token",
+    "type": "CREDENTIAL_GITHUB_TOKEN"
+  }
+]
+}
