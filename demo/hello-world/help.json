@@ -1,4 +1,4 @@
 {
-	"short": "short help placeholder for hello-world",
-	"long": "long help placeholder for hello-world used by index page and -h"
+	"short": "Hello World formula",
+	"long": "Basic example of a first formula executing a hello world implementation"
 }
