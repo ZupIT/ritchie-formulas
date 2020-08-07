@@ -2,29 +2,35 @@
   "dockerImageBuilder": "cimg/base:stable-20.04",
   "inputs": [
     {
-      "name": "branch",
-      "type": "text",
-      "label": "Select destination branch (default: master):",
-      "default": "master",
       "cache": {
         "active": true,
-        "qty": 10,
-        "newLabel": "Type new branch. "
-      }
+        "newLabel": "Type new branch. ",
+        "qty": 10
+      },
+      "default": "master",
+      "label": "Select destination branch (default: master):",
+      "name": "branch",
+      "type": "text"
     },
     {
-      "name" : "setupstream",
-      "type" : "bool",
-      "default" : "false",
-      "items" : ["false", "true"],
-      "label" : "Set upstream ? (only first time)"
+      "default": "false",
+      "items": [
+        "false",
+        "true"
+      ],
+      "label": "Set upstream ? (only first time)",
+      "name": "setupstream",
+      "type": "bool"
     },
     {
-      "name" : "push",
-      "type" : "bool",
-      "default" : "false",
-      "items" : ["false", "true"],
-      "label" : "Push after update ?"
+      "default": "false",
+      "items": [
+        "false",
+        "true"
+      ],
+      "label": "Push after update ?",
+      "name": "push",
+      "type": "bool"
     }
   ]
 }
