@@ -20,8 +20,9 @@ createSlug() {
 
 binaryRead() {
   local var
+
   while true; do
-    read -p "$1" var
+    read -rp "$1" var
     if [[ "$var" == "y" || "$var" == "Y" || "$var" == "n" || "$var" == "N" ]]; then
       echo "$var" | tr '[:upper:]' '[:lower:]'
       break
@@ -33,8 +34,9 @@ binaryRead() {
 
 simpleRead() {
   local var
+
   while true; do
-    read -p "$1" var
+    read -rp "$1" var
     if [[ -z "$var" ]]; then
       echo >&2 "Please, input must not be empty"
     else
@@ -46,8 +48,9 @@ simpleRead() {
 
 readWithDefaultValue() {
   local var
+
   while true; do
-    read -p "$1" var
+    read -rp "$1" var
     if [[ -z "$var" ]]; then
       echo >&2 "$2"
       echo "$2"
@@ -61,9 +64,11 @@ readWithDefaultValue() {
 
 readProjectName() {
   local project_name
+  local slug
+
   while true; do
-    read -p "$1" project_name
-    local slug=$(createSlug "$project_name")
+    read -rp "$1" project_name
+    slug=$(createSlug "$project_name")
     if [[ ! "$slug" =~ ^[a-zA-Z0-9-]+$ ]]; then
       echo >&2 "Project name cannot contain special characters"
     else
@@ -75,9 +80,10 @@ readProjectName() {
 
 readTwoOptions() {
   local var
+
   while true; do
-    read -p "Choose [$1/$2]: " var
-    if [[ $var == $1 || $var == $2 ]]; then
+    read -rp "Choose [$1/$2]: " var
+    if [[ $var == "$1" || $var == "$2" ]]; then
       echo "$var"
       break
     else
@@ -87,56 +93,79 @@ readTwoOptions() {
 }
 
 createBackendProject() {
+  local project_name
+  local jdk_version
+  local kotlin_version
+  local beagle_version
+
   readProjectName "Backend project name: "
-  local project_name=${reply[0]}
   backend_slug=${reply[1]}
   backend_package_name=$(simpleRead "Package name (ex: com.example): ")
-  local jdk_version=$(readWithDefaultValue "JDK version(8+) (default: 13): " "13")
-  local kotlin_version=$(readWithDefaultValue "Kotlin version(1.3+) (default: 1.3.72): " "1.3.72")
-  local beagle_version=$(readWithDefaultValue "Beagle version (default: 1.0.2): " "1.0.2")
+  jdk_version=$(readWithDefaultValue "JDK version(8+) (default: 13): " "13")
+  kotlin_version=$(readWithDefaultValue "Kotlin version(1.3+) (default: 1.3.72): " "1.3.72")
+  beagle_version=$(readWithDefaultValue "Beagle version (default: 1.0.2): " "1.0.2")
   backend_framework=$(readTwoOptions "spring" "micronaut")
 
-  $(runBackend "$project_name" $backend_slug $backend_package_name $jdk_version $kotlin_version $beagle_version $backend_framework)
+  $(runBackend "$backend_slug" "$backend_package_name" "$jdk_version" "$kotlin_version" "$beagle_version" "$backend_framework")
 }
 
 createWebProject() {
-  readProjectName "Web project name: "
-  local project_name=${reply[0]}
-  web_slug=${reply[1]}
-  local beagle_version=$(readWithDefaultValue "Beagle version (default: 1.1.0): " "1.1.0")
-  local framework=$(readTwoOptions "react" "angular")
+  local project_name
+  local beagle_version
+  local framework
 
-  $(runWeb "$project_name" $web_slug $beagle_version $framework)
+  readProjectName "Web project name: "
+  web_slug=${reply[1]}
+  beagle_version=$(readWithDefaultValue "Beagle version (default: 1.1.0): " "1.1.0")
+  framework=$(readTwoOptions "react" "angular")
+
+  $(runWeb "$web_slug" "$beagle_version" "$framework")
 }
 
 createMobileProject() {
+  local project_name
+  local os
+
   readProjectName "Mobile project name: "
-  local project_name=${reply[0]}
+  project_name=${reply[0]}
   mobile_slug=${reply[1]}
-  local os=$(readTwoOptions "ios" "android")
+  os=$(readTwoOptions "ios" "android")
 
   if [[ $os == "ios" ]]; then
-    local organization_name=$(simpleRead "Organization name: ")
-    local organization_id=$(simpleRead "Organizaion ID: ")
-    local beagle_version=$(readWithDefaultValue "Beagle version (ex: 1.0.0, default: latest): " "latest")
-    local bff_url=$(readWithDefaultValue "BFF url (default: http://localhost:8080): " "http://localhost:8080")
-    local sourcery=$(binaryRead "Do you want to use Sourcery? [y/n]: ")
+    local organization_name
+    local organization_id
+    local beagle_version
+    local bff_url
+    local sourcery
 
-    $(runMobile $os "$project_name" $mobile_slug "$organization_name" $organization_id $beagle_version $bff_url $sourcery)
+    organization_name=$(simpleRead "Organization name: ")
+    organization_id=$(simpleRead "Organizaion ID: ")
+    beagle_version=$(readWithDefaultValue "Beagle version (ex: 1.0.0-IOS, default: latest): " "latest")
+    bff_url=$(readWithDefaultValue "BFF url (default: http://localhost:8080): " "http://localhost:8080")
+    sourcery=$(binaryRead "Do you want to use Sourcery? [y/n]: ")
+
+    $(runMobile "$os" "$project_name" "$mobile_slug" "$organization_name" "$organization_id" "$beagle_version" "$bff_url" "$sourcery")
   else
-    local package_name=$(simpleRead "Package name (ex: com.example): ")
-    local min_sdk=$(readWithDefaultValue "Min version SDK android: (default: 21): " "21")
-    local target_sdk=$(readWithDefaultValue "Target version SDK: (default: 29): " "21")
-    local kotlin_version=$(readWithDefaultValue "Kotlin version(1.3+) (default: 1.3.72): " "1.3.72")
-    local beagle_version=$(readWithDefaultValue "Beagle version (default: 1.0.0): " "1.0.0")
-    local bff_url=$(readWithDefaultValue "BFF url (default: http://localhost:8080): " "http://localhost:8080")
+    local package_name
+    local min_sdk
+    local target_sdk
+    local kotlin_version
+    local beagle_version
+    local bff_url
 
-    $(runMobile $os "$project_name" $mobile_slug $package_name $min_sdk $target_sdk $kotlin_version $beagle_version $bff_url)
+    package_name=$(simpleRead "Package name (ex: com.example): ")
+    min_sdk=$(readWithDefaultValue "Min version SDK android: (default: 21): " "21")
+    target_sdk=$(readWithDefaultValue "Target version SDK: (default: 29): " "21")
+    kotlin_version=$(readWithDefaultValue "Kotlin version(1.3+) (default: 1.3.72): " "1.3.72")
+    beagle_version=$(readWithDefaultValue "Beagle version (default: 1.0.0): " "1.0.0")
+    bff_url=$(readWithDefaultValue "BFF url (default: http://localhost:8080): " "http://localhost:8080")
+
+    $(runMobile "$os" "$project_name" "$mobile_slug" "$package_name" "$min_sdk" "$target_sdk" "$kotlin_version" "$beagle_version" "$bff_url")
   fi
 }
 
 removeCorsFromBackend() {
-  $(removeCors $backend_framework $backend_package_name $backend_slug)
+  $(removeCors "$backend_framework" "$backend_package_name" "$backend_slug")
 }
 
 printResult() {
@@ -160,11 +189,13 @@ printResult() {
 }
 
 runFormula() {
+  local answer
+
   createBackendProject
 
   echo
 
-  local answer=$(binaryRead "Do you want to create a web project? [y/n]: ")
+  answer=$(binaryRead "Do you want to create a web project? [y/n]: ")
   if [[ $answer == "y" ]]; then
     createWebProject
 
