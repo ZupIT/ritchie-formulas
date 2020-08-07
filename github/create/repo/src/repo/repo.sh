@@ -35,22 +35,32 @@ run() {
 
   PROJECT_NAME=$(checkSpace "$PROJECT_NAME")
 
-  checkProjectName "$PROJECT_NAME"
+  checkProjectName $PROJECT_NAME
 
-  echo "$PROJECT_NAME"
-
-  mkdir "$PROJECT_NAME"
-  cd "$PROJECT_NAME" || exit
+  mkdir $PROJECT_NAME
+  cd $PROJECT_NAME || exit
 
   git init
-  echo "$PROJECT_DESCRIPTION" >> README.md
+  echo $PROJECT_DESCRIPTION >> README.md
 
+  if [[ $DOCKER_EXECUTION ]]; then
+    read -p "Enter your email: " email
+    git config --local user.name $USERNAME
+    git config --local user.email $email
+  fi
+  
   git add .
   git commit -m "Initial Commit"
+  
+  curl -H 'Authorization: token '$TOKEN https://api.github.com/user/repos -d '{"name":"'$PROJECT_NAME'", "private":'$PRIVATE'}' &&
+  git remote add origin https://$USERNAME:$TOKEN@github.com/$USERNAME/$PROJECT_NAME.git &&
+  git push origin master
 
-  curl -H 'Authorization: token '"$TOKEN" https://api.github.com/user/repos -d '{"name":"'"$PROJECT_NAME"'", "private":'"$PRIVATE"'}'
+  if [[ $DOCKER_EXECUTION ]]; then
+    cd ..
+    chown 1000:1000 -R $PROJECT_NAME
+  fi
 
-  git push https://"$USERNAME":"$TOKEN"@github.com/"$USERNAME"/"$PROJECT_NAME".git HEAD
-
-  git remote add origin https://github.com/"$USERNAME"/"$PROJECT_NAME"
+  echo "Project successfully created!!"
+  echo "📁  ./$PROJECT_NAME"
 }
