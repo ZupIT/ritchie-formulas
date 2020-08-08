@@ -12,6 +12,8 @@
     ]
   },
   "tags": [
-    "aws", "clean", "bucket"
+    "aws",
+    "clean",
+    "bucket"
   ]
 }
