@@ -1,4 +1,4 @@
 {
-	"short": "Hello World formula",
-	"long": "Basic example of a first formula executing a hello world implementation"
+  "long": "Basic example of a first formula executing a hello world implementation",
+  "short": "Hello World formula"
 }
