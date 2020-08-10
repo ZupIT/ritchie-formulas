@@ -18,11 +18,11 @@
 
 - Stdin
 
-```echo "{\"input_text\":\"Dennis\", \"input_bool\":\"false\", \"input_list\":\"false\", \"input_password\":\"Ritchie\"}" | rit demo hello-world --stdin```
+```echo '{"input_text":"Dennis", "input_bool":"false", "input_list":"false", "input_password":"Ritchie"}' | rit demo hello-world --stdin```
 
 - Stdin + Docker
 
-```echo "{\"input_text\":\"Dennis\", \"input_bool\":\"false\", \"input_list\":\"false\", \"input_password\":\"Ritchie\"}" | rit demo hello-world --stdin --docker```
+```echo '{"input_text":"Dennis", "input_bool":"false", "input_list":"false", "input_password":"Ritchie"}' | rit demo hello-world --stdin --docker```
 
 ## Description
 
