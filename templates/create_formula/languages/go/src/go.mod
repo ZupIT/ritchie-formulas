@@ -1,4 +1,4 @@
-module hello
+module formula
 
 go 1.14
 

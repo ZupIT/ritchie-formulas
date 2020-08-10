@@ -4,16 +4,16 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class HelloTest {
+public class FormulaTest {
 
   @Test
   public void run() {
-    Hello hello = new Hello("Hello", "World", true);
+    Formula formula = new Formula("Hello", "World", true);
     String excpeted =
         "Hello World!\n"
             + "You receive Hello in text.\n"
             + "You receive World in list.\n"
             + "You receive true in boolean.\n";
-    assertEquals(excpeted, hello.Run());
+    assertEquals(excpeted, formula.Run());
   }
 }
