@@ -1,4 +1,4 @@
-package hello
+package formula
 
 import (
 	"fmt"
@@ -7,13 +7,13 @@ import (
 	"github.com/gookit/color"
 )
 
-type Hello struct {
+type Formula struct {
 	Text    string
 	List    string
 	Boolean string
 }
 
-func (h Hello) Run(writer io.Writer) {
+func (h Formula) Run(writer io.Writer) {
 	var result string
 	result += fmt.Sprintf("Hello world!\n")
 	result += color.FgGreen.Render(fmt.Sprintf("You receive %s in text.\n", h.Text))
