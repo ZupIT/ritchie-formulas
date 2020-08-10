@@ -1,0 +1,23 @@
+{
+  "dockerImageBuilder": "cimg/go:1.14",
+  "inputs": [
+    {
+      "name": "access_key",
+      "type": "CREDENTIAL_AWS_ACCESSKEYID"
+    },
+    {
+      "name": "secret_access_key",
+      "type": "CREDENTIAL_AWS_SECRETACCESSKEY"
+    },
+    {
+      "cache": {
+        "active": true,
+        "newLabel": "Type new value. ",
+        "qty": 6
+      },
+      "label": "Type your region [ e.g us-east-1 ]: ",
+      "name": "region",
+      "type": "text"
+    }
+  ]
+}
