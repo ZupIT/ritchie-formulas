@@ -31,7 +31,7 @@ allocate. You can use the last 8 bits at will.
 ##### Example
 
 If your `minikube ip`  is `192.168.64.1` you can set the IP range to
-`192.168.64.100` to `192.168.64.119` so you'll be able to create 
+`192.168.64.100` to `192.168.64.119` so you'll be able to create
 20 LoadBalancer services in your cluster
 
 ### Istioctl
