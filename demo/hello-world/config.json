@@ -32,7 +32,8 @@
       "label": "What do you want to automate? ",
       "name": "input_list",
       "type": "text"
-    },{
+    },
+    {
       "label": "Tell us a secret: ",
       "name": "input_password",
       "type": "password"
