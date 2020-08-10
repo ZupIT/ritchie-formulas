@@ -1,4 +1,4 @@
 {
-	"short": "Installs Istio dependencies",
-	"long": "Installs Istio dependencies"
+  "long": "Installs Istio dependencies",
+  "short": "Installs Istio dependencies"
 }
