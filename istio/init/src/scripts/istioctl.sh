@@ -1,3 +1,4 @@
+#!/bin/bash
 runIstioctl() {
     if [ $1 = "yes" ]; then
         echo "Istioctl installation..."
