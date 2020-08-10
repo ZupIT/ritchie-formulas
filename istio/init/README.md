@@ -3,7 +3,7 @@
 ## Command
 
 ```bash
-rit mesh init
+rit istio init
 ```
 
 ## Description
