@@ -42,4 +42,9 @@ def Run(datapoints_amount, category, labeled_data):
         file_contents = render_template(estimator)
         f.write(json.dumps(file_contents))
 
-    print("Done! please check {} and happy machine learning =]".format(filename))
+    print(
+        "Done! please check {} and happy machine \
+    learning =]".format(
+            filename
+        )
+    )
