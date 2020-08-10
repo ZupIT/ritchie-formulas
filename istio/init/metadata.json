@@ -11,6 +11,7 @@
     ]
   },
   "tags": [
-    "istio", "init"
+    "istio",
+    "init"
   ]
 }

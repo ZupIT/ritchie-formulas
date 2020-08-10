@@ -13,7 +13,7 @@ Installs **latest** `istioctl`, `kustomize` and `minikube` dependencies in order
 ## Additional info
 ### Minikube
 
-In order to run Istio, your k8s cluster needs to support some extra features that minikube delivers in a easy and configurable way. 
+In order to run Istio, your k8s cluster needs to support some extra features that minikube delivers in a easy and configurable way.
 
 `minikube` starts a cluster with `8GB` RAM and `4` CPUs and **3rd party service account token** configured (see [Istio Security Best Practices](https://istio.io/latest/docs/ops/best-practices/security/))
 

@@ -2,28 +2,26 @@
   "dockerImageBuilder": "cimg/base:stable-20.04",
   "inputs": [
     {
+      "default": "no",
+      "items": [
+        "no",
+        "yes"
+      ],
       "label": "Do you wish to install minikube? ",
       "name": "minikube",
+      "type": "text"
+    },
+    {
       "default": "no",
       "items": [
         "no",
         "yes"
       ],
-      "type": "text"
-    },
-    {
       "label": "Do you wish to install istioctl? ",
       "name": "istioctl",
-      "default": "no",
-      "items": [
-        "no",
-        "yes"
-      ],
       "type": "text"
     },
     {
-      "label": "Which istio profile you want to install? ",
-      "name": "profile",
       "default": "default",
       "items": [
         "default",
@@ -33,6 +31,8 @@
         "demo",
         "empty"
       ],
+      "label": "Which istio profile you want to install? ",
+      "name": "profile",
       "type": "text"
     }
   ]
