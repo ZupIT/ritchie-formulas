@@ -1,8 +1,7 @@
 {
   "dependencies": {
-    "cli-color": "^2.0.0",
-    "axios": "^0.19.2"
-
+    "axios": "^0.19.2",
+    "cli-color": "^2.0.0"
   },
   "main": "index.js",
   "scripts": {
