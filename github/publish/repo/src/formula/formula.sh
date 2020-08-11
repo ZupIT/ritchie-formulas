@@ -1,4 +1,6 @@
 #!/bin/bash
+# shellcheck disable=SC2181
+# shellcheck disable=SC2086
 
 removeSpaces() {
   echo "${1}" | xargs | tr " " -
