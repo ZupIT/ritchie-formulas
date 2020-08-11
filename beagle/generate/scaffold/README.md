@@ -1,3 +1,4 @@
+<!-- markdownlint-disable-file MD013 -->
 # Ritchie Formula
 
 ## command

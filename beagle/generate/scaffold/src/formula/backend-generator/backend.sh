@@ -71,7 +71,7 @@ runBackend() {
   mkdir "$CURRENT_PWD"/"$slug"
 
   if [[ $framework == "spring" ]]; then
-    cp -r formula/backend-generator/beagle-spring/. "$CURRENT_PWD"/"$slug"
+    cp -r formula/backend-generator/_vendor/beagle-spring/. "$CURRENT_PWD"/"$slug"
 
     cd "$CURRENT_PWD"/"$slug" || exit
 
@@ -94,7 +94,7 @@ runBackend() {
 
     replacePackageName "$package_name" "${files[@]}"
   else
-    cp -r formula/backend-generator/beagle-micronaut/. "$CURRENT_PWD"/"$slug"
+    cp -r formula/backend-generator/_vendor/beagle-micronaut/. "$CURRENT_PWD"/"$slug"
 
     cd "$CURRENT_PWD"/"$slug" || exit
 

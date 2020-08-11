@@ -1,7 +1,10 @@
 #!/bin/bash
 
+# shellcheck source=/dev/null
 . "$(dirname "$0")"/formula/backend-generator/backend.sh --source-only
+# shellcheck source=/dev/null
 . "$(dirname "$0")"/formula/web-generator/web.sh --source-only
+# shellcheck source=/dev/null
 . "$(dirname "$0")"/formula/mobile-generator/mobile.sh --source-only
 
 removeSpaces() {
@@ -106,6 +109,7 @@ createBackendProject() {
   beagle_version=$(readWithDefaultValue "Beagle version (default: 1.0.2): " "1.0.2")
   backend_framework=$(readTwoOptions "spring" "micronaut")
 
+  # shellcheck disable=SC2091
   $(runBackend "$backend_slug" "$backend_package_name" "$jdk_version" "$kotlin_version" "$beagle_version" "$backend_framework")
 }
 
@@ -119,6 +123,7 @@ createWebProject() {
   beagle_version=$(readWithDefaultValue "Beagle version (default: 1.1.0): " "1.1.0")
   framework=$(readTwoOptions "react" "angular")
 
+  # shellcheck disable=SC2091
   $(runWeb "$web_slug" "$beagle_version" "$framework")
 }
 
@@ -144,6 +149,7 @@ createMobileProject() {
     bff_url=$(readWithDefaultValue "BFF url (default: http://localhost:8080): " "http://localhost:8080")
     sourcery=$(binaryRead "Do you want to use Sourcery? [y/n]: ")
 
+    # shellcheck disable=SC2091
     $(runMobile "$os" "$project_name" "$mobile_slug" "$organization_name" "$organization_id" "$beagle_version" "$bff_url" "$sourcery")
   else
     local package_name
@@ -160,11 +166,13 @@ createMobileProject() {
     beagle_version=$(readWithDefaultValue "Beagle version (default: 1.0.0): " "1.0.0")
     bff_url=$(readWithDefaultValue "BFF url (default: http://localhost:8080): " "http://localhost:8080")
 
+    # shellcheck disable=SC2091
     $(runMobile "$os" "$project_name" "$mobile_slug" "$package_name" "$min_sdk" "$target_sdk" "$kotlin_version" "$beagle_version" "$bff_url")
   fi
 }
 
 removeCorsFromBackend() {
+  # shellcheck disable=SC2091
   $(removeCors "$backend_framework" "$backend_package_name" "$backend_slug")
 }
 
