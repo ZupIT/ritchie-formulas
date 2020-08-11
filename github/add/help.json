@@ -1,4 +1,4 @@
 {
-	"short": "short help placeholder for add",
-	"long": "long help placeholder for add used by index page and -h"
+  "long": "Add Github Objects",
+  "short": "Add Github Objects"
 }
