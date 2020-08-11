@@ -36,6 +36,10 @@ runFormula() {
   checkProjectName $slug_name
 
   cd $WORKSPACE_PATH
+  if [ $? != 0 ]; then
+      cd -
+      exit 1;
+  fi
 
   echo "---------------------------------------------------------------------------"
 
