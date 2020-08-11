@@ -8,11 +8,11 @@ runWeb() {
   mkdir "$CURRENT_PWD"/"$slug"
 
   if [[ $framework == "react" ]]; then
-    cp -r formula/web-generator/beagle-react/* "$CURRENT_PWD"/"$slug"
+    cp -r formula/web-generator/_vendor/beagle-react/* "$CURRENT_PWD"/"$slug"
 
     cd "$CURRENT_PWD"/"$slug" || exit
   else
-    cp -r formula/web-generator/beagle-angular/* "$CURRENT_PWD"/"$slug"
+    cp -r formula/web-generator/_vendor/beagle-angular/* "$CURRENT_PWD"/"$slug"
 
     cd "$CURRENT_PWD"/"$slug" || exit
   fi

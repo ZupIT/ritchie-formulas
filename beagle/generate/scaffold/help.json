@@ -1,4 +1,4 @@
 {
-  "short": "Manipulate scaffold",
-  "long": "Generates a backend project with beagle and also, if needed, generates a web and/or mobile project with beagle"
+  "long": "Generates a backend project with beagle and also, if needed, generates a web and/or mobile project with beagle",
+  "short": "Manipulate scaffold"
 }

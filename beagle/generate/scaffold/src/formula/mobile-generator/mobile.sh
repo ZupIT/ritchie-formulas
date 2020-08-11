@@ -68,7 +68,7 @@ runMobile() {
     bff_url=$7
     sourcery=$8
 
-    cp -r formula/mobile-generator/ios/. "$CURRENT_PWD"/"$slug"
+    cp -r formula/mobile-generator/_vendor/ios/. "$CURRENT_PWD"/"$slug"
 
     cd "$CURRENT_PWD"/"$slug" || exit
 
@@ -114,7 +114,7 @@ runMobile() {
     beagle_version=$8
     bff_url=$9
 
-    cp -r formula/mobile-generator/android/* "$CURRENT_PWD"/"$slug"
+    cp -r formula/mobile-generator/_vendor/android/* "$CURRENT_PWD"/"$slug"
 
     cd "$CURRENT_PWD"/"$slug" || exit
 
