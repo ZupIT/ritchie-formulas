@@ -1,0 +1,4 @@
+{
+  "long": "Publish github repo and generate first release, then delete local repo and add it to Ritchie",
+  "short": "Publish github repo and generate first release"
+}
