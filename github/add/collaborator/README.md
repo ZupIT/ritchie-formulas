@@ -6,11 +6,12 @@
 ```bash
 rit github add collaborator
 ```
+
 ![Example](./src/docs/github.gif)
 
 ## Description
 
-This formula allows adding a new collaborator by typing only two parameters. 
+This formula allows adding a new collaborator by typing only two parameters.
 (collaborator username and repository name)
 
 ### STDIN Example
