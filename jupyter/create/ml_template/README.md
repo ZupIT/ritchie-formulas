@@ -1,14 +1,18 @@
 <!-- markdownlint-disable-file MD013 -->
 
-# Ritchie Formula
+# Create a template with jupyter
 
 ## Command
 
-`$ rit jupyter create ml_template`
+```bash
+rit jupyter create ml_template
+```
 
 Example with stdin
 
-`$ echo '{"DATAPOINTS_AMOUNT": "<10k", "CATEGORY": "true", "LABELED_DATA": "true"}' | jupyter create ml_template --stdin`
+```bash
+echo '{"DATAPOINTS_AMOUNT": "<10k", "CATEGORY": "true", "LABELED_DATA": "true"}' | jupyter create ml_template --stdin`
+```
 
 ## Requirements
 

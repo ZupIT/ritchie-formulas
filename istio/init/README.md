@@ -1,4 +1,4 @@
-# Ritchie Formula
+# Manage istio
 
 ## Command
 
