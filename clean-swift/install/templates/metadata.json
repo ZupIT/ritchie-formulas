@@ -5,8 +5,7 @@
   "os": {
     "deps": [],
     "support": [
-      "mac",
-      "linux"
+      "mac"
     ]
   },
   "tags": [
