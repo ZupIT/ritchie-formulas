@@ -1,0 +1,15 @@
+{
+  "execution": [
+    "local"
+  ],
+  "os": {
+    "deps": [],
+    "support": [
+      "mac",
+      "linux"
+    ]
+  },
+  "tags": [
+    "clean-swift", "install", "templates"
+  ]
+}
