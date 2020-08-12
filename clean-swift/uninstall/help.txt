@@ -1,0 +1,1 @@
+Manage clean-swift uninstall objects

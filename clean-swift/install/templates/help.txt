@@ -1,0 +1,1 @@
+Install clean-swift templates

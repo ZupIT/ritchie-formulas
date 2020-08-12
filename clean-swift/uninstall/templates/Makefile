@@ -9,4 +9,3 @@ bash-build:
 	cp -r src/* $(BIN_FOLDER)
 	mv $(BIN_FOLDER)/main.sh $(BIN_FOLDER)/$(BINARY_NAME)
 	chmod +x $(BIN_FOLDER)/$(BINARY_NAME)
-
