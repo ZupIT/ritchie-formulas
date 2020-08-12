@@ -10,7 +10,7 @@ namespace main
             string TEXT     = Environment.GetEnvironmentVariable("SAMPLE_TEXT");
             string TLIST    = Environment.GetEnvironmentVariable("SAMPLE_LIST");
             string TBOOL    = Environment.GetEnvironmentVariable("SAMPLE_BOOL");
-            new formula.Hello(TEXT, TLIST, TBOOL);  
+            new formula.Hello(TEXT, TLIST, TBOOL);
         }
 }
 }
