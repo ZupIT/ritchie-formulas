@@ -1,5 +1,5 @@
 <!-- markdownlint-disable-file MD013 -->
-# Ritchie Formula
+# Beagle Generate Scaffold
 
 ## command
 

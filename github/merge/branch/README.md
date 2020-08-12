@@ -12,7 +12,8 @@ rit github merge branch
 
 ## How to generate personal access token
 
-To generate a personal access token click [here](https://github.com/settings/tokens)
+To generate a personal access token click
+ [here](https://github.com/settings/tokens)
 
 ## How it works
 
@@ -24,8 +25,9 @@ git checkout {{dest_branch}}
 git pull origin {{current_branch}}
 ```
 
+If push is true
+
 ```bash
-if push:
  git push
  git checkout {{current_branch}}
 ```

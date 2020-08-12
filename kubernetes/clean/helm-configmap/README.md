@@ -8,4 +8,4 @@ rit kubernetes clean helm-configmap
 
 ## description
 
-This formula do
+This formula clean helm config map
