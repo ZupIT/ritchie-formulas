@@ -18,6 +18,6 @@ namespace formula
             Console.WriteLine("You receive " + Input2 + " in list. ");
             Console.WriteLine("You receive " + Input3 + " in boolean. ");
         }
-        
+
     }
 }

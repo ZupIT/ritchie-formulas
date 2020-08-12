@@ -17,7 +17,7 @@ linux-build:
 windows-build:
 	mkdir -p $(BIN_FOLDER)/$(BIN_FOLDER_WINDOWS)
 	dotnet build $(SOURCE_FILE) -o $(BIN_FOLDER)/$(BIN_FOLDER_WINDOWS) --configuration Release --runtime win10-x64
-macOS-build: 
+macOS-build:
 	mkdir -p $(BIN_FOLDER)/$(BIN_FOLDER_DARWIN)
 	dotnet build $(SOURCE_FILE) -o $(BIN_FOLDER)/$(BIN_FOLDER_DARWIN) --configuration Release --runtime osx-x64
 
