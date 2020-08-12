@@ -5,5 +5,5 @@ runFormula() {
 
   mkdir -p "$XCODE_USER_TEMPLATES_DIR"
   rm -fR "$XCODE_USER_TEMPLATES_DIR"/Clean\ Swift
-  cp -R formula/clean-swift "$XCODE_USER_TEMPLATES_DIR"
+  cp -R formula/_vendor "$XCODE_USER_TEMPLATES_DIR"
 }
