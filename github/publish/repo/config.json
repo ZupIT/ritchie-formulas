@@ -1,0 +1,53 @@
+{
+  "dockerImageBuilder": "cimg/base:stable-20.04",
+  "inputs": [
+    {
+      "name": "username",
+      "type": "CREDENTIAL_GITHUB_USERNAME"
+    },
+    {
+      "name": "token",
+      "type": "CREDENTIAL_GITHUB_TOKEN"
+    },
+    {
+      "name": "email",
+      "type": "CREDENTIAL_GITHUB_EMAIL"
+    },
+    {
+      "default": "true",
+      "items": [
+        "true",
+        "false"
+      ],
+      "label": "Is it a private repository? ",
+      "name": "privacy",
+      "type": "text"
+    },
+    {
+      "cache": {
+        "active": true,
+        "newLabel": "Type new project name:",
+        "qty": 3
+      },
+      "label": "Project name: ",
+      "name": "project_name",
+      "type": "text"
+    },
+    {
+      "cache": {
+        "active": true,
+        "newLabel": "Type new project path:",
+        "qty": 3
+      },
+      "label": "Workspace path: (ex: /home/users/dennis/ritchie-formulas)",
+      "name": "workspace_path",
+      "type": "text"
+    },
+    {
+      "default": "v1.0.0",
+      "label": "Version: (default: v1.0.0)",
+      "name": "version",
+      "type": "text"
+    }
+  ]
+}

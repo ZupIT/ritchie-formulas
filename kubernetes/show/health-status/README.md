@@ -8,4 +8,4 @@ rit kubernetes show health-status
 
 ## description
 
-This formula do
+This formula check health status of kubernets
