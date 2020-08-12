@@ -1,29 +1,11 @@
-# Manager bucket aws
+# Delete bucket aws
 
-## commands
-
-List buckets
-
-```bash
-rit aws list bucket
-```
-
-Create buckets
-
-```bash
-rit aws create bucket
-```
+## command
 
 Delete buckets
 
 ```bash
 rit aws delete bucket
-```
-
-## local test
-
-```bash
-make test-local form=AWS_BUCKET
 ```
 
 ## description

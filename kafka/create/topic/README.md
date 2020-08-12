@@ -8,4 +8,4 @@ rit kafka create topic
 
 ## description
 
-This formula do
+This formula do create a topic on kafka

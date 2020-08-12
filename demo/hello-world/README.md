@@ -1,6 +1,6 @@
 <!-- markdownlint-disable-file MD013 -->
 
-# Ritchie Formula
+# Ritchie Formula Hello World
 
 ## Premisses
 
@@ -10,19 +10,27 @@
 
 - Prompt
 
-```rit demo hello-world```
+```bash
+rit demo hello-world
+```
 
 - Docker
 
-```rit demo hello-world --docker```
+```bash
+rit demo hello-world --docker
+```
 
 - Stdin
 
-```echo '{"input_text":"Dennis", "input_bool":"false", "input_list":"false", "input_password":"Ritchie"}' | rit demo hello-world --stdin```
+```bash
+echo '{"input_text":"Dennis", "input_bool":"false", "input_list":"false", "input_password":"Ritchie"}' | rit demo hello-world --stdin
+```
 
 - Stdin + Docker
 
-```echo '{"input_text":"Dennis", "input_bool":"false", "input_list":"false", "input_password":"Ritchie"}' | rit demo hello-world --stdin --docker```
+```bash
+echo '{"input_text":"Dennis", "input_bool":"false", "input_list":"false", "input_password":"Ritchie"}' | rit demo hello-world --stdin --docker
+```
 
 ## Description
 
@@ -36,7 +44,7 @@ It allows the user to inform 4 different kinds of inputs:
 
 - a list
 
-- a password (secret)
+- and a password (secret)
 
 ## Demo
 

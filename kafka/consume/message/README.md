@@ -8,4 +8,4 @@ rit kafka consume message
 
 ## description
 
-This formula do
+This formula consume a kafka topic in realtime and print messages

@@ -14,10 +14,19 @@ This repository contains rit formulas which can be executed by the [ritchie-cli]
 
 ```bash
  rit add repo
+ Select your provider:
+  > Github
+    Gilab
  Repository name: {{some_repo_name}}
- Is a private repository?
- > no
  Repository URL: {{this_repo_url}}
+ Is a private repository?
+    no
+  > yes
+ Personal access tokens: {{git_personal_token}}
+ Select a tag version:
+  > 1.0.1
+    1.0.0
+ Set the priority: 2
 ```
 
 ## Build and test formulas locally
