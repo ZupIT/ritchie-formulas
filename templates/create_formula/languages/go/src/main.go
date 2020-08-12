@@ -1,7 +1,7 @@
 package main
 
 import (
-	"hello/pkg/hello"
+	"formula/pkg/formula"
 	"os"
 )
 
@@ -10,7 +10,7 @@ func main() {
 	input2 := os.Getenv("SAMPLE_LIST")
 	input3 := os.Getenv("SAMPLE_BOOL")
 
-	hello.Hello{
+	formula.Formula{
 		Text:    input1,
 		List:    input2,
 		Boolean: input3,
