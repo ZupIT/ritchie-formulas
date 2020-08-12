@@ -14,7 +14,7 @@ func getFullContentFromFormula(root string) map[string]string {
 		panic(err)
 	}
 	for _, file := range files {
-		if strings.Contains(file, "src/main.") && !strings.HasPrefix(file, "../../templates") {
+		if strings.Contains(file, "src/main.") && !strings.HasPrefix(file, "../../templates") && !strings.Contains(file, "_vendor/") {
 			fileX := strings.Split(file, "/src/main.")
 			required[fileX[0]] = fileX[1]
 		}

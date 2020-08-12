@@ -1,4 +1,9 @@
 {
+<<<<<<< HEAD
   "long": "long help placeholder for publish used by index page and -h",
   "short": "short help placeholder for publish"
+=======
+  "long": "Formula to publish Ritchie formula repo on github",
+  "short": "Formula to publish Ritchie formula repo on github, and add it to Ritchie repositories (rit add repo) automatically"
+>>>>>>> upstream/master
 }

@@ -1,0 +1,37 @@
+{
+  "dockerImageBuilder": "cimg/python:3.8",
+  "inputs": [
+    {
+      "default": "",
+      "items": [
+        "<50",
+        "<10k",
+        "<100k",
+        ">100k"
+      ],
+      "label": "How many datapoints do you have?",
+      "name": "datapoints_amount",
+      "type": "text"
+    },
+    {
+      "default": "true",
+      "items": [
+        "true",
+        "false"
+      ],
+      "label": "Are you predicting a category?",
+      "name": "category",
+      "type": "bool"
+    },
+    {
+      "default": "true",
+      "items": [
+        "true",
+        "false"
+      ],
+      "label": "Do you have labeled data (supervised learning)?",
+      "name": "labeled_data",
+      "type": "bool"
+    }
+  ]
+}
