@@ -1,1 +1,0 @@
-Delete bucket aws

@@ -8,4 +8,4 @@ rit kafka produce message
 
 ## description
 
-This formula do
+This formula produce a messagem with kafka

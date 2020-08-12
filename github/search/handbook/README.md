@@ -8,4 +8,4 @@ rit github search handbook
 
 ## description
 
-This formula do
+This formula search a handhook
