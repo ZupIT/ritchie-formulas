@@ -1,1 +1,0 @@
-Help you to merge your code with a deploy branch example qa branch.

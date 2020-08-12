@@ -8,4 +8,4 @@ rit kafka list topic
 
 ## description
 
-This formula do
+This formula list topics of kafka

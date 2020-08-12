@@ -1,1 +1,0 @@
-Generates a project using spring starter
