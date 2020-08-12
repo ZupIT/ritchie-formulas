@@ -1,4 +1,4 @@
-# Ritchie Formula
+# Clean a bucket aws
 
 ## command
 

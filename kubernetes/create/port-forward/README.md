@@ -8,4 +8,4 @@ rit kubernetes create port-forward
 
 ## description
 
-This formula do
+This formula create port-forward on kubernets
