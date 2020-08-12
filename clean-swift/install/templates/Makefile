@@ -1,4 +1,4 @@
-# SH
+#SH
 BINARY_NAME=run.sh
 BIN_FOLDER=bin
 
