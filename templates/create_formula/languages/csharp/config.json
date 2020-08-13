@@ -1,5 +1,5 @@
 {
-  "dockerImageBuilder": "mcr.microsoft.com/dotnet/core/sdk:3.1",
+  "dockerImageBuilder": "chiaretto/dotnet-core-debian-buildessential:3.1",
   "inputs": [
     {
       "cache": {
