@@ -12,4 +12,4 @@ RUN chmod +x /rit/set_umask.sh
 
 WORKDIR /app
 ENTRYPOINT ["/rit/set_umask.sh"]
-CMD ["/rit/target/release/rust"]
+CMD ["/rit/runDocker.sh"]

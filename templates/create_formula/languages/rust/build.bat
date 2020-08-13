@@ -8,7 +8,6 @@ SET SH_FILE=%BIN_FOLDER%\run.sh
     mkdir %BIN_FOLDER%
     xcopy /E /I src %BIN_FOLDER%
     cd %BIN_FOLDER%
-    call cargo install --path .
     cd ..
     call :BAT_WINDOWS
     call :SH_LINUX
@@ -18,10 +17,10 @@ SET SH_FILE=%BIN_FOLDER%\run.sh
 :BAT_WINDOWS
     echo @ECHO OFF > %BAT_FILE%
     echo SET mypath=%%~dp0 >> %BAT_FILE%
-    echo start /B /WAIT %%mypath:~0,-1%%/target/release/rust.exe >> %BAT_FILE%
+    echo start /B /WAIT cargo run --quiet >> %BAT_FILE%
 
 :SH_LINUX
-    echo "$(dirname "$0")"/target/release/rust > %SH_FILE%
+    echo cargo run --quiet > %SH_FILE%
     GOTO DONE
 
 :CP_DOCKER
