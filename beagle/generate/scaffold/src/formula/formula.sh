@@ -127,47 +127,72 @@ createWebProject() {
   $(runWeb "$web_slug" "$beagle_version" "$framework")
 }
 
-createMobileProject() {
+createIOSProject() {
   local project_name
-  local os
+  local organization_name
+  local organization_id
+  local beagle_version
+  local bff_url
+  local sourcery
 
-  readProjectName "Mobile project name: "
+  readProjectName "IOS project name: "
   project_name=${reply[0]}
-  mobile_slug=${reply[1]}
+  ios_slug=${reply[1]}
+  organization_name=$(simpleRead "Organization name: ")
+  organization_id=$(simpleRead "Organizaion ID: ")
+  beagle_version=$(readWithDefaultValue "Beagle version (ex: 1.0.0-IOS, default: latest): " "latest")
+  bff_url=$(readWithDefaultValue "BFF url (default: http://localhost:8080): " "http://localhost:8080")
+  sourcery=$(binaryRead "Do you want to use Sourcery? [y/n]: ")
+
+  # shellcheck disable=SC2091
+  $(runMobile "ios" "$project_name" "$ios_slug" "$organization_name" "$organization_id" "$beagle_version" "$bff_url" "$sourcery")
+}
+
+createAndroidProject() {
+  local project_name
+  local package_name
+  local min_sdk
+  local target_sdk
+  local kotlin_version
+  local beagle_version
+  local bff_url
+
+  readProjectName "Android project name: "
+  project_name=${reply[0]}
+  android_slug=${reply[1]}
+  package_name=$(simpleRead "Package name (ex: com.example): ")
+  min_sdk=$(readWithDefaultValue "Min version SDK android: (default: 21): " "21")
+  target_sdk=$(readWithDefaultValue "Target version SDK: (default: 29): " "21")
+  kotlin_version=$(readWithDefaultValue "Kotlin version(1.3+) (default: 1.3.72): " "1.3.72")
+  beagle_version=$(readWithDefaultValue "Beagle version (default: 1.0.0): " "1.0.0")
+  bff_url=$(readWithDefaultValue "BFF url (default: http://localhost:8080): " "http://localhost:8080")
+
+  # shellcheck disable=SC2091
+  $(runMobile "android" "$project_name" "$android_slug" "$package_name" "$min_sdk" "$target_sdk" "$kotlin_version" "$beagle_version" "$bff_url")
+}
+
+createMobileProject() {
+  local os
+  local answer
+
   os=$(readTwoOptions "ios" "android")
 
   if [[ $os == "ios" ]]; then
-    local organization_name
-    local organization_id
-    local beagle_version
-    local bff_url
-    local sourcery
+    createIOSProject
 
-    organization_name=$(simpleRead "Organization name: ")
-    organization_id=$(simpleRead "Organizaion ID: ")
-    beagle_version=$(readWithDefaultValue "Beagle version (ex: 1.0.0-IOS, default: latest): " "latest")
-    bff_url=$(readWithDefaultValue "BFF url (default: http://localhost:8080): " "http://localhost:8080")
-    sourcery=$(binaryRead "Do you want to use Sourcery? [y/n]: ")
-
-    # shellcheck disable=SC2091
-    $(runMobile "$os" "$project_name" "$mobile_slug" "$organization_name" "$organization_id" "$beagle_version" "$bff_url" "$sourcery")
+    echo
+    answer=$(binaryRead "Do you want to also create a android project? [y/n]: ")
+    if [[ $answer == "y" ]]; then
+      createAndroidProject
+    fi
   else
-    local package_name
-    local min_sdk
-    local target_sdk
-    local kotlin_version
-    local beagle_version
-    local bff_url
+    createAndroidProject
 
-    package_name=$(simpleRead "Package name (ex: com.example): ")
-    min_sdk=$(readWithDefaultValue "Min version SDK android: (default: 21): " "21")
-    target_sdk=$(readWithDefaultValue "Target version SDK: (default: 29): " "21")
-    kotlin_version=$(readWithDefaultValue "Kotlin version(1.3+) (default: 1.3.72): " "1.3.72")
-    beagle_version=$(readWithDefaultValue "Beagle version (default: 1.0.0): " "1.0.0")
-    bff_url=$(readWithDefaultValue "BFF url (default: http://localhost:8080): " "http://localhost:8080")
-
-    # shellcheck disable=SC2091
-    $(runMobile "$os" "$project_name" "$mobile_slug" "$package_name" "$min_sdk" "$target_sdk" "$kotlin_version" "$beagle_version" "$bff_url")
+    echo
+    answer=$(binaryRead "Do you want to also create a ios project? [y/n]: ")
+    if [[ $answer == "y" ]]; then
+      createIOSProject
+    fi
   fi
 }
 
@@ -189,9 +214,15 @@ printResult() {
     echo
   fi
 
-  if [[ $mobile_slug ]]; then
-    echo "mobile project successfully created!!"
-    echo "📁  ./$mobile_slug"
+  if [[ $ios_slug ]]; then
+    echo "IOS project successfully created!!"
+    echo "📁  ./$ios_slug"
+    echo
+  fi
+
+  if [[ $android_slug ]]; then
+    echo "Android project successfully created!!"
+    echo "📁  ./$android_slug"
     echo
   fi
 }
