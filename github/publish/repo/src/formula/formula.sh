@@ -68,7 +68,7 @@ runFormula() {
   git push origin master
 
   if [[ $DOCKER_EXECUTION ]]; then
-        chown 1000:1000 -R $CURRENT_PWD/$slug_name
+    chown 1000:1000 -R $CURRENT_PWD/$slug_name
   fi
 
   echo "---------------------------------------------------------------------------"
