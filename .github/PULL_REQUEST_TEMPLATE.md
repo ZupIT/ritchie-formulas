@@ -15,13 +15,13 @@ Please provide the following information:
 
 # Pull Request
 
-####- What I did
+## What I did
 
-####- How I did it
+## How I did it
 
-####- How to verify it
+## How to verify it
 
-####- Description for the changelog
+## Description for the changelog
 <!--
 Write a short (one line) summary that describes the changes in this
 pull request for inclusion in the changelog:
