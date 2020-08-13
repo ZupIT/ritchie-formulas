@@ -40,13 +40,10 @@ runFormula() {
   checkProjectName $slug_name
 
   cd $WORKSPACE_PATH
-<<<<<<< HEAD
-=======
   if [ $? != 0 ]; then
       cd -
       exit 1;
   fi
->>>>>>> upstream/master
 
   echo "---------------------------------------------------------------------------"
 
