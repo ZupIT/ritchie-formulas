@@ -68,7 +68,7 @@ runFormula() {
   git push origin master
 
   if [[ $DOCKER_EXECUTION ]]; then
-    fmt.Sprintf("%s && chown -R %s bin", defaultContainerCmd, currentUser.Uid)
+        chown 1000:1000 -R $CURRENT_PWD/$slug_name
   fi
 
   echo "---------------------------------------------------------------------------"
@@ -84,7 +84,7 @@ runFormula() {
       echo -e "✘️ \\e[91mError:\\e[0mFail generating release $VERSION";
       exit 1;
   fi
-  echo "🚀  Release $VERSION successfully generated !"
+  echo "🚀 Release $VERSION successfully generated !"
   sleep 1s
 
   echo "---------------------------------------------------------------------------"
