@@ -29,7 +29,7 @@
         "newLabel": "Type new project name:",
         "qty": 3
       },
-      "label": "Project name: ",
+      "label": "Github project name: ",
       "name": "project_name",
       "type": "text"
     },

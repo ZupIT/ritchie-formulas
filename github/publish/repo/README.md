@@ -11,19 +11,27 @@
 
 - Prompt
 
-```rit github publish repo```
+```bash
+rit github publish repo
+```
 
 - Docker
 
-```rit github publish repo --docker```
+```bash
+rit github publish repo --docker
+```
 
 - Stdin
 
-```echo '{"privacy":"true", "project_name":"ritchie-formulas-demo", "workspace_path":"/home/users/dennis/ritchie-formulas-local", "version":"v1.0.0"}' | rit github publish repo --stdin```
+```bash
+echo '{"privacy":"true", "project_name":"ritchie-formulas-demo", "workspace_path":"/home/users/dennis/ritchie-formulas-local", "version":"v1.0.0"}' | rit github publish repo --stdin
+```
 
 - Stdin + Docker
 
-```echo '{"privacy":"true", "project_name":"ritchie-formulas-demo", "workspace_path":"/home/users/dennis/ritchie-formulas-local", "version":"v1.0.0"}' | rit github publish repo --stdin --docker```
+```bash
+echo '{"privacy":"true", "project_name":"ritchie-formulas-demo", "workspace_path":"/home/users/dennis/ritchie-formulas-local", "version":"v1.0.0"}' | rit github publish repo --stdin --docker
+```
 
 ## Description
 
