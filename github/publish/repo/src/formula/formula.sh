@@ -1,10 +1,7 @@
 #!/bin/bash
-<<<<<<< HEAD
-=======
 # shellcheck disable=SC2181
 # shellcheck disable=SC2086
 # shellcheck disable=SC2164
->>>>>>> upstream/master
 
 removeSpaces() {
   echo "${1}" | xargs | tr " " -
@@ -40,13 +37,10 @@ runFormula() {
   checkProjectName $slug_name
 
   cd $WORKSPACE_PATH
-<<<<<<< HEAD
-=======
   if [ $? != 0 ]; then
       cd -
       exit 1;
   fi
->>>>>>> upstream/master
 
   echo "---------------------------------------------------------------------------"
 
@@ -74,7 +68,7 @@ runFormula() {
   git push origin master
 
   if [[ $DOCKER_EXECUTION ]]; then
-    chown 1000:1000 -R $CURRENT_PWD/$slug_name
+    fmt.Sprintf("%s && chown -R %s bin", defaultContainerCmd, currentUser.Uid)
   fi
 
   echo "---------------------------------------------------------------------------"
