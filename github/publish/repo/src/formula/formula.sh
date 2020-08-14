@@ -1,10 +1,7 @@
 #!/bin/bash
-<<<<<<< HEAD
-=======
 # shellcheck disable=SC2181
 # shellcheck disable=SC2086
 # shellcheck disable=SC2164
->>>>>>> upstream/master
 
 removeSpaces() {
   echo "${1}" | xargs | tr " " -
@@ -87,7 +84,7 @@ runFormula() {
       echo -e "✘️ \\e[91mError:\\e[0mFail generating release $VERSION";
       exit 1;
   fi
-  echo "🚀  Release $VERSION successfully generated !"
+  echo "🚀 Release $VERSION successfully generated !"
   sleep 1s
 
   echo "---------------------------------------------------------------------------"
