@@ -1,0 +1,15 @@
+{
+  "description": "YOURLS API configuration",
+  "inputs" : [
+    {
+      "name" : "yourls_api_endpoint",
+      "type" : "text",
+      "label" : "API endpoint (Ex.: http://your-domain.com/yourls-api.php): "
+    },
+    {
+      "name" : "yourls_api_secret",
+      "type" : "text",
+      "label" : "Secret signature token (Find in YOURLS Admin console > Tools) : "
+    }
+  ]
+}
