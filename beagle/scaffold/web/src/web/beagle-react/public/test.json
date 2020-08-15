@@ -1,0 +1,21 @@
+{
+    "_beagleComponent_": "beagle:container",
+    "children": [
+        {
+            "_beagleComponent_":"beagle:text",
+            "text":"first text"
+        },
+       {
+            "_beagleComponent_":"beagle:text",
+            "style":{
+              "padding":{
+                "top":{
+                  "value":10,
+                  "type": "REAL"
+                }
+              }
+            },
+            "text":"second text"
+        }
+    ]
+}

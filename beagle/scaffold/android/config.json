@@ -1,0 +1,63 @@
+{
+  "description": "Initialize an android project with beagle",
+  "inputs": [
+    {
+      "name": "project_name",
+      "type": "text",
+      "label": "Project name: "
+    },
+    {
+      "name": "package_name",
+      "type": "text",
+      "label": "Package name: (ex: com.example)",
+      "cache": {
+        "active": true,
+        "qty": 4,
+        "newLabel": "Type new value."
+      }
+    },
+    {
+      "name": "beagle_version",
+      "type": "text",
+      "default": "1.0.0",
+      "label": "Beagle version: (default 1.0.0)",
+      "cache": {
+        "active": true,
+        "qty": 4,
+        "newLabel": "Type new value."
+      }
+    },
+    {
+      "name": "beagle_url",
+      "type": "text",
+      "label": "BFF url: (ex: https://URL)",
+      "cache": {
+        "active": true,
+        "qty": 4,
+        "newLabel": "Type new value."
+      }
+    },
+    {
+      "name": "min_sdk",
+      "type": "text",
+      "default": "21",
+      "label": "Min version SDK android: (default 21)",
+      "cache": {
+        "active": true,
+        "qty": 4,
+        "newLabel": "Type new value."
+      }
+    },
+    {
+      "name": "target_sdk",
+      "type": "text",
+      "default": "29",
+      "label": "Target version SDK: (default 29)",
+      "cache": {
+        "active": true,
+        "qty": 4,
+        "newLabel": "Type new value."
+      }
+    }
+  ]
+}
