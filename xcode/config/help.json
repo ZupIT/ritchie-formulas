@@ -1,4 +1,4 @@
 {
-	"short": "short help placeholder for config",
-	"long": "long help placeholder for config used by index page and -h"
+  "long": "Manage xcode configuration objects",
+  "short": "Manage xcode configuration objects"
 }

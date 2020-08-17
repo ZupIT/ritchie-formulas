@@ -26,21 +26,13 @@ function getPreAction(projectName) {
         $: {
           title: 'Run Script',
           scriptText:
-            "find ${BUILT_PRODUCTS_DIR} -name '" +
+            "# Type a script or drag a script file from your workspace to insert its path.;find ${BUILT_PRODUCTS_DIR} -name '" +
             projectName +
             ".framework' -exec rm -rf {} \\;",
         },
       },
     },
   };
-}
-
-function getScriptText(projectName) {
-  return (
-    "find ${BUILT_PRODUCTS_DIR} -name '" +
-    projectName +
-    ".framework' -exec rm -rf {} \\;"
-  );
 }
 
 async function Run(projectName) {
@@ -54,8 +46,8 @@ async function Run(projectName) {
     const parsedXML = await parse(file);
 
     if ('PreActions' in parsedXML.Scheme.BuildAction[0]) {
-      parsedXML.Scheme.BuildAction[0].PreActions[0].ExecutionAction[0].ActionContent[0].$.scriptText += getScriptText(
-        projectName
+      parsedXML.Scheme.BuildAction[0].PreActions.push(
+        getPreAction(projectName)
       );
     } else {
       parsedXML.Scheme.BuildAction[0].PreActions = getPreAction(projectName);
@@ -64,6 +56,8 @@ async function Run(projectName) {
     const xml = builder.buildObject(parsedXML);
 
     await writeFile(path, xml);
+
+    console.log('Script successfully added!!');
   } catch (err) {
     console.log(err);
     process.exit(1);

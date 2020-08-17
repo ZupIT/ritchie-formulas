@@ -8,4 +8,4 @@ rit xcode config pre-build-cache
 
 ## description
 
-description of formula
+Configure xcode pre build cache script
