@@ -1,17 +1,16 @@
 {
   "execution": [
-    "local",
-    "docker"
+    "local"
   ],
   "os": {
     "deps": [],
     "support": [
-      "windows",
-      "mac",
-      "linux"
+      "mac"
     ]
   },
   "tags": [
-    "xcode", "config", "pre-build-cache"
+    "xcode",
+    "config",
+    "pre-build-cache"
   ]
 }
