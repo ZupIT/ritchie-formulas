@@ -1,9 +1,3 @@
 {
-  "inputs": [
-    {
-      "label": "Project name: ",
-      "name": "project_name",
-      "type": "text"
-    }
-  ]
+  "inputs": []
 }
