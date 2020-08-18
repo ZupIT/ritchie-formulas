@@ -3,7 +3,7 @@ BINARY_NAME_UNIX=run.sh
 BINARY_NAME_WINDOWS=run.bat
 BIN_FOLDER=bin
 
-build: node-build docker
+build: node-build
 
 node-build:
 	mkdir -p $(BIN_FOLDER)
@@ -13,6 +13,3 @@ node-build:
 	echo 'node "$$(dirname "$$0")"/index.js' >>  $(BIN_FOLDER)/$(BINARY_NAME_UNIX)
 	echo 'node index.js' > $(BIN_FOLDER)/$(BINARY_NAME_WINDOWS)
 	chmod +x $(BIN_FOLDER)/$(BINARY_NAME_UNIX)
-
-docker:
-	cp Dockerfile set_umask.sh $(BIN_FOLDER)
