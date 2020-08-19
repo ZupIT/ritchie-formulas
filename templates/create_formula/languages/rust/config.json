@@ -1,5 +1,5 @@
 {
-  "dockerImageBuilder": "cimg/rust:1.45.0",
+  "dockerImageBuilder": "chiaretto/rust-rustup-default-stable:1.45.0",
   "inputs": [
     {
       "cache": {
