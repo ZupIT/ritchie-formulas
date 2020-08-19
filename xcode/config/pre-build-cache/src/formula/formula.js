@@ -1,17 +1,52 @@
 const fs = require('fs');
 const util = require('util');
+const exec = util.promisify(require('child_process').exec);
+const readline = require('readline');
 const xml2js = require('xml2js');
 
 const parser = new xml2js.Parser();
 const builder = new xml2js.Builder();
 
-async function parse(data) {
+async function checkXcodeOpened() {
   try {
-    const res = await parser.parseStringPromise(data);
-    return res;
+    await exec('ps aux | grep -v grep | grep -c Xcode');
+    return true;
   } catch (err) {
-    console.log(err);
-    process.exit(1);
+    return false;
+  }
+}
+
+function readInput(text) {
+  const reader = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+  });
+
+  return new Promise((resolve, _) => {
+    reader.question(text, async (answer) => {
+      reader.close();
+      resolve(answer);
+    });
+  });
+}
+
+async function closeXcode() {
+  try {
+    console.log('To execute this formula you need to close Xcode.');
+    const answer = await readInput('Do you want to close Xcode? [y/n]: ');
+
+    if (answer.toLowerCase() === 'y') {
+      console.log('Closing Xcode...');
+      await exec('pkill Xcode');
+      return true;
+    } else if (answer.toLowerCase() === 'n') {
+      console.log('Please close XCode to execute the formula');
+      return false;
+    }
+
+    throw new Error("Please enter with a valid string: 'y' or 'n'");
+  } catch (err) {
+    throw err;
   }
 }
 
@@ -53,33 +88,58 @@ function getPreAction(projectName) {
   };
 }
 
+async function createXCSharedData(projectName, dirPath, writeFile, readFile) {
+  const mkdir = util.promisify(fs.mkdir);
+
+  await mkdir(dirPath, { recursive: true });
+
+  let template = await readFile('./formula/template.xcscheme', 'utf8');
+
+  template = template.replace(/\${projectName}/g, projectName);
+
+  await writeFile(`${dirPath}/${projectName}.xcscheme`, template);
+}
+
 async function Run() {
   const readFile = util.promisify(fs.readFile);
+  const fileExists = util.promisify(fs.exists);
   const writeFile = util.promisify(fs.writeFile);
 
   try {
+    if (await checkXcodeOpened()) {
+      const success = await closeXcode();
+      if (!success) {
+        return;
+      }
+    }
+
     const projectName = await getProjectName();
     const path = `${process.env.CURRENT_PWD}/${projectName}.xcodeproj/xcshareddata/xcschemes/${projectName}.xcscheme`;
 
-    const file = await readFile(path);
+    if (await fileExists(path)) {
+      const file = await readFile(path);
 
-    const parsedXML = await parse(file);
+      const parsedXML = await parser.parseStringPromise(file);
 
-    if ('PreActions' in parsedXML.Scheme.BuildAction[0]) {
-      parsedXML.Scheme.BuildAction[0].PreActions[0].ExecutionAction.push(
-        getPreAction(projectName).ExecutionAction
-      );
+      if ('PreActions' in parsedXML.Scheme.BuildAction[0]) {
+        parsedXML.Scheme.BuildAction[0].PreActions[0].ExecutionAction.push(
+          getPreAction(projectName).ExecutionAction
+        );
+      } else {
+        parsedXML.Scheme.BuildAction[0].PreActions = getPreAction(projectName);
+      }
+
+      const xml = builder.buildObject(parsedXML);
+
+      await writeFile(path, xml);
     } else {
-      parsedXML.Scheme.BuildAction[0].PreActions = getPreAction(projectName);
+      const dirPath = `${process.env.CURRENT_PWD}/${projectName}.xcodeproj/xcshareddata/xcschemes`;
+      await createXCSharedData(projectName, dirPath, writeFile, readFile);
     }
-
-    const xml = builder.buildObject(parsedXML);
-
-    await writeFile(path, xml);
 
     console.log('Script successfully added!!');
   } catch (err) {
-    console.log(err);
+    console.log(err.message);
     process.exit(1);
   }
 }
