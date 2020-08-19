@@ -21,7 +21,7 @@ Please provide the following information:
 
 ## How to verify it
 
-## What kind of change does this PR make?
+## What kind of change does this PR make
 
 - [ ] Major
 - [ ] Minor
