@@ -55,17 +55,17 @@ runFormula() {
         git config --local user.name $USERNAME
         git config --local user.email $EMAIL
       fi
-    git add .
-    git commit -m "Initial Commit"
-    curl -H 'Authorization: token '$TOKEN https://api.github.com/user/repos -d '{"name":"'$slug_name'", "private": '$PRIVACY'}'
+    git add . > /dev/null
+    git commit -m "Initial Commit" > /dev/null
+    curl -H 'Authorization: token '$TOKEN https://api.github.com/user/repos -d '{"name":"'$slug_name'", "private": '$PRIVACY'}' > /dev/null
     if [ $? != 0 ]; then
       echo -e "✘️ \\e[91mError:\\e[0mFail creating $PRIVACY repository";
       exit 1;
     fi
-    git remote add origin https://$USERNAME:$TOKEN@github.com/$USERNAME/$slug_name.git
+    git remote add origin https://$USERNAME:$TOKEN@github.com/$USERNAME/$slug_name.git > /dev/null
   fi
 
-  git push origin master
+  git push origin master > /dev/null
 
   if [[ $DOCKER_EXECUTION ]]; then
     chown 1000:1000 -R $CURRENT_PWD/$slug_name
@@ -79,7 +79,7 @@ runFormula() {
   echo "---------------------------------------------------------------------------"
   echo "🛠 Generating release $VERSION"
   API_JSON=$(printf '{"tag_name": "%s","target_commitish": "master","name": "%s","body": "Release of version %s","draft": false,"prerelease": false}' $VERSION $VERSION $VERSION)
-  curl --data "$API_JSON" https://api.github.com/repos/$USERNAME/$slug_name/releases?access_token=$TOKEN
+  curl --data "$API_JSON" https://api.github.com/repos/$USERNAME/$slug_name/releases?access_token=$TOKEN > /dev/null
   if [ $? != 0 ]; then
       echo -e "✘️ \\e[91mError:\\e[0mFail generating release $VERSION";
       exit 1;
