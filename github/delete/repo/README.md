@@ -1,5 +1,6 @@
 <!-- markdownlint-disable-file MD013 -->
 <!-- markdownlint-disable-file MD033 -->
+<!-- markdownlint-disable-file MD034 -->
 
 # Ritchie Formula
 
