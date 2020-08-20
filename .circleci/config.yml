@@ -24,7 +24,7 @@ references:
         - /^pull\/.*$/
         - /^feature.*/
         - /^fix.*/
-        - ritchie-2.0.0
+        - master
 
 executors:
   static-executor:
