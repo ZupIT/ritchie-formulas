@@ -10,7 +10,7 @@
       "type": "CREDENTIAL_GITHUB_TOKEN"
     },
     {
-      "label": "Github project to delete name: ",
+      "label": "Github project name to delete: ",
       "name": "project_name",
       "type": "text"
     }
