@@ -13,13 +13,21 @@
     },
     {
       "default": "false",
-      "items": [
-        "false",
-        "true"
-      ],
+      "items": ["false", "true"],
       "label": "Create a private repository?: ",
       "name": "private",
       "type": "bool"
+    },
+    {
+      "cache": {
+        "active": true,
+        "newLabel": "Type new project path:",
+        "qty": 3
+      },
+      "default": "",
+      "label": "Workspace path (ex: /home/user/Documents/my-project): ",
+      "name": "workspace_path",
+      "type": "text"
     },
     {
       "name": "username",
