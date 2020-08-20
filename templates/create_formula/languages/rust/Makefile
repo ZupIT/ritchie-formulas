@@ -1,19 +1,25 @@
 # Make Run Rust
-BINARY_NAME_UNIX=run.sh
-BINARY_NAME_WINDOWS=run.bat
+BIN_NAME=formula
 BIN_FOLDER=bin
+UNIX-SH=run.sh
+WINDOWS-BAT=run.bat
 
 build: rust-build docker
 
 rust-build:
 	mkdir -p $(BIN_FOLDER)
-	cargo install --path .
-	cp -r src $(BIN_FOLDER)
-	cp -r target $(BIN_FOLDER)
-	echo '#!/bin/sh' > $(BIN_FOLDER)/$(BINARY_NAME_UNIX)
-	echo './target/release/rust' >>  $(BIN_FOLDER)/$(BINARY_NAME_UNIX)
-	echo 'target/release/rust.exe' > $(BIN_FOLDER)/$(BINARY_NAME_WINDOWS)
-	chmod +x $(BIN_FOLDER)/$(BINARY_NAME_UNIX)
+	cp -r src/* $(BIN_FOLDER)
+	cargo build --manifest-path $(BIN_FOLDER)/Cargo.toml --release
+
+	# Unix
+	echo '#!/bin/sh' > $(BIN_FOLDER)/$(UNIX-SH)
+	echo '"$$(dirname "$$0")"/target/release/$(BIN_NAME)' >>  $(BIN_FOLDER)/$(UNIX-SH)
+	chmod +x $(BIN_FOLDER)/$(UNIX-SH)
+
+	# Windows
+	echo '@ECHO OFF' > $(BIN_FOLDER)/$(WINDOWS-BAT)
+	echo 'SET mypath=%~dp0' >> $(BIN_FOLDER)/$(WINDOWS-BAT)
+	echo 'start /B /WAIT %mypath:~0,-1%/target/release/$(BIN_NAME)' >> $(BIN_FOLDER)/$(WINDOWS-BAT)
 
 docker:
 	cp Dockerfile set_umask.sh $(BIN_FOLDER)

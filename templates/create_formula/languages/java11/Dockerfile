@@ -1,4 +1,4 @@
-FROM chiaretto/rust-rustup-default-stable:1.45.0
+FROM cimg/openjdk:11.0.5
 
 USER root
 

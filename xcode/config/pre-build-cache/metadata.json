@@ -1,0 +1,16 @@
+{
+  "execution": [
+    "local"
+  ],
+  "os": {
+    "deps": [],
+    "support": [
+      "mac"
+    ]
+  },
+  "tags": [
+    "xcode",
+    "config",
+    "pre-build-cache"
+  ]
+}

@@ -6,7 +6,7 @@ orbs:
 references:
   images:
     go: &GOLANG_IMAGE cimg/go:1.14
-    python: &PYTHON_IMAGE circleci/python:3.8.2
+    pythonwithgo: &PYTHONWITHGO_IMAGE ritclizup/pythonwithgo:1.0
 
   paths:
     test-results: &TEST_RESULTS_DIR bin
@@ -24,18 +24,18 @@ references:
         - /^pull\/.*$/
         - /^feature.*/
         - /^fix.*/
-        - ritchie-2.0.0
+        - master
 
 executors:
-  ritchie-executor:
+  static-executor:
     docker:
-      - image: *GOLANG_IMAGE
+      - image: *PYTHONWITHGO_IMAGE
         user: root
     working_directory: /workspace
 
-  static-executor:
+  ritchie-executor:
     docker:
-      - image: *PYTHON_IMAGE
+      - image: *GOLANG_IMAGE
         user: root
     working_directory: /workspace
 
@@ -54,29 +54,9 @@ jobs:
           command: |
             apt-get install -y shellcheck
       - run:
-          name: Install pre-commit
-          command: |
-            pip install pre-commit
-      - run:
           name: pre-commit
           command: |
             pre-commit run --all-files
-
-#  lint:
-#    executor: ritchie-executor
-#    steps:
-#      - checkout
-#      - run:
-#          name: Install golangci-lint
-#          command: |
-#            download=https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh
-#            wget -O- -q $download | sh -s -- -b /go/bin/ v1.24.0
-#      - run:
-#          name: lint
-#          command: |
-#            go mod download
-#            /go/bin/golangci-lint run
-
   unit_test:
     executor: ritchie-executor
     environment:
@@ -100,9 +80,6 @@ jobs:
 workflows:
   build-for-requests:
     jobs:
-#      - lint:
-#          filters:
-#            <<: *FILTERS_CHECK_CODE
       - pre-commit:
           filters:
             <<: *FILTERS_CHECK_CODE
