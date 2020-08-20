@@ -20,19 +20,19 @@ type Inputs struct {
 
 func (in Inputs) Run() {
 	if in.Key == "" || in.Secret == "" {
-        fmt.Println("Verify your credentials saved! Not received.")
-        return
-    }
-    sess, err := session.NewSession(&aws.Config{
-        Region:      aws.String(in.Region),
-        Credentials: credentials.NewStaticCredentials(in.Key, in.Secret, ""),
-    })
-    if err != nil {
-        fmt.Println("Failed to create session, verify credentials")
-        return
-    }
-    svc := s3.New(sess)
-    in.runClean(svc)
+		fmt.Println("Verify your credentials saved! Not received.")
+		return
+	}
+	sess, err := session.NewSession(&aws.Config{
+		Region:      aws.String(in.Region),
+		Credentials: credentials.NewStaticCredentials(in.Key, in.Secret, ""),
+	})
+	if err != nil {
+		fmt.Println("Failed to create session, verify credentials")
+		return
+	}
+	svc := s3.New(sess)
+	in.runClean(svc)
 }
 
 func (in Inputs) runClean(svc *s3.S3) {
@@ -56,7 +56,7 @@ func (in Inputs) runClean(svc *s3.S3) {
 	case "YES":
 		fmt.Printf("Cleaning...")
 		listObjectsInput := &s3.ListObjectsInput{
-			Bucket: aws.String(bSelect),
+			Bucket:  aws.String(bSelect),
 			MaxKeys: aws.Int64(20),
 		}
 
@@ -64,7 +64,7 @@ func (in Inputs) runClean(svc *s3.S3) {
 			for _, value := range page.Contents {
 				deleteObjectInput := &s3.DeleteObjectInput{
 					Bucket: aws.String(bSelect),
-					Key: value.Key,
+					Key:    value.Key,
 				}
 
 				_, err := svc.DeleteObject(deleteObjectInput)
