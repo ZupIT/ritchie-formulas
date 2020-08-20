@@ -1,4 +1,4 @@
 {
-  "short": "Github command to delete a repo",
-  "long": "Github command to delete a public or private repo based on github credentials"
+  "long": "Github command to delete a public or private repo based on github credentials",
+  "short": "Github command to delete a repo"
 }
