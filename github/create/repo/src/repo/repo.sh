@@ -37,7 +37,7 @@ run() {
 
   checkProjectName "$PROJECT_NAME"
 
-  if [[ "$WORKSPACE_PATH" != "" ]]; then
+  if [[ "$WORKSPACE_PATH" != " " ]]; then
     cd "$WORKSPACE_PATH" || exit 1
   else
     mkdir "$PROJECT_NAME"
@@ -54,5 +54,5 @@ run() {
   git remote add origin https://"$USERNAME":"$TOKEN"@github.com/"$USERNAME"/"$PROJECT_NAME".git &&
   git push origin master
 
-  echo "✅ Project successfully added on Github!!"
+  echo "✅ Project successfully initialized with git and added on Github!!"
 }

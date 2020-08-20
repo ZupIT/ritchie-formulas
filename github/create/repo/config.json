@@ -19,12 +19,7 @@
       "type": "bool"
     },
     {
-      "cache": {
-        "active": true,
-        "newLabel": "Type new project path:",
-        "qty": 3
-      },
-      "default": "",
+      "default": " ",
       "label": "Workspace path (ex: /home/user/Documents/my-project): ",
       "name": "workspace_path",
       "type": "text"
