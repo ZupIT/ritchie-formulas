@@ -1,16 +1,8 @@
 {
-  "execution": [
-    "local",
-    "docker"
-  ],
+  "execution": ["local", "docker"],
   "os": {
     "deps": [],
-    "support": [
-      "mac",
-      "linux"
-    ]
+    "support": ["mac", "linux"]
   },
-  "tags": [
-    "github", "delete", "repo"
-  ]
+  "tags": ["github", "delete", "repo"]
 }
