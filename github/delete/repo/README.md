@@ -38,9 +38,9 @@ echo '{"project_name":"dennis-ritchie"}' | rit github delete repo --stdin --dock
 
 This Github delete command allows the user to delete a Github PUBLIC or PRIVATE repository on the user domain.
 
-The user has to inform only one input: 
+The user has to inform only one input:
 
-- the repository name on Github 
+- the repository name on Github
 
 Ex: The NAME would be "ritchie-formulas" for URL https://github.com/ZupIT/ritchie-formulas
 
