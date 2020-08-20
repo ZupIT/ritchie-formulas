@@ -36,11 +36,11 @@ runFormula() {
   fi
 
   echo "---------------------------------------------------------------------------"
-  
+
   echo "📡 Checking if Github url https://github.com/$USERNAME/$slug_name.git exists."
 
   git ls-remote "https://github.com/$USERNAME/$slug_name.git" > /dev/null 2>&1
-  
+
   if [ "$?" -ne 0 ]; then
     sleep 1s
     echo "🚨 Unable to read from https://github.com/$USERNAME/$slug_name.git"
@@ -50,7 +50,7 @@ runFormula() {
     sleep 1s
     curl -X DELETE -H 'Authorization: token '$TOKEN https://api.github.com/repos/$USERNAME/$slug_name > /dev/null
   fi
-  
+
   git ls-remote "https://github.com/$USERNAME/$slug_name.git" > /dev/null 2>&1
 
   if [ "$?" -ne 0 ]; then
@@ -60,5 +60,5 @@ runFormula() {
     sleep 1s
     echo "🚨 Unable to delete https://github.com/$USERNAME/$slug_name.git repository"
     echo "🔧 Check your github token authorizations."
-  fi 
+  fi
 }
