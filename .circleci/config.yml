@@ -6,7 +6,7 @@ orbs:
 references:
   images:
     go: &GOLANG_IMAGE cimg/go:1.14
-    python: &PYTHON_IMAGE circleci/python:3.8.2
+    pythonwithgo: &PYTHONWITHGO_IMAGE ritclizup/pythonwithgo:1.0
 
   paths:
     test-results: &TEST_RESULTS_DIR bin
@@ -27,15 +27,15 @@ references:
         - ritchie-2.0.0
 
 executors:
-  ritchie-executor:
+  static-executor:
     docker:
-      - image: *GOLANG_IMAGE
+      - image: *PYTHONWITHGO_IMAGE
         user: root
     working_directory: /workspace
 
-  static-executor:
+  ritchie-executor:
     docker:
-      - image: *PYTHON_IMAGE
+      - image: *GOLANG_IMAGE
         user: root
     working_directory: /workspace
 
