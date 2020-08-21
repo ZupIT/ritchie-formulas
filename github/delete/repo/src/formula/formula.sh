@@ -46,7 +46,8 @@ runFormula() {
     echo "🚨 Unable to read from https://github.com/$USERNAME/$slug_name.git"
     exit 1;
   else
-    echo "🚧 Start deleting project at https://github.com/$USERNAME/$slug_name.git"
+    echo "🐙 https://github.com/$USERNAME/$slug_name.git exists."
+    echo "🚧 Start deleting https://github.com/$USERNAME/$slug_name.git repository."
     sleep 1s
     curl -X DELETE -H 'Authorization: token '$TOKEN https://api.github.com/repos/$USERNAME/$slug_name > /dev/null
   fi
