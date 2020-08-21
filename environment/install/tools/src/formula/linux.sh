@@ -195,7 +195,7 @@ installJdk() {
 
     sudo apt-get update -y 2>&1 | tee "$USER"/log/tmp.log
 
-    echo -ne "${YELLOW}Select the version of Openjdk to be installed:"
+    echo -ne "${YELLOW}Select the version of Openjdk to be installed:\\n"
 
     options=("8" "11" "12" "Quit")
 
@@ -328,10 +328,9 @@ installIntellij() {
         return
     fi
 
-    Sudo apt-add-repository ppa:mmk2410/intellij-idea -y 2>&1 | tee "$USER"/log/tmp.log
     sudo apt-get update -y 2>&1 | tee "$USER"/log/tmp.log
 
-    echo -ne "${YELLOW}Select the version of IntelliJ to be installed:"
+    echo -ne "${YELLOW}Select the version of IntelliJ to be installed:\\n"
 
     options=("Community" "Ultimate" "Quit")
 
@@ -340,13 +339,13 @@ installIntellij() {
         "Community")
             clearLine 1
             init "Starting installation of IntelliJ IDEA Community" "IntelliJ IDEA Community installation completed"
-            sudo apt-get install intellij-idea-community -y 2>&1 | tee "$USER"/log/tmp.log
+            sudo snap install intellij-idea-community --classic 2>&1 | tee "$USER"/log/tmp.log
             break
             ;;
         "Ultimate")
             clearLine 1
             init "Starting installation of IntelliJ IDEA" "IntelliJ IDEA Ultimate installation completed"
-            sudo apt-get install intellij-idea-ultimate -y 2>&1 | tee "$USER"/log/tmp.log
+            sudo snap install intellij-idea-ultimate --classic 2>&1 | tee "$USER"/log/tmp.log
             break
             ;;
         "Quit")
