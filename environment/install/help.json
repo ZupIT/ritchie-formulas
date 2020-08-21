@@ -1,4 +1,4 @@
 {
-  "long": "long help placeholder for install used by index page and -h",
-  "short": "short help placeholder for install"
+  "long": "Command for installing objects in the environment",
+  "short": "Installation of objects in the environment"
 }

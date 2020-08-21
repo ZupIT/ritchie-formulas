@@ -18,10 +18,10 @@ runConfigLinux() {
 
     case "$CONFIGURATION" in
     "Complete configuration")
-        completeConfiguration "$GIT_NAME" "$GIT_EMAIL"
+        completeConfiguration
         ;;
     "Select programs")
-        selectConfiguration "$GIT_NAME" "$GIT_EMAIL"
+        selectConfiguration
         ;;
     *) echo -e "${RED}Invalid option, try again!" ;;
     esac
@@ -39,7 +39,7 @@ completeConfiguration() {
     installNode
     installNpm
     installVsCode
-    installGit "$GIT_NAME" "$GIT_EMAIL"
+    installGit
     installMaven
     installDocker
     installIntellij
@@ -84,7 +84,7 @@ selectConfiguration() {
     )
 
     while opt=$(zenity --title="Installation" --text="Tools" --list \
-        --column="Tools" "${selections[@]}"); do
+        --column="Name" "${selections[@]}"); do
 
         case "$opt" in
         "${selections[0]}") installSPropertiesCommon ;;
@@ -97,7 +97,7 @@ selectConfiguration() {
         "${selections[7]}") installNode ;;
         "${selections[8]}") installNpm ;;
         "${selections[9]}") installVsCode ;;
-        "${selections[10]}") installGit "$GIT_NAME" "$GIT_EMAIL" ;;
+        "${selections[10]}") installGit ;;
         "${selections[11]}") installMaven ;;
         "${selections[12]}") installDocker ;;
         "${selections[13]}") installIntellij ;;
@@ -289,8 +289,32 @@ installGit() {
 
     sudo apt-get install git -y 2>&1 | tee "$USER"/log/tmp.log
 
-    git config --global user.name "$1"
-    git config --global user.email "$2"
+    configGit
+}
+
+configGit() {
+    echo -ne "${GREEN}? ${YELLOW}GIT username: "
+    read -r user
+
+    echo -ne "${GREEN}? ${YELLOW}GIT email: "
+    read -r email
+
+    git config --global user.name "$user"
+    git config --global user.email "$email"
+
+    echo -ne "${YELLOW}Would you like to configure git credentials using rit? (y|n): "
+
+    while true; do
+        read -r var
+        if [[ "$var" == "y" || "$var" == "Y" ]]; then
+            rit set credential
+            break
+        elif [[ "$var" == "n" || "$var" == "N" ]]; then
+            break
+        else
+            echo >&2 "Please, enter with 'y' or 'n'"
+        fi
+    done
 }
 
 installMaven() {
