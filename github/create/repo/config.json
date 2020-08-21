@@ -22,6 +22,12 @@
       "type": "bool"
     },
     {
+      "default": " ",
+      "label": "Workspace path (ex: /home/user/my-project)\n(Note: An empty value create a GitHub repo with just a README file): ",
+      "name": "workspace_path",
+      "type": "text"
+    },
+    {
       "name": "username",
       "type": "CREDENTIAL_GITHUB_USERNAME"
     },
