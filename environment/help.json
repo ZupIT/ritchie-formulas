@@ -1,10 +1,4 @@
 {
-<<<<<<< HEAD
   "long": "Manipulate environment objects",
   "short": "Manipulate environment objects"
 }
-=======
-  "long": "long help placeholder for environment used by index page and -h",
-  "short": "short help placeholder for environment"
-}
->>>>>>> Fixes for Shell syntax checking

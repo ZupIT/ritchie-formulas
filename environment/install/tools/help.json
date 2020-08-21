@@ -1,10 +1,4 @@
 {
-<<<<<<< HEAD
   "long": "As soon as the command is requested by the user, he must start the tool installation script according to the OS",
   "short": "Tools to be installed in the environment"
 }
-=======
-  "long": "long help placeholder for tools used by index page and -h",
-  "short": "short help placeholder for tools"
-}
->>>>>>> Fixes for Shell syntax checking
