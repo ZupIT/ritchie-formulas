@@ -1,0 +1,14 @@
+{
+  "dockerImageBuilder": "cimg/base:stable-20.04",
+  "inputs": [
+    {
+      "items": [
+        "Complete configuration",
+        "Select programs"
+      ],
+      "label": "Choose which type of installation you want to do: ",
+      "name": "CONFIGURATION",
+      "type": "text"
+    }
+  ]
+}
