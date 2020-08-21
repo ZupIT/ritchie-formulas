@@ -10,9 +10,7 @@ rit environment install tools
 
 Formula to automate the configuration of development environments.
 
-<div align="center">
-    <img src="../tools/docs/img/environment-form.gif"/>
-</div>
+![gif](docs/img/environment-form.gif)
 
 ### List of installed tools
 
@@ -39,8 +37,8 @@ Formula to automate the configuration of development environments.
 
 ### Next steps
 
-- Some ideas:
-    - Create script to automate installation of common tools for MacOS and Windows.
-    - UX improvement.
-    - Add more tools that are common to users.
-    - Add commands by professional areas.
++ Some ideas:
+  + Create script to automate installation of common tools for MacOS and Windows.
+  + UX improvement.
+  + Add more tools that are common to users.
+  + Add commands by professional areas.

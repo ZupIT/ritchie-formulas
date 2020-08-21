@@ -1,4 +1,4 @@
 {
-	"short": "short help placeholder for environment",
-	"long": "long help placeholder for environment used by index page and -h"
+  "long": "long help placeholder for environment used by index page and -h",
+  "short": "short help placeholder for environment"
 }

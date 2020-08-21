@@ -9,7 +9,7 @@ runFormula() {
   # todo: Detect different versions of OS
   case "$SYSTEM" in
   Linux*)
-    runConfigLinux $SYSTEM $CONFIGURATION $GIT_NAME $GIT_EMAIL
+    runConfigLinux "$SYSTEM" "$CONFIGURATION" "$GIT_NAME" "$GIT_EMAIL"
     ;;
   Darwin*)
     config "MacOS"
@@ -20,7 +20,7 @@ runFormula() {
     # todo: add CYGWIN
     ;;
   *)
-    printf "Unknown operating system.\n"
+    printf "Unknown operating system.\\n"
     ;;
   esac
 }
