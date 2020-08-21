@@ -22,4 +22,4 @@ To generate a personal access token click [here](https://github.com/settings/tok
 
 ## How it works
 
-![gif](https://media.giphy.com/media/U5bfisA8omNg52kEG1/giphy.gif)
+![gif](doc/github-create-repo.gif)

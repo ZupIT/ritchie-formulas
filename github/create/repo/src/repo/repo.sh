@@ -37,17 +37,15 @@ run() {
 
   checkProjectName "$PROJECT_NAME"
 
-  mkdir "$PROJECT_NAME"
-  cd "$PROJECT_NAME" || exit
+  if [[ "$WORKSPACE_PATH" != " " ]]; then
+    cd "$WORKSPACE_PATH" || exit 1
+  else
+    mkdir "$PROJECT_NAME"
+    cd "$PROJECT_NAME" || exit 1
+    echo "$PROJECT_DESCRIPTION" >> README.md
+  fi
 
   git init
-  echo "$PROJECT_DESCRIPTION" >> README.md
-
-  if [[ $DOCKER_EXECUTION ]]; then
-    read -rp "Enter your email: " email
-    git config --local user.name "$USERNAME"
-    git config --local user.email "$email"
-  fi
 
   git add .
   git commit -m "Initial Commit"
@@ -56,11 +54,5 @@ run() {
   git remote add origin https://"$USERNAME":"$TOKEN"@github.com/"$USERNAME"/"$PROJECT_NAME".git &&
   git push origin master
 
-  if [[ $DOCKER_EXECUTION ]]; then
-    cd ..
-    chown 1000:1000 -R "$PROJECT_NAME"
-  fi
-
-  echo "Project successfully created!!"
-  echo "📁  ./$PROJECT_NAME"
+  echo "✅ Project successfully initialized with git and added on Github!!"
 }
