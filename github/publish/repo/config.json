@@ -19,7 +19,7 @@
         "true",
         "false"
       ],
-      "label": "Is it a private repository? ",
+      "label": "Will it be a private repository? ",
       "name": "privacy",
       "type": "text"
     },
@@ -39,7 +39,7 @@
         "newLabel": "Type new project path:",
         "qty": 3
       },
-      "label": "Workspace path: (ex: /home/users/dennis/ritchie-formulas)",
+      "label": "Workspace to publish path: (ex: /home/users/dennis/ritchie-formulas)",
       "name": "workspace_path",
       "type": "text"
     },

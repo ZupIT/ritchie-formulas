@@ -21,6 +21,16 @@ Please provide the following information:
 
 ## How to verify it
 
+## What kind of change does this PR make
+
+- [ ] Major
+- [ ] Minor
+- [ ] Patch
+
+<!--
+See: https://semver.org/
+-->
+
 ## Description for the changelog
 
 <!--
