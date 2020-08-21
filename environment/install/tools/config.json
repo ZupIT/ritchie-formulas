@@ -1,0 +1,24 @@
+{
+  "dockerImageBuilder": "cimg/base:stable-20.04",
+  "inputs": [
+    {
+      "items": [
+        "Complete configuration",
+        "Select programs"
+      ],
+      "label": "Choose which type of installation you want to do: ",
+      "name": "CONFIGURATION",
+      "type": "text"
+    },
+    {
+      "label": "Username GIT: ",
+      "name": "GIT_NAME",
+      "type": "text"
+    },
+    {
+      "label": "Email GIT: ",
+      "name": "GIT_EMAIL",
+      "type": "text"
+    }
+  ]
+}
