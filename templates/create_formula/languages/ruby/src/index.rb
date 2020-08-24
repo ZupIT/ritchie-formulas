@@ -1,6 +1,6 @@
 #!/usr/bin/ruby
 
-require "./formula/formula"
+require_relative 'formula/formula'
 
 INPUT1 = ENV["SAMPLE_TEXT"]
 INPUT2 = ENV["SAMPLE_LIST"]

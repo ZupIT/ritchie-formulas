@@ -1,10 +1,13 @@
 FROM ruby:2.6
 
-COPY . .
+USER root
 
-RUN chmod +x set_umask.sh
+RUN mkdir /rit
+COPY . /rit
+RUN sed -i 's/\r//g' /rit/set_umask.sh
+RUN sed -i 's/\r//g' /rit/run.sh
+RUN chmod +x /rit/set_umask.sh
 
 WORKDIR /app
-
-ENTRYPOINT ["/set_umask.sh"]
-CMD ["./index.rb"]
+ENTRYPOINT ["/rit/set_umask.sh"]
+CMD ["/rit/run.sh"]
