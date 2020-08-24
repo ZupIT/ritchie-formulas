@@ -1,6 +1,6 @@
 #!/usr/bin/ruby
 
-require "./{{bin-name}}/{{bin-name}}"
+require "./formula/formula"
 
 INPUT1 = ENV["SAMPLE_TEXT"]
 INPUT2 = ENV["SAMPLE_LIST"]
