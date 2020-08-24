@@ -1,0 +1,48 @@
+{
+  "dockerImageBuilder": "cimg/base:stable-20.04",
+  "inputs": [
+    {
+      "name": "username",
+      "type": "CREDENTIAL_GITLAB_USERNAME"
+    },
+    {
+      "name": "token",
+      "type": "CREDENTIAL_GITLAB_TOKEN"
+    },
+    {
+      "name": "email",
+      "type": "CREDENTIAL_GITLAB_EMAIL"
+    },
+    {
+      "cache": {
+        "active": true,
+        "newLabel": "Type new value. ",
+        "qty": 6
+      },
+      "label": "Project Name : ",
+      "name": "projectname",
+      "type": "text"
+    },
+    {
+      "items": [
+        "private",
+        "public",
+        "internal"
+      ],
+      "label": "What will be the visibility of the repository? ",
+      "name": "privacy",
+      "type": "text"
+    },
+    {
+      "label": "Workspace to publish path: (ex: /home/user/dennis/ritchie-formulas)",
+      "name": "workspace_path",
+      "type": "text"
+    },
+    {
+      "default": "v1.0.0",
+      "label": "Version: (default: v1.0.0)",
+      "name": "version",
+      "type": "text"
+    }
+  ]
+}
