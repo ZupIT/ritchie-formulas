@@ -1,0 +1,4 @@
+{
+  "long": "Formula to publish Ritchie formula repo on gitlab",
+  "short": "Formula to publish Ritchie formula repo on gitlab, and add it to Ritchie repositories (rit add repo) automatically"
+}
