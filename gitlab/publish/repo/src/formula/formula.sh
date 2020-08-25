@@ -1,4 +1,8 @@
 #!/bin/bash
+# shellcheck disable=SC2181
+# shellcheck disable=SC2086
+# shellcheck disable=SC2164
+# shellcheck disable=SC1001
   removeSpaces() {
     echo "${1}" | xargs | tr " " -
   }
@@ -6,9 +10,9 @@
 cleanName() {
   tmp="$1"
   if [[ "$1" = *" "* ]]; then
-    echo >&2 "\nRemoving spaces from Project Name...: "
+    echo >&2 "Removing spaces from Project Name...: "
     tmp=$(removeSpaces "$1")
-    echo >&2 "\nProject name without spaces: $tmp"
+    echo >&2 "Project name without spaces: $tmp"
     fi
     echo "$tmp" | tr '[:upper:]' '[:lower:]'
   }
