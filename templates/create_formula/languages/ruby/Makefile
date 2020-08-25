@@ -8,13 +8,12 @@ build: ruby-build docker
 ruby-build:
 	mkdir -p $(BIN_FOLDER)
 	cp -r src/* $(BIN_FOLDER)
-	echo '#!/bin/sh' 		 > $(BIN_FOLDER)/$(BINARY_NAME_UNIX)
-	echo 'bundle install --path vendor/bundle' 	>> $(BIN_FOLDER)/$(BINARY_NAME_UNIX)
-	echo 'ruby "$$(dirname "$$0")"/index.rb'	>> $(BIN_FOLDER)/$(BINARY_NAME_UNIX)
+	echo '#!/bin/sh' > $(BIN_FOLDER)/$(BINARY_NAME_UNIX)
+	echo "bundle install --path $(BIN_FOLDER)" >> $(BIN_FOLDER)/$(BINARY_NAME_UNIX)
+	echo 'ruby "$$(dirname "$$0")"/index.rb' >> $(BIN_FOLDER)/$(BINARY_NAME_UNIX)
 
-	echo 'bundle install --path vendor/bundle' 	>  $(BIN_FOLDER)/$(BINARY_NAME_WINDOWS)
-	echo 'ruby "$$(dirname "$$0")"/index.rb'		>> $(BIN_FOLDER)/$(BINARY_NAME_WINDOWS)
-
+	echo "bundle install --path $(BIN_FOLDER)" >> $(BIN_FOLDER)/$(BINARY_NAME_WINDOWS)
+	echo 'ruby "$$(dirname "$$0")"/index.rb' >> $(BIN_FOLDER)/$(BINARY_NAME_WINDOWS)
 	chmod +x $(BIN_FOLDER)/$(BINARY_NAME_UNIX)
 
 docker:
