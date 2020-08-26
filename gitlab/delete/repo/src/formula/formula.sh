@@ -56,7 +56,7 @@ runFormula() {
 
   if [ "$?" -ne 0 ]; then
     sleep 1s
-    echo "✅ Project successfully deleted from Gitlab"
+    echo "✅ Repository successfully deleted from Gitlab"
   else
     sleep 1s
     echo "🚨 Unable to delete https://gitlab.com/$USERNAME/$slug_name.git repository"
