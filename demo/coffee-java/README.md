@@ -3,10 +3,19 @@
 ## command
 
 ```bash
-rit scaffold generate coffee-java
+rit demo coffee-java
 ```
 
 ## description
 
-This is a formula receive 4 inputs (customer name, coffee type, delivery,
-no delay) and builds a coffee.
+This is formula receive 4 inputs:
+
+- customer name, 
+
+- coffee type, 
+
+- delivery,
+
+- no delay 
+
+and builds a coffee.
