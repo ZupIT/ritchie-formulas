@@ -8,14 +8,12 @@ rit demo coffee-node
 
 ## description
 
-This is formula receive 4 inputs:
+This is formula receive 3 inputs:
 
 - customer name, 
 
 - coffee type, 
 
-- delivery,
-
-- no delay 
+- delivery
 
 and builds a coffee.
