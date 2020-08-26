@@ -47,10 +47,9 @@ run() {
   fi
 
   git init
-
   git add .
   git commit -m "Initial Commit"
-  
+
   curl -H 'PRIVATE-TOKEN: '$TOKEN -X POST 'https://gitlab.com/api/v4/projects?name='$PROJECT_NAME'&visibility='$PRIVATE > /dev/null
   git remote add origin https://oauth2:$TOKEN@gitlab.com/$USERNAME/$PROJECT_NAME.git
 
