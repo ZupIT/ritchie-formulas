@@ -10,7 +10,7 @@
       "type": "CREDENTIAL_GITLAB_TOKEN"
     },
     {
-      "label": "GitLab project name to delete: ",
+      "label": "Gitlab project name to delete: ",
       "name": "project_name",
       "type": "text"
     }
