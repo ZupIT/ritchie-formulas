@@ -1,0 +1,18 @@
+{
+  "dockerImageBuilder": "cimg/base:stable-20.04",
+  "inputs": [
+    {
+      "name": "username",
+      "type": "CREDENTIAL_GITLAB_USERNAME"
+    },
+    {
+      "name": "token",
+      "type": "CREDENTIAL_GITLAB_TOKEN"
+    },
+    {
+      "label": "GitLab project name to delete: ",
+      "name": "project_name",
+      "type": "text"
+    }
+  ]
+}
