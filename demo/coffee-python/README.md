@@ -3,16 +3,19 @@
 ## command
 
 ```bash
-rit scaffold generate coffee-python
-```
-
-## local test
-
-```bash
-make test-local form=SC_COFFEE_PYTHON
+rit demo coffee-python
 ```
 
 ## description
 
-This is formula receive 4 inputs (customer name, coffee type, delivery,
-no delay) and builds a coffee.
+This is formula receive 4 inputs:
+
+- customer name, 
+
+- coffee type, 
+
+- delivery,
+
+- no delay 
+
+and builds a coffee.
