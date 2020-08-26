@@ -3,16 +3,19 @@
 ## command
 
 ```bash
-rit scaffold generate coffee-node
-```
-
-## local test
-
-```bash
-make test-local form=SC_COFFEE_NODE
+rit demo coffee-node
 ```
 
 ## description
 
-This is formula receive 4 inputs (customer name, coffee type, delivery,
-no delay) and builds a coffee.
+This is formula receive 4 inputs:
+
+- customer name, 
+
+- coffee type, 
+
+- delivery,
+
+- no delay 
+
+and builds a coffee.
