@@ -56,7 +56,7 @@ runFormula() {
 
   if [ "$?" -ne 0 ]; then
     sleep 1s
-    echo "✅ Project successfully deleted from Github"
+    echo "✅ Repository successfully deleted from Github"
   else
     sleep 1s
     echo "🚨 Unable to delete https://github.com/$USERNAME/$slug_name.git repository"
