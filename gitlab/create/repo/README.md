@@ -19,3 +19,7 @@ rit set credential
 ## How to generate personal access token
 
 To generate a personal access token click [here](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html)
+
+## How it works
+
+![gif](https://media.giphy.com/media/USCWX5znZyXi3MW8Wu/giphy.gif)
