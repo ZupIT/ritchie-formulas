@@ -54,5 +54,5 @@ run() {
   git remote add origin https://"$USERNAME":"$TOKEN"@github.com/"$USERNAME"/"$PROJECT_NAME".git &&
   git push origin master
 
-  echo "✅ Project successfully initialized with git and added on Github!!"
+  echo "✅ Repository successfully initialized with git and added on Github!!"
 }
