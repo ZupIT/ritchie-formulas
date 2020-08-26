@@ -3,13 +3,7 @@
 ## command
 
 ```bash
-rit scaffold generate coffee-go
-```
-
-## local test
-
-```bash
-make test-local form=SC_COFFEE_GO
+rit demo coffee-go
 ```
 
 ## description
