@@ -55,5 +55,5 @@ run() {
 
   git push origin master
 
-  echo "✅ Project successfully initialized with git and added on Gitlab!!"
+  echo "✅ Repository successfully initialized with Git and added on Gitlab!!"
 }
