@@ -43,3 +43,7 @@ The user has to inform only one input:
 - the repository name on Gitlab
 
 Ex: The NAME would be "ritchie-formulas" for URL https://github.com/ZupIT/ritchie-formulas
+
+## How it works
+
+![gif](https://media.giphy.com/media/RJJMed5qzQeynuztBS/giphy.gif)
