@@ -42,7 +42,7 @@ The user has to inform only one input:
 
 - the repository name on Gitlab
 
-Ex: The NAME would be "ritchie-formulas" for URL https://github.com/ZupIT/ritchie-formulas
+Ex: The NAME would be "ritchie-formulas" for URL https://gitlab.com/ZupIT/ritchie-formulas
 
 ## How it works
 
