@@ -1,5 +1,5 @@
 {
-  "dockerImageBuilder": "cimg/ruby:2.7.1",
+  "dockerImageBuilder": "ruby:2.7.1",
   "inputs": [
     {
       "cache": {

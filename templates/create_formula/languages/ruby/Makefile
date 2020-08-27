@@ -9,7 +9,7 @@ ruby-build:
 	mkdir -p $(BIN_FOLDER)
 	cp -r src/* $(BIN_FOLDER)
 	echo '#!/bin/sh' > $(BIN_FOLDER)/$(BINARY_NAME_UNIX)
-	echo 'bundle install --gemfile "$$(dirname "$$0")"/Gemfile'  >> $(BIN_FOLDER)/$(BINARY_NAME_UNIX)
+	echo 'bundle install --quiet --gemfile "$$(dirname "$$0")"/Gemfile'  >> $(BIN_FOLDER)/$(BINARY_NAME_UNIX)
 	echo 'ruby "$$(dirname "$$0")"/index.rb' >> $(BIN_FOLDER)/$(BINARY_NAME_UNIX)
 
 	echo 'bundle install --gemfile "$$(dirname "$$0")"/Gemfile' >> $(BIN_FOLDER)/$(BINARY_NAME_WINDOWS)
