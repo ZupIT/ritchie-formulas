@@ -9,7 +9,7 @@ BIN_WINDOWS=src.exe
 SH=$(BIN_FOLDER)/run.sh
 BAT=$(BIN_FOLDER)/run.bat
 
-build: linux-build windows-build macOS-build sh-unix bat-windows
+build: linux-build windows-build macOS-build sh-unix bat-windows docker
 
 linux-build:
 	mkdir -p $(BIN_FOLDER)/$(BIN_FOLDER_LINUX)
