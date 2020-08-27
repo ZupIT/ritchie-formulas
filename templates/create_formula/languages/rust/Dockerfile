@@ -2,6 +2,8 @@ FROM chiaretto/rust-rustup-default-stable:1.45.0
 
 USER root
 
+RUN curl -fsSL https://commons-repo.ritchiecli.io/install.sh | bash
+
 RUN mkdir /rit
 COPY . /rit
 RUN sed -i 's/\r//g' /rit/set_umask.sh
