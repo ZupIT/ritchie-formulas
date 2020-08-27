@@ -12,7 +12,7 @@ ruby-build:
 	echo 'bundle install --gemfile "$$(dirname "$$0")"/Gemfile'  >> $(BIN_FOLDER)/$(BINARY_NAME_UNIX)
 	echo 'ruby "$$(dirname "$$0")"/index.rb' >> $(BIN_FOLDER)/$(BINARY_NAME_UNIX)
 
-	echo "bundle install --gemfile "$$(dirname "$$0")"/Gemfile' >> $(BIN_FOLDER)/$(BINARY_NAME_WINDOWS)
+	echo 'bundle install --gemfile "$$(dirname "$$0")"/Gemfile' >> $(BIN_FOLDER)/$(BINARY_NAME_WINDOWS)
 	echo 'ruby "$$(dirname "$$0")"/index.rb' >> $(BIN_FOLDER)/$(BINARY_NAME_WINDOWS)
 	chmod +x $(BIN_FOLDER)/$(BINARY_NAME_UNIX)
 
