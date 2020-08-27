@@ -23,7 +23,7 @@
     },
     {
       "default": " ",
-      "label": "Workspace path (ex: /home/user/my-project)\n(Note: An empty value create a GitHub repo with just a README file): ",
+      "label": "Workspace path (ex: /home/user/my-project)\n(Note: An empty value create a Gitlab repo with just a README file): ",
       "name": "workspace_path",
       "type": "text"
     },
