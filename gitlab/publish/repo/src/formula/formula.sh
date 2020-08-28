@@ -94,17 +94,17 @@ checkProjectName() {
   sleep 1s
 
   echo "---------------------------------------------------------------------------"
-  echo "🐙 Adding Gitlab repository https://gitlab.com/$USERNAME/$slug_name to Ritchie"
+  echo "🦊 Adding Gitlab repository https://gitlab.com/$USERNAME/$slug_name to Ritchie"
   sleep 10s
   echo '{"provider":"Gitlab", "name":"'$slug_name'", "version":"'$VERSION'", "url":"'https://gitlab.com/$USERNAME/$slug_name'", "token":"'$TOKEN'", "priority":2}' | rit add repo --stdin
   if [ $? != 0 ]; then
-      echo -e "✘️ Fail adding Github repository to Ritchie ($ rit add repo)";
+      echo -e "✘️ Fail adding Gitlab repository to Ritchie ($ rit add repo)";
       exit 1;
   fi
   echo "🔁 Updating Ritchie repository"
   echo '{"name":"'$slug_name'", "version":"'$VERSION'"}' | rit update repo --stdin
   if [ $? != 0 ]; then
-      echo -e "✘️ Fail updating repository on Github ($ rit update repo)";
+      echo -e "✘️ Fail updating repository on Gitlab ($ rit update repo)";
       exit 1;
   fi
   echo "👏👏👏 New workspace published and imported successfully"

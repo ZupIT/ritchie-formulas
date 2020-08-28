@@ -1,4 +1,5 @@
 #!/bin/bash
+# shellcheck disable=SC2086
 
 checkCommand() {
   if ! command -v "$1" >/dev/null; then
@@ -46,13 +47,13 @@ run() {
   fi
 
   git init
-
   git add .
   git commit -m "Initial Commit"
 
-  curl -H 'Authorization: token '"$TOKEN" https://api.github.com/user/repos -d '{"name":"'"$PROJECT_NAME"'", "private":'"$PRIVATE"'}' &&
-  git remote add origin https://"$USERNAME":"$TOKEN"@github.com/"$USERNAME"/"$PROJECT_NAME".git &&
+  curl -H 'PRIVATE-TOKEN: '$TOKEN -X POST 'https://gitlab.com/api/v4/projects?name='$PROJECT_NAME'&visibility='$PRIVATE > /dev/null
+  git remote add origin https://oauth2:$TOKEN@gitlab.com/$USERNAME/$PROJECT_NAME.git
+
   git push origin master
 
-  echo "✅ Repository successfully initialized with git and added on Github!!"
+  echo "✅ Repository successfully initialized with Git and added on Gitlab!!"
 }

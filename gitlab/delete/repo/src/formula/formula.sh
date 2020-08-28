@@ -37,29 +37,29 @@ runFormula() {
 
   echo "---------------------------------------------------------------------------"
 
-  echo "📡 Checking if Github url https://github.com/$USERNAME/$slug_name.git exists."
+  echo "📡 Checking if Gitlab url https://gitlab.com/$USERNAME/$slug_name.git exists."
 
-  git ls-remote "https://github.com/$USERNAME/$slug_name.git" > /dev/null 2>&1
+  git ls-remote "https://gitlab.com/$USERNAME/$slug_name.git" > /dev/null 2>&1
 
   if [ "$?" -ne 0 ]; then
     sleep 1s
-    echo "🚨 Unable to read from https://github.com/$USERNAME/$slug_name.git"
+    echo "🚨 Unable to read from https://gitlab.com/$USERNAME/$slug_name.git"
     exit 1;
   else
-    echo "🐙 https://github.com/$USERNAME/$slug_name.git exists."
-    echo "🚧 Start deleting https://github.com/$USERNAME/$slug_name.git repository."
+    echo "🦊 https://gitlab.com/$USERNAME/$slug_name.git exists."
+    echo "🚧 Start deleting https://gitlab.com/$USERNAME/$slug_name.git repository."
     sleep 1s
-    curl -X DELETE -H 'Authorization: token '$TOKEN https://api.github.com/repos/$USERNAME/$slug_name > /dev/null
+    curl -H 'Content-Type: application/json' -H 'Private-Token: '$TOKEN -X DELETE 'https://gitlab.com/api/v4/projects/'$USERNAME'%2F'$slug_name > /dev/null
   fi
 
-  git ls-remote "https://github.com/$USERNAME/$slug_name.git" > /dev/null 2>&1
+  git ls-remote "https://gitlab.com/$USERNAME/$slug_name.git" > /dev/null 2>&1
 
   if [ "$?" -ne 0 ]; then
     sleep 1s
-    echo "✅ Repository successfully deleted from Github"
+    echo "✅ Repository successfully deleted from Gitlab"
   else
     sleep 1s
-    echo "🚨 Unable to delete https://github.com/$USERNAME/$slug_name.git repository"
-    echo "🔧 Check your github token authorizations."
+    echo "🚨 Unable to delete https://gitlab.com/$USERNAME/$slug_name.git repository"
+    echo "🔧 Check your gitlab token authorizations."
   fi
 }
