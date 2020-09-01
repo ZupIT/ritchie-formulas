@@ -1,4 +1,4 @@
-FROM alpine:3.12
+FROM cimg/go:1.14
 
 USER root
 
