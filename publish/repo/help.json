@@ -1,0 +1,4 @@
+{
+  "long": "Publish formula repository on Github or Gitlab using rit github/gitlab publish repo formulas",
+  "short": "Publish formula repository on Github or Gitlab"
+}
