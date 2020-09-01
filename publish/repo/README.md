@@ -39,7 +39,7 @@ The user has to inform 5 different kinds of inputs:
 
 - the repository's privacy
 
-- the Gitlab repository's name
+- the repository's name
 
 - the local repository path you wish to publish
 
