@@ -1,4 +1,4 @@
 {
-	"short": "Publish command",
-	"long": "Command to publish contents on any platform"
+  "long": "Command to publish contents on any platform",
+  "short": "Publish command"
 }
