@@ -48,6 +48,6 @@ The user has to inform 5 different kinds of inputs:
 
 - Command execution
 
-<img class="special-img-class" src="/github/publish/repo/docs/img/Github.png" />
+<img class="special-img-class" src="/publish/repo/docs/img/Github.png" />
 
-<img class="special-img-class" src="/github/publish/repo/docs/img/Gitlab.png" />
+<img class="special-img-class" src="/publish/repo/docs/img/Gitlab.png" />
