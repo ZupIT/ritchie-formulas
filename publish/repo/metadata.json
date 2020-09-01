@@ -1,6 +1,6 @@
 {
   "execution": [
-    "local"  
+    "local"
   ],
   "os": {
     "deps": [],
@@ -10,8 +10,6 @@
     ]
   },
   "tags": [
-    "github",
-    "publish",
-    "repo"
+    "github", "gitlab", "publish", "repo"
   ]
 }

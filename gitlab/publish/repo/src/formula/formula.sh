@@ -25,7 +25,7 @@ checkProjectName() {
 
   runFormula() {
 
-  slug_name=$(cleanName "$PROJECTNAME")
+  slug_name=$(cleanName "$PROJECT_NAME")
   checkProjectName $slug_name
 
   cd $WORKSPACE_PATH
