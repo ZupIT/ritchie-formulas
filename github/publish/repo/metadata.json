@@ -1,7 +1,6 @@
 {
   "execution": [
-    "local",
-    "docker"
+    "local"
   ],
   "os": {
     "deps": [],

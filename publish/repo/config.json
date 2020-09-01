@@ -2,16 +2,13 @@
   "dockerImageBuilder": "cimg/base:stable-20.04",
   "inputs": [
     {
-      "name": "username",
-      "type": "CREDENTIAL_GITLAB_USERNAME"
-    },
-    {
-      "name": "token",
-      "type": "CREDENTIAL_GITLAB_TOKEN"
-    },
-    {
-      "name": "email",
-      "type": "CREDENTIAL_GITLAB_EMAIL"
+      "items": [
+        "Github",
+        "Gitlab"
+      ],
+      "label": "Provider : ",
+      "name": "provider",
+      "type": "text"
     },
     {
       "cache": {
@@ -24,12 +21,12 @@
       "type": "text"
     },
     {
+      "default": "true",
       "items": [
-        "private",
-        "public",
-        "internal"
+        "true",
+        "false"
       ],
-      "label": "What will be the visibility of the repository? ",
+      "label": "Will it be a private repository? ",
       "name": "privacy",
       "type": "text"
     },
