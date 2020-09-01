@@ -1,14 +1,15 @@
 <!-- markdownlint-disable-file MD013 -->
 <!-- markdownlint-disable-file MD033 -->
+<!-- markdownlint-disable-file MD024 -->
 
 # Ritchie Publish Repo Formula
 
 ## Command
 
-- Set GITHUB or GITLAB credentials ($ rit set credentials) with USERNAME, TOKEN & EMAIL
+- Set GITHUB or GITLAB credentials ($ rit set credentials) with USERNAME, TOKEN & EMAIL.
 
 - This formula can currently only be executed locally on MacOs or Linux.
- 
+
 ## Command
 
 - Prompt

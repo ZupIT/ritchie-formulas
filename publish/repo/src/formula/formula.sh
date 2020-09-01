@@ -4,7 +4,7 @@
 # shellcheck disable=SC2164
 
 runFormula() {
-  if [ "Github" == $PROVIDER ] 
+  if [ "Github" == $PROVIDER ]
   then
     echo "🐙 Github provider selected"
     echo '{"privacy":"'$PRIVACY'", "project_name":"'$PROJECT_NAME'", "workspace_path":"'$WORKSPACE_PATH'", "version":"'$VERSION'"}' | rit github publish repo --stdin
