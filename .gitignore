@@ -208,3 +208,7 @@ dist
 # End of https://www.toptal.com/developers/gitignore/api/node
 
 package-lock.json
+
+# CSharp output directories from debug compilation 
+**/csharp/src/bin/**
+**/csharp/src/obj/**
