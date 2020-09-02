@@ -1,14 +1,14 @@
-FROM cimg/node:14.0
+FROM alpine:3.12
 
-USER root
+RUN mkdir /rit && \
+    apk add --no-cache sudo curl bash nodejs && \
+    curl -fsSL https://commons-repo.ritchiecli.io/install.sh | bash
 
-RUN curl -fsSL https://commons-repo.ritchiecli.io/install.sh | bash
-
-RUN mkdir /rit
 COPY . /rit
-RUN sed -i 's/\r//g' /rit/set_umask.sh
-RUN sed -i 's/\r//g' /rit/run.sh
-RUN chmod +x /rit/set_umask.sh
+
+RUN sed -i 's/\r//g' /rit/set_umask.sh && \
+    sed -i 's/\r//g' /rit/run.sh && \
+    chmod +x /rit/set_umask.sh
 
 WORKDIR /app
 ENTRYPOINT ["/rit/set_umask.sh"]
