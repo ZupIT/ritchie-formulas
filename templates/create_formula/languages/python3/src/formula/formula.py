@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-from colored import fg, bg, attr
+from colored import fg, attr
 
 
 def Run(input1, input2, input3):
