@@ -7,6 +7,9 @@ SET SH_FILE=%BIN_FOLDER%\run.sh
 :build
     mkdir %BIN_FOLDER%
     xcopy /E /I src %BIN_FOLDER%
+    cd %BIN_FOLDER%
+    call composer install -q
+    cd ..
     CALL :BAT_WINDOWS
     CALL :SH_LINUX
     CALL :CP_DOCKER
