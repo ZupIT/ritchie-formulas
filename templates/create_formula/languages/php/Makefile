@@ -6,9 +6,9 @@ BIN_FOLDER=bin
 build: php-build docker
 
 php-build:
-    mkdir -p $(BIN_FOLDER)
-    cp -r src/* $(BIN_FOLDER)
-    composer install -q -d $(BIN_FOLDER)
+	mkdir -p $(BIN_FOLDER)
+	cp -r src/* $(BIN_FOLDER)
+	composer install -q -d $(BIN_FOLDER)
 	echo '#!/bin/sh' > $(BIN_FOLDER)/$(BINARY_NAME_UNIX)
 	echo 'php -f "$$(dirname "$$0")"//index.php' >>  $(BIN_FOLDER)/$(BINARY_NAME_UNIX)
 	echo 'php -f index.php' > $(BIN_FOLDER)/$(BINARY_NAME_WINDOWS)
