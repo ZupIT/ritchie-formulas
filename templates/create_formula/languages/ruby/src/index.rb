@@ -1,5 +1,6 @@
 #!/usr/bin/ruby
 
+require 'bundler/setup'
 require_relative 'formula/formula'
 
 INPUT1 = ENV["SAMPLE_TEXT"]
