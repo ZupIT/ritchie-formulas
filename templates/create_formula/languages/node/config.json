@@ -1,5 +1,5 @@
 {
-  "dockerImageBuilder": "cimg/node:14.0",
+  "dockerImageBuilder": "kobuti/make-runner:1.0.0",
   "inputs": [
     {
       "cache": {
