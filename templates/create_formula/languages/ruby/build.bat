@@ -7,6 +7,7 @@ SET SH_FILE=%BIN_FOLDER%\run.sh
 :build
     mkdir %BIN_FOLDER%
     xcopy /E /I src %BIN_FOLDER%
+    CALL bundle config set path vendor/bundle
     CALL bundle install --gemfile %%BIN_FOLDER%%/Gemfile
     CALL :BAT_WINDOWS
     CALL :SH_LINUX
