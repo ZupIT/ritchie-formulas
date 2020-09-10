@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 runFormula() {
   if [[ $DOCKER_EXECUTION ]] ; then
     mkdir -p /root/.aws/
