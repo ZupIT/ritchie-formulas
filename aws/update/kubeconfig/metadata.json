@@ -13,6 +13,6 @@
     ]
   },
   "tags": [
-    "aws", "update", "kubeconfig"
+    "aws", "update", "kubeconfig", "eks"
   ]
 }
