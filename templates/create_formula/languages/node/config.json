@@ -1,5 +1,5 @@
 {
-  "dockerImageBuilder": "kobuti/make-runner:1.0.0",
+  "dockerImageBuilder": "kobuti/make-runner:1.1.0",
   "inputs": [
     {
       "cache": {

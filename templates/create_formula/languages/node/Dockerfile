@@ -1,4 +1,4 @@
-FROM alpine:3.12
+FROM kobuti/make-runner:1.1.0
 
 RUN mkdir /rit && \
     apk add --no-cache sudo curl bash nodejs && \
