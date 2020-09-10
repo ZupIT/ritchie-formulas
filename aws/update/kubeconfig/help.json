@@ -1,4 +1,4 @@
 {
-	"short": "Update kubeconfig on eks",
-	"long": "Update kubeconfig on eks"
+  "long": "Update kubeconfig on eks",
+  "short": "Update kubeconfig on eks"
 }
