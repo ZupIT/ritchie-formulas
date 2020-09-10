@@ -4,7 +4,9 @@
     "docker"
   ],
   "os": {
-    "deps": [],
+    "deps": [
+      "aws-cli"
+    ],
     "support": [
       "mac",
       "linux"
