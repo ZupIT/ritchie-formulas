@@ -16,6 +16,7 @@
     "aws",
     "update",
     "kubeconfig",
-    "eks"
+    "eks",
+    "kubernets"
   ]
 }
