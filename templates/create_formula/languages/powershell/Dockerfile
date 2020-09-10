@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/powershell
+FROM chiaretto/powershell-sudo
 
 USER root
 

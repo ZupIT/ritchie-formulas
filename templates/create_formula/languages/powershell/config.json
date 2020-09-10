@@ -1,5 +1,5 @@
 {
-  "dockerImageBuilder": "mcr.microsoft.com/powershell",
+  "dockerImageBuilder": "chiaretto/powershell-sudo",
   "inputs": [
     {
       "cache": {

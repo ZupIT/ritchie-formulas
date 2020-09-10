@@ -12,8 +12,8 @@ bash-build:
 	chmod +x $(BIN_FOLDER)/$(BINARY_NAME)
 
 sh-unix:
-	echo '#!/bin/sh' > $(SH)
-	echo 'powershell -file $(BIN_NAME)' >> $(SH)
+	echo '#!/usr/bin/pwsh' > $(SH)
+	echo './$(BIN_NAME)' >> $(SH)
 	chmod +x $(SH)
 
 bat-windows:
