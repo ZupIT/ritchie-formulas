@@ -68,7 +68,7 @@ checkProjectName() {
   echo "---------------------------------------------------------------------------"
   echo "✅ Project added on Gitlab"
   echo "✅ The id of project is: $projectID"
-  echo "📎 Run: $ git clone https://gitlab.com/$USERNAM/$slug_name.git"
+  echo "📎 Run: $ git clone https://gitlab.com/$USERNAME/$slug_name.git"
   sleep 1s
 
   echo "---------------------------------------------------------------------------"
