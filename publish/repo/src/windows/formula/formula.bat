@@ -5,7 +5,7 @@ call:%~1
 goto exit
 
 :runFormula
-  echo %PROVIDER% 
+  echo %PROVIDER%
   if "%PROVIDER%" == "Github" (
     echo Github provider selected
     echo {"privacy":"%PRIVACY%", "project_name":"%PROJECT_NAME%", "workspace_path":"%WORKSPACE_PATH%", "version":"%VERSION%"} | rit github publish repo --stdin
