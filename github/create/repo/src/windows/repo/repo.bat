@@ -5,9 +5,9 @@ call:%~1
 goto exit
 
 :run
-  if %WORKSPACE_PATH% == " " (
-    mkdir %WORKSPACE_PATH%
-    cd %WORKSPACE_PATH%
+  if "%WORKSPACE_PATH%" == " " (
+    mkdir %CURRENT_PWD%\%PROJECT_NAME%
+    cd %CURRENT_PWD%\%PROJECT_NAME%
     echo %PROJECT_DESCRIPTION% >> README.md
   ) else (
     cd %WORKSPACE_PATH%
