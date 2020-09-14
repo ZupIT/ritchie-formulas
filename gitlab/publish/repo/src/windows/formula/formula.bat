@@ -47,6 +47,18 @@ goto exit
   timeout 2 > nul
 
   echo ---------------------------------------------------------------------------
+  echo Removing local build
+
+  rmdir /q/s %USERPROFILE%\.rit\repos\local
+  if %errorlevel% == 1 (
+    echo Fail removing local build
+    goto exit
+  )
+
+  echo Local build removed successfully
+  timeout 2 > nul
+
+  echo ---------------------------------------------------------------------------
   echo Adding Gitlab repository https://gitlab.com/%USERNAME%/%PROJECT_NAME% to Ritchie
   timeout 6 > nul
 
