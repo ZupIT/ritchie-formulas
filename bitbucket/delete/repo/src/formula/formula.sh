@@ -13,10 +13,5 @@ runFormula() {
 
   curl -X DELETE -u "$USERNAME":"$TOKEN" https://api.bitbucket.org/2.0/repositories/"$USERNAME"/"$PROJECT_NAME"
 
-  if [ "$?" -ne 0 ]; then
-    echo "✅ Repository successfully deleted from Bitbucket"
-  else
-    echo
-    echo "Could not find repository with name $PROJECT_NAME"
-  fi
+  echo "✅ Repository successfully deleted from Bitbucket"
 }
