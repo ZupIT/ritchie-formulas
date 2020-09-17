@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/bin/bash
+# shellcheck disable=SC2086
 
 checkCommand() {
   if ! command -v "$1" >/dev/null; then

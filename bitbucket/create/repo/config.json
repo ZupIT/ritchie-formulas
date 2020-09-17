@@ -13,7 +13,10 @@
     },
     {
       "default": "false",
-      "items": ["false", "true"],
+      "items": [
+        "false",
+        "true"
+      ],
       "label": "Create a private repository?: ",
       "name": "private",
       "type": "bool"

@@ -1,4 +1,4 @@
 {
-	"short": "short help placeholder for repo",
-	"long": "long help placeholder for repo used by index page and -h"
+  "long": "bitbucket command to create a repo",
+  "short": "bitbucket command to create a repo"
 }
