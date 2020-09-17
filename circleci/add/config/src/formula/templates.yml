@@ -1,0 +1,86 @@
+registries:
+  Dockerhub:
+    docker:
+      - image: circleci/python:3.6.1
+    environment:
+      AWS_DEFAULT_OUTPUT: json
+    steps:
+      - setup_remote_docker
+      - attach_workspace:
+          at: .
+      - run:
+          name: Build Docker image
+          command: docker build -t $PROJECT_NAME:latest .
+      - run:
+          name: Publish to Docker Hub
+          command: |
+            echo "${DOCKERHUB_PASS}" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
+            docker push $PROJECT_NAME:latest
+
+  ECR:
+    docker:
+      - image: circleci/python:3.6.1
+    environment:
+      AWS_DEFAULT_OUTPUT: json
+    steps:
+      - checkout
+      - setup_remote_docker
+      - attach_workspace:
+          at: workspace
+      - aws-cli/install
+      - aws-cli/configure:
+          aws-region: "${AWS_REGION}"
+      - run:
+          name: Load image
+          command: |
+            docker load --input workspace/docker-image/image.tar
+      - run:
+          name: Setup common environment variables
+          command: |
+            echo 'export FULL_IMAGE_NAME="${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${PROJECT_NAME}:${CIRCLE_SHA1}"' >> $BASH_ENV
+      - run:
+          name: Push image
+          command: |
+            eval $(aws ecr get-login --region ${AWS_REGION} --no-include-email)
+            docker push $FULL_IMAGE_NAME
+
+deploys:
+  continuous:
+    requires:
+      - <stage>
+  approval:
+    type: approval
+    requires:
+      - <stage>
+  tag-release:
+    requires:
+      - <stage>
+    filters:
+      tags:
+        only: /^\d+\.\d+\.\d+$/
+  approve:
+    type: approval
+    requires:
+      - <stage>
+
+deploy-actions:
+  ecs-fargate:
+    - aws-cli/install
+    - aws-cli/configure:
+        aws-region: "us-east-1"
+    - aws-ecs/update-service:
+        family: "ats-stg-task"
+        cluster-name: "${ECS_CLUSTER_NAME}"
+        service-name: "ats-service-stg"
+        container-image-name-updates: "container=ats-stg-container,image-and-tag=${FULL_IMAGE_NAME}"
+        container-env-var-updates: "container=ats-stg-container,name=VERSION_INFO,value=${CIRCLE_SHA1}_${CIRCLE_BUILD_NUM},container=ats-stg-container,name=BUILD_DATE,value=\"$(date)\""
+        verify-revision-is-deployed: true
+  dokku:
+    - run:
+        name: Add ssh host
+        command: echo "${HOST_PUBLIC_KEY}" >> ~/.ssh/known_hosts
+    - run:
+        name: Deploy to dokku
+        command: |
+          git remote add staging dokku@${HOST_IP}:${PROJECT_NAME}
+          git push staging master

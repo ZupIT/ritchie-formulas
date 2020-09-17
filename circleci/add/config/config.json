@@ -4,34 +4,62 @@
     {
       "cache": {
         "active": true,
-        "newLabel": "Type new value. ",
+        "newLabel": "Enter new name.",
         "qty": 6
       },
-      "label": "Type : ",
-      "name": "sample_text",
+      "label": "Project name:",
+      "name": "project_name",
       "type": "text"
     },
     {
-      "default": "in1",
       "items": [
-        "in_list1",
-        "in_list2",
-        "in_list3",
-        "in_listN"
+        "mongo",
+        "postgres",
+        "no database"
       ],
-      "label": "Pick your : ",
-      "name": "sample_list",
+      "label": "Would you like to add a database?",
+      "name": "database",
       "type": "text"
     },
     {
-      "default": "false",
       "items": [
-        "false",
-        "true"
+        "ECR",
+        "Dockerhub",
+        "No Registry"
       ],
-      "label": "Pick: ",
-      "name": "sample_bool",
-      "type": "bool"
+      "label": "Which registry are you pushing your image to?",
+      "name": "registry",
+      "type": "text"
+    },
+    {
+      "items": [
+        "AWS Fargate",
+        "Dockerhub",
+        "Dokku"
+      ],
+      "label": "Where are you deploying?",
+      "name": "registry",
+      "type": "text"
+    },
+    {
+      "items": [
+        "continuous",
+        "approval",
+        "tag-release"
+      ],
+      "label": "How are you deploying staging?",
+      "name": "staging_deploy",
+      "type": "text"
+    },
+    {
+      "items": [
+        "continuous",
+        "approval",
+        "tag-release"
+      ],
+      "label": "How are you deploying production?",
+      "name": "production_deploy",
+      "type": "text"
     }
   ]
 }

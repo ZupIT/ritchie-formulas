@@ -1,7 +1,6 @@
 {
   "dependencies": {
-    "cli-color": "^2.0.0",
-    "yaml": "^1.10.0"
+    "cli-color": "^2.0.0"
   },
   "main": "index.js",
   "scripts": {
