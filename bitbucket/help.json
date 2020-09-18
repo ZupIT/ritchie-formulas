@@ -1,4 +1,4 @@
 {
-  "long": "long help placeholder for bitbucket used by index page and -h",
-  "short": "short help placeholder for bitbucket"
+  "long": "Manage bitbucket objects",
+  "short": "Manage bitbucket objects"
 }
