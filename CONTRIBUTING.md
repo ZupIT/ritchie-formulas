@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD013-->
 <!-- Contributing from template
 (https://github.com/docker/docker.github.io/blob/master/CONTRIBUTING.md) -->
 
