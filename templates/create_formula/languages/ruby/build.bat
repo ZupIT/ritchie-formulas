@@ -1,14 +1,33 @@
 :: Ruby parameters
 echo off
 SETLOCAL
-SET BINARY_NAME_UNIX={{bin-name}}.sh
-SET BINARY_NAME_WINDOWS={{bin-name}}.bat
-SET DIST=..\dist
-SET DIST_DIR=%DIST%\commons\bin
+SET BIN_FOLDER=bin
+SET BAT_FILE=%BIN_FOLDER%\run.bat
+SET SH_FILE=%BIN_FOLDER%\run.sh
 :build
-    mkdir %DIST_DIR%
-	more +1 run_template > %DIST_DIR%\%BINARY_NAME_WINDOWS%
-    copy run_template %DIST_DIR%\%BINARY_NAME_UNIX%
-    xcopy . %DIST_DIR% /E /H /C /I
+    mkdir %BIN_FOLDER%
+    xcopy /E /I src %BIN_FOLDER%
+    CALL bundle config set path vendor/bundle
+    CALL bundle install --gemfile %%BIN_FOLDER%%/Gemfile
+    CALL :BAT_WINDOWS
+    CALL :SH_LINUX
+    CALL :CP_DOCKER
     GOTO DONE
+
+:BAT_WINDOWS
+    echo @ECHO OFF > %BAT_FILE%
+    echo SET mypath=%%~dp0 >> %BAT_FILE%
+    echo ruby %%mypath:~0,-1%%/index.rb >> %BAT_FILE%
+    GOTO DONE
+
+:SH_LINUX
+    echo #!/bin/sh > %SH_FILE%
+	echo ruby "$(dirname "$0")"/index.rb >> %SH_FILE%
+    GOTO DONE
+
+:CP_DOCKER
+    copy Dockerfile %BIN_FOLDER%
+    copy set_umask.sh %BIN_FOLDER%
+    GOTO DONE
+
 :DONE

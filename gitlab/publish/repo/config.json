@@ -20,7 +20,7 @@
         "qty": 6
       },
       "label": "Project Name : ",
-      "name": "projectname",
+      "name": "project_name",
       "type": "text"
     },
     {

@@ -1,13 +1,13 @@
 {
   "execution": [
-    "local",
-    "docker"
+    "local"
   ],
   "os": {
     "deps": [],
     "support": [
       "mac",
-      "linux"
+      "linux",
+      "windows"
     ]
   },
   "tags": [

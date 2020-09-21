@@ -25,7 +25,7 @@ checkProjectName() {
 
   runFormula() {
 
-  slug_name=$(cleanName "$PROJECTNAME")
+  slug_name=$(cleanName "$PROJECT_NAME")
   checkProjectName $slug_name
 
   cd $WORKSPACE_PATH
@@ -60,21 +60,19 @@ checkProjectName() {
   fi
 
   git push origin master > /dev/null
-  projectID=$(curl --header "Private-Token: $TOKEN" -X GET https://gitlab.com/api/v4/projects\?search\=$slug_name\ | cut -c "8-15")
   if [[ $DOCKER_EXECUTION ]]; then
     chown 1000:1000 -R $CURRENT_PWD/$slug_name
   fi
 
   echo "---------------------------------------------------------------------------"
   echo "✅ Project added on Gitlab"
-  echo "✅ The id of project is: $projectID"
-  echo "📎 Run: $ git clone https://gitlab.com/maurineimirandazup/$slug_name.git"
+  echo "📎 Run: $ git clone https://gitlab.com/$USERNAME/$slug_name.git"
   sleep 1s
 
   echo "---------------------------------------------------------------------------"
   echo "🛠 Generating release $VERSION"
   API_JSON=$(printf '{"name":"%s", "tag_name": "%s", "description": "Release of version %s", "ref":"master"}' $VERSION $VERSION $VERSION)
-  curl --header 'Content-Type: application/json' --header "Private-Token: $TOKEN" --data "$API_JSON" --request POST 'https://gitlab.com/api/v4/projects/'$projectID'/releases' > /dev/null
+  curl --header 'Content-Type: application/json' --header "Private-Token: $TOKEN" --data "$API_JSON" --request POST 'https://gitlab.com/api/v4/projects/'$USERNAME'%2f'$slug_name'/releases' > /dev/null
   if [ $? != 0 ]; then
       echo -e "✘️ Fail generating release $VERSION";
       exit 1;
