@@ -1,0 +1,18 @@
+{
+  "execution": [
+    "local",
+    "docker"
+  ],
+  "os": {
+    "deps": [],
+    "support": [
+      "mac",
+      "linux"
+    ]
+  },
+  "tags": [
+    "bitbucket",
+    "create",
+    "repo"
+  ]
+}
