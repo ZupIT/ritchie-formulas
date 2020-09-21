@@ -1,4 +1,0 @@
-{
-	"short": "creates a circle ci config file at the root of your project",
-	"long": "Use the command prompt to tell which kind of project you are building and generate the corresponding file"
-}
