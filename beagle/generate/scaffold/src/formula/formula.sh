@@ -106,7 +106,7 @@ createBackendProject() {
   backend_package_name=$(simpleRead "Package name (ex: com.example): ")
   jdk_version=$(readWithDefaultValue "JDK version(8+) (default: 13): " "13")
   kotlin_version=$(readWithDefaultValue "Kotlin version(1.3+) (default: 1.3.72): " "1.3.72")
-  beagle_version=$(readWithDefaultValue "Beagle version (default: 1.1.0): " "1.1.0")
+  beagle_version=$(readWithDefaultValue "Beagle version (default: 1.2.0): " "1.2.0")
   backend_framework=$(readTwoOptions "spring" "micronaut")
 
   # shellcheck disable=SC2091
@@ -120,7 +120,7 @@ createWebProject() {
 
   readProjectName "Web project name: "
   web_slug=${reply[1]}
-  beagle_version=$(readWithDefaultValue "Beagle version (default: 1.1.0): " "1.1.0")
+  beagle_version=$(readWithDefaultValue "Beagle version (default: 1.2.0): " "1.2.0")
   framework=$(readTwoOptions "react" "angular")
 
   # shellcheck disable=SC2091
@@ -140,7 +140,7 @@ createIOSProject() {
   ios_slug=${reply[1]}
   organization_name=$(simpleRead "Organization name: ")
   organization_id=$(simpleRead "Organizaion ID: ")
-  beagle_version=$(readWithDefaultValue "Beagle version (ex: 1.0.0-IOS, default: latest): " "latest")
+  beagle_version=$(readWithDefaultValue "Beagle version (ex: 1.2.1-IOS, default: latest): " "latest")
   bff_url=$(readWithDefaultValue "BFF url (default: http://localhost:8080): " "http://localhost:8080")
   sourcery=$(binaryRead "Do you want to use Sourcery? [y/n]: ")
 
@@ -164,7 +164,7 @@ createAndroidProject() {
   min_sdk=$(readWithDefaultValue "Min version SDK android: (default: 21): " "21")
   target_sdk=$(readWithDefaultValue "Target version SDK: (default: 29): " "29")
   kotlin_version=$(readWithDefaultValue "Kotlin version(1.3+) (default: 1.3.72): " "1.3.72")
-  beagle_version=$(readWithDefaultValue "Beagle version (default: 1.1.0): " "1.1.0")
+  beagle_version=$(readWithDefaultValue "Beagle version (default: 1.2.2): " "1.2.2")
   bff_url=$(readWithDefaultValue "BFF url (default: http://localhost:8080): " "http://localhost:8080")
 
   # shellcheck disable=SC2091
