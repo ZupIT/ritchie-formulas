@@ -12,7 +12,7 @@ run() {
   fi
 
   if $SETUPSTREAM; then
-    echo -n "Type original repo: (https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git) "
+    echo -n "Type original repo: (https://repository-site.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git) "
     read -r originalrepo
     if git remote add upstream "$originalrepo"; then
       echo -e "\\e[0;32m✔ \\e[1;30mRemote upstream added\\e[0m";
@@ -52,7 +52,6 @@ run() {
     fi
   fi
 }
-
 
 checkCommand () {
     if ! command -v "$1" >/dev/null; then
