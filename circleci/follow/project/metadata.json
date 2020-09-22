@@ -12,6 +12,8 @@
     ]
   },
   "tags": [
-    "circleci", "follow", "project"
+    "circleci",
+    "follow",
+    "project"
   ]
 }

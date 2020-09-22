@@ -15,22 +15,22 @@
       "type": "CREDENTIAL_CIRCLECI_TOKEN"
     },
     {
-      "name": "user",
-      "type": "CREDENTIAL_BITBUCKET_USERNAME",
       "condition": {
-        "variable": "provider",
         "operator": "==",
-        "value": "bitbucket"
-      }
+        "value": "bitbucket",
+        "variable": "provider"
+      },
+      "name": "user",
+      "type": "CREDENTIAL_BITBUCKET_USERNAME"
     },
     {
-      "name": "user",
-      "type": "CREDENTIAL_GITHUB_USERNAME",
       "condition": {
-        "variable": "provider",
         "operator": "==",
-        "value": "github"
-      }
+        "value": "github",
+        "variable": "provider"
+      },
+      "name": "user",
+      "type": "CREDENTIAL_GITHUB_USERNAME"
     },
     {
       "cache": {
