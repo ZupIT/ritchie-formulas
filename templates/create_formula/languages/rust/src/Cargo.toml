@@ -5,3 +5,4 @@ authors = ["ritchie"]
 edition = "2018"
 
 [dependencies]
+colored = "2"
