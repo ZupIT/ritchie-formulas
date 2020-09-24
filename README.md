@@ -1,4 +1,4 @@
-<!-- markdownlint-disable MD041 MD033 -->
+<!-- markdownlint-disable MD041 MD033 MD013-->
 [![CircleCI](https://circleci.com/gh/ZupIT/ritchie-formulas/tree/ritchie-2.0.0.svg?style=shield)](https://circleci.com/gh/ZupIT/ritchie-formulas)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 
@@ -11,18 +11,18 @@ This repository contains the community formulas which can be executed by the [ri
 ## Create a new formula
 
 1. Fork the repository.
-1. Create a branch:`git checkout -b <branch_name>`
-1. Create a new formula, using the forked repository as a Ritchie
+2. Create a branch:`git checkout -b <branch_name>`
+3. Create a new formula, using the forked repository as a Ritchie
 workspace: `rit create formula` if you need help please visit
  [how to create formulas on Ritchie](https://docs.ritchiecli.io/getting-started/creating-formulas)
-1. Build and use the new formula: `rit build formula`
- or use --watch to watch changes on formula code: `rit build formula --watch`
-1. Run `pre-commit.sh` to lint your code
-1. Run `go test -v ./.circleci/validation/...` to test your code and formula
+4. Build and use the new formula: `rit build formula`
+ or use --watch to keep observing changes on formula code live: `rit build formula --watch`
+5. Run `pre-commit.sh` to lint your code
+6. Run `go test -v ./.circleci/validation/...` to test your code and formula
 structure. _(GoLang Required)_
-1. Commit your implementation.
-1. Push your branch.
-1. Open a pull request on the repository for analysis.
+7. Commit your implementation.
+8. Push your branch.
+9. Open a pull request on the repository for analysis.
 
 ## Add support to other languages on create formula command
 
@@ -34,7 +34,7 @@ the following tutorial:
 
 ## Full Documentation
 
-- [Gitbook](https://docs.ritchiecli.io)
+[Gitbook](https://docs.ritchiecli.io)
 
 ## Contributing
 
@@ -42,4 +42,4 @@ the following tutorial:
 
 ## Zup Products
 
-- [Zup open source](https://opensource.zup.com.br)
+[Zup open source](https://opensource.zup.com.br)

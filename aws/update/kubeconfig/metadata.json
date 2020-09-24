@@ -1,0 +1,22 @@
+{
+  "execution": [
+    "local",
+    "docker"
+  ],
+  "os": {
+    "deps": [
+      "aws-cli"
+    ],
+    "support": [
+      "mac",
+      "linux"
+    ]
+  },
+  "tags": [
+    "aws",
+    "update",
+    "kubeconfig",
+    "eks",
+    "kubernets"
+  ]
+}
