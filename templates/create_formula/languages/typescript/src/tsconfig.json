@@ -4,7 +4,9 @@
     "module": "commonjs",
     "outDir": "dist",
     "sourceMap": true,
-    "types": ["@types/node"]
+    "types": [
+      "node"
+    ]
   },
   "include": [
     "./**/*.ts"
