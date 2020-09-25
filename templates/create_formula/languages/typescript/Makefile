@@ -9,9 +9,10 @@ node-build:
 	mkdir -p $(BIN_FOLDER)
 	cp -r src/* $(BIN_FOLDER)
 	npm install --silent --no-progress --prefix $(BIN_FOLDER)
+	npm run build --silent $(BIN_FOLDER)
 	echo '#!/bin/sh' > $(BIN_FOLDER)/$(BINARY_NAME_UNIX)
-	echo 'node "$$(dirname "$$0")"/index.js' >>  $(BIN_FOLDER)/$(BINARY_NAME_UNIX)
-	echo 'node index.js' > $(BIN_FOLDER)/$(BINARY_NAME_WINDOWS)
+	echo 'node "$$(dirname "$$0")"/dist/index.js' >>  $(BIN_FOLDER)/$(BINARY_NAME_UNIX)
+	echo 'node /dist/index.js' > $(BIN_FOLDER)/$(BINARY_NAME_WINDOWS)
 	chmod +x $(BIN_FOLDER)/$(BINARY_NAME_UNIX)
 
 docker:

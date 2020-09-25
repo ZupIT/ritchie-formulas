@@ -9,6 +9,7 @@ SET SH_FILE=%BIN_FOLDER%\run.sh
     xcopy /E /I src %BIN_FOLDER%
     cd %BIN_FOLDER%
     call npm install --silent
+    call npm run build --silent
     cd ..
     call :BAT_WINDOWS
     call :SH_LINUX
@@ -18,10 +19,10 @@ SET SH_FILE=%BIN_FOLDER%\run.sh
 :BAT_WINDOWS
     echo @ECHO OFF > %BAT_FILE%
     echo SET mypath=%%~dp0 >> %BAT_FILE%
-    echo start /B /WAIT node %%mypath:~0,-1%%/index.js >> %BAT_FILE%
+    echo start /B /WAIT node %%mypath:~0,-1%%/dist/index.js >> %BAT_FILE%
 
 :SH_LINUX
-    echo node "$(dirname "$0")"/index.js > %SH_FILE%
+    echo node "$(dirname "$0")"/dist/index.js > %SH_FILE%
     GOTO DONE
 
 :CP_DOCKER

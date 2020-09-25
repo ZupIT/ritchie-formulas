@@ -1,7 +1,7 @@
 import run from "./formula/formula"
 
-const INPUT1: string = process.env.SAMPLE_TEXT
-const INPUT2: string = process.env.SAMPLE_LIST
-const INPUT3: boolean = Boolean(process.env.SAMPLE_BOOL)
+const input1: string = process.env.SAMPLE_TEXT
+const input2: string = process.env.SAMPLE_LIST
+const input3: boolean = Boolean(process.env.SAMPLE_BOOL)
 
-run(INPUT1, INPUT2, INPUT3)
+run(input1, input2, input3)
