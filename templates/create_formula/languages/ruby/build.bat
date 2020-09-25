@@ -22,7 +22,9 @@ SET SH_FILE=%BIN_FOLDER%\run.sh
 
 :SH_LINUX
     echo #!/bin/sh > %SH_FILE%
-	echo ruby "$(dirname "$0")"/index.rb >> %SH_FILE%
+    echo cd "$(dirname "$0")" >> %SH_FILE%
+    echo bundle config set path vendor/bundle >> %SH_FILE%
+	echo ruby ./index.rb >> %SH_FILE%
     GOTO DONE
 
 :CP_DOCKER
