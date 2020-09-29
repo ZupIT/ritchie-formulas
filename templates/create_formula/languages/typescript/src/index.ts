@@ -2,7 +2,7 @@ import run from './formula/Formula'
 import IFormula from './formula/IFormula'
 
 const input1: string = process.env.INPUT_TEXT
-const input2: boolean = Boolean(process.env.INPUT_BOOLEAN)
+const input2: boolean = JSON.parse(process.env.INPUT_BOOLEAN.toLowerCase())
 const input3: string = process.env.INPUT_LIST
 const input4: string = process.env.INPUT_PASSWORD
 
