@@ -1,16 +1,32 @@
 @echo off
 SETLOCAL
 SET BINARY_NAME=run.bat
+SET BINARY_NAME_UNIX=run.sh
 SET BIN_FOLDER=bin
 SET ENTRY_POINT=main.bat
+SET ENTRY_POINT_UNIX=main.sh
 
-:build
+:BUILD
   mkdir %BIN_FOLDER%
-  xcopy src %BIN_FOLDER% /e/h/i/c
+  xcopy /e/h/i/c src %BIN_FOLDER%
   cd %BIN_FOLDER%
-  rename %ENTRY_POINT% %BINARY_NAME%
-  goto exit
+  call :SH_UNIX
+  call :BAT_WINDOWS
+  call :CP_DOCKER
+  GOTO EXIT
 
-:exit
+:SH_UNIX
+  rename %ENTRY_POINT_UNIX% %BINARY_NAME_UNIX%
+
+:BAT_WINDOWS
+  rename %ENTRY_POINT% %BINARY_NAME%
+
+:CP_DOCKER
+  cd ..
+  copy Dockerfile %BIN_FOLDER%
+  copy set_umask.sh %BIN_FOLDER%
+
+:EXIT
   ENDLOCAL
   exit /b
+  
