@@ -53,10 +53,10 @@ jobs:
           name: install Shellcheck
           command: |
             apt-get install -y shellcheck
-      - run:
-          name: pre-commit
-          command: |
-            pre-commit run --all-files
+#       - run:
+#           name: pre-commit
+#           command: |
+#             pre-commit run --all-files
   unit_test:
     executor: ritchie-executor
     environment:
