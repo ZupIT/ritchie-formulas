@@ -1,14 +1,32 @@
 @ECHO OFF
 SETLOCAL
 
-SET BINARY_NAME=run.bat
 SET BIN_FOLDER=bin
+SET BAT_FILE=%BIN_FOLDER%\run.bat
+SET SH_FILE=%BIN_FOLDER%\run.sh
 SET ENTRY_POINT=main.ps1
 
 :build
   mkdir %BIN_FOLDER%
-  xcopy src %BIN_FOLDER% /e/h/i/c
-  echo @ECHO OFF > %BIN_FOLDER%\%BINARY_NAME%
-  echo Powershell.exe -executionpolicy remotesigned -File %~dp0src\%ENTRY_POINT% >> %BIN_FOLDER%\%BINARY_NAME%
-  ENDLOCAL
-  exit /b 0
+  xcopy /E /I src %BIN_FOLDER%
+  call :BAT_WINDOWS
+  call :SH_LINUX
+  call :CP_DOCKER
+  GOTO DONE
+  
+:BAT_WINDOWS
+  echo @ECHO OFF > %BAT_FILE%
+  echo SET mypath=%%~dp0 >> %BAT_FILE%
+  echo Powershell.exe -executionpolicy remotesigned -File %%mypath:~0,-1%%\%ENTRY_POINT% >> %BAT_FILE%
+
+:SH_LINUX
+    echo #!/bin/sh > %SH_FILE%
+    echo pwsh "$(dirname "$0")"/%ENTRY_POINT% >> %SH_FILE%
+    GOTO DONE
+
+:CP_DOCKER
+  copy Dockerfile %BIN_FOLDER%
+  copy set_umask.sh %BIN_FOLDER%
+  GOTO DONE
+
+:DONE
