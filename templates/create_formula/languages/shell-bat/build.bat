@@ -1,8 +1,9 @@
 @echo off
+
 SETLOCAL
+SET BIN_FOLDER=bin
 SET BINARY_NAME=run.bat
 SET BINARY_NAME_UNIX=run.sh
-SET BIN_FOLDER=bin
 SET ENTRY_POINT=main.bat
 SET ENTRY_POINT_UNIX=main.sh
 
@@ -12,7 +13,6 @@ SET ENTRY_POINT_UNIX=main.sh
   cd %BIN_FOLDER%
   call :SH_UNIX
   call :BAT_WINDOWS
-  call :CP_DOCKER
   GOTO EXIT
 
 :SH_UNIX
@@ -29,4 +29,3 @@ SET ENTRY_POINT_UNIX=main.sh
 :EXIT
   ENDLOCAL
   exit /b
-  
