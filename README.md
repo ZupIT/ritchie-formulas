@@ -6,7 +6,7 @@
 
 # Ritchie's commons formula repository
 
-This repository contains the community formulas which can be executed by the [ritchie-cli](https://github.com/ZupIT/ritchie-cli).
+This amazing repository contains the community formulas which can be executed by the [ritchie-cli](https://github.com/ZupIT/ritchie-cli).
 
 ## Create a new formula
 
