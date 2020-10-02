@@ -4,22 +4,26 @@
     {
       "label": "Type the project name: ",
       "name": "project_name",
-      "type": "text"
+      "type": "text",
+      "tutorial": "Project name e.g.: awesome-project"
     },
     {
-      "label": "Type the location (e.g.: /home/user/projects): ",
+      "label": "Type the location: ",
       "name": "project_location",
-      "type": "text"
+      "type": "text",
+      "tutorial": "Project location e.g.: /home/user/projects"
     },
     {
       "label": "Type the terraform bucket name: ",
       "name": "bucket_name",
-      "type": "text"
+      "type": "text",
+      "tutorial": "Bucket name e.g.: some-aws-bucket"
     },
     {
       "label": "Type the bucket region: ",
       "name": "bucket_region",
-      "type": "text"
+      "type": "text",
+      "tutorial": "AWS region i.e., us-east-1, us-west-1, sa-east-1"
     }
   ]
 }

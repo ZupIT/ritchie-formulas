@@ -9,7 +9,8 @@
       },
       "label": "Type : ",
       "name": "sample_text",
-      "type": "text"
+      "type": "text",
+      "tutorial": "Add a text for this field."
     },
     {
       "default": "in1",
@@ -21,7 +22,8 @@
       ],
       "label": "Pick your : ",
       "name": "sample_list",
-      "type": "text"
+      "type": "text",
+      "tutorial": "Select an item for this field."
     },
     {
       "default": "false",
@@ -31,7 +33,8 @@
       ],
       "label": "Pick: ",
       "name": "sample_bool",
-      "type": "bool"
+      "type": "bool",
+      "tutorial": "Select true or false for this field."
     }
   ]
 }
