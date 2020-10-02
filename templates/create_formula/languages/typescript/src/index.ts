@@ -1,8 +1,8 @@
 import run from './formula/Formula'
 
-const text: string = process.env.INPUT_TEXT
-const boolean: boolean = JSON.parse(process.env.INPUT_BOOLEAN.toLowerCase())
-const list: string = process.env.INPUT_LIST
-const password: string = process.env.INPUT_PASSWORD
+const inputText: string = process.env.INPUT_TEXT
+const inputBoolean: boolean = JSON.parse(process.env.INPUT_BOOLEAN.toLowerCase())
+const inputList: string = process.env.INPUT_LIST
+const inputPassword: string = process.env.INPUT_PASSWORD
 
-run(text, boolean, list, password)
+run(inputText, inputBoolean, inputList, inputPassword)
