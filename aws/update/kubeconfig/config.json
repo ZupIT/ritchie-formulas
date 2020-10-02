@@ -38,7 +38,8 @@
       ],
       "label": "Pick the region: ",
       "name": "region",
-      "type": "text"
+      "type": "text",
+      "tutorial": "Choose one option"
     },
     {
       "cache": {
@@ -48,7 +49,8 @@
       },
       "label": "Cluster Name: ",
       "name": "cluster_name",
-      "type": "text"
+      "type": "text",
+      "tutorial": "Your EKS cluster name"
     }
   ]
 }

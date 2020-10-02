@@ -28,27 +28,32 @@
       ],
       "label": "Pick the region: ",
       "name": "region",
-      "type": "text"
+      "type": "text",
+      "tutorial": "Choose one option"
     },
     {
       "label": "Type the vpc name:",
       "name": "vpc_name",
-      "type": "text"
+      "type": "text",
+      "tutorial": "The vpc name e.g.: some-vpc"
     },
     {
-      "label": "Type the vpc_cidr [e.g.: 10.0.0.0/16]:",
+      "label": "Type the vpc_cidr:",
       "name": "vpc_cidr",
-      "type": "text"
+      "type": "text",
+      "tutorial": "The vpc cidr e.g.: 10.0.0.0/16"
     },
     {
-      "label": "Type your vpc_azs [e.g.: us-west-1a, us-west-1c]:",
+      "label": "Type your vpc_azs:",
       "name": "vpc_azs",
-      "type": "text"
+      "type": "text",
+      "tutorial": "AWS vpc_azs i.e., us-west-1a, us-west-1c"
     },
     {
       "label": "Type the customer name:",
       "name": "customer_name",
-      "type": "text"
+      "type": "text",
+      "tutorial": "A customer name e.g.: something"
     }
   ]
 }
