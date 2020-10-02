@@ -21,7 +21,8 @@
       },
       "label": "Project Name : ",
       "name": "project_name",
-      "type": "text"
+      "type": "text",
+      "tutorial": "Your project name e.g.: awesome-project"
     },
     {
       "items": [
@@ -31,18 +32,21 @@
       ],
       "label": "What will be the visibility of the repository? ",
       "name": "privacy",
-      "type": "text"
+      "type": "text",
+      "tutorial": "Choose one option"
     },
     {
-      "label": "Workspace to publish path: (ex: /home/user/dennis/ritchie-formulas)",
+      "label": "Workspace to publish path:",
       "name": "workspace_path",
-      "type": "text"
+      "type": "text",
+      "tutorial": "Workspace path i.e., /home/user/dennis/ritchie-formulas"
     },
     {
       "default": "v1.0.0",
       "label": "Version: (default: v1.0.0)",
       "name": "version",
-      "type": "text"
+      "type": "text",
+      "tutorial": "The version of your project i.e., v1.0.0"
     }
   ]
 }
