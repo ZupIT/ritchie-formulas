@@ -11,7 +11,7 @@
       "name": "input_text",
       "type": "text",
       "tutorial": "Your prefer name",
-      "required": "Select true or false for this field."
+      "required": true
     },
     {
       "default": "false",
@@ -23,7 +23,7 @@
       "name": "input_boolean",
       "type": "bool",
       "tutorial": "Choose one option",
-      "required": "Select true or false for this field."
+      "required": false
     },
     {
       "default": "everything",
@@ -37,14 +37,14 @@
       "name": "input_list",
       "type": "text",
       "tutorial": "Select what you want to automate with Ritchie",
-      "required": "Select true or false for this field."
+      "required": false
     },
     {
       "label": "Tell us a secret: ",
       "name": "input_password",
       "type": "password",
       "tutorial": "Type a secret",
-      "required": "Select true or false for this field."
+      "required": true
     }
   ]
 }

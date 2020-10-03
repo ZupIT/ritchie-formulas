@@ -10,7 +10,7 @@
       "label": "Type your name: ",
       "name": "input_text",
       "type": "text",
-      "required": "Select true or false for this field."
+      "required": true
     },
     {
       "default": "false",
@@ -21,7 +21,7 @@
       "label": "Have you ever used Ritchie? ",
       "name": "input_boolean",
       "type": "bool",
-      "required": "Select true or false for this field."
+      "required": false
     },
     {
       "default": "everything",
@@ -34,13 +34,13 @@
       "label": "What do you want to automate? ",
       "name": "input_list",
       "type": "text",
-      "required": "Select true or false for this field."
+      "required": false
     },
     {
       "label": "Tell us a secret: ",
       "name": "input_password",
       "type": "password",
-      "required": "Select true or false for this field."
+      "required": true
     }
   ]
 }
