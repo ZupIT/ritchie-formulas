@@ -1,5 +1,5 @@
 {
-  "dockerImageBuilder": "cimg/go:1.14",
+  "dockerImageBuilder": "cimg/node:14.0",
   "inputs": [
     {
       "cache": {
@@ -9,8 +9,7 @@
       },
       "label": "Type your name: ",
       "name": "input_text",
-      "type": "text",
-      "tutorial": "Your prefer name"
+      "type": "text"
     },
     {
       "default": "false",
@@ -20,8 +19,7 @@
       ],
       "label": "Have you ever used Ritchie? ",
       "name": "input_boolean",
-      "type": "bool",
-      "tutorial": "Choose one option"
+      "type": "bool"
     },
     {
       "default": "everything",
@@ -33,14 +31,12 @@
       ],
       "label": "What do you want to automate? ",
       "name": "input_list",
-      "type": "text",
-      "tutorial": "Select what you want to automate with Ritchie"
+      "type": "text"
     },
     {
       "label": "Tell us a secret: ",
       "name": "input_password",
-      "type": "password",
-      "tutorial": "Type a secret"
+      "type": "password"
     }
   ]
 }

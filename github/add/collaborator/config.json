@@ -9,7 +9,8 @@
       },
       "label": "Type collaborator username: ",
       "name": "collaborator_user",
-      "type": "text"
+      "type": "text",
+      "tutorial": "A github username e.g.: someuserzup"
     },
     {
       "cache": {
@@ -19,7 +20,8 @@
       },
       "label": "Type repository name: ",
       "name": "repository_name",
-      "type": "text"
+      "type": "text",
+      "tutorial": "Target repository name i.e., ritchie-formulas"
     },
     {
       "name": "owner_username",

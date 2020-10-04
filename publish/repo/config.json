@@ -8,7 +8,8 @@
       ],
       "label": "Provider : ",
       "name": "provider",
-      "type": "text"
+      "type": "text",
+      "tutorial": "Choose one option"
     },
     {
       "cache": {
@@ -18,7 +19,8 @@
       },
       "label": "Project Name : ",
       "name": "project_name",
-      "type": "text"
+      "type": "text",
+      "tutorial": "Type your project name"
     },
     {
       "default": "true",
@@ -28,18 +30,21 @@
       ],
       "label": "Will it be a private repository? ",
       "name": "privacy",
-      "type": "text"
+      "type": "text",
+      "tutorial": "Choose one option"
     },
     {
-      "label": "Workspace to publish path: (ex: /home/user/dennis/ritchie-formulas)",
+      "label": "Workspace to publish path:",
       "name": "workspace_path",
-      "type": "text"
+      "type": "text",
+      "tutorial": "The path of your workspace i.e., /home/user/dennis/ritchie-formulas"
     },
     {
       "default": "v1.0.0",
       "label": "Version: (default: v1.0.0)",
       "name": "version",
-      "type": "text"
+      "type": "text",
+      "tutorial": "The version of your project i.e., v1.0.0"
     }
   ]
 }
