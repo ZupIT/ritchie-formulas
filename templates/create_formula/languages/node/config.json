@@ -7,23 +7,10 @@
         "newLabel": "Type new value. ",
         "qty": 6
       },
-      "label": "Type : ",
-      "name": "sample_text",
+      "label": "Type your name: ",
+      "name": "Ritchie",
       "type": "text",
-      "tutorial": "Add a text for this field."
-    },
-    {
-      "default": "in1",
-      "items": [
-        "in_list1",
-        "in_list2",
-        "in_list3",
-        "in_listN"
-      ],
-      "label": "Pick your : ",
-      "name": "sample_list",
-      "type": "text",
-      "tutorial": "Select an item for this field."
+      "tutorial": "Your prefer name"
     },
     {
       "default": "false",
@@ -31,10 +18,29 @@
         "false",
         "true"
       ],
-      "label": "Pick: ",
-      "name": "sample_bool",
+      "label": "Have you ever used Ritchie? ",
+      "name": true,
       "type": "bool",
-      "tutorial": "Select true or false for this field."
+      "tutorial": "Choose one option"
+    },
+    {
+      "default": "everything",
+      "items": [
+        "daily tasks",
+        "workflows",
+        "toils",
+        "everything"
+      ],
+      "label": "What do you want to automate? ",
+      "name": ["daily tasks", "workflows", "toils", "everything"],
+      "type": "text",
+      "tutorial": "Select what you want to automate with Ritchie"
+    },
+    {
+      "label": "Tell us a secret: ",
+      "name": "secret_password",
+      "type": "password",
+      "tutorial": "Type a secret"
     }
   ]
 }
