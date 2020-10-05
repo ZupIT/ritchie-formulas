@@ -5,12 +5,12 @@
       "cache": {
         "active": true,
         "newLabel": "Type new value. ",
-        "qty": 6
+        "qty": 3
       },
       "label": "Type your name: ",
-      "name": "Ritchie",
+      "name": "input_text",
       "type": "text",
-      "tutorial": "Your prefer name"
+      "tutorial": "Add your name"
     },
     {
       "default": "false",
@@ -19,9 +19,9 @@
         "true"
       ],
       "label": "Have you ever used Ritchie? ",
-      "name": true,
+      "name": "input_boolean",
       "type": "bool",
-      "tutorial": "Choose one option"
+      "tutorial": "Tell us the truth"
     },
     {
       "default": "everything",
@@ -32,15 +32,15 @@
         "everything"
       ],
       "label": "What do you want to automate? ",
-      "name": ["daily tasks", "workflows", "toils", "everything"],
+      "name": "input_list",
       "type": "text",
-      "tutorial": "Select what you want to automate with Ritchie"
+      "tutorial": "Choose one option"
     },
     {
       "label": "Tell us a secret: ",
-      "name": "secret_password",
+      "name": "input_password",
       "type": "password",
-      "tutorial": "Type a secret"
+      "tutorial": "Type anything you want"
     }
   ]
 }
