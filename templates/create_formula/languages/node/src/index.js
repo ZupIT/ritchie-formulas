@@ -1,6 +1,4 @@
-var path = require('path'),
-run = require("./formula/formula"),
-config_data = require(path.resolve('../config.json'));
+const run = require("./formula/formula")
 
 const INPUT1 = process.env.INPUT_TEXT
 const INPUT2 = process.env.INPUT_BOOLEAN
