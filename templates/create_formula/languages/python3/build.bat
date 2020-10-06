@@ -10,6 +10,7 @@ SET SH_FILE=%BIN_FOLDER%\run.sh
     CALL :BAT_WINDOWS
     CALL :SH_LINUX
     CALL :CP_DOCKER
+    pip3 install -r %BIN_FOLDER%/requirements.txt
     GOTO DONE
 
 :BAT_WINDOWS
