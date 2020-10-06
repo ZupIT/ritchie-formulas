@@ -20,6 +20,7 @@ sh_unix:
 	chmod +x $(BIN_FOLDER)/$(BINARY_NAME)
 
 bat_windows:
+	echo '@ECHO OFF' > $(BIN_FOLDER)/$(BINARY_NAME_WINDOWS)
 	echo 'python main.py' >> $(BIN_FOLDER)/$(BINARY_NAME_WINDOWS)
 
 docker:
