@@ -16,10 +16,5 @@ rust-build:
 	echo '"$$(dirname "$$0")"/target/release/$(BIN_NAME)' >>  $(BIN_FOLDER)/$(UNIX-SH)
 	chmod +x $(BIN_FOLDER)/$(UNIX-SH)
 
-	# Windows
-	echo '@ECHO OFF' > $(BIN_FOLDER)/$(WINDOWS-BAT)
-	echo 'SET mypath=%~dp0' >> $(BIN_FOLDER)/$(WINDOWS-BAT)
-	echo 'start /B /WAIT %mypath:~0,-1%/target/release/$(BIN_NAME)' >> $(BIN_FOLDER)/$(WINDOWS-BAT)
-
 docker:
 	cp Dockerfile set_umask.sh $(BIN_FOLDER)
