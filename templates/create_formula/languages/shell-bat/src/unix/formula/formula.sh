@@ -2,16 +2,16 @@
 
 runFormula() {
   echo "Hello World! "
-  echoColor "green" "My name is $1."
+  echoColor "green" "My name is $INPUT_TEXT."
 
-  if [ "$2" = "true" ]; then
+  if [ "$INPUT_BOOLEAN" = "true" ]; then
     echoColor "blue" "I've already created formulas using Ritchie."
   else
     echoColor "red" "I'm excited in creating new formulas using Ritchie."
   fi
 
-  echoColor "yellow" "Today, I want to automate $3."
-  echoColor "cyan"  "My secret is $4."
+  echoColor "yellow" "Today, I want to automate $INPUT_LIST."
+  echoColor "cyan"  "My secret is $INPUT_PASSWORD."
 }
 
 echoColor() {
@@ -33,4 +33,3 @@ echoColor() {
       ;;
     esac
 }
-
