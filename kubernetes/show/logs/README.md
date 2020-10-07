@@ -1,6 +1,6 @@
 # Kubernetes show logs
 
-## Promises
+## Premisses
 - Set kubeconfig credentials (`rit set credentials`)
 
 ## Command
