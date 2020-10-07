@@ -12,8 +12,8 @@ bash-build:
 	chmod +x $(BIN_FOLDER)/$(BINARY_NAME)
 
 sh-unix:
-	echo '#!/usr/bin/pwsh' > $(SH)
-	echo './$(BIN_NAME)' >> $(SH)
+	echo '#!/bin/sh' > $(SH)
+	echo 'pwsh "$$(dirname "$$0")"/$(BIN_NAME)' >> $(SH)
 	chmod +x $(SH)
 
 bat-windows:

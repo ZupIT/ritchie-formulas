@@ -1,5 +1,5 @@
 {
-  "dockerImageBuilder": "chiaretto/rust-rustup-default-stable:1.45.0",
+  "dockerImageBuilder": "cimg/node:14.0",
   "inputs": [
     {
       "cache": {
@@ -10,7 +10,6 @@
       "label": "Type your name: ",
       "name": "input_text",
       "type": "text",
-      "tutorial": "Your prefer name",
       "required": true
     },
     {
@@ -22,7 +21,6 @@
       "label": "Have you ever used Ritchie? ",
       "name": "input_boolean",
       "type": "bool",
-      "tutorial": "Choose one option",
       "required": false
     },
     {
@@ -36,14 +34,12 @@
       "label": "What do you want to automate? ",
       "name": "input_list",
       "type": "text",
-      "tutorial": "Select what you want to automate with Ritchie",
       "required": false
     },
     {
       "label": "Tell us a secret: ",
       "name": "input_password",
       "type": "password",
-      "tutorial": "Type a secret",
       "required": true
     }
   ]

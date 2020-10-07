@@ -1,3 +1,5 @@
-. "$(Get-Location)\formula\formula.ps1"
+#!/usr/bin/pwsh
+
+. $PSScriptRoot\formula\formula.ps1
 
 runFormula

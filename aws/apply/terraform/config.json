@@ -9,18 +9,21 @@
       ],
       "label": "Select your repository URL: ",
       "name": "repository",
-      "type": "text"
+      "type": "text",
+      "tutorial": "Choose one option"
     },
     {
       "default": "src",
-      "label": "Type your terraform files path [src]: ",
+      "label": "Type your terraform files path: ",
       "name": "terraform_path",
-      "type": "text"
+      "type": "text",
+      "tutorial": "Terraform files path e.g.: src"
     },
     {
-      "label": "Type your environment name: [ex.: qa, prod]",
+      "label": "Type your environment name:",
       "name": "environment",
-      "type": "text"
+      "type": "text",
+      "tutorial": "Environment name i.e., qa, prod"
     },
     {
       "name": "git_user",
