@@ -5,10 +5,13 @@ import com.ritchie.formula.Formula;
 public class Main {
 
   public static void main(String[] args) {
-    String input1 = System.getenv("SAMPLE_TEXT");
-    String input2 = System.getenv("SAMPLE_LIST");
-    boolean input3 = Boolean.parseBoolean(System.getenv("SAMPLE_BOOL"));
-    Formula formula = new Formula(input1, input2, input3);
-    System.out.println(formula.Run());
+
+    String inputText = System.getenv("INPUT_TEXT");
+    boolean inputBoolean = Boolean.parseBoolean(System.getenv("INPUT_BOOLEAN"));
+    String inputList = System.getenv("INPUT_LIST");
+    String inputPassword = System.getenv("INPUT_PASSWORD");
+
+    Formula formula = new Formula(inputText, inputBoolean, inputList, inputPassword);
+    formula.Run();
   }
 }
