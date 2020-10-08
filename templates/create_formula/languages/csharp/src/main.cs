@@ -7,10 +7,12 @@ namespace main
     {
         static void Main(string[] args)
         {
-            string TEXT     = Environment.GetEnvironmentVariable("SAMPLE_TEXT");
-            string TLIST    = Environment.GetEnvironmentVariable("SAMPLE_LIST");
-            string TBOOL    = Environment.GetEnvironmentVariable("SAMPLE_BOOL");
-            new formula.Hello(TEXT, TLIST, TBOOL);
+            string input1   = Environment.GetEnvironmentVariable("input_text");
+            string input2   = Environment.GetEnvironmentVariable("input_list");
+            string input3   = Environment.GetEnvironmentVariable("input_boolean");
+            string input4   = Environment.GetEnvironmentVariable("input_password");
+
+            new formula.Hello(input1, input2, input3, input4);
         }
 }
 }
