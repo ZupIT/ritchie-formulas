@@ -20,7 +20,7 @@ SET SH_FILE=%BIN_FOLDER%\run.sh
 
 :SH_LINUX
 	echo #!/bin/bash > %SH_FILE%
-    echo if [[ $DOCKER_EXECUTION ]] ; then >> %SH_FILE%
+    echo if [ -f /.dockerenv ] ; then >> %SH_FILE%
     echo pip3 install -r "$(dirname "$0")"/requirements.txt ^>^> /dev/null >> %SH_FILE%
     echo fi >> %SH_FILE%
     echo python3 "$(dirname "$0")"/main.py >> %SH_FILE%

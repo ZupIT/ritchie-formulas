@@ -13,7 +13,7 @@ python-build:
 
 sh_unix:
 	echo '#!/bin/bash' > $(BIN_FOLDER)/$(BINARY_NAME)
-	echo 'if [[ $$DOCKER_EXECUTION ]] ; then' >> $(BIN_FOLDER)/$(BINARY_NAME)
+	echo 'if [ -f /.dockerenv ] ; then' >> $(BIN_FOLDER)/$(BINARY_NAME)
 	echo 'pip3 install -r "$$(dirname "$$0")"/requirements.txt --user >> /dev/null' >> $(BIN_FOLDER)/$(BINARY_NAME)
 	echo 'fi' >> $(BIN_FOLDER)/$(BINARY_NAME)
 	echo 'python3 "$$(dirname "$$0")"/main.py' >> $(BIN_FOLDER)/$(BINARY_NAME)
