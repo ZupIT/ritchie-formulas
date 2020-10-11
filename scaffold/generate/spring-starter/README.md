@@ -1,5 +1,10 @@
 # Spring Boot Scaffold Generator
 
+A scaffold generator to create a [spring boot](https://spring.io/projects/spring-boot) enviroment
+
+Inspired by https://start.spring.io
+
+
 
 ## Premisses
 
