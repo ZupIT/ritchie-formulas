@@ -4,8 +4,6 @@ A scaffold generator to create a [spring boot](https://spring.io/projects/spring
 
 Inspired by https://start.spring.io
 
-
-
 ## Premisses
 
 - [Golang installed](https://golang.org/doc/install)
