@@ -3,7 +3,7 @@
   "inputs": [
     {
       "default": "https://github.com/zupit/iti-stack-core",
-      "label": "Select your repository URL: ",
+      "label": "Type your repository URL: ",
       "name": "repository",
       "type": "text",
       "tutorial": "Inform your repository URL e.g.: https://github.com/zupit/iti-stack-core"
