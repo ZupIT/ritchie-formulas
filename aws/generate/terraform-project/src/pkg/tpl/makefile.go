@@ -33,11 +33,11 @@ plan: prep ## Show what terraform wants to do
 	@terraform plan -var-file=./variables/common.tfvars -var-file=$(VARS)
 
 apply: plan ## Let Terraform do his thing
-	@echo "Apllying the terraform plan"
+	@echo "Applying the terraform plan"
 	@terraform apply -var-file=./variables/common.tfvars -var-file=$(VARS)
 
 apply-ci: plan ## Let Terraform do his thing on CI
-	@echo "Apllying the terraform plan"
+	@echo "Applying the terraform plan"
 	@terraform apply -var-file=./variables/common.tfvars -var-file=$(VARS) -auto-approve
 
 destroy: set-env ## Let Terraform destroy everything
