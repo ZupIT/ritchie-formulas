@@ -6,13 +6,13 @@ const (
 }
 provider "aws" {
   region  = var.region
-  version = "2.57.0"
+  version = "2.68.0"
 }
 
 terraform {
   required_version = "0.12.13"
   required_providers {
-    aws        = "2.57.0"
+    aws        = "2.68.0"
   }
 
   backend "s3" {

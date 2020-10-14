@@ -67,9 +67,6 @@ provider "helm" {
 		load_config_file       = false
 	}
 
-	service_account = "tiller"
-	install_tiller  = true
-	init_helm_home  = true
 	debug           = true
 }
 
