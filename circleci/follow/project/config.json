@@ -8,7 +8,8 @@
       ],
       "label": "Select your provider: ",
       "name": "provider",
-      "type": "text"
+      "type": "text",
+      "tutorial": "Choose one option"
     },
     {
       "name": "token",
@@ -40,7 +41,8 @@
       },
       "label": "Enter the project name to follow: ",
       "name": "project",
-      "type": "text"
+      "type": "text",
+      "tutorial": "Your target project repository i.e., awesome-project"
     }
   ]
 }
