@@ -11,7 +11,8 @@ php-build:
 	composer install -q -d $(BIN_FOLDER)
 	echo '#!/bin/sh' > $(BIN_FOLDER)/$(BINARY_NAME_UNIX)
 	echo 'php -f "$$(dirname "$$0")"//index.php' >>  $(BIN_FOLDER)/$(BINARY_NAME_UNIX)
-	echo 'php -f index.php' > $(BIN_FOLDER)/$(BINARY_NAME_WINDOWS)
+	echo 'echo off' > $(BIN_FOLDER)/$(BINARY_NAME_WINDOWS)
+	echo 'php -f index.php' >> $(BIN_FOLDER)/$(BINARY_NAME_WINDOWS)
 	chmod +x $(BIN_FOLDER)/$(BINARY_NAME_UNIX)
 
 docker:
