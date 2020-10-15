@@ -17,7 +17,7 @@ namespace formula
 
             Console.WriteLine("Hello World!");
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"My name is {input1}");
+            Console.WriteLine($"My name is {input1}.");
             Console.ForegroundColor = ConsoleColor.Blue;
             if (input3 == "true")   {
                 Console.WriteLine("I’ve already created formulas using Ritchie.");
@@ -25,9 +25,9 @@ namespace formula
                 Console.WriteLine("I’m excited in creating new formulas using Ritchie.");
             }
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine($"Today, I want to automate {input2}");
+            Console.WriteLine($"Today, I want to automate {input2}.");
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine($"My secret is {input4}");
+            Console.WriteLine($"My secret is {input4}.");
             Console.ResetColor();
         }
 
