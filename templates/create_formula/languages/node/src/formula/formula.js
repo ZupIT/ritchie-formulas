@@ -8,8 +8,8 @@ function Run(inputText, inputBoolean, inputList, inputPassword) {
     } else {
         console.log(clc.red('I’m excited in creating new formulas using Ritchie.'))
     }
-    console.log(clc.yellow("Today, I want to automate "+ inputList))
-    console.log(clc.cyan("My secret is " + inputPassword))
+    console.log(clc.yellow("Today, I want to automate "+ inputList +"."))
+    console.log(clc.cyan("My secret is " + inputPassword +"."))
 }
 
 const formula = Run
