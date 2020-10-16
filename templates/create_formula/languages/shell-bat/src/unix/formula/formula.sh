@@ -1,7 +1,7 @@
 #!/bin/sh
 
 runFormula() {
-  echo "Hello World! "
+  echo "Hello World!"
   echoColor "green" "My name is $INPUT_TEXT."
 
   if [ "$INPUT_BOOLEAN" = "true" ]; then
