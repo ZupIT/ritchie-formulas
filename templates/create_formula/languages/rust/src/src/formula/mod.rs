@@ -5,11 +5,11 @@ pub fn run(input_text: String, input_bool: bool, input_list: String, input_passw
     println!("{}", format!("My name is {}.", input_text).green());
 
     if input_bool {
-        println!("{}", "I’ve already created formulas using Ritchie.".red())
+        println!("{}", "I've already created formulas using Ritchie.".red())
     } else {
         println!(
             "{}",
-            "I’m excited in creating new formulas using Ritchie.".red()
+            "I'm excited in creating new formulas using Ritchie.".red()
         )
     }
 

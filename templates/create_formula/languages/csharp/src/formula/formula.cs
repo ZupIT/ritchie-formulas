@@ -20,9 +20,9 @@ namespace formula
             Console.WriteLine($"My name is {input1}.");
             Console.ForegroundColor = ConsoleColor.Blue;
             if (input3 == "true")   {
-                Console.WriteLine("I’ve already created formulas using Ritchie.");
+                Console.WriteLine("I've already created formulas using Ritchie.");
             } else  {
-                Console.WriteLine("I’m excited in creating new formulas using Ritchie.");
+                Console.WriteLine("I'm excited in creating new formulas using Ritchie.");
             }
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine($"Today, I want to automate {input2}.");

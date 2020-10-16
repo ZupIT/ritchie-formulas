@@ -22,9 +22,9 @@ public class Formula {
         System.out.println(Chalk.on(String.format("My name is %s.", inputText)).green());
 
         if (inputBoolean) {
-            System.out.println(Chalk.on("I’ve already created formulas using Ritchie.").cyan());
+            System.out.println(Chalk.on("I've already created formulas using Ritchie.").cyan());
         } else {
-            System.out.println(Chalk.on("I’m excited in creating new formulas using Ritchie.").red());
+            System.out.println(Chalk.on("I'm excited in creating new formulas using Ritchie.").red());
         }
 
         System.out.println(Chalk.on(String.format("Today, I want to automate %s.", inputList)).yellow());

@@ -25,9 +25,9 @@ func (f Formula) Run(writer io.Writer) {
 	result += color.FgGreen.Render(fmt.Sprintf("My name is %s.\n", f.Text))
 
 	if f.Boolean {
-		result += color.FgBlue.Render(fmt.Sprintln("I’ve already created formulas using Ritchie."))
+		result += color.FgBlue.Render(fmt.Sprintln("I've already created formulas using Ritchie."))
 	} else {
-		result += color.FgRed.Render(fmt.Sprintln("I’m excited in creating new formulas using Ritchie."))
+		result += color.FgRed.Render(fmt.Sprintln("I'm excited in creating new formulas using Ritchie."))
 	}
 
 	result += color.FgYellow.Render(fmt.Sprintf("Today, I want to automate %s.\n", f.List))

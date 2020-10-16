@@ -30,7 +30,7 @@ public class FormulaTest {
 
     assertEquals("Hello World!\n" +
             "\u001B[32mMy name is Hello.\u001B[39m\n" +
-            "\u001B[36mI’ve already created formulas using Ritchie.\u001B[39m\n" +
+            "\u001B[36mI've already created formulas using Ritchie.\u001B[39m\n" +
             "\u001B[33mToday, I want to automate world.\u001B[39m\n" +
             "\u001B[35mMy secret is pass.\u001B[39m\n", outContent.toString());
   }
@@ -41,7 +41,7 @@ public class FormulaTest {
 
     assertEquals("Hello World!\n" +
             "\u001B[32mMy name is Hello.\u001B[39m\n" +
-            "\u001B[31mI’m excited in creating new formulas using Ritchie.\u001B[39m\n" +
+            "\u001B[31mI'm excited in creating new formulas using Ritchie.\u001B[39m\n" +
             "\u001B[33mToday, I want to automate world.\u001B[39m\n" +
             "\u001B[35mMy secret is pass.\u001B[39m\n", outContent.toString());
   }
@@ -52,7 +52,7 @@ public class FormulaTest {
 
     assertEquals("Hello World!\n" +
             "\u001B[32mMy name is Hello.\u001B[39m\n" +
-            "\u001B[31mI’m excited in creating new formulas using Ritchie.\u001B[39m\n" +
+            "\u001B[31mI'm excited in creating new formulas using Ritchie.\u001B[39m\n" +
             "\u001B[33mToday, I want to automate world.\u001B[39m\n" +
             "\u001B[35mMy secret is .\u001B[39m\n", outContent.toString());
   }
