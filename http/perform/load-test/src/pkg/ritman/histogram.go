@@ -51,18 +51,14 @@ func (score *LoadBalanceTestScore) init() {
 
 // Add helper function to compute data
 func (score *LoadBalanceTestScore) Add(res *Result) {
+	score.Hits++
+	score.updateLatency(*res)
 	key := time.Unix(res.Started, 0).Second()
 
-	score.Hits++
-
-	score.updateLatency(*res)
 	if histogram, ok := score.Histogram[key]; ok {
 		histogram.Hits++
-
 		histogram.StatusCode[res.StatusCode]++
-
 		histogram.updateLatency(*res)
-
 		score.Histogram[key] = histogram
 	} else {
 		score.Histogram[key] = newHistogram(*res)

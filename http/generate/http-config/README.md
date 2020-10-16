@@ -30,3 +30,7 @@ This formula is a helper for ritman http load testing formula, it generates a de
     }
 ```
 4. The "body" field supports any valid JSON format, so you can fullfill with your disired test content.
+
+## Demo
+
+![Alt Text](https://media1.giphy.com/media/DvpJneeGh2v9TsHkQM/giphy.gif)

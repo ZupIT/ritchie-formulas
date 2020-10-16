@@ -130,3 +130,7 @@ Acronyns:
     - avg - stands for average
     - rps - stands for rate per seconds
     - ms - stands for milliseconds
+
+## Demo
+
+![Alt Text](https://media3.giphy.com/media/KEIZsoInjvzmFUYCcL/giphy.gif)

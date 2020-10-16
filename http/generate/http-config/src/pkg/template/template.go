@@ -50,6 +50,8 @@ func (fw fileWriter) getContent() fileWriter {
 		fw.fileContent = file
 	} else {
 		color.Red(fmt.Sprintf("could not create config file: %s\n", err))
+		// EACCES
+		os.Exit(13)
 	}
 
 	return fw
