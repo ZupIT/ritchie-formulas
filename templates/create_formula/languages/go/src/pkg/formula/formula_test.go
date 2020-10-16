@@ -31,7 +31,7 @@ func TestFormula_Run(t *testing.T) {
 			wantWriter: func() string {
 				return fmt.Sprintf("Hello world!\n") +
 					color.FgGreen.Render(fmt.Sprintf("My name is Dennis.\n")) +
-					color.FgBlue.Render(fmt.Sprintln("I’ve already created formulas using Ritchie.")) +
+					color.FgBlue.Render(fmt.Sprintln("I've already created formulas using Ritchie.")) +
 					color.FgYellow.Render(fmt.Sprintf("Today, I want to automate everything.\n")) +
 					color.FgCyan.Render(fmt.Sprintf("My secret is Ritchie.\n"))
 			}(),
@@ -47,7 +47,7 @@ func TestFormula_Run(t *testing.T) {
 			wantWriter: func() string {
 				return fmt.Sprintf("Hello world!\n") +
 					color.FgGreen.Render(fmt.Sprintf("My name is Dennis.\n")) +
-					color.FgBlue.Render(fmt.Sprintln("I’m excited in creating new formulas using Ritchie.")) +
+					color.FgBlue.Render(fmt.Sprintln("I'm excited in creating new formulas using Ritchie.")) +
 					color.FgYellow.Render(fmt.Sprintf("Today, I want to automate everything.\n")) +
 					color.FgCyan.Render(fmt.Sprintf("My secret is Ritchie.\n"))
 			}(),
