@@ -20,7 +20,7 @@ type Formula struct {
 func (f Formula) Run(writer io.Writer) {
 	var result string
 
-	result += fmt.Sprintf("Hello world!\n")
+	result += fmt.Sprintf("Hello World!\n")
 
 	result += color.FgGreen.Render(fmt.Sprintf("My name is %s.\n", f.Text))
 
