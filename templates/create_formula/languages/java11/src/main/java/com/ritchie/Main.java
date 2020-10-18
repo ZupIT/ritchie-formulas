@@ -3,12 +3,12 @@ package com.ritchie;
 import com.ritchie.formula.Formula;
 
 public class Main {
-
   public static void main(String[] args) {
-    String input1 = System.getenv("SAMPLE_TEXT");
-    String input2 = System.getenv("SAMPLE_LIST");
-    boolean input3 = Boolean.parseBoolean(System.getenv("SAMPLE_BOOL"));
-    Formula formula = new Formula(input1, input2, input3);
-    System.out.println(formula.Run());
+    String input_text = System.getenv("INPUT_TEXT");
+    String input_list = System.getenv("INPUT_LIST");
+    String password = System.getenv("PASSWORD");
+    boolean input_boolean = Boolean.parseBoolean(System.getenv("INPUT_BOOLEAN"));
+    Formula formula = new Formula(input_text, input_list, password, input_boolean);
+    formula.Run();
   }
 }
