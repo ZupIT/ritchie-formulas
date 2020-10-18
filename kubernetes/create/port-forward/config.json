@@ -7,7 +7,8 @@
       },
       "label": "Type kubernetes namespace: ",
       "name": "namespace",
-      "type": "text"
+      "type": "text",
+      "tutorial": "A kubernetes namespace i.e., kube-example"
     },
     {
       "cache": {
@@ -15,7 +16,8 @@
       },
       "label": "Type name or part name of pod: ",
       "name": "pod_part_name",
-      "type": "text"
+      "type": "text",
+      "tutorial": "The name or part name of your pod i.e., awesome-app, awesome"
     },
     {
       "cache": {
@@ -23,7 +25,8 @@
       },
       "label": "Type port map of pod: ",
       "name": "port",
-      "type": "text"
+      "type": "text",
+      "tutorial": "A port map i.e., 8080:5000"
     },
     {
       "name": "kubeconfig",

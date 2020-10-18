@@ -1,47 +1,34 @@
 package com.ritchie.formula;
 
+import com.github.tomaslanger.chalk.Chalk;
+
 public class Formula {
 
-  private String input1;
-  private String input2;
-  private boolean input3;
+    private final String inputText;
+    private final boolean inputBoolean;
+    private final String inputList;
+    private final String inputPassword;
 
-  public String Run() {
-    return String.format(
-        "Hello World!\n"
-            + "You receive %s in text.\n"
-            + "You receive %s in list.\n"
-            + "You receive %s in boolean.\n",
-        input1, input2, input3);
-  }
+    public Formula(String inputText, boolean inputBoolean, String inputList, String inputPassword) {
+        this.inputText = inputText;
+        this.inputBoolean = inputBoolean;
+        this.inputList = inputList;
+        this.inputPassword = inputPassword;
+    }
 
-  public Formula(String input1, String input2, boolean input3) {
-    this.input1 = input1;
-    this.input2 = input2;
-    this.input3 = input3;
-  }
+    public void Run() {
+        System.out.println("Hello World!");
 
-  public String getInput1() {
-    return input1;
-  }
+        System.out.println(Chalk.on(String.format("My name is %s.", inputText)).green());
 
-  public void setInput1(String input1) {
-    this.input1 = input1;
-  }
+        if (inputBoolean) {
+            System.out.println(Chalk.on("I've already created formulas using Ritchie.").cyan());
+        } else {
+            System.out.println(Chalk.on("I'm excited in creating new formulas using Ritchie.").red());
+        }
 
-  public String getInput2() {
-    return input2;
-  }
+        System.out.println(Chalk.on(String.format("Today, I want to automate %s.", inputList)).yellow());
 
-  public void setInput2(String input2) {
-    this.input2 = input2;
-  }
-
-  public boolean isInput3() {
-    return input3;
-  }
-
-  public void setInput3(boolean input3) {
-    this.input3 = input3;
-  }
+        System.out.println(Chalk.on(String.format("My secret is %s.", inputPassword)).magenta());
+    }
 }

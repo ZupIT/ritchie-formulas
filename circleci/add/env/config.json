@@ -13,7 +13,8 @@
       },
       "label": "Type the repository owner: ",
       "name": "repo_owner",
-      "type": "text"
+      "type": "text",
+      "tutorial": "Project owner i.e., yourname"
     },
     {
       "cache": {
@@ -23,17 +24,20 @@
       },
       "label": "Type repository name: ",
       "name": "repo_name",
-      "type": "text"
+      "type": "text",
+      "tutorial": "Your target project repository i.e., awesome-project"
     },
     {
       "label": "Type the ENV name : ",
       "name": "env_name",
-      "type": "text"
+      "type": "text",
+      "tutorial": "Pipeline environment variable name i.e., SOME_NOME"
     },
     {
       "label": "Type the ENV value : ",
       "name": "env_value",
-      "type": "password"
+      "type": "password",
+      "tutorial": "Pipeline environment variable value i.e., 1234"
     }
   ]
 }

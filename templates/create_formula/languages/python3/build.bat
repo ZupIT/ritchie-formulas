@@ -1,4 +1,4 @@
-:: Php parameters
+:: Python parameters
 echo off
 SETLOCAL
 SET BIN_FOLDER=bin
@@ -10,6 +10,7 @@ SET SH_FILE=%BIN_FOLDER%\run.sh
     CALL :BAT_WINDOWS
     CALL :SH_LINUX
     CALL :CP_DOCKER
+    pip3 install -r %BIN_FOLDER%/requirements.txt
     GOTO DONE
 
 :BAT_WINDOWS
@@ -18,7 +19,11 @@ SET SH_FILE=%BIN_FOLDER%\run.sh
     echo start /B /WAIT python %%mypath:~0,-1%%/main.py >> %BAT_FILE%
 
 :SH_LINUX
-    echo python "$(dirname "$0")"/main.py > %SH_FILE%
+	echo #!/bin/bash > %SH_FILE%
+    echo if [ -f /.dockerenv ] ; then >> %SH_FILE%
+    echo pip3 install -r "$(dirname "$0")"/requirements.txt ^>^> /dev/null >> %SH_FILE%
+    echo fi >> %SH_FILE%
+    echo python3 "$(dirname "$0")"/main.py >> %SH_FILE%
     GOTO DONE
 
 :CP_DOCKER

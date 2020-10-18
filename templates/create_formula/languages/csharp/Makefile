@@ -32,7 +32,7 @@ sh-unix:
 
 bat-windows:
 	echo '@ECHO OFF' > $(BAT)
-	echo '$(BIN_FOLDER_WINDOWS)/$(BIN_WINDOWS)' >> $(BAT)
+	echo '%~dp0$(BIN_FOLDER_WINDOWS)/$(BIN_WINDOWS)' >> $(BAT)
 
 docker:
 	cp Dockerfile set_umask.sh $(BIN_FOLDER)

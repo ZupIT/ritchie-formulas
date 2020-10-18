@@ -11,7 +11,8 @@
       ],
       "label": "How many datapoints do you have?",
       "name": "datapoints_amount",
-      "type": "text"
+      "type": "text",
+      "tutorial": "Choose one option"
     },
     {
       "default": "true",
@@ -21,7 +22,8 @@
       ],
       "label": "Are you predicting a category?",
       "name": "category",
-      "type": "bool"
+      "type": "bool",
+      "tutorial": "Choose one option"
     },
     {
       "default": "true",
@@ -31,7 +33,8 @@
       ],
       "label": "Do you have labeled data (supervised learning)?",
       "name": "labeled_data",
-      "type": "bool"
+      "type": "bool",
+      "tutorial": "Choose one option"
     }
   ]
 }
