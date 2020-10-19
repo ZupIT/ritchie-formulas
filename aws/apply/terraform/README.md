@@ -2,7 +2,6 @@
 
 ## Premisses
 
-- [Terraform installed](https://www.terraform.io/downloads.html)
 - Set Github credentials
 - Set AWS credentials
 
@@ -16,7 +15,7 @@ You can set credentials by running *rit set credential* and providing USERNAME, 
 rit aws apply terraform
 ```
 
-*It is necessary to have [Golang installed](https://golang.org/doc/install) for this command to work*
+*It is necessary to have [Golang](https://golang.org/doc/install) and [Terraform](https://www.terraform.io/downloads.html) installed for this command to work*
 
 - Docker 
 
@@ -34,7 +33,7 @@ rit aws apply terraform --docker
 echo '{"repository":"https://github.com/eduardorcury/ritchie-demo", "terraform_path":"/terraform", "environment":"dev"}' | rit aws apply terraform --stdin
 ```
 
-*It is necessary to have [Golang installed](https://golang.org/doc/install) for this command to work*
+*It is necessary to have [Golang](https://golang.org/doc/install) and [Terraform](https://www.terraform.io/downloads.html) installed for this command to work*
 
 - Stdin + Docker 
 
