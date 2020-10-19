@@ -1,24 +1,47 @@
-# List bucket aws
+# List Bucket Aws
 
-## command
+## Premisses
 
-List buckets
+- [Ritchie installed](https://docs.ritchiecli.io/v/v2.0-pt/getting-started/installation)
+- Set AWS credentials ($ rit set credentials) with ACCESS KEY ID and SECRET ACCESS KEY.
 
+## Command
+
+- Prompt
 ```bash
 rit aws list bucket
 ```
 
-## description
+*It is necessary to have [Golang](https://golang.org/doc/install) installed for this command to work*
 
-For use this formula run before:
-
+- Docker
 ```bash
-rit set credential
+rit aws list bucket --docker
 ```
 
-for add AWS credential.
+*It is necessary to have [Docker installed](https://docs.docker.com/get-docker) for this command to work*
 
-For all formulas receive field in env REGION and has received (CREDENTIAL_AWS_ACCESSKEYID,
-CREDENTIAL_AWS_SECRETACCESSKEY) in envs (ACCESS_KEY, SECRET_ACCESS_KEY).
+- Stdin
+```bash
+echo '{"region":"sa-east-1"}' | rit aws list bucket --stdin
+```
 
-For "create" command receive bucket field in env BUCKET.
+*It is necessary to have [Golang](https://golang.org/doc/install) installed for this command to work*
+
+- Stdin + Docker 
+
+```bash
+echo '{"region":"sa-east-1"}' | rit aws list bucket --stdin --docker
+```
+
+*It is necessary to have [Docker installed](https://docs.docker.com/get-docker) for this command to work*
+
+## Description
+
+This formula will list your buckets on aws providing only one input:
+
+- AWS region i.e., us-east-1, us-west-1, sa-east-1
+
+## Demonstration
+
+<img src="demo.gif">
