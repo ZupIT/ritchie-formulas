@@ -14,6 +14,7 @@ SET SH_FILE=%BIN_FOLDER%\run.sh
 
 :build
     cd src
+    xcopy /e/h/i files %BIN_FOLDER%\files
     mkdir %DIST_WIN_DIR%
     SET GO111MODULE=on
     for /f %%i in ('go list -m') do set MODULE=%%i
