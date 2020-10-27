@@ -47,7 +47,7 @@ public class FormulaTest {
   }
 
   @Test
-  public void runNoSecresInput() {
+  public void runNoSecretsInput() {
     new Formula("Hello", false, "world", "").Run();
 
     assertEquals("Hello World!\n" +
