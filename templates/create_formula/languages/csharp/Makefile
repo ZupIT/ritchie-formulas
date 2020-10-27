@@ -1,5 +1,5 @@
 # SH
-SOURCE_FILE=src/src.csproj
+SOURCE_FILE=src.csproj
 BIN_FOLDER=bin
 BIN_FOLDER_LINUX=linux
 BIN_FOLDER_DARWIN=darwin
@@ -11,11 +11,11 @@ build: linux-build macOS-build sh-unix docker
 linux-build:
 	mkdir -p $(BIN_FOLDER)
 	cp -r src/* $(BIN_FOLDER)
-	dotnet build $(SOURCE_FILE) -o $(BIN_FOLDER)/$(BIN_FOLDER_LINUX) --configuration Release
+	dotnet build $(BIN_FOLDER)/$(SOURCE_FILE) -o $(BIN_FOLDER)/$(BIN_FOLDER_LINUX) --configuration Release
 
 macOS-build:
 	mkdir -p $(BIN_FOLDER)/$(BIN_FOLDER_DARWIN)
-	dotnet build $(SOURCE_FILE) -o $(BIN_FOLDER)/$(BIN_FOLDER_DARWIN) --configuration Release --runtime osx-x64
+	dotnet build $(BIN_FOLDER)/$(SOURCE_FILE) -o $(BIN_FOLDER)/$(BIN_FOLDER_DARWIN) --configuration Release --runtime osx-x64
 
 sh-unix:
 	echo '#!/bin/sh' > $(SH)
