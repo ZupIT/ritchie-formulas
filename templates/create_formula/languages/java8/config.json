@@ -1,5 +1,5 @@
 {
-  "dockerImageBuilder": "cimg/openjdk:8.0",
+  "dockerImageBuilder": "ritclizup/rit-java9-builder",
   "inputs": [
     {
       "cache": {

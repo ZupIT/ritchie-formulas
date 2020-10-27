@@ -1,5 +1,5 @@
 {
-  "dockerImageBuilder": "cimg/node:14.0",
+  "dockerImageBuilder": "ritclizup/rit-typescript-builder",
   "inputs": [
     {
       "cache": {

@@ -1,5 +1,5 @@
 {
-  "dockerImageBuilder": "cimg/go:1.14",
+  "dockerImageBuilder": "ritclizup/rit-go-builder",
   "inputs": [
     {
       "cache": {
