@@ -1,25 +1,34 @@
-# Github navigate handbook
+# Github Navigate Handbook
 
-## Command
+## Premisses
 
-```bash
-rit github navigate handbook
-```
-
-## Requirements
-
-- git installed
-
-- set github username and token credentials using
-
-```bash
-rit set credential
-```
+- [Ritchie installed](https://docs.ritchiecli.io/v/v2.0-pt/getting-started/installation)
+- Set Github credentials ($ rit set credential) with USERNAME, EMAIL and TOKEN.
 
 ## How to generate personal access token
 
 To generate a personal access token click [here](https://github.com/settings/tokens)
 
-## How it works
+## Command
 
-![gif](https://media.giphy.com/media/U5bfisA8omNg52kEG1/giphy.gif)
+- Prompt
+```bash
+rit github navigate handbook
+```
+
+*It is necessary to have [Golang](https://golang.org/doc/install) installed for this command to work*
+
+- Docker
+```bash
+rit github navigate handbook --docker
+```
+
+*It is necessary to have [Docker installed](https://docs.docker.com/get-docker) for this command to work*
+
+## Description
+
+Navigate Handbooks from [ZupIT](https://github.com/ZupIT) repositories
+
+## Demo
+
+<img src="demo.gif">
