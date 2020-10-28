@@ -1,8 +1,6 @@
-FROM cimg/base:stable-20.04
+FROM ritclizup/rit-shell-bat-runner
 
 USER root
-
-RUN curl -fsSL https://commons-repo.ritchiecli.io/install.sh | bash
 
 RUN mkdir /rit
 COPY . /rit

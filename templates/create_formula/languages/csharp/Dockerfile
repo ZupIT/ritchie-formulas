@@ -1,8 +1,6 @@
-FROM chiaretto/dotnet-core-debian-buildessential:3.1 AS build-env
+FROM ritclizup/rit-csharp-runner
 
 USER root
-
-RUN curl -fsSL https://commons-repo.ritchiecli.io/install.sh | bash
 
 RUN mkdir /rit
 COPY . /rit

@@ -1,5 +1,5 @@
 {
-  "dockerImageBuilder": "cimg/python:3.8",
+  "dockerImageBuilder": "ritclizup/rit-python3-builder",
   "inputs": [
     {
       "cache": {
