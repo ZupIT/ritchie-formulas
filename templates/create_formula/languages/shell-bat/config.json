@@ -1,5 +1,5 @@
 {
-  "dockerImageBuilder": "cimg/base:stable-20.04",
+  "dockerImageBuilder": "ritclizup/rit-shell-bat-builder",
   "inputs": [
     {
       "cache": {

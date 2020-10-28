@@ -1,5 +1,5 @@
 {
-  "dockerImageBuilder": "chiaretto/powershell-sudo",
+  "dockerImageBuilder": "ritclizup/rit-powershell-builder",
   "inputs": [
     {
       "cache": {

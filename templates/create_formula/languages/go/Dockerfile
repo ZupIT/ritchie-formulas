@@ -1,8 +1,6 @@
-FROM cimg/go:1.14
+FROM ritclizup/rit-go-runner
 
 USER root
-
-RUN curl -fsSL https://commons-repo.ritchiecli.io/install.sh | bash
 
 RUN mkdir /rit
 COPY . /rit
