@@ -17,7 +17,7 @@ SET BAT_FILE=%BIN_FOLDER%\run.bat
 
 :BAT_WINDOWS
     echo @ECHO OFF > %BAT_FILE%
-	echo %%~dp0%BIN_FOLDER%/src.exe >> %BAT_FILE%
+	echo %%~dp0%BIN_FOLDER_WINDOWS%/src.exe >> %BAT_FILE%
     GOTO DONE
 
 :CP_DOCKER
