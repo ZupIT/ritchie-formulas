@@ -28,32 +28,32 @@ public class FormulaTest {
   public void runTrueInput() {
     new Formula("Hello", true, "world", "pass").Run();
 
-    assertEquals("Hello World!\n" +
-            "\u001B[32mMy name is Hello.\u001B[39m\n" +
-            "\u001B[36mI've already created formulas using Ritchie.\u001B[39m\n" +
-            "\u001B[33mToday, I want to automate world.\u001B[39m\n" +
-            "\u001B[35mMy secret is pass.\u001B[39m\n", outContent.toString());
+    assertEquals("Hello World!" +
+            "My name is Hello." +
+            "I've already created formulas using Ritchie." +
+            "Today, I want to automate world." +
+            "My secret is pass.", outContent.toString().replaceAll("\\r|\\n", "").replaceAll("\u001B\\[[;\\d]*m", ""));
   }
 
   @Test
   public void runFalseInput() {
     new Formula("Hello", false, "world", "pass").Run();
 
-    assertEquals("Hello World!\n" +
-            "\u001B[32mMy name is Hello.\u001B[39m\n" +
-            "\u001B[31mI'm excited in creating new formulas using Ritchie.\u001B[39m\n" +
-            "\u001B[33mToday, I want to automate world.\u001B[39m\n" +
-            "\u001B[35mMy secret is pass.\u001B[39m\n", outContent.toString());
+    assertEquals("Hello World!" +
+            "My name is Hello." +
+            "I'm excited in creating new formulas using Ritchie." +
+            "Today, I want to automate world." +
+            "My secret is pass.", outContent.toString().replaceAll("\\r|\\n", "").replaceAll("\u001B\\[[;\\d]*m", ""));
   }
 
   @Test
   public void runNoSecretsInput() {
     new Formula("Hello", false, "world", "").Run();
 
-    assertEquals("Hello World!\n" +
-            "\u001B[32mMy name is Hello.\u001B[39m\n" +
-            "\u001B[31mI'm excited in creating new formulas using Ritchie.\u001B[39m\n" +
-            "\u001B[33mToday, I want to automate world.\u001B[39m\n" +
-            "\u001B[35mMy secret is .\u001B[39m\n", outContent.toString());
+    assertEquals("Hello World!" +
+            "My name is Hello." +
+            "I'm excited in creating new formulas using Ritchie." +
+            "Today, I want to automate world." +
+            "My secret is .", outContent.toString().replaceAll("\\r|\\n", "").replaceAll("\u001B\\[[;\\d]*m", ""));
   }
 }
