@@ -1,5 +1,5 @@
 {
-  "dockerImageBuilder": "ruby:2.7.1",
+  "dockerImageBuilder": "ritclizup/rit-ruby-builder",
   "inputs": [
     {
       "cache": {
