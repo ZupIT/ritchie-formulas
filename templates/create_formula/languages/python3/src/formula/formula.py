@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 from colored import fg, attr
-
+from distutils.util import strtobool
 
 def Run(input1, input2, input3, input4):
     print("Hello World!")
     print("%sMy name is {}.%s".format(input1) % (fg(2), attr(0)))
-    if input2:
+    if (bool(strtobool(input2))):
         print("%sI've already created formulas using Ritchie.%s" % (fg(3), attr(0)))
     else:
         print(
