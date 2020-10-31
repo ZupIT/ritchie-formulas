@@ -1,11 +1,24 @@
 # Kafka create topic
 
-## command
+## Premisse
+
+Have an available Kafka URL.
+
+## Command
 
 ```bash
 rit kafka create topic
 ```
 
-## description
+```bash
+rit kafka create topic --docker
+```
 
-This formula do create a topic on kafka
+## Description
+
+This formula create a topic on the inform kafka URL.
+You can test it using docker with the `rit docker generate compose` formula.
+
+## Sample demo
+
+![Alt Text](https://media.giphy.com/media/VuSYXuKCgxJnIkPTYJ/giphy.gif)
