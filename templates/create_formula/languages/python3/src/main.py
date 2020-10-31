@@ -3,6 +3,7 @@ import os
 
 from formula import formula
 
+
 input1 = os.environ.get("INPUT_TEXT")
 input2 = os.environ.get("INPUT_BOOLEAN")
 input3 = os.environ.get("INPUT_LIST")
