@@ -1,11 +1,24 @@
-# Kafka list topic
+# Kafka List topic
 
-## command
+## Premisse
+
+Have an available Kafka URL.
+
+## Command
 
 ```bash
 rit kafka list topic
 ```
 
-## description
+```bash
+rit kafka list topic --docker
+```
 
-This formula list topics of kafka
+## Description
+
+This formula list a topic on the inform kafka URL.
+You can test it using docker with the `rit docker generate compose` formula.
+
+## Demo
+
+![Alt Text](https://giphy.com/gifs/ritchie-kafka-cli-TXnh57oelbbrx8orTT)
