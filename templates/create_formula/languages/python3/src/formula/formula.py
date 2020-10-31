@@ -11,4 +11,4 @@ def Run(input1, input2, input3, input4):
     else:
         print(f"{fg(3)}I'm excited in creating new formulas using Ritchie.{attr(0)}")
     print(f"{fg(1)}Today, I want to automate {input3}.{attr(0)}")
-    print(f"{fg(3)}My secret is {input4}.{attr(0)}")
+    print(f"{fg(3)}My secret is '{input4}'.{attr(0)}")
