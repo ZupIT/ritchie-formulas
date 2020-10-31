@@ -1,5 +1,5 @@
 {
-  "dockerImageBuilder": "cimg/php:7.4",
+  "dockerImageBuilder": "ritclizup/rit-php-builder",
   "inputs": [
     {
       "cache": {

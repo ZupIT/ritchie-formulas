@@ -1,8 +1,6 @@
-FROM cimg/php:7.4
+FROM ritclizup/rit-php-runner
 
 USER root
-
-RUN curl -fsSL https://commons-repo.ritchiecli.io/install.sh | bash
 
 RUN mkdir /rit
 COPY . /rit

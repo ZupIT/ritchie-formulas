@@ -1,8 +1,6 @@
-FROM chiaretto/powershell-sudo
+FROM ritclizup/rit-powershell-runner
 
 USER root
-
-RUN curl -fsSL https://commons-repo.ritchiecli.io/install.sh | bash
 
 RUN mkdir /rit
 COPY . /rit
