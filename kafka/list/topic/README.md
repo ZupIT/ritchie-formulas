@@ -19,6 +19,6 @@ rit kafka list topic --docker
 This formula list a topic on the inform kafka URL.
 You can test it using docker with the `rit docker generate compose` formula.
 
-## Demo
+## Sample demo
 
 ![Alt Text](https://giphy.com/gifs/ritchie-kafka-cli-TXnh57oelbbrx8orTT)
