@@ -19,6 +19,6 @@ rit kafka create topic --docker
 This formula create a topic on the inform kafka URL.
 You can test it using docker with the `rit docker generate compose` formula.
 
-## Demo
+## Sample demo
 
 ![Alt Text](https://media.giphy.com/media/VuSYXuKCgxJnIkPTYJ/giphy.gif)
