@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import os
 
-from formula import formula
+from .formula import formula
 
 input1 = os.environ.get("SAMPLE_TEXT")
 input2 = os.environ.get("SAMPLE_LIST")
