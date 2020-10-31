@@ -1,0 +1,46 @@
+{
+  "dockerImageBuilder": "ritclizup/rit-typescript-builder",
+  "inputs": [
+    {
+      "cache": {
+        "active": true,
+        "newLabel": "Type new value. ",
+        "qty": 3
+      },
+      "label": "Type your name: ",
+      "name": "input_text",
+      "type": "text",
+      "required": true
+    },
+    {
+      "default": "false",
+      "items": [
+        "false",
+        "true"
+      ],
+      "label": "Have you ever used Ritchie? ",
+      "name": "input_boolean",
+      "type": "bool",
+      "required": false
+    },
+    {
+      "default": "everything",
+      "items": [
+        "daily tasks",
+        "workflows",
+        "toils",
+        "everything"
+      ],
+      "label": "What do you want to automate? ",
+      "name": "input_list",
+      "type": "text",
+      "required": false
+    },
+    {
+      "label": "Tell us a secret: ",
+      "name": "input_password",
+      "type": "password",
+      "required": true
+    }
+  ]
+}

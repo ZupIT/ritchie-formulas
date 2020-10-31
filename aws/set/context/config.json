@@ -9,7 +9,8 @@
       },
       "label": "Which context you want to use : ",
       "name": "context_name",
-      "type": "text"
+      "type": "text",
+      "tutorial": "Context i.e., default"
     }
   ]
 }

@@ -8,7 +8,8 @@
       },
       "label": "Kafka urls: ",
       "name": "urls",
-      "type": "text"
+      "type": "text",
+      "tutorial": "The list of kafka URLs i.e., \"kafka1.abc.com:80,kafka2.abc.com:80,kafka3.abc.com:80\""
     },
     {
       "cache": {
@@ -17,7 +18,8 @@
       },
       "label": "Topic: ",
       "name": "topic",
-      "type": "text"
+      "type": "text",
+      "tutorial": "A new topic name i.e., something, google.accounts.login, BrokerEvents or AWESOME_KAFKA_TOPIC"
     },
     {
       "default": "true",
@@ -27,7 +29,8 @@
       ],
       "label": "From beginning? ",
       "name": "beginning",
-      "type": "bool"
+      "type": "bool",
+      "tutorial": "Choose one option"
     }
   ]
 }

@@ -1,8 +1,6 @@
-FROM cimg/python:3.8
+FROM ritclizup/rit-python3-runner
 
 USER root
-
-RUN curl -fsSL https://commons-repo.ritchiecli.io/install.sh | bash
 
 RUN mkdir /rit
 COPY . /rit
