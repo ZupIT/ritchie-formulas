@@ -2,7 +2,6 @@ package main
 
 import (
 	"eks/pkg/eks"
-	"os"
 )
 
 func main() {
@@ -10,9 +9,9 @@ func main() {
 }
 
 func loadInputs() eks.Inputs {
-	clusterName := os.Getenv("CLUSTER_NAME")
-	domainName := os.Getenv("DOMAIN_NAME")
-	PWD := os.Getenv("CURRENT_PWD")
+	clusterName := "name"                         //os.Getenv("CLUSTER_NAME")
+	domainName := "domain.io"                     //os.Getenv("DOMAIN_NAME")
+	PWD := "/Users/guillaumefalourd/test-formula" //os.Getenv("CURRENT_PWD")
 
 	return eks.Inputs{
 		ClusterName: clusterName,

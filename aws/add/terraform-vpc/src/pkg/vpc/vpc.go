@@ -89,6 +89,7 @@ func (in Inputs) moduleExist() bool {
 }
 
 func (in *Inputs) parseAZS() {
+	strings.Replace(in.VPCAZS, " ", "", -1)
 	ss := strings.Split(in.VPCAZS, ",")
 	siz := len(ss) - 1
 	var azs string

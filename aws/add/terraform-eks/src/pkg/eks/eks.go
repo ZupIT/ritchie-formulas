@@ -1,8 +1,11 @@
 package eks
 
 import (
+	"bufio"
 	"fmt"
 	"html/template"
+	"io"
+	"io/ioutil"
 	"os"
 	"path"
 
@@ -23,6 +26,8 @@ const (
 	hemlDeps      = "src/modules/helm_deps"
 	iamK8SModule  = "src/modules/iam_k8s"
 	variableQA    = "src/variables/qa.tfvars"
+
+	terraformConfig = "\tkubernetes = \"~> 1.11.0\"\n\tlocal      = \"1.4.0\"\n\ttemplate   = \"2.1.2\"\n\thelm       = \"0.10.4\"\n\texternal   = \"1.2.0\"\n\ttls        = \"2.1.1\"\n\tarchive    = \"1.3.0\"\n\trandom     = \"2.2.1\"\n"
 )
 
 const (
@@ -195,6 +200,15 @@ func (in Inputs) mergeMain() {
 		color.Red(fmt.Sprintf("error appending file %q, detail: %q", mfile, err))
 		os.Exit(1)
 	}
+
+	path0 := path.Join(in.PWD, maintfFile)
+	println("path0:", path0)
+
+	err = InsertStringToFile(path0, terraformConfig, 12)
+	if err != nil {
+		color.Red(fmt.Sprintf("error TEST"))
+	}
+
 }
 
 func (in Inputs) checkIfProjectExist() {
@@ -213,4 +227,44 @@ func checkDiagnostics(diags hcl.Diagnostics) {
 		}
 		os.Exit(1)
 	}
+}
+
+func File2lines(filePath string) ([]string, error) {
+	f, err := os.Open(filePath)
+	if err != nil {
+		return nil, err
+	}
+	defer f.Close()
+	return LinesFromReader(f)
+}
+
+func LinesFromReader(r io.Reader) ([]string, error) {
+	var lines []string
+	scanner := bufio.NewScanner(r)
+	for scanner.Scan() {
+		lines = append(lines, scanner.Text())
+	}
+	if err := scanner.Err(); err != nil {
+		return nil, err
+	}
+
+	return lines, nil
+}
+
+func InsertStringToFile(path, str string, index int) error {
+	lines, err := File2lines(path)
+	if err != nil {
+		return err
+	}
+
+	fileContent := ""
+	for i, line := range lines {
+		if i == index {
+			fileContent += str
+		}
+		fileContent += line
+		fileContent += "\n"
+	}
+
+	return ioutil.WriteFile(path, []byte(fileContent), 0644)
 }

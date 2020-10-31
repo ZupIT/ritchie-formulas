@@ -47,13 +47,13 @@
       "label": "Type your vpc_azs:",
       "name": "vpc_azs",
       "type": "text",
-      "tutorial": "AWS vpc_azs i.e., us-west-1a, us-west-1c"
+      "tutorial": "AWS vpc_azs e.g.: us-west-1a, us-west-1b"
     },
     {
       "label": "Type the customer name:",
       "name": "customer_name",
       "type": "text",
-      "tutorial": "A customer name e.g.: something"
+      "tutorial": "A customer name e.g.: Dennis Ritchie"
     }
   ]
 }
