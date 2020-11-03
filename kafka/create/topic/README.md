@@ -7,7 +7,11 @@
 
 - The kafka cluster is accessible
 
-## command
+## Premisse
+
+Have an available Kafka URL.
+
+## Command
 
 - Prompt
 
@@ -49,6 +53,6 @@ kafka server: Topic with this name already exists. - Topic 'XXXX' already exists
 
 - Command execution
 
-![Alt Text](https://media.giphy.com/media/o8MA12cSey3NSnp6pq/source.gif)
+![Alt Text](https://media.giphy.com/media/VuSYXuKCgxJnIkPTYJ/giphy.gif)
 
 - Created bucket after executing command
