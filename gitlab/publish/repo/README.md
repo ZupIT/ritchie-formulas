@@ -1,4 +1,3 @@
-<!-- markdownlint-disable-file MD013 -->
 <!-- markdownlint-disable-file MD033 -->
 
 # Ritchie Formula
@@ -48,3 +47,7 @@ The user has to inform 4 different kinds of inputs:
 - the local repository path you wish to publish
 
 - the release version to generate
+
+## Demo
+
+![gif](doc/gif.gif)
