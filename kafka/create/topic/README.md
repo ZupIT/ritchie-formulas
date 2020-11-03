@@ -3,10 +3,6 @@
 
 # create kafka topic
 
-## Premisses
-
-- The kafka cluster is accessible
-
 ## Premisse
 
 Have an available Kafka URL.
@@ -39,11 +35,8 @@ echo '{"urls":"localhost:9092", "name":"topic-stdin", "replication":"1", "partit
 
 ## Description
 
-This create kafka topic command allows the user to delete a bucket in AWS S3
-
-If the command using stdin method, the question for list and confirm name of the bucket is suppressed.
-
-If the kafka has exists, you receive the error:
+This formula create a topic on the inform kafka URL.
+You can test it using docker with the `rit docker generate compose` formula.
 
 ```bash
 kafka server: Topic with this name already exists. - Topic 'XXXX' already exists.
