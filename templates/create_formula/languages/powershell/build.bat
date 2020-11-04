@@ -16,8 +16,7 @@ SET ENTRY_POINT=main.ps1
   
 :BAT_WINDOWS
   echo @ECHO OFF > %BAT_FILE%
-  echo SET mypath=%%~dp0 >> %BAT_FILE%
-  echo Powershell.exe -executionpolicy remotesigned -File %%mypath:~0,-1%%%ENTRY_POINT% >> %BAT_FILE%
+  echo Powershell.exe -executionpolicy remotesigned -File %ENTRY_POINT% >> %BAT_FILE%
 
 :SH_LINUX
     echo #!/bin/sh > %SH_FILE%

@@ -16,8 +16,7 @@ SET SH_FILE=%BIN_FOLDER%\run.sh
 
 :BAT_WINDOWS
     echo @ECHO OFF > %BAT_FILE%
-    echo SET mypath=%%~dp0 >> %BAT_FILE%
-    echo ruby %%mypath:~0,-1%%/index.rb >> %BAT_FILE%
+    echo ruby /index.rb >> %BAT_FILE%
     GOTO DONE
 
 :SH_LINUX
