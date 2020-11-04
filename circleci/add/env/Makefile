@@ -37,8 +37,7 @@ sh-unix:
 
 bat-windows:
 	echo '@ECHO OFF' > $(BAT)
-	echo 'SET mypath=%~dp0' >> $(BAT)
-	echo 'start /B /WAIT %mypath:~0,-1%/windows/main.exe' >> $(BAT)
+	echo 'start /B /WAIT windows/main.exe' >> $(BAT)
 
 test:
 	$(GOTEST) -short `go list ./... | grep -v vendor/`
