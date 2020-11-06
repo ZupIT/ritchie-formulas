@@ -9,8 +9,8 @@
       },
       "label": "Type your name: ",
       "name": "input_text",
-      "type": "text",
-      "required": true
+      "required": true,
+      "type": "text"
     },
     {
       "default": "false",
@@ -20,8 +20,8 @@
       ],
       "label": "Have you ever used Ritchie? ",
       "name": "input_boolean",
-      "type": "bool",
-      "required": false
+      "required": false,
+      "type": "bool"
     },
     {
       "default": "everything",
@@ -33,14 +33,14 @@
       ],
       "label": "What do you want to automate? ",
       "name": "input_list",
-      "type": "text",
-      "required": false
+      "required": false,
+      "type": "text"
     },
     {
       "label": "Tell us a secret: ",
       "name": "input_password",
-      "type": "password",
-      "required": true
+      "required": true,
+      "type": "password"
     }
   ]
 }

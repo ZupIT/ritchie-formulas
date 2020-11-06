@@ -12,6 +12,8 @@
     ]
   },
   "tags": [
-    "http", "perform", "load-test"
+    "http",
+    "perform",
+    "load-test"
   ]
 }

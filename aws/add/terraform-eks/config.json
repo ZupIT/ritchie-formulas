@@ -4,14 +4,14 @@
     {
       "label": "Type the cluster name:",
       "name": "cluster_name",
-      "type": "text",
-      "tutorial": "Your EKS cluster name"
+      "tutorial": "Your EKS cluster name",
+      "type": "text"
     },
     {
       "label": "Type the domain name:",
       "name": "domain_name",
-      "type": "text",
-      "tutorial": "Your EKS domain name"
+      "tutorial": "Your EKS domain name",
+      "type": "text"
     }
   ]
 }

@@ -9,26 +9,26 @@
       },
       "label": "Kafka urls: ",
       "name": "urls",
-      "type": "text",
-      "tutorial": "The list of kafka URLs e.g.: \"kafka1.abc.com:80,kafka2.abc.com:80,kafka3.abc.com:80\""
+      "tutorial": "The list of kafka URLs e.g.: \"kafka1.abc.com:80,kafka2.abc.com:80,kafka3.abc.com:80\"",
+      "type": "text"
     },
     {
       "label": "Topic name: ",
       "name": "name",
-      "type": "text",
-      "tutorial": "Your topic name"
+      "tutorial": "Your topic name",
+      "type": "text"
     },
     {
       "label": "Replication-factor: ",
       "name": "replication",
-      "type": "text",
-      "tutorial": "The replication factor i.e., 1"
+      "tutorial": "The replication factor i.e., 1",
+      "type": "text"
     },
     {
       "label": "Partitions: ",
       "name": "partitions",
-      "type": "text",
-      "tutorial": "The partitions i.e., 1"
+      "tutorial": "The partitions i.e., 1",
+      "type": "text"
     }
   ]
 }

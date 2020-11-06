@@ -12,6 +12,8 @@
     ]
   },
   "tags": [
-    "http", "generate", "http-config"
+    "http",
+    "generate",
+    "http-config"
   ]
 }

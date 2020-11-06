@@ -1,3 +1,6 @@
+<!-- markdownlint-disable-file MD013 -->
+<!-- markdownlint-disable-file MD033 -->
+
 # Generate Compose
 
 ## Premisses
@@ -7,18 +10,20 @@
 ## Command
 
 - Prompt
+
 ```bash
 rit docker generate compose
 ```
 
-*It is necessary to have [Golang](https://golang.org/doc/install) installed for this command to work*
+_It is necessary to have [Golang](https://golang.org/doc/install) installed for this command to work_
 
 - Docker
+
 ```bash
 rit docker generate compose --docker
 ```
 
-*It is necessary to have [Docker installed](https://docs.docker.com/get-docker) for this command to work*
+_It is necessary to have [Docker installed](https://docs.docker.com/get-docker) for this command to work_
 
 ## Description
 

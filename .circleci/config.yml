@@ -13,9 +13,9 @@ references:
 
   environment: &ENVIRONMENT
     TEST_RESULTS_DIR: *TEST_RESULTS_DIR
-    GIT_EMAIL : "zup-ci@zup.com.br"
-    GIT_USERNAME: "zup-ci"
-    GIT_NAME: "Zup CI"
+    GIT_EMAIL: 'zup-ci@zup.com.br'
+    GIT_USERNAME: 'zup-ci'
+    GIT_NAME: 'Zup CI'
     BUILD_IMAGE: *GOLANG_IMAGE
 
   filters-checks-pr: &FILTERS_CHECK_CODE
@@ -53,10 +53,10 @@ jobs:
           name: install Shellcheck
           command: |
             apt-get install -y shellcheck
-#       - run:
-#           name: pre-commit
-#           command: |
-#             pre-commit run --all-files
+      - run:
+          name: pre-commit
+          command: |
+            pre-commit run --all-files
   unit_test:
     executor: ritchie-executor
     environment:
