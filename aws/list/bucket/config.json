@@ -17,8 +17,8 @@
       },
       "label": "Type your region: ",
       "name": "region",
-      "type": "text",
-      "tutorial": "AWS region i.e., us-east-1, us-west-1, sa-east-1"
+      "tutorial": "AWS region i.e., us-east-1, us-west-1, sa-east-1",
+      "type": "text"
     }
   ]
 }
