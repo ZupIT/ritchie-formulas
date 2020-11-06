@@ -9,8 +9,8 @@
       ],
       "label": "Select type project: ",
       "name": "type",
-      "type": "text",
-      "tutorial": "Choose one option"
+      "tutorial": "Choose one option",
+      "type": "text"
     },
     {
       "default": "kotlin",
@@ -21,8 +21,8 @@
       ],
       "label": "Select language project: ",
       "name": "language",
-      "type": "text",
-      "tutorial": "Choose one option"
+      "tutorial": "Choose one option",
+      "type": "text"
     },
     {
       "default": "2.2.4.RELEASE",
@@ -36,26 +36,26 @@
       ],
       "label": "Select Spring Boot version: ",
       "name": "boot_version",
-      "type": "text",
-      "tutorial": "Choose one option"
+      "tutorial": "Choose one option",
+      "type": "text"
     },
     {
       "label": "Type your groupId: ",
       "name": "group_id",
-      "type": "text",
-      "tutorial": "Project group ID i.e., br.com.zup"
+      "tutorial": "Project group ID i.e., br.com.zup",
+      "type": "text"
     },
     {
       "label": "Type your artifactId: ",
       "name": "artifact_id",
-      "type": "text",
-      "tutorial": "The name of your jar file without the version i.e., demo"
+      "tutorial": "The name of your jar file without the version i.e., demo",
+      "type": "text"
     },
     {
       "label": "Type the project`s description: ",
       "name": "description",
-      "type": "text",
-      "tutorial": "A description for your project i.e., project demo"
+      "tutorial": "A description for your project i.e., project demo",
+      "type": "text"
     },
     {
       "default": "jar",
@@ -65,8 +65,8 @@
       ],
       "label": "Pick your packaging type: ",
       "name": "packaging",
-      "type": "text",
-      "tutorial": "Choose one option"
+      "tutorial": "Choose one option",
+      "type": "text"
     },
     {
       "default": "11",
@@ -77,14 +77,14 @@
       ],
       "label": "Pick your java version: ",
       "name": "java_version",
-      "type": "text",
-      "tutorial": "Choose a java version"
+      "tutorial": "Choose a java version",
+      "type": "text"
     },
     {
       "label": "Enter the dependencies ids: ",
       "name": "dependencies",
-      "type": "text",
-      "tutorial": "type witch dependencies you want preload i.e., web,postgresql. For list dependencies: 'rit scaffold show spring-starter-dependencies' "
+      "tutorial": "type witch dependencies you want preload i.e., web,postgresql. For list dependencies: 'rit scaffold show spring-starter-dependencies' ",
+      "type": "text"
     }
   ]
 }

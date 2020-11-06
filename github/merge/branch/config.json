@@ -10,8 +10,8 @@
       "default": "qa",
       "label": "Select destination branch(default qa):",
       "name": "branch",
-      "type": "text",
-      "tutorial": "Destination branch name i.e., master, developer, some-branch"
+      "tutorial": "Destination branch name i.e., master, developer, some-branch",
+      "type": "text"
     },
     {
       "default": "yes",
@@ -21,8 +21,8 @@
       ],
       "label": "Push after merge ?",
       "name": "push",
-      "type": "bool",
-      "tutorial": "Choose one option"
+      "tutorial": "Choose one option",
+      "type": "bool"
     }
   ]
 }

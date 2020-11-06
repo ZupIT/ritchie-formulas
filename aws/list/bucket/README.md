@@ -28,7 +28,7 @@ echo '{"region":"sa-east-1"}' | rit aws list bucket --stdin
 
 *It is necessary to have [Golang](https://golang.org/doc/install) installed for this command to work*
 
-- Stdin + Docker 
+- Stdin + Docker
 
 ```bash
 echo '{"region":"sa-east-1"}' | rit aws list bucket --stdin --docker

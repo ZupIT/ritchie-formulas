@@ -11,7 +11,7 @@ Inspired by https://start.spring.io
 
 ## Adding ritchie-formulas to Ritchie CLI
 
-- Run command 
+- Run command
 ```bash
 echo '{"provider":"Github", "name":"demo", "version":"2.0.0", "url":"https://github.com/ZupIT/ritchie-formulas", "token": null, "priority":1}' | rit add repo --stdin
 ```
@@ -30,7 +30,7 @@ rit scaffold generate spring-starter
 
 ## Description
 
-This formula generate a scaffold project using spring boot and dependencies that you to choose 
+This formula generate a scaffold project using spring boot and dependencies that you to choose
 
 
 ## Demo

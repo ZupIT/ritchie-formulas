@@ -1,4 +1,4 @@
 {
-	"short": "Ritman http load-test",
-	"long": "HTTP simple load testing tool"
+  "long": "HTTP simple load testing tool",
+  "short": "Ritman http load-test"
 }

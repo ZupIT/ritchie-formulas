@@ -1,4 +1,4 @@
 {
-	"short": "perform http commands",
-	"long": "perform http utility commands"
+  "long": "perform http utility commands",
+  "short": "perform http commands"
 }

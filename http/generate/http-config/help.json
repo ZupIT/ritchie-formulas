@@ -1,4 +1,4 @@
 {
-	"short": "Creates http-load template",
-	"long": "Creates http load testing template"
+  "long": "Creates http load testing template",
+  "short": "Creates http-load template"
 }

@@ -21,8 +21,8 @@
       ],
       "label": "Will it be a private repository? ",
       "name": "privacy",
-      "type": "text",
-      "tutorial": "Choose one option"
+      "tutorial": "Choose one option",
+      "type": "text"
     },
     {
       "cache": {
@@ -32,8 +32,8 @@
       },
       "label": "Github project name: ",
       "name": "project_name",
-      "type": "text",
-      "tutorial": "Target repository name i.e., ritchie-formulas"
+      "tutorial": "Target repository name i.e., ritchie-formulas",
+      "type": "text"
     },
     {
       "cache": {
@@ -43,15 +43,15 @@
       },
       "label": "Workspace to publish path: ",
       "name": "workspace_path",
-      "type": "text",
-      "tutorial": "Project workspace path i.e., /home/users/dennis/ritchie-formulas"
+      "tutorial": "Project workspace path i.e., /home/users/dennis/ritchie-formulas",
+      "type": "text"
     },
     {
       "default": "v1.0.0",
       "label": "Version: (default: v1.0.0)",
       "name": "version",
-      "type": "text",
-      "tutorial": "Project version e.g.: v1.0.0"
+      "tutorial": "Project version e.g.: v1.0.0",
+      "type": "text"
     }
   ]
 }

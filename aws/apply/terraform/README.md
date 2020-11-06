@@ -9,7 +9,7 @@ You can set credentials by running *rit set credential* and providing USERNAME, 
 
 ## Command
 
-- Prompt 
+- Prompt
 
 ```bash
 rit aws apply terraform
@@ -17,7 +17,7 @@ rit aws apply terraform
 
 *It is necessary to have [Golang](https://golang.org/doc/install) and [Terraform](https://www.terraform.io/downloads.html) installed for this command to work*
 
-- Docker 
+- Docker
 
 
 ```bash
@@ -27,7 +27,7 @@ rit aws apply terraform --docker
 *It is necessary to have [Docker installed](https://docs.docker.com/get-docker) for this command to work*
 
 
-- Stdin 
+- Stdin
 
 ```bash
 echo '{"repository":"https://github.com/eduardorcury/ritchie-demo", "terraform_path":"/terraform", "environment":"dev"}' | rit aws apply terraform --stdin
@@ -35,7 +35,7 @@ echo '{"repository":"https://github.com/eduardorcury/ritchie-demo", "terraform_p
 
 *It is necessary to have [Golang](https://golang.org/doc/install) and [Terraform](https://www.terraform.io/downloads.html) installed for this command to work*
 
-- Stdin + Docker 
+- Stdin + Docker
 
 ```bash
 echo '{"repository":"https://github.com/eduardorcury/ritchie-demo", "terraform_path":"/terraform", "environment":"dev"}' | rit aws apply terraform --stdin --docker

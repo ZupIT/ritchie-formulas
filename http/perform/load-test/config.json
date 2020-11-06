@@ -2,24 +2,24 @@
   "dockerImageBuilder": "cimg/go:1.14",
   "inputs": [
     {
-      "name" : "test_duration",
-      "type" : "text",
-      "label" : "Test duration in seconds",
-      "cache" : {
+      "cache": {
         "active": true,
-        "qtd" : 5,
-        "newLabel" : "Previous test duration value"
-      }
+        "newLabel": "Previous test duration value",
+        "qtd": 5
+      },
+      "label": "Test duration in seconds",
+      "name": "test_duration",
+      "type": "text"
     },
     {
-      "name" : "max_threads",
-      "type" : "text",
-      "label" : "Number of threads to be used in the test",
-      "cache" : {
+      "cache": {
         "active": true,
-        "qtd" : 5,
-        "newLabel" : "Previous max threads value"
-      }
+        "newLabel": "Previous max threads value",
+        "qtd": 5
+      },
+      "label": "Number of threads to be used in the test",
+      "name": "max_threads",
+      "type": "text"
     }
   ]
 }

@@ -12,8 +12,8 @@
     {
       "label": "Gitlab project name to delete: ",
       "name": "project_name",
-      "type": "text",
-      "tutorial": "The project name that you want to delete e.g.: not-so-awesome-project"
+      "tutorial": "The project name that you want to delete e.g.: not-so-awesome-project",
+      "type": "text"
     }
   ]
 }

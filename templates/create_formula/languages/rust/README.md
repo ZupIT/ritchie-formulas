@@ -8,4 +8,4 @@
 
 ## Description
 
-Formula description 
+Formula description
