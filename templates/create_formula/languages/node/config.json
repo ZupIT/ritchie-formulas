@@ -8,7 +8,7 @@
         "qty": 3
       },
       "label": "Type your name: ",
-      "name": "input_text",
+      "name": "rit_input_text",
       "required": true,
       "tutorial": "Your prefer name",
       "type": "text"
@@ -20,7 +20,7 @@
         "true"
       ],
       "label": "Have you ever used Ritchie? ",
-      "name": "input_boolean",
+      "name": "rit_input_boolean",
       "required": false,
       "tutorial": "Choose one option",
       "type": "bool"
@@ -34,14 +34,14 @@
         "everything"
       ],
       "label": "What do you want to automate? ",
-      "name": "input_list",
+      "name": "rit_input_list",
       "required": false,
       "tutorial": "Select what you want to automate with Ritchie",
       "type": "text"
     },
     {
       "label": "Tell us a secret: ",
-      "name": "input_password",
+      "name": "rit_input_password",
       "required": true,
       "tutorial": "Type a secret",
       "type": "password"
