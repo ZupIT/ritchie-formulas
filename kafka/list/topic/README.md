@@ -21,4 +21,4 @@ You can test it using docker with the `rit docker generate compose` formula.
 
 ## Sample demo
 
-![Alt Text](https://giphy.com/gifs/ritchie-kafka-cli-TXnh57oelbbrx8orTT)
+![Alt Text](https://media0.giphy.com/media/TXnh57oelbbrx8orTT/giphy.gif)
