@@ -36,4 +36,4 @@ This formula search a handbook on a github repository
 
 ## Demo
 
-<img src="demo.gif">
+<img src="https://github.com/ZupIT/ritchie-formulas/raw/master/github/search/handbook/demo.gif">
