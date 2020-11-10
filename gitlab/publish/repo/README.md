@@ -51,4 +51,4 @@ The user has to inform 4 different kinds of inputs:
 
 ## Demo
 
-![gif](doc/gif.gif)
+![gif](https://github.com/ZupIT/ritchie-formulas/raw/master/gitlab/publish/repo/doc/gif.gif)
