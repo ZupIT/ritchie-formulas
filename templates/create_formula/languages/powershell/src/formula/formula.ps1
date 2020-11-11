@@ -1,8 +1,8 @@
 Function runFormula () {
-  $input_text = $env:INPUT_TEXT
-  $input_boolean = $env:INPUT_BOOLEAN
-  $input_list = $env:INPUT_LIST
-  $input_password = $env:INPUT_PASSWORD
+  $input_text = $env:RIT_INPUT_TEXT
+  $input_boolean = $env:RIT_INPUT_BOOLEAN
+  $input_list = $env:RIT_INPUT_LIST
+  $input_password = $env:RIT_INPUT_PASSWORD
 
   Write-Host "Hello World!"
   Write-Host "My name is $input_text."
