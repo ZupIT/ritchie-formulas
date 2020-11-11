@@ -10,10 +10,10 @@ import (
 )
 
 func main() {
-	input1 := os.Getenv("INPUT_TEXT")
-	input2 := os.Getenv("INPUT_LIST")
-	input3, _ := strconv.ParseBool(os.Getenv("INPUT_BOOLEAN"))
-	input4 := os.Getenv("INPUT_PASSWORD")
+	input1 := os.Getenv("RIT_INPUT_TEXT")
+	input2 := os.Getenv("RIT_INPUT_LIST")
+	input3, _ := strconv.ParseBool(os.Getenv("RIT_INPUT_BOOLEAN"))
+	input4 := os.Getenv("RIT_INPUT_PASSWORD")
 
 	formula.Formula{
 		Text:     input1,
