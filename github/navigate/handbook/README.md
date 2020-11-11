@@ -36,4 +36,4 @@ Navigate Handbooks from [ZupIT](https://github.com/ZupIT) repositories
 
 ## Demo
 
-<img src="demo.gif">
+<img src="https://github.com/ZupIT/ritchie-formulas/raw/master/github/navigate/handbook/demo.gif">
