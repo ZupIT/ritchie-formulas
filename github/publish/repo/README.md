@@ -57,8 +57,8 @@ The user has to inform 4 different kinds of inputs:
 
 - Published Repo after executing command
 
-<img class="special-img-class" src="/github/publish/repo/docs/img/repo-published-on-github.png" />
+<img class="special-img-class" src="https://github.com/ZupIT/ritchie-formulas/raw/master/github/publish/repo/docs/img/repo-published-on-github.png" />
 
 - Ritchie Listed Repo after executing command
 
-<img class="special-img-class" src="/github/publish/repo/docs/img/rit-list-repo.png" />
+<img class="special-img-class" src="https://github.com/ZupIT/ritchie-formulas/raw/master/github/publish/repo/docs/img/rit-list-repo.png" />

@@ -22,4 +22,4 @@ To generate a personal access token click [here](https://bitbucket.org/account/s
 
 ## How it works
 
-![gif](doc/bitbucket-delete-repo.gif)
+![gif](https://github.com/ZupIT/ritchie-formulas/raw/master/bitbucket/delete/repo/doc/bitbucket-delete-repo.gif)

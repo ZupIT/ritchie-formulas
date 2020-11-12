@@ -41,4 +41,4 @@ This formula generate a scaffold project using spring boot and dependencies that
 
 ## Demo
 
-<img src="demo.gif">
+<img src="https://github.com/ZupIT/ritchie-formulas/raw/master/scaffold/generate/spring-starter/demo.gif">

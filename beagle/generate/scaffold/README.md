@@ -40,4 +40,4 @@ It allows the user to inform 10 different kinds of inputs:
 
 ## Demo
 
-![gif](doc/beagle-generate-scaffold.gif)
+![gif](https://github.com/ZupIT/ritchie-formulas/raw/master/beagle/generate/scaffold/doc/beagle-generate-scaffold.gif)

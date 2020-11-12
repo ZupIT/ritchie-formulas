@@ -22,4 +22,4 @@ To generate a personal access token click [here](https://bitbucket.org/account/s
 
 ## How it works
 
-![gif](doc/bitbucket-create-repo.gif)
+![gif](https://github.com/ZupIT/ritchie-formulas/raw/master/bitbucket/create/repo/doc/bitbucket-create-repo.gif)
