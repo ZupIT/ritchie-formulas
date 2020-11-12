@@ -7,7 +7,7 @@
 rit github add collaborator
 ```
 
-![Example](./src/docs/github.gif)
+![Example](https://github.com/ZupIT/ritchie-formulas/raw/master/github/add/collaborator/src/docs/github.gif)
 
 ## Description
 

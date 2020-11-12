@@ -22,4 +22,4 @@ To generate a personal access token click [here](https://github.com/settings/tok
 
 ## How it works
 
-![gif](doc/github-create-repo.gif)
+![gif](https://github.com/ZupIT/ritchie-formulas/raw/master/github/create/repo/doc/github-create-repo.gif)

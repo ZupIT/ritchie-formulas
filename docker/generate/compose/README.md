@@ -31,4 +31,4 @@ Generate docker-compose.yml in the current directory based on the parameters you
 
 ## Demo
 
-<img src="demo.gif">
+<img src="https://github.com/ZupIT/ritchie-formulas/raw/master/docker/generate/compose/demo.gif">

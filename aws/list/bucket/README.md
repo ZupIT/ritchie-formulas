@@ -50,4 +50,4 @@ This formula will list your buckets on aws providing only one input:
 
 ## Demonstration
 
-<img src="demo.gif">
+<img src="https://raw.githubusercontent.com/ZupIT/ritchie-formulas/master/aws/list/bucket/demo.gif">
