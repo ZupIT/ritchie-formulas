@@ -1,39 +1,6 @@
 <!-- markdownlint-disable-file MD013 -->
 <!-- markdownlint-disable-file MD033 -->
-
-# Ritchie Formula
-
-## Premisses
-
-- Set GITHUB credentials ($ rit set credentials) with USERNAME, TOKEN & EMAIL
-
-## Command
-
-- Prompt
-
-```bash
-rit github publish repo
-```
-
-- Docker
-
-```bash
-rit github publish repo --docker
-```
-
-- Stdin
-
-```bash
-echo '{"privacy":"true", "project_name":"ritchie-formulas-demo", "workspace_path":"/home/users/dennis/ritchie-formulas-local", "version":"v1.0.0"}' | rit github publish repo --stdin
-```
-
-- Stdin + Docker
-
-```bash
-echo '{"privacy":"true", "project_name":"ritchie-formulas-demo", "workspace_path":"/home/users/dennis/ritchie-formulas-local", "version":"v1.0.0"}' | rit github publish repo --stdin --docker
-```
-
-## Description
+# Description
 
 This Github publish command allows the user to create a Github Ritchie formulas repository based on a local repository.
 It also generates a release and add it to Ritchie repositories ($ rit add repo).
@@ -48,6 +15,17 @@ The user has to inform 4 different kinds of inputs:
 - the local repository path you wish to publish
 
 - the release version to generate
+
+## Command
+
+```bash
+rit github publish repo
+```
+
+## Requirements
+
+- Git
+- Set Github Credentials
 
 ## Demonstration
 
