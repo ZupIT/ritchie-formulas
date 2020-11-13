@@ -1,4 +1,12 @@
-<!-- markdownlint-disable-file MD041 -->
+# Description
+
+Create a local and remote repository on Bitbucket
+
+## Command
+
+```bash
+rit bitbucket create repo
+```
 
 ## Requirements
 
@@ -8,12 +16,6 @@
 
 ```bash
 rit set credential
-```
-
-## Command
-
-```bash
-rit bitbucket create repo
 ```
 
 ## How to generate personal access token(app password)

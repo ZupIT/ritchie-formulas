@@ -1,4 +1,12 @@
-<!-- markdownlint-disable-file MD041 -->
+# Description
+
+Create a local and remote repository on Gitlab
+
+## Command
+
+```bash
+rit gitlab create repo
+```
 
 ## Requirements
 
@@ -8,12 +16,6 @@
 
 ```bash
 rit set credential
-```
-
-## Command
-
-```bash
-rit gitlab create repo
 ```
 
 ## How to generate personal access token

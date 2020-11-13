@@ -1,24 +1,7 @@
 <!-- markdownlint-disable-file MD013 -->
 <!-- markdownlint-disable-file MD033 -->
-<!-- markdownlint-disable-file MD041 -->
 
-## Requirements
-
-- Golang
-- The bucket is clean
-- Set AWS credentials (\$ rit set credential) with accesskeyid, secretaccesskey
-
-```bash
-rit set credential
-```
-
-## Command
-
-```bash
-rit aws delete bucket
-```
-
-## Description
+# Description
 
 This AWS Delete Bucket command allows the user to delete a bucket in AWS S3
 
@@ -37,6 +20,22 @@ error: BucketNotEmpty: The bucket you tried to delete is not empty
 ```
 
 For this error you can execute before `rit aws clean bucket`
+
+## Command
+
+```bash
+rit aws delete bucket
+```
+
+## Requirements
+
+- Golang
+- The bucket is clean
+- Set AWS credentials (\$ rit set credential) with accesskeyid, secretaccesskey
+
+```bash
+rit set credential
+```
 
 ## Demonstration
 

@@ -1,8 +1,7 @@
-<!-- markdownlint-disable-file MD041 -->
+## Description
 
-## Requirements
-
-- Golang
+This formula receives 5 inputs (token, repo owner, repo name, env name, env value)
+and adds a new env to circle ci project.
 
 ## Command
 
@@ -10,7 +9,6 @@
 rit circleci add env
 ```
 
-## Description
+## Requirements
 
-This formula receives 5 inputs (token, repo owner, repo name, env name, env value)
-and adds a new env to circle ci project.
+- Golang

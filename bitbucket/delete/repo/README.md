@@ -1,4 +1,12 @@
-<!-- markdownlint-disable-file MD041 -->
+# Description
+
+Delete a remote repository on Bitbucket
+
+## Command
+
+```bash
+rit bitbucket delete repo
+```
 
 ## Requirements
 
@@ -8,12 +16,6 @@
 
 ```bash
 rit set credential
-```
-
-## Command
-
-```bash
-rit bitbucket delete repo
 ```
 
 ## How to generate personal access token(app password)

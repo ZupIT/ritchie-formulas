@@ -1,23 +1,7 @@
 <!-- markdownlint-disable-file MD013 -->
 <!-- markdownlint-disable-file MD033 -->
-<!-- markdownlint-disable-file MD041 -->
 
-## Requirements
-
-- Golang
-- Terraform
-- Set Github credentials
-- Set AWS credentials
-
-You can set credentials by running _rit set credential_ and providing USERNAME, TOKEN and EMAIL for Github and ACCESS KEY ID and SECRET ACCESS KEY for AWS.
-
-## Command
-
-```bash
-rit aws apply terraform
-```
-
-## Description
+# Description
 
 This command allows the user to execute terraform init, terraform plan and terraform apply command on a given repository. The command also loads the variables located on the files './variables/common.tfvars' and 'variables/**env**.tfvars', where **env** is the environment name provided.
 
@@ -36,6 +20,21 @@ The equivalent terraform apply command is:
 ```bash
 terraform apply -var-file=./variables/common.tfvars -var-file=variables/{ENV}.tfvars -auto-approve
 ```
+
+## Command
+
+```bash
+rit aws apply terraform
+```
+
+## Requirements
+
+- Golang
+- Terraform
+- Set Github credentials
+- Set AWS credentials
+
+You can set credentials by running _rit set credential_ and providing USERNAME, TOKEN and EMAIL for Github and ACCESS KEY ID and SECRET ACCESS KEY for AWS.
 
 ## Demonstration
 

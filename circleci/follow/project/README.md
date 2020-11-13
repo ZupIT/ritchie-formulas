@@ -1,8 +1,8 @@
-<!-- markdownlint-disable-file MD041 -->
+# Description
 
-## Requirements
-
-- NodeJS
+Whenever you need to setup a ci pipeline remotely, just issue
+this command to follow circle ci projects. Once followed, CircleCI will automatically
+read the `config.yml` file of the project and launch the workflow.
 
 ## Command
 
@@ -10,11 +10,10 @@
 rit circleci follow project
 ```
 
-## Description
+## Requirements
 
-Whenever you need to setup a ci pipeline remotely, just issue
-this command to follow circle ci projects. Once followed, CircleCI will automatically
-read the `config.yml` file of the project and launch the workflow.
+- NodeJS
+- NPM
 
 ## Demonstration
 

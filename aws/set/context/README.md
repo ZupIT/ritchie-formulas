@@ -1,8 +1,6 @@
-<!-- markdownlint-disable-file MD041 -->
+# Description
 
-## Requirements
-
-- AWS
+This formula to set the context
 
 ## Command
 
@@ -10,6 +8,6 @@
 rit aws set context
 ```
 
-## description
+## Requirements
 
-This formula to set the context
+- AWS

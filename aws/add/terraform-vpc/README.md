@@ -1,8 +1,7 @@
-<!-- markdownlint-disable-file MD041 -->
+# Description
 
-## Requirements
-
-- Golang
+This formula receives 5 inputs (region, vpc name, vpc cidr, vpc azs, customer name)
+and adds vpc module files into the project.
 
 ## Command
 
@@ -10,7 +9,6 @@
 rit aws add terraform-vpc
 ```
 
-## Description
+## Requirements
 
-This formula receives 5 inputs (region, vpc name, vpc cidr, vpc azs, customer name)
-and adds vpc module files into the project.
+- Golang

@@ -1,8 +1,7 @@
-<!-- markdownlint-disable-file MD041 -->
+# Description
 
-## Requirements
-
-- Golang
+This formula receives 2 inputs (cluster name, domain name)
+and adds eks module files into the project.
 
 ## Command
 
@@ -10,7 +9,6 @@
 rit aws add terraform-eks
 ```
 
-## Description
+## Requirements
 
-This formula receives 2 inputs (cluster name, domain name)
-and adds eks module files into the project.
+- Golang

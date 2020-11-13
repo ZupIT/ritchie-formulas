@@ -1,8 +1,6 @@
-<!-- markdownlint-disable-file MD041 -->
+## Description
 
-## Requirements
-
-- git installed
+Update a fork
 
 ## Command
 
@@ -10,6 +8,6 @@
 rit git update fork
 ```
 
-## Description
+## Requirements
 
-Update a fork
+- git installed

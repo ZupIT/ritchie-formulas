@@ -1,8 +1,6 @@
-<!-- markdownlint-disable-file MD041 -->
+# Description
 
-## Requirements
-
-- Xcode
+Install Clean Swift templates
 
 ## Command
 
@@ -10,6 +8,6 @@
 rit clean-swift install templates
 ```
 
-## Description
+## Requirements
 
-Install Clean Swift templates
+- Xcode

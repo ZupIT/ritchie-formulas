@@ -1,8 +1,6 @@
-<!-- markdownlint-disable-file MD041 -->
+# Description
 
-## Requirements
-
-- Xcode
+Uninstall Clean Swift templates
 
 ## Command
 
@@ -10,6 +8,6 @@
 rit clean-swift uninstall templates
 ```
 
-## Description
+## Requirements
 
-Uninstall Clean Swift templates
+- Xcode

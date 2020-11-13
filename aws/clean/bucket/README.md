@@ -1,23 +1,7 @@
 <!-- markdownlint-disable-file MD013 -->
 <!-- markdownlint-disable-file MD033 -->
-<!-- markdownlint-disable-file MD041 -->
 
-## Requirements
-
-- Golang
-- Set AWS credentials (\$ rit set credential) with accesskeyid, secretaccesskey
-
-```bash
-rit set credential
-```
-
-## Command
-
-```bash
-rit aws clean bucket
-```
-
-## Description
+# Description
 
 This AWS Clean Bucket command allows the user to clean a bucket in AWS S3
 
@@ -28,6 +12,21 @@ The user has to inform 2 different kinds of inputs:
 - the Region Bucket name
 
 - the Bucket name
+
+## Command
+
+```bash
+rit aws clean bucket
+```
+
+## Requirements
+
+- Golang
+- Set AWS credentials (\$ rit set credential) with accesskeyid, secretaccesskey
+
+```bash
+rit set credential
+```
 
 ## Demonstration
 

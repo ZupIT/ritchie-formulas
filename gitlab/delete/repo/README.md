@@ -1,18 +1,6 @@
 <!-- markdownlint-disable-file MD013 -->
 <!-- markdownlint-disable-file MD033 -->
 <!-- markdownlint-disable-file MD034 -->
-<!-- markdownlint-disable-file MD041 -->
-
-## Requirements
-
-- git
-- Set GITLAB credentials (\$ rit set credentials) with USERNAME, TOKEN
-
-## Command
-
-```bash
-rit gitlab delete repo
-```
 
 ## Description
 
@@ -23,6 +11,17 @@ The user has to inform only one input:
 - the repository name on Gitlab
 
 Ex: The NAME would be "ritchie-formulas" for URL https://gitlab.com/ZupIT/ritchie-formulas
+
+## Command
+
+```bash
+rit gitlab delete repo
+```
+
+## Requirements
+
+- git
+- Set GITLAB credentials (\$ rit set credentials) with USERNAME, TOKEN
 
 ## Demonstration
 

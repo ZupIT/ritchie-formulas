@@ -1,10 +1,9 @@
 <!-- markdownlint-disable-file MD013 -->
 <!-- markdownlint-disable-file MD033 -->
-<!-- markdownlint-disable-file MD041 -->
 
-## Requirements
+# Description
 
-- Golang
+Generate docker-compose.yml in the current directory based on the parameters you choose
 
 ## Command
 
@@ -12,9 +11,9 @@
 rit docker generate compose
 ```
 
-## Description
+## Requirements
 
-Generate docker-compose.yml in the current directory based on the parameters you choose
+- Golang
 
 ## Demonstration
 
