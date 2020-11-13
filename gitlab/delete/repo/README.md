@@ -2,7 +2,7 @@
 <!-- markdownlint-disable-file MD033 -->
 <!-- markdownlint-disable-file MD034 -->
 
-## Description
+# Description
 
 This Gitlab delete command allows the user to delete a Gitlab PUBLIC or PRIVATE repository on the user domain.
 
