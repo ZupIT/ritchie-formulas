@@ -121,7 +121,7 @@ func ReadFile(path string) ([]byte, error) {
 
 // WriteFile wrapper for ioutil.WriteFile
 func WriteFile(path string, content []byte) error {
-	return ioutil.WriteFile(path, content, 0644)
+	return ioutil.WriteFile(path, content, 0600)
 }
 
 // RemoveFile wrapper for os.Remove

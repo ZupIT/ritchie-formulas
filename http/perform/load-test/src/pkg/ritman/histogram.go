@@ -123,7 +123,7 @@ func (score LoadBalanceTestScore) writeToFile(home string) {
 	jsonData, err := json.MarshalIndent(score, "", "\t")
 
 	if err == nil {
-		err = ioutil.WriteFile(path, jsonData, 0644)
+		err = ioutil.WriteFile(path, jsonData, 0600)
 		if err != nil {
 			panic(fmt.Sprintf("Could not write results file: %s\nPermission required +644", err))
 		} else {

@@ -126,7 +126,7 @@ func (in Inputs) addVariables() {
 	// variables
 	t := template.Must(template.New("Var").Parse(tpl.Variable))
 	varf := path.Join(in.PWD, variableQA)
-	vf, err := os.OpenFile(varf, os.O_APPEND|os.O_WRONLY, 0644)
+	vf, err := os.OpenFile(varf, os.O_APPEND|os.O_WRONLY, 0600)
 	if err != nil {
 		color.Red(fmt.Sprintf("error openning %q, detail: %q", varf, err))
 		os.Exit(1)
@@ -184,7 +184,7 @@ func (in Inputs) mergeMain() {
 	fileutil.WriteFile(mfile, mcfg.Bytes())
 
 	// main.tf others
-	mf, err := os.OpenFile(mfile, os.O_APPEND|os.O_WRONLY, 0644)
+	mf, err := os.OpenFile(mfile, os.O_APPEND|os.O_WRONLY, 0600)
 	if err != nil {
 		color.Red(fmt.Sprintf("error openning %q, detail: %q", mfile, err))
 		os.Exit(1)
