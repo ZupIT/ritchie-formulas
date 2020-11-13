@@ -1,6 +1,7 @@
 <!-- markdownlint-disable-file MD013 -->
 <!-- markdownlint-disable-file MD033 -->
 <!-- markdownlint-disable-file MD034 -->
+<!-- markdownlint-disable-file MD041 -->
 
 ## Requirements
 
