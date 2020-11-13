@@ -1,8 +1,6 @@
 <!-- markdownlint-disable-file MD013 -->
 <!-- markdownlint-disable-file MD033 -->
 
-# Ritchie Formula
-
 ## Requirements
 
 - Set GITLAB credentials (\$ rit set credentials) with USERNAME, TOKEN & EMAIL

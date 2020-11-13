@@ -1,8 +1,6 @@
 <!-- markdownlint-disable-file MD013 -->
 <!-- markdownlint-disable-file MD033 -->
 
-# Ritchie Formula
-
 ## Requirements
 
 - Be in a unix environment (Linux or Mac)

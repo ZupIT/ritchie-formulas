@@ -2,8 +2,6 @@
 <!-- markdownlint-disable-file MD033 -->
 <!-- markdownlint-disable-file MD034 -->
 
-# Ritchie Formula
-
 ## Requirements
 
 - git

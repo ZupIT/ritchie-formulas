@@ -1,8 +1,6 @@
 <!-- markdownlint-disable-file MD013 -->
 <!-- markdownlint-disable-file MD033 -->
 
-# Ritchie Formula
-
 ## Requirements
 
 - [Golang](https://golang.org/doc/install) installed

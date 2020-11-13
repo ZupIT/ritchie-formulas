@@ -1,5 +1,3 @@
-# Git update fork
-
 ## Requirements
 
 - git installed

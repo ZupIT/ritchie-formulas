@@ -1,5 +1,3 @@
-# Ritchie Formulas
-
 ## Requirements
 
 - Golang
