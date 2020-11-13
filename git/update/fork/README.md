@@ -1,11 +1,15 @@
 # Git update fork
 
+## Requirements
+
+- git installed
+
 ## Command
 
 ```bash
 rit git update fork
 ```
 
-## Requirements
+## Description
 
-- git installed
+Update a fork
