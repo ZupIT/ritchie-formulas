@@ -1,10 +1,4 @@
-# Create a local and remote repository
-
-## Command
-
-```bash
-rit gitlab create repo
-```
+# Ritchie Formula
 
 ## Requirements
 
@@ -16,10 +10,16 @@ rit gitlab create repo
 rit set credential
 ```
 
+## Command
+
+```bash
+rit gitlab create repo
+```
+
 ## How to generate personal access token
 
 To generate a personal access token click [here](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html)
 
-## How it works
+## Demonstration
 
 ![gif](https://media.giphy.com/media/USCWX5znZyXi3MW8Wu/giphy.gif)

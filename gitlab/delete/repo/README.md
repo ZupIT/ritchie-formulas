@@ -4,34 +4,15 @@
 
 # Ritchie Formula
 
-## Premisses
+## Requirements
 
-- Set GITLAB credentials ($ rit set credentials) with USERNAME, TOKEN
+- git
+- Set GITLAB credentials (\$ rit set credentials) with USERNAME, TOKEN
 
 ## Command
 
-- Prompt
-
 ```bash
 rit gitlab delete repo
-```
-
-- Docker
-
-```bash
-rit gitlab delete repo --docker
-```
-
-- Stdin
-
-```bash
-echo '{"project_name":"dennis-ritchie"}' | rit gitlab delete repo --stdin
-```
-
-- Stdin + Docker
-
-```bash
-echo '{"project_name":"dennis-ritchie"}' | rit gitlab delete repo --stdin --docker
 ```
 
 ## Description
@@ -44,6 +25,6 @@ The user has to inform only one input:
 
 Ex: The NAME would be "ritchie-formulas" for URL https://gitlab.com/ZupIT/ritchie-formulas
 
-## How it works
+## Demonstration
 
 ![gif](https://media.giphy.com/media/RJJMed5qzQeynuztBS/giphy.gif)

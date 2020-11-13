@@ -3,34 +3,14 @@
 
 # Ritchie Formula
 
-## Premisses
+## Requirements
 
 - Set GITLAB credentials (\$ rit set credentials) with USERNAME, TOKEN & EMAIL
 
 ## Command
 
-- Prompt
-
 ```bash
 rit gitlab publish repo
-```
-
-- Docker
-
-```bash
-rit gitlab publish repo --docker (WIP)
-```
-
-- Stdin
-
-```bash
-echo '{"privacy":"true", "project_name":"ritchie-formulas-demo", "workspace_path":"/home/users/dennis/ritchie-formulas-local", "version":"v1.0.0"}' | rit gitlab publish repo --stdin
-```
-
-- Stdin + Docker
-
-```bash
-echo '{"privacy":"true", "project_name":"ritchie-formulas-demo", "workspace_path":"/home/users/dennis/ritchie-formulas-local", "version":"v1.0.0"}' | rit gitlab publish repo --stdin --docker
 ```
 
 ## Description
@@ -49,6 +29,6 @@ The user has to inform 4 different kinds of inputs:
 
 - the release version to generate
 
-## Demo
+## Demonstration
 
 ![gif](https://github.com/ZupIT/ritchie-formulas/raw/master/gitlab/publish/repo/doc/gif.gif)
