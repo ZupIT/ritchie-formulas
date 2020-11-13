@@ -1,27 +1,19 @@
 <!-- markdownlint-disable-file MD013 -->
 <!-- markdownlint-disable-file MD033 -->
 
-# Beagle Generate Scaffold
+# Ritchie Formula
 
-## Premisses
+## Requirements
 
-Be in a linux environment (Linux or Mac)
+- Be in a unix environment (Linux or Mac)
 
 ## Command
-
-- Prompt
 
 ```bash
 rit beagle generate scaffold
 ```
 
-- Docker
-
-```bash
-rit beagle generate scaffold --docker
-```
-
-## description
+## Description
 
 This formula generates a backend project with beagle and also, if needed, generates a web and/or mobile project with beagle.
 
@@ -38,6 +30,6 @@ It allows the user to inform 10 different kinds of inputs:
 - Tell if you want to create Mobile project (Boolean)
   - Mobile project name (Text)
 
-## Demo
+## Demonstration
 
 ![gif](https://github.com/ZupIT/ritchie-formulas/raw/master/beagle/generate/scaffold/doc/beagle-generate-scaffold.gif)
