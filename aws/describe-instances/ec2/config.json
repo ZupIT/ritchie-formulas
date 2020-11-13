@@ -19,6 +19,18 @@
       "name": "region",
       "tutorial": "AWS region i.e., us-east-1, us-west-1, sa-east-1",
       "type": "text"
+    },
+    {
+      "items": [
+        "all",
+        "running",
+        "stopped"
+      ],
+      "label": "Select instance state:",
+      "name": "instance_state",
+      "required": true,
+      "tutorial": "AWS EC2 instance state i.e., all, running, stopped",
+      "type": "text"
     }
   ]
 }

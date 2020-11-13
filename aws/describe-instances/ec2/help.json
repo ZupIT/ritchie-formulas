@@ -1,4 +1,4 @@
 {
-	"short": "Describe ec2 instances",
-	"long": "Describe all instances in the EC2 service"
+  "long": "Describes all instances in the EC2 service",
+  "short": "Describe ec2 instances"
 }

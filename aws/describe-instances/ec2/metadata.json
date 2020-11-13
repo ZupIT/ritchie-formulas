@@ -12,6 +12,8 @@
     ]
   },
   "tags": [
-    "aws", "describe-instances", "ec2"
+    "aws",
+    "describe-instances",
+    "ec2"
   ]
 }

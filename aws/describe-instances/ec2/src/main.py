@@ -2,10 +2,13 @@
 
 import os
 
-from formula import formula
+from services import describe
 
-region = os.environ.get("REGION")
-access_key = os.environ.get("ACCESS_KEY")
-secret_key = os.environ.get("SECRET_ACCESS_KEY")
+PARAMS = {
+    "region": os.environ.get("REGION"),
+    "access_key": os.environ.get("ACCESS_KEY"),
+    "secret_key": os.environ.get("SECRET_ACCESS_KEY"),
+    "instance_state": os.environ.get("INSTANCE_STATE"),
+}
 
-formula.Run()
+describe.handle(PARAMS)
