@@ -1,40 +1,21 @@
 <!-- markdownlint-disable-file MD013 -->
 <!-- markdownlint-disable-file MD033 -->
 
-# Create bucket aws
+# Ritchie Formula
 
-## Premisses
+## Requirements
 
-- Set AWS credentials ($ rit set credential) with accesskeyid, secretaccesskey
+- Golang
+- Set AWS credentials (\$ rit set credential) with accesskeyid, secretaccesskey
 
 ```bash
 rit set credential
 ```
 
-## command
-
-- Prompt
+## Command
 
 ```bash
 rit aws create bucket
-```
-
-- Docker
-
-```bash
-rit aws create bucket --docker
-```
-
-- Stdin
-
-```bash
-echo '{"region":"us-east-1", "bucket":"ritchie-formulas-demo-stdin"}' | rit aws create bucket --stdin
-```
-
-- Stdin + Docker
-
-```bash
-echo '{"region":"us-east-1", "bucket":"ritchie-formulas-demo-stdin-docker"}' | rit aws create bucket --stdin --docker
 ```
 
 ## Description

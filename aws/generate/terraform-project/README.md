@@ -1,24 +1,16 @@
 <!-- markdownlint-disable-file MD013 -->
 <!-- markdownlint-disable-file MD033 -->
 
-# Aws generate terraform project
+# Ritchie Formula
 
-## Premisses
+## Requirements
 
 - [Golang](https://golang.org/doc/install) installed
 
 ## Command
 
-- Prompt
-
 ```bash
 rit aws generate terraform-project
-```
-
-- Stdin
-
-```bash
-echo '{"project_name":"my-terraform-project", "project_location":"/home/user/projects", "bucket_name":"my-aws-bucket", "bucket_region":"us-east-1"}' | rit aws generate terraform-project --stdin
 ```
 
 ## Description

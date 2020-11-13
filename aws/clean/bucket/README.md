@@ -1,40 +1,21 @@
 <!-- markdownlint-disable-file MD013 -->
 <!-- markdownlint-disable-file MD033 -->
 
-# clean bucket aws
+# Ritchie Formula
 
-## Premisses
+## Requirements
 
-- Set AWS credentials ($ rit set credential) with accesskeyid, secretaccesskey
+- Golang
+- Set AWS credentials (\$ rit set credential) with accesskeyid, secretaccesskey
 
 ```bash
 rit set credential
 ```
 
-## command
-
-- Prompt
+## Command
 
 ```bash
 rit aws clean bucket
-```
-
-- Docker
-
-```bash
-rit aws clean bucket --docker
-```
-
-- Stdin
-
-```bash
-echo '{"region":"us-east-1", "bucket":"ritchie-formulas-demo-stdin"}' | rit aws clean bucket --stdin
-```
-
-- Stdin + Docker
-
-```bash
-echo '{"region":"us-east-1", "bucket":"ritchie-formulas-demo-stdin-docker"}' | rit aws clean bucket --stdin --docker
 ```
 
 ## Description

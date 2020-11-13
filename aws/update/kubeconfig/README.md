@@ -1,4 +1,8 @@
-# AWS Update KubeConfig
+# Ritchie Formula
+
+## Requirements
+
+- AWS
 
 ## command
 

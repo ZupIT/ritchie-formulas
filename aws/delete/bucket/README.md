@@ -1,41 +1,22 @@
 <!-- markdownlint-disable-file MD013 -->
 <!-- markdownlint-disable-file MD033 -->
 
-# delete bucket aws
+# Ritchie Formula
 
-## Premisses
+## Requirements
 
+- Golang
 - The bucket is clean
-- Set AWS credentials ($ rit set credential) with accesskeyid, secretaccesskey
+- Set AWS credentials (\$ rit set credential) with accesskeyid, secretaccesskey
 
 ```bash
 rit set credential
 ```
 
-## command
-
-- Prompt
+## Command
 
 ```bash
 rit aws delete bucket
-```
-
-- Docker
-
-```bash
-rit aws delete bucket --docker
-```
-
-- Stdin
-
-```bash
-echo '{"region":"us-east-1", "bucket":"ritchie-formulas-demo-stdin"}' | rit aws delete bucket --stdin
-```
-
-- Stdin + Docker
-
-```bash
-echo '{"region":"us-east-1", "bucket":"ritchie-formulas-demo-stdin-docker"}' | rit aws delete bucket --stdin --docker
 ```
 
 ## Description

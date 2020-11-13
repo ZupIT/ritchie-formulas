@@ -1,6 +1,10 @@
-# Aws set context
+# Ritchie Formula
 
-## command
+## Requirements
+
+- AWS
+
+## Command
 
 ```bash
 rit aws set context
