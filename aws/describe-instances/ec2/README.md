@@ -3,7 +3,7 @@
 ## Premisses
 
 - [Ritchie installed](https://docs.ritchiecli.io/v/v2.0-pt/getting-started/installation)
-- Set AWS credentials (\$ rit set credentials) with ACCESS KEY ID and SECRET ACCESS KEY.
+- Set AWS credentials (\$ rit set credentials).
 
 ## Command
 
@@ -13,7 +13,7 @@
 rit aws describe-instances ec2
 ```
 
-_It is necessary to have [Python](https://www.python.org/downloads/) installed for this command to work_
+_It is necessary to have [Python](https://www.python.org/downloads/) installed_
 
 - Docker
 

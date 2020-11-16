@@ -9,7 +9,7 @@ build: python-build sh_unix bat_windows docker
 python-build:
 	mkdir -p $(BIN_FOLDER)
 	cp -r src/* $(BIN_FOLDER)
-	pip3 install -r $(BIN_FOLDER)/requirements.txt --user --disable-pip-version-check	
+	pip3 install -r $(BIN_FOLDER)/requirements.txt --user --disable-pip-version-check
 
 sh_unix:
 	echo '#!/bin/bash' > $(BIN_FOLDER)/$(BINARY_NAME)

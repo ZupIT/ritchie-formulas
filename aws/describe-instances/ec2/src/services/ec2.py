@@ -16,9 +16,11 @@ class Instances:
     def __set_filters(self, config: str):
         self.filters = [{}]
         if config == "running":
-            self.filters = [{"Name": "instance-state-name", "Values": ["running"]}]
+            filter = {"Name": "instance-state-name", "Values": ["running"]}
+            self.filters = [filter]
         elif config == "stopped":
-            self.filters = [{"Name": "instance-state-name", "Values": ["stopped"]}]
+            filter = {"Name": "instance-state-name", "Values": ["stopped"]}
+            self.filters = [filter]
 
     def parse_data(self, instances):
         ec2info = []
