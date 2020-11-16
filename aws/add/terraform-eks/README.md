@@ -1,12 +1,14 @@
-# Terraform aws eks
+# Description
 
-## command
+This formula receives 2 inputs (cluster name, domain name)
+and adds eks module files into the project.
+
+## Command
 
 ```bash
 rit aws add terraform-eks
 ```
 
-## description
+## Requirements
 
-This formula receives 2 inputs (cluster name, domain name)
-and adds eks module files into the project.
+- Golang

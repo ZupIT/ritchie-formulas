@@ -1,4 +1,6 @@
-# Create a local and remote repository
+# Description
+
+Create a local and remote repository on Gitlab
 
 ## Command
 
@@ -20,6 +22,6 @@ rit set credential
 
 To generate a personal access token click [here](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html)
 
-## How it works
+## Demonstration
 
 ![gif](https://media.giphy.com/media/USCWX5znZyXi3MW8Wu/giphy.gif)
