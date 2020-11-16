@@ -2,7 +2,7 @@
 <!-- markdownlint-disable-file MD033 -->
 <!-- markdownlint-disable-file MD029 -->
 
-# rit http generate http-config
+# Description
 
 This formula is a helper for ritman http load testing formula, it generates a default configuration template, like the one bellow:
 
@@ -38,6 +38,16 @@ This formula is a helper for ritman http load testing formula, it generates a de
 
 4. The "body" field supports any valid JSON format, so you can fullfill with your disired test content.
 
-## Demo
+## Command
+
+```bash
+rit http generate http-config
+```
+
+## Requirements
+
+- [Golang installed](https://golang.org/doc/install)
+
+## Demonstration
 
 ![Alt Text](https://media1.giphy.com/media/DvpJneeGh2v9TsHkQM/giphy.gif)
