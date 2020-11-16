@@ -1,4 +1,6 @@
-# Create a local and remote repository
+# Description
+
+This Github create command allows the user to create a new Github repository.
 
 ## Command
 
@@ -8,18 +10,10 @@ rit github create repo
 
 ## Requirements
 
-- git installed
+- Git
 
-- set github username and token credentials using
+- Set Github Credentials
 
-```bash
-rit set credential
-```
-
-## How to generate personal access token
-
-To generate a personal access token click [here](https://github.com/settings/tokens)
-
-## How it works
+## Demonstration
 
 ![gif](https://github.com/ZupIT/ritchie-formulas/raw/master/github/create/repo/doc/github-create-repo.gif)
