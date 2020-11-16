@@ -40,10 +40,10 @@ You can set credentials by running _rit set credential_ and providing USERNAME, 
 
 - Command execution
 
-![Demo gif](https://github.com/eduardorcury/ritchie-demo/blob/main/media/rit-demo.gif)
+![Demo gif](https://raw.githubusercontent.com/eduardorcury/ritchie-demo/main/media/rit-demo.gif)
 
 - The created resource
 
 In this demo, an AWS IAM user was created using terraform and ritchie.
 
-![Img](https://github.com/eduardorcury/ritchie-demo/blob/main/media/resource-img.png)
+![Img](https://raw.githubusercontent.com/eduardorcury/ritchie-demo/main/media/resource-img.png)
