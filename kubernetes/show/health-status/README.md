@@ -1,38 +1,4 @@
-# Kubernetes show health-status
-
-## Premisses
-
-- Set kubeconfig credentials (`rit set credentials`)
-
-## Command
-
-- Prompt
-
-```bash
-rit kubernetes show health-status
-```
-
-- Docker
-
-```bash
-rit kubernetes show health-status --docker
-```
-
-- Stdin
-
-```bash
-echo '{"namespace": "kube-system", "pod_part_name": "coredns"}' | rit kubernetes
-show health-status --stdin
-```
-
-- Stdin + docker
-
-```bash
-echo '{"namespace": "kube-system", "pod_part_name": "coredns"}' | rit kubernetes
-show health-status --stdin --docker
-```
-
-## Description
+# Description
 
 This _health-status_ command checks if the container is running as expected.
 
@@ -45,6 +11,18 @@ The user has to inform 2 different kinds of inputs:
 
 - the namespace that the pod is running
 - the name of the pod (or at least a part of it)
+
+## Command
+
+```bash
+rit kubernetes show health-status
+```
+
+## Requirements
+
+- Set kubeconfig credentials (`rit set credentials`)
+- [Kubernetes Installed](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
+- [Golang Installed](https://golang.org/doc/install)
 
 ## Demonstration
 
