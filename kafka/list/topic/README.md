@@ -1,8 +1,7 @@
-# Kafka List topic
+# Description
 
-## Premisse
-
-Have an available Kafka URL.
+This formula list a topic on the inform kafka URL.
+You can test it using docker with the `rit docker generate compose` formula.
 
 ## Command
 
@@ -10,15 +9,11 @@ Have an available Kafka URL.
 rit kafka list topic
 ```
 
-```bash
-rit kafka list topic --docker
-```
+## Requirements
 
-## Description
+- Have an available Kafka URL.
+- [Golang installed](https://golang.org/doc/install)
 
-This formula list a topic on the inform kafka URL.
-You can test it using docker with the `rit docker generate compose` formula.
-
-## Sample demo
+## Demonstrations
 
 ![Alt Text](https://media0.giphy.com/media/TXnh57oelbbrx8orTT/giphy.gif)
