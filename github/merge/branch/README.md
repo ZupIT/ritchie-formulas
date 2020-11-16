@@ -1,21 +1,7 @@
-# Github merge branch
 
-## Command
+# Description
 
-```bash
-rit github merge branch
-```
-
-## Requirements
-
-- git installed
-
-## How to generate personal access token
-
-To generate a personal access token click
- [here](https://github.com/settings/tokens)
-
-## How it works
+- How it works
 
 ```bash
 git pull origin {{current_branch}}
@@ -31,3 +17,19 @@ If push is true
  git push
  git checkout {{current_branch}}
 ```
+
+## Command
+
+```bash
+rit github merge branch
+```
+
+## Requirements
+
+- Git
+- Set Git Credentials
+
+## How to generate personal access token
+
+To generate a personal access token click
+ [here](https://github.com/settings/tokens)
