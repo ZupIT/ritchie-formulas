@@ -1,11 +1,13 @@
-# Kubernetes clean helm-configmap
+# Description
 
-## command
+This formula clean helm config map
+
+## Command
 
 ```bash
 rit kubernetes clean helm-configmap
 ```
 
-## description
+## Requirements
 
-This formula clean helm config map
+- [Kubernetes Installed](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
