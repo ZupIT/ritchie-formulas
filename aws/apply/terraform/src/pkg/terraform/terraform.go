@@ -39,7 +39,7 @@ func (in Inputs) Run() {
 		if err != nil {
 			log.Fatal("Failed Pull repository. Error: ", err)
 		}
-		os.Chdir(in.TerraformPath)
+		_ = os.Chdir(in.TerraformPath)
 	} else {
 		log.Println("Cloning repository...")
 		err := in.plainClone(dirRepo)
@@ -47,10 +47,7 @@ func (in Inputs) Run() {
 			log.Fatal("Failed cloning repository. Error: ", err)
 		}
 
-		errChdir := os.Chdir(fmt.Sprint(dirRepo, "/", in.TerraformPath))
-        if errChdir != nil {
-            log.Fatal("Failed changing directory. Error: ", err)
-        }
+		_ = os.Chdir(fmt.Sprint(dirRepo, "/", in.TerraformPath))
 	}
 
 	varFile := fmt.Sprintf("-var-file=variables/%v.tfvars", in.Environment)
