@@ -197,7 +197,7 @@ func GenerateYml(items []string, extParams map[string]string) {
 
 // WriteFile wrapper for ioutil.WriteFile
 func writeFile(path string, content []byte) error {
-	return ioutil.WriteFile(path, content, 0644)
+	return ioutil.WriteFile(path, content, 0600)
 }
 
 func createIfNotExists(dir string, perm os.FileMode) error {

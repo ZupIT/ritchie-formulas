@@ -143,7 +143,7 @@ func (in Input) Run() {
 	}
 
 	t := template.Must(template.New("QABackendtf").Parse(tpl.QABackendtf))
-	bfile, err := os.OpenFile(backendtf, os.O_APPEND|os.O_WRONLY, 0644)
+	bfile, err := os.OpenFile(backendtf, os.O_APPEND|os.O_WRONLY, 0600)
 	if err != nil {
 		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", in.Path(), err.Error()))
 		os.Exit(1)
@@ -176,7 +176,7 @@ func (in Input) Run() {
 	}
 
 	t = template.Must(template.New("circleciConfig").Parse(tpl.Circleciconfig))
-	bfile, err = os.OpenFile(circleciConfig, os.O_APPEND|os.O_WRONLY, 0644)
+	bfile, err = os.OpenFile(circleciConfig, os.O_APPEND|os.O_WRONLY, 0600)
 	if err != nil {
 		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", in.Path(), err.Error()))
 		os.Exit(1)
@@ -210,7 +210,7 @@ func CreateDirIfNotExists(dir string, perm os.FileMode) error {
 
 func CreateFileIfNotExist(file string, content []byte) error {
 	if IsNotExist(file) {
-		if err := ioutil.WriteFile(file, content, 0644); err != nil {
+		if err := ioutil.WriteFile(file, content, 0600); err != nil {
 			return err
 		}
 	}

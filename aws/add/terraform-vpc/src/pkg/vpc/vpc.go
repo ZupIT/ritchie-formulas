@@ -36,7 +36,7 @@ func Run(in Inputs) {
 
 	if !in.moduleExist() {
 		//main.tf
-		mainf, err := os.OpenFile(path.Join(cdir, maintfFile), os.O_APPEND|os.O_WRONLY, 0644)
+		mainf, err := os.OpenFile(path.Join(cdir, maintfFile), os.O_APPEND|os.O_WRONLY, 0600)
 		if err != nil {
 			color.Yellow(fmt.Sprintf("error openning main.tf, detail: %q", err))
 			os.Exit(1)
@@ -51,7 +51,7 @@ func Run(in Inputs) {
 		in.parseAZS()
 		t := template.Must(template.New("Var").Parse(tpl.Variable))
 		varf := path.Join(cdir, variableQA)
-		vfile, err := os.OpenFile(varf, os.O_APPEND|os.O_WRONLY, 0644)
+		vfile, err := os.OpenFile(varf, os.O_APPEND|os.O_WRONLY, 0600)
 		if err != nil {
 			color.Red(fmt.Sprintf("error openning %q, detail: %q", varf, err))
 			os.Exit(1)
