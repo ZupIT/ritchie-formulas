@@ -4,7 +4,7 @@
 <!-- markdownlint-disable-file MD001 -->
 <!-- markdownlint-disable-file MD046 -->
 
-# HTTP Load testing tool
+# Description
 
 the "http-load" formula named as Ritman is a tiny http load testing client dedicated for performance testing. As of now, ritman is intended for interactive usage, in a near future you'll be able to integrate on pipelines as a simple command call.
 
@@ -141,6 +141,16 @@ Note:
 
 Acronyns: - avg - stands for average - rps - stands for rate per seconds - ms - stands for milliseconds
 
-## Demo
+## Command
+
+```bash
+rit http perform load-test
+```
+
+## Requirements
+
+- [Golang installed](https://golang.org/doc/install)
+
+## Demostration
 
 ![Alt Text](https://media3.giphy.com/media/KEIZsoInjvzmFUYCcL/giphy.gif)
