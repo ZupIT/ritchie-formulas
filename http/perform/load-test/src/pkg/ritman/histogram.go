@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"log"
 	"path"
 	"strconv"
 	"time"
@@ -109,7 +110,10 @@ func (score LoadBalanceTestScore) toJSON() (string, error) {
 
 	var prettyJSON bytes.Buffer
 
-	json.Indent(&prettyJSON, jsonData, "", "\t")
+	errIndent := json.Indent(&prettyJSON, jsonData, "", "\t")
+	if errIndent != nil {
+		log.Fatal("Failed to indent", err)
+	}
 
 	if err == nil {
 		return string(prettyJSON.Bytes()), nil

@@ -115,14 +115,18 @@ func execCommand(command string, params ...string) {
 	stdout, _ := cmd.StdoutPipe()
 	var outError bytes.Buffer
 	cmd.Stderr = &outError
-	cmd.Start()
+	err := cmd.Start()
+	if err != nil {
+		log.Fatal("Failed to start cmd", err)
+	}
+
 	scanner := bufio.NewScanner(stdout)
 	scanner.Split(bufio.ScanLines)
 	for scanner.Scan() {
 		m := scanner.Text()
 		fmt.Println(m)
 	}
-	err := cmd.Wait()
+	err = cmd.Wait()
 	if err != nil {
 		log.Fatalf("Failed to execute command %v\nParams: %v\nError: %v", command, params, outError.String())
 	}
