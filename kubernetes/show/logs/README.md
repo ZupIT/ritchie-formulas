@@ -16,7 +16,6 @@ rit kubernetes show logs
 
 ## Requirements
 
-- kubeconfig credentials
 - [GoLang Installed](https://golang.org/doc/install)
 
 ## Demonstration

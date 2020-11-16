@@ -26,8 +26,8 @@ rit github merge branch
 
 ## Requirements
 
-- Git
-- Set Git Credentials
+- [Git Installed](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- Git Account
 
 ## How to generate personal access token
 

@@ -20,7 +20,6 @@ rit kubernetes show health-status
 
 ## Requirements
 
-- Set kubeconfig credentials (`rit set credentials`)
 - [Kubernetes Installed](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 - [Golang Installed](https://golang.org/doc/install)
 

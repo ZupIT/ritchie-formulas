@@ -19,8 +19,8 @@ rit github delete repo
 
 ## Requirements
 
-- Git
-- Set GITHUB credentials ($ rit set credentials) with USERNAME, TOKEN
+- [Git Installed](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- Github Account
 
 ## Demonstration
 

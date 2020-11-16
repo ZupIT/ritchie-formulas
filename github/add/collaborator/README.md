@@ -11,8 +11,8 @@ rit github add collaborator
 
 ## Requirements
 
-- Git
-- Set Github Credentials
+- [Git Installed](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- Github Account
 
 ## Demonstration
 

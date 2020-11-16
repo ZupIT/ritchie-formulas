@@ -27,7 +27,7 @@ rit add repo
 ## Requirements
 
 - [Golang installed](https://golang.org/doc/install)
-- [Ritchie installed](https://docs.ritchiecli.io/v/v2.0-pt/getting-started/installation)
+- Github Account
 
 ## Demonstration
 
