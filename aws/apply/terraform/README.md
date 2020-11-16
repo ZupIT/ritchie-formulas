@@ -1,50 +1,7 @@
 <!-- markdownlint-disable-file MD013 -->
 <!-- markdownlint-disable-file MD033 -->
 
-# Terraform aws apply
-
-## Premisses
-
-- Set Github credentials
-- Set AWS credentials
-
-You can set credentials by running _rit set credential_ and providing USERNAME, TOKEN and EMAIL for Github and ACCESS KEY ID and SECRET ACCESS KEY for AWS.
-
-## Command
-
-- Prompt
-
-```bash
-rit aws apply terraform
-```
-
-_It is necessary to have [Golang](https://golang.org/doc/install) and [Terraform](https://www.terraform.io/downloads.html) installed for this command to work_
-
-- Docker
-
-```bash
-rit aws apply terraform --docker
-```
-
-_It is necessary to have [Docker installed](https://docs.docker.com/get-docker) for this command to work_
-
-- Stdin
-
-```bash
-echo '{"repository":"https://github.com/eduardorcury/ritchie-demo", "terraform_path":"/terraform", "environment":"dev"}' | rit aws apply terraform --stdin
-```
-
-_It is necessary to have [Golang](https://golang.org/doc/install) and [Terraform](https://www.terraform.io/downloads.html) installed for this command to work_
-
-- Stdin + Docker
-
-```bash
-echo '{"repository":"https://github.com/eduardorcury/ritchie-demo", "terraform_path":"/terraform", "environment":"dev"}' | rit aws apply terraform --stdin --docker
-```
-
-_It is necessary to have [Docker installed](https://docs.docker.com/get-docker) for this command to work_
-
-## Description
+# Description
 
 This command allows the user to execute terraform init, terraform plan and terraform apply command on a given repository. The command also loads the variables located on the files './variables/common.tfvars' and 'variables/**env**.tfvars', where **env** is the environment name provided.
 
@@ -63,6 +20,21 @@ The equivalent terraform apply command is:
 ```bash
 terraform apply -var-file=./variables/common.tfvars -var-file=variables/{ENV}.tfvars -auto-approve
 ```
+
+## Command
+
+```bash
+rit aws apply terraform
+```
+
+## Requirements
+
+- Golang
+- Terraform
+- Set Github credentials
+- Set AWS credentials
+
+You can set credentials by running _rit set credential_ and providing USERNAME, TOKEN and EMAIL for Github and ACCESS KEY ID and SECRET ACCESS KEY for AWS.
 
 ## Demonstration
 

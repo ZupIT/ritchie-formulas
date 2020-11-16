@@ -1,6 +1,8 @@
-# Ritchie Formula
+# Description
 
-## command
+Create a local and remote repository on Bitbucket
+
+## Command
 
 ```bash
 rit bitbucket create repo
@@ -20,6 +22,6 @@ rit set credential
 
 To generate a personal access token click [here](https://bitbucket.org/account/settings/app-passwords/)
 
-## How it works
+## Demonstration
 
 ![gif](https://github.com/ZupIT/ritchie-formulas/raw/master/bitbucket/create/repo/doc/bitbucket-create-repo.gif)
