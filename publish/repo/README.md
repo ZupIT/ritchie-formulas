@@ -2,29 +2,7 @@
 <!-- markdownlint-disable-file MD033 -->
 <!-- markdownlint-disable-file MD024 -->
 
-# Ritchie Publish Repo Formula
-
-## Command
-
-- Set GITHUB or GITLAB credentials ($ rit set credentials) with USERNAME, TOKEN & EMAIL.
-
-- This formula can currently only be executed locally on MacOs or Linux.
-
-## Command
-
-- Prompt
-
-```bash
-rit publish repo
-```
-
-- Stdin
-
-```bash
-echo '{"provider":"Github","privacy":"true", "project_name":"ritchie-formulas-demo", "workspace_path":"/home/users/dennis/ritchie-formulas-local", "version":"v1.0.0"}' | rit publish repo --stdin
-```
-
-## Description
+# Description
 
 This publish command allows the user to create a Githab or Gitlab Ritchie formulas repository based on a local repository.
 
@@ -44,6 +22,18 @@ The user has to inform 5 different kinds of inputs:
 - the local repository path you wish to publish
 
 - the release version to generate
+
+## Command
+
+```bash
+rit publish repo
+```
+
+## Requirements
+
+- Github or Gitlab Account.
+
+- This formula can currently only be executed locally on MacOs or Linux.
 
 ## Demonstration
 

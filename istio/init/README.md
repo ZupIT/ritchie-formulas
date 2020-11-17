@@ -1,12 +1,4 @@
-# Manage istio
-
-## Command
-
-```bash
-rit istio init
-```
-
-## Description
+# Description
 
 Installs **latest** `istioctl`, `kustomize` and `minikube` dependencies in
 order to properly run the service mesh in your local environment
@@ -37,3 +29,9 @@ If your `minikube ip`  is `192.168.64.1` you can set the IP range to
 ### Istioctl
 
 `istioctl` uses the Operator pattern to install `istio`
+
+## Command
+
+```bash
+rit istio init
+```
