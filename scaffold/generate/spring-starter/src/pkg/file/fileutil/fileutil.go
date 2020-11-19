@@ -8,6 +8,8 @@ import (
 	"log"
 	"os"
 	"path/filepath"
+
+	"github.com/fatih/color"
 )
 
 // CopyDirectory recursively copies a src directory to a destination.
@@ -138,7 +140,12 @@ func Unzip(src string, dest string) error {
 		if err != nil {
 			return err
 		}
-		defer zippedFile.Close()
+		//defer zippedFile.Close()
+		defer func() {
+			if err := zippedFile.Close(); err != nil {
+				color.Yellow(fmt.Sprintf("error closing %q, detail: %s", zippedFile, err))
+			}
+		}()
 
 		extractedFilePath := filepath.Join(
 			dest,
@@ -162,7 +169,12 @@ func Unzip(src string, dest string) error {
 			if err != nil {
 				return err
 			}
-			defer outputFile.Close()
+			//defer outputFile.Close()
+			defer func() {
+				if err := outputFile.Close(); err != nil {
+					color.Yellow(fmt.Sprintf("error closing %q, detail: %s", outputFile, err))
+				}
+			}()
 
 			_, err = io.Copy(outputFile, zippedFile)
 			if err != nil {

@@ -41,7 +41,11 @@ func Run(in Inputs) {
 			color.Yellow(fmt.Sprintf("error openning main.tf, detail: %q", err))
 			os.Exit(1)
 		}
-		defer mainf.Close()
+		defer func() {
+			if err := mainf.Close(); err != nil {
+				color.Yellow(fmt.Sprintf("error closing main.tf, detail: %s", err))
+			}
+		}()
 		if _, err := mainf.WriteString(tpl.Maintf); err != nil {
 			color.Red(fmt.Sprintf("error writing main.tf, detail: %q", err))
 			os.Exit(1)
@@ -56,7 +60,11 @@ func Run(in Inputs) {
 			color.Red(fmt.Sprintf("error openning %q, detail: %q", varf, err))
 			os.Exit(1)
 		}
-		defer vfile.Close()
+		defer func() {
+			if err := vfile.Close(); err != nil {
+				color.Yellow(fmt.Sprintf("error closing qa.tfvars.tf, detail: %s", err))
+			}
+		}()
 		err = t.Execute(vfile, in)
 		if err != nil {
 			color.Red(fmt.Sprintf("error writing %q, detail: %q", varf, err))
