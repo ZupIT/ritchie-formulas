@@ -55,7 +55,7 @@ jobs:
           name: Horusec Security Test
           command: |
             curl -fsSL https://horusec-cli.s3.amazonaws.com/install.sh | bash
-            horusec start -p="./" -e="true"
+            horusec start -p ./ -e "true" -a "$HORUSEC_CLI_REPOSITORY_AUTHORIZATION" -G "true" -u "https://api-horus-dev.zup.com.br"
 
   pre-commit:
     executor: static-executor
