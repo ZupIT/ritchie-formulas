@@ -8,9 +8,9 @@
         "qty": 3
       },
       "label": "Type your name: ",
-      "name": "input_text",
-      "type": "text",
-      "tutorial": "Add your name"
+      "name": "rit_input_text",
+      "tutorial": "Add your name",
+      "type": "text"
     },
     {
       "default": "false",
@@ -19,9 +19,9 @@
         "true"
       ],
       "label": "Have you ever used Ritchie? ",
-      "name": "input_boolean",
-      "type": "bool",
-      "tutorial": "Tell us the truth"
+      "name": "rit_input_boolean",
+      "tutorial": "Tell us the truth",
+      "type": "bool"
     },
     {
       "default": "everything",
@@ -32,15 +32,15 @@
         "everything"
       ],
       "label": "What do you want to automate? ",
-      "name": "input_list",
-      "type": "text",
-      "tutorial": "Choose one option"
+      "name": "rit_input_list",
+      "tutorial": "Choose one option",
+      "type": "text"
     },
     {
       "label": "Tell us a secret: ",
-      "name": "input_password",
-      "type": "password",
-      "tutorial": "Type anything you want"
+      "name": "rit_input_password",
+      "tutorial": "Type anything you want",
+      "type": "password"
     }
   ]
 }

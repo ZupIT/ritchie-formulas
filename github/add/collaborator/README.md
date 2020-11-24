@@ -1,5 +1,7 @@
-<!-- markdownlint-disable-file MD013 -->
-# Add a collaborator on a repository
+# Description
+
+This formula allows adding a new collaborator by typing only two parameters.
+(collaborator username and repository name)
 
 ## Command
 
@@ -7,15 +9,11 @@
 rit github add collaborator
 ```
 
-![Example](./src/docs/github.gif)
+## Requirements
 
-## Description
+- [Git Installed](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- Github Account
 
-This formula allows adding a new collaborator by typing only two parameters.
-(collaborator username and repository name)
+## Demonstration
 
-### STDIN Example
-
-```bash
-echo '{"collaborator_user":"value", "repository_name":"value"}' | rit github add collaborator --stdin
-```
+![Example](https://github.com/ZupIT/ritchie-formulas/raw/master/github/add/collaborator/src/docs/github.gif)

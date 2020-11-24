@@ -1,11 +1,13 @@
-# Ritchie Formula
+# Description
 
-## command
+Uninstall Clean Swift templates
+
+## Command
 
 ```bash
 rit clean-swift uninstall templates
 ```
 
-## description
+## Requirements
 
-Uninstall Clean Swift templates
+- Xcode

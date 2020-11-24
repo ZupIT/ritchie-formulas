@@ -4,14 +4,14 @@
     {
       "label": "Project name: ",
       "name": "project_name",
-      "type": "text",
-      "tutorial": "Your project name e.g.: awesome-project"
+      "tutorial": "Your project name e.g.: awesome-project",
+      "type": "text"
     },
     {
       "label": "Project description: ",
       "name": "project_description",
-      "type": "text",
-      "tutorial": "Your project description e.g.: Some awesome description"
+      "tutorial": "Your project description e.g.: Some awesome description",
+      "type": "text"
     },
     {
       "default": "false",
@@ -21,15 +21,15 @@
       ],
       "label": "Create a private repository?: ",
       "name": "private",
-      "type": "bool",
-      "tutorial": "Choose one option"
+      "tutorial": "Choose one option",
+      "type": "bool"
     },
     {
       "default": " ",
       "label": "Workspace path: ",
       "name": "workspace_path",
-      "type": "text",
-      "tutorial": "Your workspace path i.e., /home/user/my-project \n Note: An empty value create a GitHub repo with just a README file"
+      "tutorial": "Your workspace path i.e., /home/user/my-project \n Note: An empty value create a GitHub repo with just a README file",
+      "type": "text"
     },
     {
       "name": "username",

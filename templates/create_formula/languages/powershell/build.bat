@@ -13,7 +13,7 @@ SET ENTRY_POINT=main.ps1
   call :SH_LINUX
   call :CP_DOCKER
   GOTO DONE
-  
+
 :BAT_WINDOWS
   echo @ECHO OFF > %BAT_FILE%
   echo SET mypath=%%~dp0 >> %BAT_FILE%

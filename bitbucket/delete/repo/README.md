@@ -1,6 +1,8 @@
-# Ritchie Formula
+# Description
 
-## command
+Delete a remote repository on Bitbucket
+
+## Command
 
 ```bash
 rit bitbucket delete repo
@@ -20,6 +22,6 @@ rit set credential
 
 To generate a personal access token click [here](https://bitbucket.org/account/settings/app-passwords/)
 
-## How it works
+## Demonstration
 
-![gif](doc/bitbucket-delete-repo.gif)
+![gif](https://github.com/ZupIT/ritchie-formulas/raw/master/bitbucket/delete/repo/doc/bitbucket-delete-repo.gif)

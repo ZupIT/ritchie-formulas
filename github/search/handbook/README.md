@@ -1,34 +1,34 @@
-# Github Search Handbook
+<!-- markdownlint-disable-file MD013 -->
+<!-- markdownlint-disable-file MD033 -->
+# Description
 
+This formula search a handbook on a github repository
 
-## Premisses
+## Command
 
-- [Golang installed](https://golang.org/doc/install)
-- [Ritchie installed](https://docs.ritchiecli.io/v/v2.0-pt/getting-started/installation)
+```bash
+rit github search handbook
+```
 
-## Adding ritchie-formulas to Ritchie CLI
+### Adding ritchie-formulas to Ritchie CLI
 
-- Run command 
+- Run command
+
 ```bash
 echo '{"provider":"Github", "name":"demo", "version":"2.0.0", "url":"https://github.com/ZupIT/ritchie-formulas", "token": null, "priority":1}' | rit add repo --stdin
 ```
 
 - or add via [add repo](https://docs.ritchiecli.io/v/v2.0-pt/tutorials/formulas/como-executar-formulas/formula-hello-world)
+
 ```bash
 rit add repo
 ```
 
-## Formula Command
+## Requirements
 
-- Prompt
-```bash
-rit github search handbook
-```
+- [Golang installed](https://golang.org/doc/install)
+- Github Account
 
-## description
+## Demonstration
 
-This formula search a handbook on a github repository
-
-## Demo
-
-<img src="demo.gif">
+<img src="https://github.com/ZupIT/ritchie-formulas/raw/master/github/search/handbook/demo.gif">
