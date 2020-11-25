@@ -1,4 +1,5 @@
-# Rust Build
+#!/bin/sh
+
 BIN_NAME=formula
 BIN_FOLDER=bin
 UNIX_SH=run.sh

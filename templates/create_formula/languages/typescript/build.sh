@@ -1,4 +1,5 @@
-# Make Run Node
+#!/bin/sh
+
 BINARY_NAME_UNIX=run.sh
 BINARY_NAME_WINDOWS=run.bat
 BIN_FOLDER=bin

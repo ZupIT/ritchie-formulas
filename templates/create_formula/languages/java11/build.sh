@@ -1,4 +1,5 @@
-# JAVA
+#!/bin/sh
+
 BIN_FOLDER=bin
 SH=$BIN_FOLDER/run.sh
 BAT=$BIN_FOLDER/run.bat

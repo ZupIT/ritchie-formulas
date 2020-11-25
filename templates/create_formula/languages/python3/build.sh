@@ -1,4 +1,5 @@
-# Python Build
+#!/bin/sh
+
 BINARY_NAME=run.sh
 BINARY_NAME_WINDOWS=run.bat
 BIN_FOLDER=bin

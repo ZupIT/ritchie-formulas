@@ -1,4 +1,4 @@
-# Shell-Bat Build
+#!/bin/sh
 
 BIN_FOLDER=bin
 BINARY_NAME_UNIX=run.sh

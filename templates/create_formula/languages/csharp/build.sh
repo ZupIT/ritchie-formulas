@@ -1,4 +1,5 @@
-# SH
+#!/bin/sh
+
 SOURCE_FILE=src.csproj
 BIN_FOLDER=bin
 BIN_FOLDER_LINUX=linux
