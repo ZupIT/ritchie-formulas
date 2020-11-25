@@ -129,7 +129,10 @@ func NewRitman(threads int) *Ritman {
 		Transport: &http.Transport{
 			Proxy:               http.ProxyFromEnvironment,
 			Dial:                dialer.Dial,
-			TLSClientConfig:     &tls.Config{InsecureSkipVerify: false},
+			TLSClientConfig:     &tls.Config{
+				InsecureSkipVerify: false,
+				MinVersion: tls.VersionTLS12,
+			},
 			MaxIdleConnsPerHost: 10000,
 			MaxConnsPerHost:     0,
 		},
