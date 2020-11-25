@@ -4,7 +4,7 @@ BINARY_NAME_WINDOWS=run.bat
 BIN_FOLDER=bin
 
 #node-build:
-	mkdir $BIN_FOLDER
+	mkdir -p $BIN_FOLDER
 	cp -r src/* $BIN_FOLDER
 	npm install --silent --no-progress --prefix $BIN_FOLDER
 	npm run build --silent --prefix  $BIN_FOLDER

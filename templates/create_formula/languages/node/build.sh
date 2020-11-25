@@ -5,7 +5,7 @@ BIN_FOLDER=bin
 
 
 # Node-Build:
-	mkdir "$BIN_FOLDER"
+	mkdir -p $BIN_FOLDER
 	cp -r src/* "$BIN_FOLDER"
 	npm install --silent --no-progress --prefix "$BIN_FOLDER"
 	echo '#!/bin/sh' > $BIN_FOLDER/$BINARY_NAME_UNIX

@@ -5,7 +5,7 @@ UNIX_SH=run.sh
 WINDOWS_BAT=run.bat
 
 # rust-build:
-	mkdir $BIN_FOLDER
+	mkdir -p $BIN_FOLDER
 	cp -r src/* $BIN_FOLDER
 	cargo build --manifest-path $BIN_FOLDER/Cargo.toml --release
 

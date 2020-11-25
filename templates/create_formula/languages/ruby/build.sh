@@ -4,7 +4,7 @@ BINARY_NAME_WINDOWS=run.bat
 BIN_FOLDER=bin
 
 #ruby-build:
-	mkdir $BIN_FOLDER
+	mkdir -p $BIN_FOLDER
 	cp -r src/* $BIN_FOLDER
 	bundle config set path vendor/bundle
 	bundle install --gemfile $BIN_FOLDER/Gemfile

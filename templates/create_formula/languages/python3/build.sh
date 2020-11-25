@@ -5,7 +5,7 @@ BIN_FOLDER=bin
 BIN_CONFIG_VENV=config_env.sh
 
 #python-build:
-	mkdir $BIN_FOLDER
+	mkdir -p $BIN_FOLDER
 	cp -r src/* $BIN_FOLDER
 	pip3 install -r $BIN_FOLDER/requirements.txt --user --disable-pip-version-check
 

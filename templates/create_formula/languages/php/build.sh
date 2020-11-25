@@ -4,7 +4,7 @@ BINARY_NAME_WINDOWS=run.bat
 BIN_FOLDER=bin
 
 # php-build:
-	mkdir $BIN_FOLDER
+	mkdir -p $BIN_FOLDER
 	cp -r src/* $BIN_FOLDER
 	composer install -q -d $BIN_FOLDER
 	echo '#!/bin/sh' > $BIN_FOLDER/$BINARY_NAME_UNIX
