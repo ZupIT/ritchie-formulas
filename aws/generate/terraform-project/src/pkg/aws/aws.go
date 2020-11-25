@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"os"
 	"path"
+	"regexp"
 	"text/template"
 
 	"project/pkg/tpl"
@@ -46,112 +47,120 @@ func (in Input) Path() string {
 
 func (in Input) Run() {
 
-	if err := CreateDirIfNotExists(in.Path(), 0755); err != nil {
-		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", in.Path(), err.Error()))
+	folderPathLocation := in.Path()
+	match, _ := regexp.MatchString("^(/[a-zA-Z0-9_-]+)+$", folderPathLocation)
+
+	if !match {
+		color.Red(fmt.Sprintf("Project location must be a valid directory path"))
 		os.Exit(1)
 	}
 
-	scaffold := fmt.Sprintf(scaffoldFormat, in.Path())
+	if err := CreateDirIfNotExists(folderPathLocation, 0755); err != nil {
+		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", folderPathLocation, err.Error()))
+		os.Exit(1)
+	}
+
+	scaffold := fmt.Sprintf(scaffoldFormat, folderPathLocation)
 	if err := CreateFileIfNotExist(scaffold, []byte(tpl.Scaffold)); err != nil {
-		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", in.Path(), err.Error()))
+		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", folderPathLocation, err.Error()))
 		os.Exit(1)
 	}
 
-	readme := fmt.Sprintf(readmeFormat, in.Path())
+	readme := fmt.Sprintf(readmeFormat, folderPathLocation)
 	if err := CreateFileIfNotExist(readme, []byte(tpl.Readme)); err != nil {
-		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", in.Path(), err.Error()))
+		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", folderPathLocation, err.Error()))
 		os.Exit(1)
 	}
 
-	gitignore := fmt.Sprintf(gitignoreFormat, in.Path())
+	gitignore := fmt.Sprintf(gitignoreFormat, folderPathLocation)
 	if err := CreateFileIfNotExist(gitignore, []byte(tpl.GitIgnore)); err != nil {
-		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", in.Path(), err.Error()))
+		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", folderPathLocation, err.Error()))
 		os.Exit(1)
 	}
 
-	jenkinsfile := fmt.Sprintf(jenkinsfileFormat, in.Path())
+	jenkinsfile := fmt.Sprintf(jenkinsfileFormat, folderPathLocation)
 	if err := CreateFileIfNotExist(jenkinsfile, []byte(tpl.Jenkinsfile)); err != nil {
-		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", in.Path(), err.Error()))
+		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", folderPathLocation, err.Error()))
 		os.Exit(1)
 	}
 
-	src := fmt.Sprintf(srcDir, in.Path())
+	src := fmt.Sprintf(srcDir, folderPathLocation)
 	if err := CreateDirIfNotExists(src, 0755); err != nil {
-		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", in.Path(), err.Error()))
+		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", folderPathLocation, err.Error()))
 		os.Exit(1)
 	}
 
-	maintf := fmt.Sprintf(mainFormat, in.Path())
+	maintf := fmt.Sprintf(mainFormat, folderPathLocation)
 	if err := CreateFileIfNotExist(maintf, []byte(tpl.Maintf)); err != nil {
-		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", in.Path(), err.Error()))
+		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", folderPathLocation, err.Error()))
 		os.Exit(1)
 	}
 
-	makefile := fmt.Sprintf(makefileFormat, in.Path())
+	makefile := fmt.Sprintf(makefileFormat, folderPathLocation)
 	if err := CreateFileIfNotExist(makefile, []byte(tpl.Makefile)); err != nil {
-		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", in.Path(), err.Error()))
+		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", folderPathLocation, err.Error()))
 		os.Exit(1)
 	}
 
-	modules := fmt.Sprintf(modulesDir, in.Path())
+	modules := fmt.Sprintf(modulesDir, folderPathLocation)
 	if err := CreateDirIfNotExists(modules, 0755); err != nil {
-		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", in.Path(), err.Error()))
+		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", folderPathLocation, err.Error()))
 		os.Exit(1)
 	}
 
-	templates := fmt.Sprintf(templatesDir, in.Path())
+	templates := fmt.Sprintf(templatesDir, folderPathLocation)
 	if err := CreateDirIfNotExists(templates, 0755); err != nil {
-		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", in.Path(), err.Error()))
+		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", folderPathLocation, err.Error()))
 		os.Exit(1)
 	}
 
-	variables := fmt.Sprintf(variablesDir, in.Path())
+	variables := fmt.Sprintf(variablesDir, folderPathLocation)
 	if err := CreateDirIfNotExists(variables, 0755); err != nil {
-		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", in.Path(), err.Error()))
+		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", folderPathLocation, err.Error()))
 		os.Exit(1)
 	}
 
-	commonvar := fmt.Sprintf(varFilesFormat, in.Path(), "common")
+	commonvar := fmt.Sprintf(varFilesFormat, folderPathLocation, "common")
 	if err := CreateFileIfNotExist(commonvar, []byte(tpl.Variable)); err != nil {
-		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", in.Path(), err.Error()))
+		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", folderPathLocation, err.Error()))
 		os.Exit(1)
 	}
 
-	prodvar := fmt.Sprintf(varFilesFormat, in.Path(), "prod")
+	prodvar := fmt.Sprintf(varFilesFormat, folderPathLocation, "prod")
 	if err := CreateFileIfNotExist(prodvar, []byte(tpl.Variable)); err != nil {
-		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", in.Path(), err.Error()))
+		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", folderPathLocation, err.Error()))
 		os.Exit(1)
 	}
 
-	qavar := fmt.Sprintf(varFilesFormat, in.Path(), "qa")
+	qavar := fmt.Sprintf(varFilesFormat, folderPathLocation, "qa")
 	if err := CreateFileIfNotExist(qavar, []byte(tpl.Variable)); err != nil {
-		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", in.Path(), err.Error()))
+		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", folderPathLocation, err.Error()))
 		os.Exit(1)
 	}
 
-	stgvar := fmt.Sprintf(varFilesFormat, in.Path(), "stg")
+	stgvar := fmt.Sprintf(varFilesFormat, folderPathLocation, "stg")
 	if err := CreateFileIfNotExist(stgvar, []byte(tpl.Variable)); err != nil {
-		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", in.Path(), err.Error()))
+		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", folderPathLocation, err.Error()))
 		os.Exit(1)
 	}
 
 	//qa.backendtf
-	backendtf := fmt.Sprintf(QABackendtfFormat, in.Path())
+	backendtf := fmt.Sprintf(QABackendtfFormat, folderPathLocation)
 	if err := CreateFileIfNotExist(backendtf, []byte("")); err != nil {
-		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", in.Path(), err.Error()))
+		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", folderPathLocation, err.Error()))
 		os.Exit(1)
 	}
 
 	t := template.Must(template.New("QABackendtf").Parse(tpl.QABackendtf))
 	bfile, err := os.OpenFile(backendtf, os.O_APPEND|os.O_WRONLY, 0600)
 	if err != nil {
-		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", in.Path(), err.Error()))
+		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", folderPathLocation, err.Error()))
 		os.Exit(1)
 	}
 	defer bfile.Close()
 	err = t.Execute(bfile, in)
 	if err != nil {
-		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", in.Path(), err.Error()))
+		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", folderPathLocation, err.Error()))
 		os.Exit(1)
 	}
 
@@ -160,31 +169,31 @@ func (in Input) Run() {
 	circleDir := path.Join(in.PWD, in.ProjectName, ".circleci")
 
 	if err := fileutil.CreateDirIfNotExists(circleDir, 0755); err != nil {
-		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", in.Path(), err.Error()))
+		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", folderPathLocation, err.Error()))
 		os.Exit(1)
 	}
 
 	if err = fileutil.CopyDirectory(CircleCIPath, circleDir); err != nil {
-		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", in.Path(), err.Error()))
+		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", folderPathLocation, err.Error()))
 		os.Exit(1)
 	}
 
-	circleciConfig := fmt.Sprintf(CircleCIConfigPath, in.Path())
+	circleciConfig := fmt.Sprintf(CircleCIConfigPath, folderPathLocation)
 	if err := CreateFileIfNotExist(circleciConfig, []byte("")); err != nil {
-		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", in.Path(), err.Error()))
+		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", folderPathLocation, err.Error()))
 		os.Exit(1)
 	}
 
 	t = template.Must(template.New("circleciConfig").Parse(tpl.Circleciconfig))
 	bfile, err = os.OpenFile(circleciConfig, os.O_APPEND|os.O_WRONLY, 0600)
 	if err != nil {
-		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", in.Path(), err.Error()))
+		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", folderPathLocation, err.Error()))
 		os.Exit(1)
 	}
 	defer bfile.Close()
 	err = t.Execute(bfile, in)
 	if err != nil {
-		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", in.Path(), err.Error()))
+		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", folderPathLocation, err.Error()))
 		os.Exit(1)
 	}
 

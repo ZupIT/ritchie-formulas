@@ -11,7 +11,11 @@
       "label": "Type the location: ",
       "name": "project_location",
       "tutorial": "Project location e.g.: /home/user/projects",
-      "type": "text"
+      "type": "text",
+      "pattern": {
+        "regex": "^(\\/[a-zA-Z0-9_-]+)+$",
+        "mismatchText": "Project location must be a valid directory path"
+      }
     },
     {
       "label": "Type the terraform bucket name: ",
