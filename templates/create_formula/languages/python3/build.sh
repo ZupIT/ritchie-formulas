@@ -14,6 +14,7 @@ BIN_FOLDER=bin
 	echo "#!/bin/bash"
 	echo "if [ -f /.dockerenv ] ; then"
 	echo "pip3 install -r \$(dirname \"\$0\")/requirements.txt --user --disable-pip-version-check >> /dev/null"
+	echo "fi"
 	echo "python3 \$(dirname \"\$0\")/main.py"
 	} >> $BIN_FOLDER/$BINARY_NAME
 	chmod +x $BIN_FOLDER/$BINARY_NAME
