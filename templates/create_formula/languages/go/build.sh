@@ -49,4 +49,4 @@ BIN_WINDOWS=$BIN_FOLDER_WINDOWS/$BIN_NAME.exe
 
 #test:
 	cd src || exit
-	go test -short $(go list ./... | grep -v vendor/)
+	#go test -short $(go list ./... | grep -v vendor/)
