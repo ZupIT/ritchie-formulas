@@ -157,7 +157,7 @@ func (in Input) Run() {
 		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", folderPathLocation, err.Error()))
 		os.Exit(1)
 	}
-	defer bfile.Close()
+
 	err = t.Execute(bfile, in)
 	if err != nil {
 		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", folderPathLocation, err.Error()))
@@ -190,7 +190,7 @@ func (in Input) Run() {
 		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", folderPathLocation, err.Error()))
 		os.Exit(1)
 	}
-	defer bfile.Close()
+
 	err = t.Execute(bfile, in)
 	if err != nil {
 		color.Red(fmt.Sprintf("failed to create project: %q, error: %q", folderPathLocation, err.Error()))
@@ -201,6 +201,11 @@ func (in Input) Run() {
 	color.Green(fmt.Sprintln("location:", in.Path()))
 	color.Green(fmt.Sprintln("go to the location and run [rit aws add] and check the options for your project"))
 
+	err = bfile.Close()
+	if err != nil {
+		color.Red(fmt.Sprintf("failed close file"))
+		os.Exit(1)
+	}
 }
 
 func IsNotExist(name string) bool {
