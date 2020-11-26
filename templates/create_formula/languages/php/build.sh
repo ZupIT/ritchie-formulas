@@ -8,11 +8,19 @@ BIN_FOLDER=bin
 	mkdir -p $BIN_FOLDER
 	cp -r src/* $BIN_FOLDER
 	composer install -q -d $BIN_FOLDER
-	echo '#!/bin/sh' > $BIN_FOLDER/$BINARY_NAME_UNIX
-	echo 'php -f $(dirname "$0")/index.php' >>  $BIN_FOLDER/$BINARY_NAME_UNIX
-	echo 'echo off' > $BIN_FOLDER/$BINARY_NAME_WINDOWS
-	echo 'php -f index.php' >> $BIN_FOLDER/$BINARY_NAME_WINDOWS
+
+	# Unix
+	{
+	echo "#!/bin/sh"
+	echo "php -f \$(dirname \"\$0\")/index.php"
+	} >>  $BIN_FOLDER/$BINARY_NAME_UNIX
 	chmod +x $BIN_FOLDER/$BINARY_NAME_UNIX
+
+	# Windows
+	{
+	echo "@echo off"
+	echo "php -f index.php"
+	} >> $BIN_FOLDER/$BINARY_NAME_WINDOWS
 
 # docker:
 	cp Dockerfile set_umask.sh $BIN_FOLDER

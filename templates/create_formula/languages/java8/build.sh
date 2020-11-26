@@ -10,18 +10,22 @@ TARGET=target
 
 #java-build:
 	mkdir -p $BIN_FOLDER
-	mvn clean install 
+	mvn clean install
 	cp $TARGET/$JAR_FILE $BIN_FOLDER
 	rm -Rf $TARGET
 
 #sh-unix:
-	echo '#!/bin/sh' > $SH
-	echo 'java -jar $(dirname "$0")/'$JAR_FILE >> $SH
+	{
+	echo "#!/bin/sh"
+	echo "java -jar \$(dirname \"\$0\")/$JAR_FILE"
+	} >> $SH
 	chmod +x $SH
 
 #bat-windows:
-	echo '@ECHO OFF' > $BAT
-	echo 'java -jar '$JAR_FILE >> $BAT
+	{
+	echo "@ECHO OFF"
+	echo "java -jar $JAR_FILE"
+	} >> $BAT
 
 #test:
 	mvn clean install

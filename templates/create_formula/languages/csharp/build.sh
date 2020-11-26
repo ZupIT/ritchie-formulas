@@ -17,12 +17,15 @@ SH=$BIN_FOLDER/run.sh
 	dotnet build $BIN_FOLDER/$SOURCE_FILE -o $BIN_FOLDER/$BIN_FOLDER_DARWIN --configuration Release --runtime osx-x64
 
 #sh-unix:
-	echo '#!/bin/sh' > $SH
-	echo 'if [ $(uname) = "Darwin" ]; then' >> $SH
-	echo '  dotnet $(dirname "$0")/'$BIN_FOLDER_DARWIN/$BIN_UNIX >> $SH
-	echo 'else' >> $SH
-	echo '	dotnet $(dirname "$0")/'$BIN_FOLDER_LINUX/$BIN_UNIX >> $SH
-	echo 'fi' >> $SH
+	{
+	echo "#!/bin/sh"
+	echo "if [ $(uname) = \"Darwin\" ]; then"
+	echo "	dotnet \$(dirname \"\$0\")/$BIN_FOLDER_DARWIN/$BIN_UNIX"
+	echo 'else'
+	echo "	dotnet \$(dirname \"\$0\")/$BIN_FOLDER_LINUX/$BIN_UNIX"
+	echo "fi"
+	} >> $SH
+
 	chmod +x $SH
 
 #docker:

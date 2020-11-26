@@ -9,10 +9,16 @@ BIN_FOLDER=bin
 	mkdir -p $BIN_FOLDER
 	cp -r src/* "$BIN_FOLDER"
 	npm install --silent --no-progress --prefix "$BIN_FOLDER"
-	echo '#!/bin/sh' > $BIN_FOLDER/$BINARY_NAME_UNIX
-	echo 'node $(dirname "$0")/index.js' >>  "$BIN_FOLDER/$BINARY_NAME_UNIX"
-	echo 'node index.js' > "$BIN_FOLDER/$BINARY_NAME_WINDOWS"
+
+	#Unix
+	{
+	echo "#!/bin/sh"
+	echo "node \$(dirname \"\$0\")/index.js"
+	} >>  $BIN_FOLDER/$BINARY_NAME_UNIX
 	chmod +x "$BIN_FOLDER/$BINARY_NAME_UNIX"
+
+	#Windows
+	echo "node index.js" > $BIN_FOLDER/$BINARY_NAME_WINDOWS
 
 #Docker Files:
 	cp Dockerfile set_umask.sh $BIN_FOLDER

@@ -10,16 +10,20 @@ BIN_FOLDER=bin
 	bundle config set path vendor/bundle
 	bundle install --gemfile $BIN_FOLDER/Gemfile
 
-	echo '#!/bin/sh' > $BIN_FOLDER/$BINARY_NAME_UNIX
-	echo 'cd "$$(dirname "$$0")"' >> $BIN_FOLDER/$BINARY_NAME_UNIX
-	echo 'bundle config set path vendor/bundle' >> $BIN_FOLDER/$BINARY_NAME_UNIX
-	echo 'ruby ./index.rb' >> $BIN_FOLDER/$BINARY_NAME_UNIX
-
-	echo '@ECHO OFF' > $BIN_FOLDER/$BINARY_NAME_WINDOWS
-	echo 'SET mypath=%~dp0' >> $BIN_FOLDER/$BINARY_NAME_WINDOWS
-	echo 'ruby %mypath:~0,-1%/index.rb' >> $BIN_FOLDER/$BINARY_NAME_WINDOWS
-
+	{
+	echo "#!/bin/sh"
+	echo "cd \$(dirname \"\$0\")"
+	echo "bundle config set path vendor/bundle"
+	echo "ruby ./index.rb"
+	} >> $BIN_FOLDER/$BINARY_NAME_UNIX
 	chmod +x $BIN_FOLDER/$BINARY_NAME_UNIX
+
+	{
+	echo "@ECHO OFF"
+	echo "SET mypath=%~dp0"
+	echo "ruby %mypath:~0,-1%/index.rb"
+	} >> $BIN_FOLDER/$BINARY_NAME_WINDOWS
+
 
 #docker:
 	cp Dockerfile set_umask.sh $BIN_FOLDER

@@ -17,13 +17,17 @@ TARGET=target
 	rm -Rf $TARGET
 
 #sh-unix:
-	echo '#!/bin/sh' > $SH
-	echo 'java -jar $(dirname "$0")/'$JAR_FILE >> $SH
+	{
+	echo "#!/bin/sh"
+	echo "java -jar \$(dirname \"\$0\")/$JAR_FILE"
+	} >> $SH
 	chmod +x $SH
 
 #bat-windows:
-	echo '@ECHO OFF' > $BAT
-	echo 'java -jar $JAR_FILE' >> $BAT
+	{
+	echo "@ECHO OFF"
+	echo "java -jar $JAR_FILE"
+	} >> $BAT
 
 #test:
 	mvn clean install
