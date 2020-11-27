@@ -30,6 +30,10 @@ formatPackageName() {
   echo "$1" | tr "." "/"
 }
 
+parse_git_branch() {
+  echo "${1}" | git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+}
+
 runFormula() {
 
   slug_name=$(createSlug "$PROJECT_NAME")
@@ -43,6 +47,9 @@ runFormula() {
   fi
 
   echo "---------------------------------------------------------------------------"
+
+  branch=$(parse_git_branch)
+  echo "🌱 Using branch: $branch"
 
   if git rev-parse --git-dir > /dev/null 2>&1; then
     echo "🚧 This repository already exists. Preparing new commit..."
@@ -65,7 +72,7 @@ runFormula() {
     git remote add origin https://$USERNAME:$TOKEN@github.com/$USERNAME/$slug_name.git
   fi
 
-  git push origin master > /dev/null
+  git push origin $branch > /dev/null
 
   if [[ $DOCKER_EXECUTION ]]; then
     chown 1000:1000 -R $CURRENT_PWD/$slug_name
@@ -78,7 +85,7 @@ runFormula() {
 
   echo "---------------------------------------------------------------------------"
   echo "🛠 Generating release $VERSION"
-  API_JSON=$(printf '{"tag_name": "%s","target_commitish": "master","name": "%s","body": "Release of version %s","draft": false,"prerelease": false}' $VERSION $VERSION $VERSION)
+  API_JSON=$(printf '{"tag_name": "%s","target_commitish": "%s","name": "%s","body": "Release of version %s","draft": false,"prerelease": false}' $VERSION $branch $VERSION $VERSION)
   curl --data "$API_JSON" https://api.github.com/repos/$USERNAME/$slug_name/releases?access_token=$TOKEN > /dev/null
   if [ $? != 0 ]; then
       echo -e "✘️ Fail generating release $VERSION";
