@@ -31,7 +31,7 @@ formatPackageName() {
 }
 
 parse_git_branch() {
-  echo "${1}" | git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+  echo $1 | git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
 }
 
 runFormula() {
