@@ -10,6 +10,10 @@
     {
       "label": "Type the location: ",
       "name": "project_location",
+      "pattern": {
+        "mismatchText": "Project location must be a valid directory path",
+        "regex": "^(\\/[a-zA-Z0-9_-]+)+$"
+      },
       "tutorial": "Project location e.g.: /home/user/projects",
       "type": "text"
     },

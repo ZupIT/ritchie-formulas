@@ -68,7 +68,7 @@ func (fw fileWriter) writeToFile() {
 
 	path := path.Join(usr.HomeDir, ".rit", configFileName)
 
-	if err := ioutil.WriteFile(path, fw.fileContent, 0644); err == nil {
+	if err := ioutil.WriteFile(path, fw.fileContent, 0600); err == nil {
 		color.Green(fmt.Sprintf("config file created: %s\n", path))
 	} else {
 		color.Red(fmt.Sprintf("could not write config file: %s\n", err))

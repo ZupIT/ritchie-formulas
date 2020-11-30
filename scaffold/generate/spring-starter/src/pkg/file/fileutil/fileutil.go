@@ -8,6 +8,8 @@ import (
 	"log"
 	"os"
 	"path/filepath"
+
+	"github.com/fatih/color"
 )
 
 // CopyDirectory recursively copies a src directory to a destination.
@@ -68,14 +70,23 @@ func Copy(src, dst string) error {
 	if err != nil {
 		return err
 	}
-	defer source.Close()
 
 	destination, err := os.Create(dst)
 	if err != nil {
 		return err
 	}
-	defer destination.Close()
 	_, err = io.Copy(destination, source)
+
+	err = source.Close()
+	if err != nil {
+		fmt.Println("failed to close source file")
+	}
+
+	err = destination.Close()
+	if err != nil {
+		fmt.Println("failed to close destination file")
+	}
+
 	return err
 }
 
@@ -121,7 +132,7 @@ func ReadFile(path string) ([]byte, error) {
 
 // WriteFile wrapper for ioutil.WriteFile
 func WriteFile(path string, content []byte) error {
-	return ioutil.WriteFile(path, content, 0644)
+	return ioutil.WriteFile(path, content, 0600)
 }
 
 // RemoveFile wrapper for os.Remove
@@ -138,7 +149,12 @@ func Unzip(src string, dest string) error {
 		if err != nil {
 			return err
 		}
-		defer zippedFile.Close()
+		//defer zippedFile.Close()
+		defer func() {
+			if err := zippedFile.Close(); err != nil {
+				color.Yellow(fmt.Sprintf("error closing %q, detail: %s", zippedFile, err))
+			}
+		}()
 
 		extractedFilePath := filepath.Join(
 			dest,
@@ -147,7 +163,10 @@ func Unzip(src string, dest string) error {
 
 		if file.FileInfo().IsDir() {
 			log.Println("Directory Created:", extractedFilePath)
-			os.MkdirAll(extractedFilePath, file.Mode())
+			err = os.MkdirAll(extractedFilePath, file.Mode())
+			if err != nil {
+				log.Fatal("Failed to run mkdirAll", err)
+			}
 		} else {
 			log.Println("File extracted:", file.Name)
 
@@ -159,7 +178,12 @@ func Unzip(src string, dest string) error {
 			if err != nil {
 				return err
 			}
-			defer outputFile.Close()
+			//defer outputFile.Close()
+			defer func() {
+				if err := outputFile.Close(); err != nil {
+					color.Yellow(fmt.Sprintf("error closing %q, detail: %s", outputFile, err))
+				}
+			}()
 
 			_, err = io.Copy(outputFile, zippedFile)
 			if err != nil {

@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"log"
 	"path"
 	"strconv"
 	"time"
@@ -109,7 +110,10 @@ func (score LoadBalanceTestScore) toJSON() (string, error) {
 
 	var prettyJSON bytes.Buffer
 
-	json.Indent(&prettyJSON, jsonData, "", "\t")
+	errIndent := json.Indent(&prettyJSON, jsonData, "", "\t")
+	if errIndent != nil {
+		log.Fatal("Failed to indent", err)
+	}
 
 	if err == nil {
 		return string(prettyJSON.Bytes()), nil
@@ -123,7 +127,7 @@ func (score LoadBalanceTestScore) writeToFile(home string) {
 	jsonData, err := json.MarshalIndent(score, "", "\t")
 
 	if err == nil {
-		err = ioutil.WriteFile(path, jsonData, 0644)
+		err = ioutil.WriteFile(path, jsonData, 0600)
 		if err != nil {
 			panic(fmt.Sprintf("Could not write results file: %s\nPermission required +644", err))
 		} else {
