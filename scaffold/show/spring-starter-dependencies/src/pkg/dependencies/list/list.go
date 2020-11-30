@@ -52,7 +52,10 @@ func (in Inputs) Run() {
 	body, err := ioutil.ReadAll(resp.Body)
 
 	var data Result
-	json.Unmarshal(body, &data)
+	err = json.Unmarshal(body, &data)
+	if err != nil {
+		log.Fatal("Failed unmarshall", err)
+	}
 
 	for _, t := range data.Dependencies.Values {
 		fmt.Printf("Type name: %s \n\n", t.Name)

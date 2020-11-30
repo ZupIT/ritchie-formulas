@@ -77,7 +77,12 @@ func downloadFile(inputs Inputs) (string, error) {
 		return "", err
 	}
 
-	defer resp.Body.Close()
+	//defer resp.Body.Close()
+	defer func() {
+		if err := resp.Body.Close(); err != nil {
+			fmt.Sprintf("error closing http request to: %v, detail: %s", starterURL, err)
+		}
+	}()
 
 	if resp.StatusCode != 200 {
 		err := fmt.Errorf("Invalid parameters ou dependencies! Response Status Code: %s", resp.Status)
@@ -90,7 +95,12 @@ func downloadFile(inputs Inputs) (string, error) {
 	if err != nil {
 		return "", err
 	}
-	defer out.Close()
+	//defer out.Close()
+	defer func() {
+		if err := out.Close(); err != nil {
+			fmt.Sprintf("error closing %q, detail: %s", prjfile, err)
+		}
+	}()
 	_, err = io.Copy(out, resp.Body)
 	if err != nil {
 		return "", err

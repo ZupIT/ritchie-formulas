@@ -126,12 +126,17 @@ func (in Inputs) addVariables() {
 	// variables
 	t := template.Must(template.New("Var").Parse(tpl.Variable))
 	varf := path.Join(in.PWD, variableQA)
-	vf, err := os.OpenFile(varf, os.O_APPEND|os.O_WRONLY, 0644)
+	vf, err := os.OpenFile(varf, os.O_APPEND|os.O_WRONLY, 0600)
 	if err != nil {
 		color.Red(fmt.Sprintf("error openning %q, detail: %q", varf, err))
 		os.Exit(1)
 	}
-	defer vf.Close()
+	defer func() {
+		if err := vf.Close(); err != nil {
+			color.Yellow(fmt.Sprintf("error closing %q, detail: %s", varf, err))
+		}
+	}()
+
 	err = t.Execute(vf, in)
 	if err != nil {
 		color.Red(fmt.Sprintf("error writing %q, detail: %q", varf, err))
@@ -184,12 +189,16 @@ func (in Inputs) mergeMain() {
 	fileutil.WriteFile(mfile, mcfg.Bytes())
 
 	// main.tf others
-	mf, err := os.OpenFile(mfile, os.O_APPEND|os.O_WRONLY, 0644)
+	mf, err := os.OpenFile(mfile, os.O_APPEND|os.O_WRONLY, 0600)
 	if err != nil {
 		color.Red(fmt.Sprintf("error openning %q, detail: %q", mfile, err))
 		os.Exit(1)
 	}
-	defer mf.Close()
+	defer func() {
+		if err := mf.Close(); err != nil {
+			color.Yellow(fmt.Sprintf("error closing %q, detail: %s", mfile, err))
+		}
+	}()
 	_, err = mf.Write([]byte(tpl.Maintf))
 	if err != nil {
 		color.Red(fmt.Sprintf("error appending file %q, detail: %q", mfile, err))
