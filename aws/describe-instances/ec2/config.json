@@ -1,0 +1,36 @@
+{
+  "dockerImageBuilder": "ritclizup/rit-python3-builder",
+  "inputs": [
+    {
+      "name": "access_key",
+      "type": "CREDENTIAL_AWS_ACCESSKEYID"
+    },
+    {
+      "name": "secret_access_key",
+      "type": "CREDENTIAL_AWS_SECRETACCESSKEY"
+    },
+    {
+      "cache": {
+        "active": true,
+        "newLabel": "Type new value. ",
+        "qty": 6
+      },
+      "label": "Type your region: ",
+      "name": "region",
+      "tutorial": "AWS region i.e., us-east-1, us-west-1, sa-east-1",
+      "type": "text"
+    },
+    {
+      "items": [
+        "all",
+        "running",
+        "stopped"
+      ],
+      "label": "Select instance state:",
+      "name": "instance_state",
+      "required": true,
+      "tutorial": "AWS EC2 instance state i.e., all, running, stopped",
+      "type": "text"
+    }
+  ]
+}

@@ -2,43 +2,24 @@
 <!-- markdownlint-disable-file MD033 -->
 <!-- markdownlint-disable-file MD034 -->
 
-# Spring Boot Scaffold Generator
+# Description
 
 A scaffold generator to create a [spring boot](https://spring.io/projects/spring-boot) enviroment
 
 Inspired by https://start.spring.io
 
-## Premisses
-
-- [Golang installed](https://golang.org/doc/install)
-- [Ritchie installed](https://docs.ritchiecli.io/v/v2.0-pt/getting-started/installation)
-
-## Adding ritchie-formulas to Ritchie CLI
-
-- Run command
-
-```bash
-echo '{"provider":"Github", "name":"demo", "version":"2.0.0", "url":"https://github.com/ZupIT/ritchie-formulas", "token": null, "priority":1}' | rit add repo --stdin
-```
-
-- or add via [add repo](https://docs.ritchiecli.io/v/v2.0-pt/tutorials/formulas/como-executar-formulas/formula-hello-world)
-
-```bash
-rit add repo
-```
+This formula generate a scaffold project using spring boot and dependencies that you to choose
 
 ## Command
-
-- Prompt
 
 ```bash
 rit scaffold generate spring-starter
 ```
 
-## Description
+## Requirements
 
-This formula generate a scaffold project using spring boot and dependencies that you to choose
+- [Golang installed](https://golang.org/doc/install)
 
-## Demo
+## Demonstration
 
-<img src="demo.gif">
+<img src="https://github.com/ZupIT/ritchie-formulas/raw/master/scaffold/generate/spring-starter/demo.gif">
