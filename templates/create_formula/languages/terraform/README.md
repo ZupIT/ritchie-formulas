@@ -1,11 +1,17 @@
-# Ritchie Formula
+# Description
 
-## command
+Template and demo formula in terraform that creates a bucket at aws.
+
+## Command
 
 ```bash
-#rit-replace{formulaCmd}
+rit create formula
 ```
 
-## description
+Select `terraform` language
 
-description of formula
+## Requirements
+
+- AWS Account.
+
+- Configured AWS credentials.
