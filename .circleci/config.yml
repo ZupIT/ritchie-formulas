@@ -7,6 +7,7 @@ references:
   images:
     go: &GOLANG_IMAGE cimg/go:1.14
     pythonwithgo: &PYTHONWITHGO_IMAGE ritclizup/pythonwithgo:1.0
+    horus: &HORUS_IMAGE ubuntu-1604:202004-01
 
   paths:
     test-results: &TEST_RESULTS_DIR bin
@@ -39,7 +40,23 @@ executors:
         user: root
     working_directory: /workspace
 
+  horusec-executor:
+    machine:
+      image: *HORUS_IMAGE
+
 jobs:
+  horus:
+    executor: horusec-executor
+    environment:
+      <<: *ENVIRONMENT
+    steps:
+      - checkout
+      - run:
+          name: Horusec Security Test
+          command: |
+            curl -fsSL https://horusec.io/bin/install.sh | bash
+            horusec start -p ./ -e "true" -a "$HORUSEC_CLI_REPOSITORY_AUTHORIZATION" -G "true" -u "https://api-horusec.zup.com.br"
+
   pre-commit:
     executor: static-executor
     steps:
@@ -80,6 +97,9 @@ jobs:
 workflows:
   build-for-requests:
     jobs:
+      - horus:
+        filters:
+          <<: *FILTERS_CHECK_CODE
       - pre-commit:
           filters:
             <<: *FILTERS_CHECK_CODE

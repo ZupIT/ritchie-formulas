@@ -21,13 +21,13 @@ func commandResolver() CommandHandler {
 	r := os.Getenv("REPLICATION")
 	p := os.Getenv("PARTITIONS")
 
-	re, err := strconv.Atoi(r)
+	re, err := strconv.ParseInt(r, 10, 32)
 	if err != nil {
 		fmt.Println("Replication must be a number")
 		return nil
 	}
 
-	pa, err := strconv.Atoi(p)
+	pa, err := strconv.ParseInt(p, 10, 32)
 	if err != nil {
 		fmt.Println("Partitions must be a number")
 		return nil
