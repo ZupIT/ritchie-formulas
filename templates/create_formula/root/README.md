@@ -29,12 +29,6 @@ This repository contains rit formulas which can be executed by the [ritchie-cli]
  Set the priority: 2
 ```
 
-## Build and test formulas locally
-
-```bash
- rit build formula
-```
-
 ## Contribute to the repository with your formulas
 
 1. Fork the repository
