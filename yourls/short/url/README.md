@@ -22,4 +22,3 @@ First run:
 To change your credentials:
 
 ![Example](https://raw.githubusercontent.com/fabianofernandeszup/ritchie-formulas-fabiano/master/yourls/short/url/docs/add-cred-yourls.gif)
-
