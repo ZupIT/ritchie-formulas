@@ -1,4 +1,6 @@
+# The Makefile file will be deprecated in March 2021. It will be replaced by the current build.sh file
 # Go parameters
+
 BIN_FOLDER=bin
 SH=$(BIN_FOLDER)/run.sh
 BAT=$(BIN_FOLDER)/run.bat

@@ -1,3 +1,4 @@
+# The Makefile file will be deprecated in March 2021. It will be replaced by the current build.sh file
 # Make Run PHP
 BINARY_NAME_UNIX=run.sh
 BINARY_NAME_WINDOWS=run.bat

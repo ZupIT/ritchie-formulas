@@ -1,4 +1,6 @@
+# The Makefile file will be deprecated in March 2021. It will be replaced by the current build.sh file
 # SH
+
 SOURCE_FILE=src.csproj
 BIN_FOLDER=bin
 BIN_FOLDER_LINUX=linux

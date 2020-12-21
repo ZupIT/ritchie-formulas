@@ -1,3 +1,4 @@
+# The Makefile file will be deprecated in March 2021. It will be replaced by the current build.sh file
 # Make Run Rust
 BIN_NAME=formula
 BIN_FOLDER=bin
