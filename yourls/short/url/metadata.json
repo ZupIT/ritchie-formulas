@@ -1,0 +1,20 @@
+{
+  "execution": [
+    "local",
+    "docker"
+  ],
+  "os": {
+    "deps": [],
+    "support": [
+      "windows",
+      "mac",
+      "linux"
+    ]
+  },
+  "tags": [
+    "yourls",
+    "short",
+    "url",
+    "java"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "dockerImageBuilder": "ritclizup/rit-java11-builder",
+  "inputs": [
+    {
+      "name": "yourls_api_endpoint",
+      "type": "CREDENTIAL_YOURLS_APIENDPOINT"
+    },
+    {
+      "name": "yourls_api_secret",
+      "type": "CREDENTIAL_YOURLS_APISECRET"
+    },
+    {
+      "label": "Enter the url to shorten : ",
+      "name": "url_to_shorten",
+      "type": "text"
+    },
+    {
+      "default": " ",
+      "label": "Short url keyword [OPTIONAL]: ",
+      "name": "keyword",
+      "type": "text"
+    }
+  ]
+}
