@@ -3,7 +3,8 @@
 # shellcheck disable=SC2086
 # shellcheck disable=SC2164
 # shellcheck disable=SC1001
-  removeSpaces() {
+
+removeSpaces() {
     echo "${1}" | xargs | tr " " -
   }
 
@@ -16,6 +17,7 @@ cleanName() {
     fi
     echo "$tmp" | tr '[:upper:]' '[:lower:]'
   }
+
 checkProjectName() {
   if [[ ! "$1" =~ ^[a-zA-Z0-9-]+$ ]]; then
     echo "Project name cannot contain special characters"
@@ -23,7 +25,11 @@ checkProjectName() {
   fi
 }
 
-  runFormula() {
+parse_git_branch() {
+  echo | git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+}
+
+runFormula() {
 
   slug_name=$(cleanName "$PROJECT_NAME")
   checkProjectName $slug_name
@@ -36,6 +42,9 @@ checkProjectName() {
   fi
 
   echo "---------------------------------------------------------------------------"
+
+  branch=$(parse_git_branch)
+  echo "🌱 Using branch: $branch"
 
   if git rev-parse --git-dir > /dev/null 2>&1; then
     echo "🚧 This repository already exists. Preparing new commit..."
@@ -59,7 +68,8 @@ checkProjectName() {
     git remote add origin https://oauth2:$TOKEN@gitlab.com/$USERNAME/$slug_name.git
   fi
 
-  git push origin master > /dev/null
+  git push origin $branch > /dev/null
+
   if [[ $DOCKER_EXECUTION ]]; then
     chown 1000:1000 -R $CURRENT_PWD/$slug_name
   fi
@@ -71,7 +81,7 @@ checkProjectName() {
 
   echo "---------------------------------------------------------------------------"
   echo "🛠 Generating release $VERSION"
-  API_JSON=$(printf '{"name":"%s", "tag_name": "%s", "description": "Release of version %s", "ref":"master"}' $VERSION $VERSION $VERSION)
+  API_JSON=$(printf '{"name":"%s", "tag_name": "%s", "description": "Release of version %s", "ref":"%s"}' $VERSION $VERSION $VERSION $branch)
   curl --header 'Content-Type: application/json' --header "Private-Token: $TOKEN" --data "$API_JSON" --request POST 'https://gitlab.com/api/v4/projects/'$USERNAME'%2f'$slug_name'/releases' > /dev/null
   if [ $? != 0 ]; then
       echo -e "✘️ Fail generating release $VERSION";
