@@ -1,7 +1,7 @@
 name: Unit Test
 
 on: 
-  push:
+  pull_request:
 
 jobs:
   unit-test:
@@ -12,5 +12,5 @@ jobs:
         with:
           go-version: '^1.14'
       - name: Start tests
-        run: go test -v ./.github/workflows/unit-test/validation/...
+        run: go test -v ./.circleci/validation/...
                     
