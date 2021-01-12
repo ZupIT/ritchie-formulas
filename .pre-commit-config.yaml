@@ -1,5 +1,5 @@
 #https://pre-commit.com/hooks.html
-exclude: '_vendor/.*$'
+exclude: \.github/.*|_vendor.*$
 repos:
   - repo: git://github.com/pre-commit/pre-commit-hooks
     rev: v2.5.0

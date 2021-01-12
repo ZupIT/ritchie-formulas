@@ -18,7 +18,7 @@ workspace: `rit create formula` if you need help please visit
 4. Build and use the new formula: `rit build formula`
  or use --watch to keep observing changes on formula code live: `rit build formula --watch`
 5. Run `pre-commit.sh` to lint your code
-6. Run `go test -v ./.circleci/validation/...` to test your code and formula
+6. Run `go test -v ./.github/workflows/validation/...` to test your code and formula
 structure. _(GoLang Required)_
 7. Commit your implementation.
 8. Push your branch.
