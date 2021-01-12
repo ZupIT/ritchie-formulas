@@ -8,7 +8,7 @@ import (
 
 func TestFormulasContent(t *testing.T) {
 
-	root := "../../"
+	root := "../../../"
 	rules := createRules()
 	requiredFromRoot := getFullContentFromFormula(root)
 
