@@ -14,7 +14,3 @@ class Formula(private val inputText: String, private val inputBoolean: Boolean, 
        println(Chalk.on(String.format("My secret is %s.", inputPassword)).magenta())
     }
 }
-
-
-
-
