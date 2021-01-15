@@ -1,5 +1,5 @@
 {
-  "dockerImageBuilder": "ritclizup/rit-kotlin-jdk11-builder",
+  "dockerImageBuilder": "ritclizup/rit-kotlin-jdk8-builder",
   "inputs": [
     {
       "cache": {

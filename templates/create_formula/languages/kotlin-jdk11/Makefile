@@ -1,4 +1,4 @@
-# JAVA
+# KOTLIN
 BIN_FOLDER=bin
 SH=$(BIN_FOLDER)/run.sh
 BAT=$(BIN_FOLDER)/run.bat
@@ -7,10 +7,10 @@ CLEAN=mvn clean
 JAR_FILE=Main.jar
 TARGET=target
 
-build: java-build sh-unix bat-windows docker
+build: kotlin-build sh-unix bat-windows docker
 	$(CLEAN)
 
-java-build:
+kotlin-build:
 	mkdir -p $(BIN_FOLDER)
 	$(BUILD)
 	mv $(TARGET)/$(JAR_FILE) $(BIN_FOLDER)

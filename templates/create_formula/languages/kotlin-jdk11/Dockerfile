@@ -1,4 +1,4 @@
-FROM ritclizup/rit-kotlin-jdk11-runner
+FROM ritclizup/rit-kotlin-jdk8-runner
 
 USER root
 
