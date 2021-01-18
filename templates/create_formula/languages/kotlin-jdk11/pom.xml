@@ -117,7 +117,7 @@
         </dependency>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
-            <artifactId>kotlin-stdlib-jdk11</artifactId>
+            <artifactId>kotlin-stdlib</artifactId>
             <version>1.4.10</version>
         </dependency>
         <dependency>

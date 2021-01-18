@@ -27,7 +27,7 @@ class FormulaTest {
                 "My name is Hello." +
                 "I've already created formulas using Ritchie." +
                 "Today, I want to automate world." +
-                "My secret is pass.", outContent.toString().replace(Regex("[\\r|\\n]"), "").replace(Regex("[\u001B\\[[;\\d]]"), ""))
+                "My secret is pass.", outContent.toString().replace(Regex("\\r|\\n"), "").replace(Regex("\u001B\\[[;\\d]*m"), ""))
     }
 
     @Test
@@ -37,7 +37,7 @@ class FormulaTest {
                 "My name is Hello." +
                 "I'm excited in creating new formulas using Ritchie." +
                 "Today, I want to automate world." +
-                "My secret is pass.", outContent.toString().replace(Regex("[\\r|\\n]"), "").replace(Regex("[\u001B\\[[;\\d]]"), ""))
+                "My secret is pass.", outContent.toString().replace(Regex("\\r|\\n"), "").replace(Regex("\u001B\\[[;\\d]*m"), ""))
     }
 
     @Test
@@ -47,6 +47,6 @@ class FormulaTest {
                 "My name is Hello." +
                 "I'm excited in creating new formulas using Ritchie." +
                 "Today, I want to automate world." +
-                "My secret is .", outContent.toString().replace(Regex("[\\r|\\n]"), "").replace(Regex("[\u001B\\[[;\\d]]"), ""))
+                "My secret is .", outContent.toString().replace(Regex("\\r|\\n"), "").replace(Regex("\u001B\\[[;\\d]*m"), ""))
     }
 }
