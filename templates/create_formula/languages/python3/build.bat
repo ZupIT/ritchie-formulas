@@ -16,7 +16,7 @@ SET SH_FILE=%BIN_FOLDER%\run.sh
 :BAT_WINDOWS
     echo @ECHO OFF > %BAT_FILE%
     echo SET mypath=%%~dp0 >> %BAT_FILE%
-    echo start /B /WAIT python %%mypath:~0,-1%%/main.py >> %BAT_FILE%
+    echo start /B /D "%%mypath%%" /WAIT python main.py >> %BAT_FILE%
 
 :SH_LINUX
 	echo #!/bin/bash > %SH_FILE%
