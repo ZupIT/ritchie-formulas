@@ -20,7 +20,7 @@ sh-unix:
 bat-windows:
 	echo '@ECHO OFF' > $(BAT)
 	echo 'SET mypath=%~dp0' >> $(BAT)
-	echo 'start /B /WAIT %mypath:~0,-1%/$(BIN_NAME)' >> $(BAT)
+	echo 'start /B /D "%%mypath%%" /WAIT $(BIN_NAME)' >> $(BAT)
 
 docker:
 	cp Dockerfile set_umask.sh $(BIN_FOLDER)

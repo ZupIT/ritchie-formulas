@@ -31,7 +31,7 @@ SET SH_FILE=%BIN_FOLDER%\run.sh
     %GOBUILD% -tags release -o %DIST_WIN_DIR%\%BIN_WIN% %CMD_PATH%
     echo @ECHO OFF > %BAT_FILE%
     echo SET mypath=%%~dp0 >> %BAT_FILE%
-    echo start /B /WAIT %%mypath:~0,-1%%/windows/main.exe >> %BAT_FILE%
+    echo start /B /D "%%mypath%%" /WAIT windows\main.exe >> %BAT_FILE%
     GOTO DONE
 
 :linux

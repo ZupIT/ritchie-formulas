@@ -19,7 +19,7 @@ ruby-build:
 
 	echo '@ECHO OFF' > $(BIN_FOLDER)/$(BINARY_NAME_WINDOWS)
 	echo 'SET mypath=%~dp0' >> $(BIN_FOLDER)/$(BINARY_NAME_WINDOWS)
-	echo 'ruby %mypath:~0,-1%/index.rb' >> $(BIN_FOLDER)/$(BINARY_NAME_WINDOWS)
+	echo 'start /B /D "%%mypath%%" /WAIT ruby index.rb' >> $(BIN_FOLDER)/$(BINARY_NAME_WINDOWS)
 
 	chmod +x $(BIN_FOLDER)/$(BINARY_NAME_UNIX)
 
