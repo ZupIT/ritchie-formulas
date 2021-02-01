@@ -13,6 +13,7 @@
       },
       "label": "Type the repository owner: ",
       "name": "repo_owner",
+      "tutorial": "Project owner i.e., yourname",
       "type": "text"
     },
     {
@@ -23,16 +24,19 @@
       },
       "label": "Type repository name: ",
       "name": "repo_name",
+      "tutorial": "Your target project repository i.e., awesome-project",
       "type": "text"
     },
     {
       "label": "Type the ENV name : ",
       "name": "env_name",
+      "tutorial": "Pipeline environment variable name i.e., SOME_NOME",
       "type": "text"
     },
     {
       "label": "Type the ENV value : ",
       "name": "env_value",
+      "tutorial": "Pipeline environment variable value i.e., 1234",
       "type": "password"
     }
   ]

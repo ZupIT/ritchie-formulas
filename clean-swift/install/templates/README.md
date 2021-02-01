@@ -1,11 +1,13 @@
-# Ritchie Formula
+# Description
 
-## command
+Install Clean Swift templates
+
+## Command
 
 ```bash
 rit clean-swift install templates
 ```
 
-## description
+## Requirements
 
-Install Clean Swift templates
+- Xcode

@@ -1,24 +1,23 @@
-# List bucket aws
+<!-- markdownlint-disable-file MD013 -->
+<!-- markdownlint-disable-file MD033 -->
 
-## command
+# Description
 
-List buckets
+This formula will list your buckets on aws providing only one input:
+
+- AWS region i.e., us-east-1, us-west-1, sa-east-1
+
+## Command
 
 ```bash
 rit aws list bucket
 ```
 
-## description
+## Requirements
 
-For use this formula run before:
+- Golang
+- Set AWS credentials (\$ rit set credentials) with ACCESS KEY ID and SECRET ACCESS KEY.
 
-```bash
-rit set credential
-```
+## Demonstration
 
-for add AWS credential.
-
-For all formulas receive field in env REGION and has received (CREDENTIAL_AWS_ACCESSKEYID,
-CREDENTIAL_AWS_SECRETACCESSKEY) in envs (ACCESS_KEY, SECRET_ACCESS_KEY).
-
-For "create" command receive bucket field in env BUCKET.
+<img src="https://raw.githubusercontent.com/ZupIT/ritchie-formulas/master/aws/list/bucket/demo.gif">

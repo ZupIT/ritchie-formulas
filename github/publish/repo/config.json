@@ -21,6 +21,7 @@
       ],
       "label": "Will it be a private repository? ",
       "name": "privacy",
+      "tutorial": "Choose one option",
       "type": "text"
     },
     {
@@ -31,6 +32,7 @@
       },
       "label": "Github project name: ",
       "name": "project_name",
+      "tutorial": "Target repository name i.e., ritchie-formulas",
       "type": "text"
     },
     {
@@ -39,14 +41,16 @@
         "newLabel": "Type new project path:",
         "qty": 3
       },
-      "label": "Workspace to publish path: (ex: /home/users/dennis/ritchie-formulas)",
+      "label": "Workspace to publish path: ",
       "name": "workspace_path",
+      "tutorial": "Project workspace path i.e., /home/users/dennis/ritchie-formulas",
       "type": "text"
     },
     {
       "default": "v1.0.0",
       "label": "Version: (default: v1.0.0)",
       "name": "version",
+      "tutorial": "Project version e.g.: v1.0.0",
       "type": "text"
     }
   ]

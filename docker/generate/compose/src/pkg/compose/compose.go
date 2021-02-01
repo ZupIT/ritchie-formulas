@@ -3,6 +3,7 @@ package compose
 import (
 	"fmt"
 	"io/ioutil"
+	"log"
 	"os"
 	"strings"
 )
@@ -168,8 +169,16 @@ func GenerateYml(items []string, extParams map[string]string) {
 				mongoYmlString = strings.Replace(mongoYmlString, "{{MONGO_WEBCLIENT_PASSWORD}}", extParams["mongoWebClientPassword"], -1)
 				ymlString = fmt.Sprintf("%s%s\n\n", ymlString, mongoYmlString)
 			case "stubby4j":
-				createIfNotExists("files/stubby4j", 0755)
-				writeFile("files/stubby4j/integrations.yml", []byte(integretionYml))
+				err := createIfNotExists("files/stubby4j", 0755)
+				if err != nil {
+					log.Fatal("Failed to create file", err)
+				}
+
+				err = writeFile("files/stubby4j/integrations.yml", []byte(integretionYml))
+				if err != nil {
+					log.Fatal("Failed to write file", err)
+				}
+
 				ymlString = fmt.Sprintf("%s%s\n\n", ymlString, stubby4jYml)
 			case "jaeger":
 				ymlString = fmt.Sprintf("%s%s\n\n", ymlString, jaegerYml)
@@ -189,7 +198,11 @@ func GenerateYml(items []string, extParams map[string]string) {
 				ymlString = fmt.Sprintf("%s%s\n\n", ymlString, rabbitmqYmlString)
 			}
 		}
-		writeFile("docker-compose.yml", []byte(ymlString))
+		err := writeFile("docker-compose.yml", []byte(ymlString))
+		if err != nil {
+			log.Fatal("Failed to write file", err)
+		}
+
 		fmt.Println("Generated files in the current directory")
 		fmt.Println("Run:\ndocker-compose up")
 	}
@@ -197,7 +210,7 @@ func GenerateYml(items []string, extParams map[string]string) {
 
 // WriteFile wrapper for ioutil.WriteFile
 func writeFile(path string, content []byte) error {
-	return ioutil.WriteFile(path, content, 0644)
+	return ioutil.WriteFile(path, content, 0600)
 }
 
 func createIfNotExists(dir string, perm os.FileMode) error {

@@ -14,6 +14,7 @@ SET SH_FILE=%BIN_FOLDER%\run.sh
 
 :build
     cd src
+    xcopy /e/h/i files %BIN_FOLDER%\files
     mkdir %DIST_WIN_DIR%
     SET GO111MODULE=on
     for /f %%i in ('go list -m') do set MODULE=%%i
@@ -31,7 +32,7 @@ SET SH_FILE=%BIN_FOLDER%\run.sh
     %GOBUILD% -tags release -o %DIST_WIN_DIR%\%BIN_WIN% %CMD_PATH%
     echo @ECHO OFF > %BAT_FILE%
     echo SET mypath=%%~dp0 >> %BAT_FILE%
-    echo start /B /WAIT %%mypath:~0,-1%%/windows/main.exe >> %BAT_FILE%
+    echo start /B /D "%%mypath%%" /WAIT windows\main.exe >> %BAT_FILE%
     GOTO DONE
 
 :linux

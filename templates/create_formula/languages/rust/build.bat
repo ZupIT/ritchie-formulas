@@ -19,12 +19,7 @@ SET BAT_FILE=%BIN_FOLDER%\run.bat
 :BAT_WINDOWS
     echo @ECHO OFF > %BAT_FILE%
     echo SET mypath=%%~dp0 >> %BAT_FILE%
-    echo start /B /WAIT %%mypath:~0,-1%%/target/release/%BIN_NAME% >> %BAT_FILE%
-
-:SH_LINUX
-    echo "#!/bin/sh" > %SH_FILE%
-    echo "$$(dirname "$$0")"/target/release/%BIN_NAME%  > %SH_FILE%
-    GOTO DONE
+    echo start /B /D "%%mypath%%" /WAIT target\release\%BIN_NAME% >> %BAT_FILE%
 
 :CP_DOCKER
     copy Dockerfile %BIN_FOLDER%

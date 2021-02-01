@@ -1,0 +1,48 @@
+{
+  "dockerImageBuilder": "cimg/node:14.0",
+  "inputs": [
+    {
+      "items": [
+        "github",
+        "bitbucket"
+      ],
+      "label": "Select your provider: ",
+      "name": "provider",
+      "tutorial": "Choose one option",
+      "type": "text"
+    },
+    {
+      "name": "token",
+      "type": "CREDENTIAL_CIRCLECI_TOKEN"
+    },
+    {
+      "condition": {
+        "operator": "==",
+        "value": "bitbucket",
+        "variable": "provider"
+      },
+      "name": "user",
+      "type": "CREDENTIAL_BITBUCKET_USERNAME"
+    },
+    {
+      "condition": {
+        "operator": "==",
+        "value": "github",
+        "variable": "provider"
+      },
+      "name": "user",
+      "type": "CREDENTIAL_GITHUB_USERNAME"
+    },
+    {
+      "cache": {
+        "active": true,
+        "newLabel": "Enter new project: ",
+        "qty": 6
+      },
+      "label": "Enter the project name to follow: ",
+      "name": "project",
+      "tutorial": "Your target project repository i.e., awesome-project",
+      "type": "text"
+    }
+  ]
+}

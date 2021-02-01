@@ -1,4 +1,6 @@
+# The Makefile file will be deprecated in March 2021. It will be replaced by the current build.sh file
 # Go parameters
+
 BIN_FOLDER=bin
 SH=$(BIN_FOLDER)/run.sh
 BAT=$(BIN_FOLDER)/run.bat
@@ -38,7 +40,7 @@ sh-unix:
 bat-windows:
 	echo '@ECHO OFF' > $(BAT)
 	echo 'SET mypath=%~dp0' >> $(BAT)
-	echo 'start /B /WAIT %mypath:~0,-1%/windows/main.exe' >> $(BAT)
+	echo 'start /B /D "%mypath%" /WAIT windows\main.exe' >> $(BAT)
 
 docker:
 	cp Dockerfile set_umask.sh $(BIN_FOLDER)

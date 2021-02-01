@@ -3,24 +3,26 @@ mod formula;
 use std::env;
 
 fn main() {
-	let sample_text;
-	let sample_list;
-  let sample_bool;
+    let input_text = string_from_env("RIT_INPUT_TEXT");
 
-	match env::var("SAMPLE_TEXT") {
-		Ok(val) => sample_text = val,
-		Err(_e) => sample_text = "none".to_string(),
-  }
+    let input_bool = bool_from_env("RIT_INPUT_BOOLEAN");
 
-	match env::var("SAMPLE_LIST") {
-		Ok(val) => sample_list = val,
-		Err(_e) => sample_list = "none".to_string(),
-  }
+    let input_list = string_from_env("RIT_INPUT_LIST");
+    let input_password = string_from_env("RIT_INPUT_PASSWORD");
 
-	match env::var("SAMPLE_BOOL") {
-		Ok(val) => sample_bool = val,
-		Err(_e) => sample_bool = "none".to_string(),
-  }
+    formula::run(input_text, input_bool, input_list, input_password);
+}
 
-	formula::run(sample_text, sample_list, sample_bool);
+fn string_from_env(key: &str) -> String {
+    match env::var(key) {
+        Ok(val) => val,
+        Err(_) => "none".to_string(),
+    }
+}
+
+fn bool_from_env(key: &str) -> bool {
+    match env::var(key) {
+        Ok(val) => val.parse().unwrap_or(false),
+        Err(_) => false,
+    }
 }

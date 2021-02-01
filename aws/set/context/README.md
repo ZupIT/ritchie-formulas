@@ -1,11 +1,13 @@
-# Aws set context
+# Description
 
-## command
+This formula to set the context
+
+## Command
 
 ```bash
 rit aws set context
 ```
 
-## description
+## Requirements
 
-This formula to set the context
+- AWS

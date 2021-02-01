@@ -9,6 +9,7 @@
       ],
       "label": "Do you wish to install minikube? ",
       "name": "minikube",
+      "tutorial": "Choose one option",
       "type": "text"
     },
     {
@@ -19,6 +20,7 @@
       ],
       "label": "Do you wish to install istioctl? ",
       "name": "istioctl",
+      "tutorial": "Choose one option",
       "type": "text"
     },
     {
@@ -33,6 +35,7 @@
       ],
       "label": "Which istio profile you want to install? ",
       "name": "profile",
+      "tutorial": "Choose one option",
       "type": "text"
     }
   ]

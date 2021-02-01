@@ -1,4 +1,8 @@
-# Github navigate handbook
+<!-- markdownlint-disable-file MD013 -->
+<!-- markdownlint-disable-file MD033 -->
+# Description
+
+Navigate Handbooks from [ZupIT](https://github.com/ZupIT) repositories
 
 ## Command
 
@@ -8,18 +12,10 @@ rit github navigate handbook
 
 ## Requirements
 
-- git installed
+- [Ritchie installed](https://docs.ritchiecli.io/v/v2.0-pt/getting-started/installation)
+- Set Github credentials (\$ rit set credential) with USERNAME, EMAIL and TOKEN.
+- It is necessary to have [Golang](https://golang.org/doc/install) installed for this command to work_
 
-- set github username and token credentials using
+## Demonstration
 
-```bash
-rit set credential
-```
-
-## How to generate personal access token
-
-To generate a personal access token click [here](https://github.com/settings/tokens)
-
-## How it works
-
-![gif](https://media.giphy.com/media/U5bfisA8omNg52kEG1/giphy.gif)
+<img src="https://github.com/ZupIT/ritchie-formulas/raw/master/github/navigate/handbook/demo.gif">

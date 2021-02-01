@@ -8,6 +8,7 @@
       },
       "label": "Kafka urls: ",
       "name": "urls",
+      "tutorial": "The list of kafka URLs i.e., \"kafka1.abc.com:80,kafka2.abc.com:80,kafka3.abc.com:80\"",
       "type": "text"
     }
   ]

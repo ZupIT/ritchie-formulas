@@ -15,13 +15,15 @@
         "newLabel": "Type new value. ",
         "qty": 6
       },
-      "label": "Type your region [ e.g us-east-1 ]: ",
+      "label": "Type your region: ",
       "name": "region",
+      "tutorial": "AWS region i.e., us-east-1, us-west-1, sa-east-1",
       "type": "text"
     },
     {
       "label": "Type bucket name: ",
       "name": "bucket",
+      "tutorial": "Bucket name e.g.: some-aws-bucket",
       "type": "text"
     }
   ]

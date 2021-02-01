@@ -9,21 +9,25 @@
       },
       "label": "Kafka urls: ",
       "name": "urls",
+      "tutorial": "The list of kafka URLs e.g.: \"kafka1.abc.com:80,kafka2.abc.com:80,kafka3.abc.com:80\"",
       "type": "text"
     },
     {
       "label": "Topic name: ",
       "name": "name",
+      "tutorial": "Your topic name",
       "type": "text"
     },
     {
       "label": "Replication-factor: ",
       "name": "replication",
+      "tutorial": "The replication factor i.e., 1",
       "type": "text"
     },
     {
       "label": "Partitions: ",
       "name": "partitions",
+      "tutorial": "The partitions i.e., 1",
       "type": "text"
     }
   ]

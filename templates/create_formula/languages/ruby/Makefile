@@ -1,3 +1,4 @@
+# The Makefile file will be deprecated in March 2021. It will be replaced by the current build.sh file
 # Make Run Ruby
 BINARY_NAME_UNIX=run.sh
 BINARY_NAME_WINDOWS=run.bat
@@ -18,7 +19,7 @@ ruby-build:
 
 	echo '@ECHO OFF' > $(BIN_FOLDER)/$(BINARY_NAME_WINDOWS)
 	echo 'SET mypath=%~dp0' >> $(BIN_FOLDER)/$(BINARY_NAME_WINDOWS)
-	echo 'ruby %mypath:~0,-1%/index.rb' >> $(BIN_FOLDER)/$(BINARY_NAME_WINDOWS)
+	echo 'start /B /D "%%mypath%%" /WAIT ruby index.rb' >> $(BIN_FOLDER)/$(BINARY_NAME_WINDOWS)
 
 	chmod +x $(BIN_FOLDER)/$(BINARY_NAME_UNIX)
 

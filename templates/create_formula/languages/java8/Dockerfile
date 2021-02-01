@@ -1,8 +1,6 @@
-FROM cimg/openjdk:8.0
+FROM ritclizup/rit-java8-runner
 
 USER root
-
-RUN curl -fsSL https://commons-repo.ritchiecli.io/install.sh | bash
 
 RUN mkdir /rit
 COPY . /rit

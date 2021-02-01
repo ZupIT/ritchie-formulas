@@ -1,0 +1,39 @@
+{
+  "dockerImageBuilder": "cimg/base:stable-20.04",
+  "inputs": [
+    {
+      "cache": {
+        "active": true,
+        "newLabel": "Type new branch. ",
+        "qty": 10
+      },
+      "default": "master",
+      "label": "Select destination branch (default: master):",
+      "name": "branch",
+      "tutorial": "A git branch i.e., master, some-branch, developer",
+      "type": "text"
+    },
+    {
+      "default": "false",
+      "items": [
+        "false",
+        "true"
+      ],
+      "label": "Set upstream ? (only first time)",
+      "name": "setupstream",
+      "tutorial": "Choose one option",
+      "type": "bool"
+    },
+    {
+      "default": "false",
+      "items": [
+        "false",
+        "true"
+      ],
+      "label": "Push after update ?",
+      "name": "push",
+      "tutorial": "Choose one option",
+      "type": "bool"
+    }
+  ]
+}

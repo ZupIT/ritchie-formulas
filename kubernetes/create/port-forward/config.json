@@ -7,6 +7,7 @@
       },
       "label": "Type kubernetes namespace: ",
       "name": "namespace",
+      "tutorial": "A kubernetes namespace i.e., kube-example",
       "type": "text"
     },
     {
@@ -15,6 +16,7 @@
       },
       "label": "Type name or part name of pod: ",
       "name": "pod_part_name",
+      "tutorial": "The name or part name of your pod i.e., awesome-app, awesome",
       "type": "text"
     },
     {
@@ -23,6 +25,7 @@
       },
       "label": "Type port map of pod: ",
       "name": "port",
+      "tutorial": "A port map i.e., 8080:5000",
       "type": "text"
     },
     {

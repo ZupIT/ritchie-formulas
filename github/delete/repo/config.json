@@ -12,6 +12,7 @@
     {
       "label": "Github project name to delete: ",
       "name": "project_name",
+      "tutorial": "The project name that you want to delete e.g.: not-so-awesome-project",
       "type": "text"
     }
   ]

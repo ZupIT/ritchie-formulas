@@ -9,6 +9,7 @@
       ],
       "label": "Select type project: ",
       "name": "type",
+      "tutorial": "Choose one option",
       "type": "text"
     },
     {
@@ -20,6 +21,7 @@
       ],
       "label": "Select language project: ",
       "name": "language",
+      "tutorial": "Choose one option",
       "type": "text"
     },
     {
@@ -34,21 +36,25 @@
       ],
       "label": "Select Spring Boot version: ",
       "name": "boot_version",
+      "tutorial": "Choose one option",
       "type": "text"
     },
     {
-      "label": "Type your groupId[ex.: br.com.zup]: ",
+      "label": "Type your groupId: ",
       "name": "group_id",
+      "tutorial": "Project group ID i.e., br.com.zup",
       "type": "text"
     },
     {
-      "label": "Type your artifactId[ex.: demo]: ",
+      "label": "Type your artifactId: ",
       "name": "artifact_id",
+      "tutorial": "The name of your jar file without the version i.e., demo",
       "type": "text"
     },
     {
-      "label": "Type the project`s description [ex.: project demo]: ",
+      "label": "Type the project`s description: ",
       "name": "description",
+      "tutorial": "A description for your project i.e., project demo",
       "type": "text"
     },
     {
@@ -59,6 +65,7 @@
       ],
       "label": "Pick your packaging type: ",
       "name": "packaging",
+      "tutorial": "Choose one option",
       "type": "text"
     },
     {
@@ -70,11 +77,13 @@
       ],
       "label": "Pick your java version: ",
       "name": "java_version",
+      "tutorial": "Choose a java version",
       "type": "text"
     },
     {
-      "label": "Enter the dependencies ids [ex.: web,postgresql]. For list dependencies: 'rit scaffold show spring-starter-dependencies' : ",
+      "label": "Enter the dependencies ids: ",
       "name": "dependencies",
+      "tutorial": "type witch dependencies you want preload i.e., web,postgresql. For list dependencies: 'rit scaffold show spring-starter-dependencies' ",
       "type": "text"
     }
   ]

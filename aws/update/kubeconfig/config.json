@@ -38,6 +38,7 @@
       ],
       "label": "Pick the region: ",
       "name": "region",
+      "tutorial": "Choose one option",
       "type": "text"
     },
     {
@@ -48,6 +49,7 @@
       },
       "label": "Cluster Name: ",
       "name": "cluster_name",
+      "tutorial": "Your EKS cluster name",
       "type": "text"
     }
   ]

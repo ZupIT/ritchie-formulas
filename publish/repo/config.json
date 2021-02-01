@@ -8,6 +8,7 @@
       ],
       "label": "Provider : ",
       "name": "provider",
+      "tutorial": "Choose one option",
       "type": "text"
     },
     {
@@ -18,6 +19,7 @@
       },
       "label": "Project Name : ",
       "name": "project_name",
+      "tutorial": "Type your project name",
       "type": "text"
     },
     {
@@ -28,17 +30,20 @@
       ],
       "label": "Will it be a private repository? ",
       "name": "privacy",
+      "tutorial": "Choose one option",
       "type": "text"
     },
     {
-      "label": "Workspace to publish path: (ex: /home/user/dennis/ritchie-formulas)",
+      "label": "Workspace to publish path:",
       "name": "workspace_path",
+      "tutorial": "The path of your workspace i.e., /home/user/dennis/ritchie-formulas",
       "type": "text"
     },
     {
       "default": "v1.0.0",
       "label": "Version: (default: v1.0.0)",
       "name": "version",
+      "tutorial": "The version of your project i.e., v1.0.0",
       "type": "text"
     }
   ]

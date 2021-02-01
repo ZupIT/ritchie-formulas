@@ -1,25 +1,36 @@
-# Create bucket aws
+<!-- markdownlint-disable-file MD013 -->
+<!-- markdownlint-disable-file MD033 -->
 
-## command
+# Description
 
-Create bucket
+This AWS Create Bucket command allows the user to create a bucket in AWS S3
+If the repository already exists, the user don't receive error.
+
+The user has to inform 2 different kinds of inputs:
+
+- the Region Bucket name
+
+- the Bucket name
+
+## Command
 
 ```bash
 rit aws create bucket
 ```
 
-## description
+## Requirements
 
-For use this formula run before:
+- Golang
+- Set AWS credentials (\$ rit set credential) with accesskeyid, secretaccesskey
 
 ```bash
 rit set credential
 ```
 
-for add AWS credential.
+## Demonstration
 
-Formula receive field in env REGION and has received
-(CREDENTIAL_AWS_ACCESSKEYID, CREDENTIAL_AWS_SECRETACCESSKEY) in envs
-(ACCESS_KEY, SECRET_ACCESS_KEY).
+- Command execution
 
-Formula receive bucket field in env BUCKET.
+![Alt Text](https://media.giphy.com/media/5OI7ywkzgCkbS14LB5/source.gif)
+
+- Created bucket after executing command
