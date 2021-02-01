@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD013-->
+
 # Ritchie Formula Repo
 
 ![Rit banner](/docs/img/ritchie-banner.png)
