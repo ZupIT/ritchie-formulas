@@ -19,4 +19,4 @@ rit aws add terraform-vpc
 
 ## Demonstration
 
-![Demo](https://media.giphy.com/media/BdONqMwV5rbcvhKOSr/giphy.gif)
+![Demo](https://github.com/maurineimirandazup/ritchie-formulas/blob/feature-awsvpc-readme/docs/img/terraform-vpc.gif)
