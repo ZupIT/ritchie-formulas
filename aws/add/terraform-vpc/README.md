@@ -1,3 +1,4 @@
+<!-- markdownlint-disable-file MD013 -->
 # Description
 
 This formula receives 5 inputs (region, vpc name, vpc cidr, vpc azs, customer name)
