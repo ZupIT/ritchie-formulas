@@ -18,4 +18,4 @@ rit kafka consume message
 
 - Command execution
 
-![Alt Text](https://github.com/ZupIT/ritchie-formulas/raw/master/kafka/consume/message/doc/kafka-consume-message.gif)
+![Alt Text](https://github.com/ZupIT/ritchie-formulas/raw/master/kafka/consume/message/docs/kafka-consume-message.gif)

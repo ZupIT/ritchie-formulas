@@ -37,4 +37,4 @@ rit istio init
 
 ## Demonstration
 
-![gif](https://github.com/ZupIT/ritchie-formulas/raw/master/istio/init/doc/istio-init.gif)
+![gif](https://github.com/ZupIT/ritchie-formulas/raw/master/istio/init/docs/istio-init.gif)
