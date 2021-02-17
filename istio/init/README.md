@@ -11,8 +11,7 @@ In order to run Istio, your k8s cluster needs to support some extra features
 that minikube delivers in a easy and configurable way.
 
 `minikube` starts a cluster with `8GB` RAM and `4` CPUs and **3rd party service
-account token** configured (see [Istio Security Best Practices](
-    https://istio.io/latest/docs/ops/best-practices/security/))
+account token** configured (see [Istio Security Best Practices](https://istio.io/latest/docs/ops/best-practices/security/))
 
 #### LoadBalancer IP
 
@@ -22,7 +21,7 @@ allocate. You can use the last 8 bits at will.
 
 ##### Example
 
-If your `minikube ip`  is `192.168.64.1` you can set the IP range to
+If your `minikube ip` is `192.168.64.1` you can set the IP range to
 `192.168.64.100` to `192.168.64.119` so you'll be able to create
 20 LoadBalancer services in your cluster
 
@@ -35,3 +34,7 @@ If your `minikube ip`  is `192.168.64.1` you can set the IP range to
 ```bash
 rit istio init
 ```
+
+## Demonstration
+
+![gif](https://github.com/ZupIT/ritchie-formulas/raw/master/istio/init/doc/istio-init.gif)
