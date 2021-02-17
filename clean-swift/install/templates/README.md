@@ -12,7 +12,6 @@ rit clean-swift install templates
 
 - Xcode
 
-
 ## Demonstration
 
 - Command execution

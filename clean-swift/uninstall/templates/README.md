@@ -12,7 +12,6 @@ rit clean-swift uninstall templates
 
 - Xcode
 
-
 ## Demonstration
 
 - Command execution

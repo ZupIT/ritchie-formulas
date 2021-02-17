@@ -3,8 +3,9 @@
 This command allows the user to adds eks module files to an existing terraform project.
 
 The user has to provide 2 inputs:
- - cluster name 
- - domain name
+
+- cluster name
+- domain name
 
 ## Command
 
