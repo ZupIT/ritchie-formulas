@@ -18,4 +18,4 @@ rit kafka produce message
 
 - Command execution
 
-![Alt Text](docs/kafka-produce-message.gif)
+![Alt Text](https://github.com/ZupIT/ritchie-formulas/raw/master/kafka/consume/message/docs/kafka-produce-message.gif)
