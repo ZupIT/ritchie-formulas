@@ -33,6 +33,12 @@ Then, you can use the `rit add repo` as below:
  Set the priority: X (the lower the number, the higher the priority)
 ```
 
+Or by using this command:
+
+```bash
+rit add repo --provider=Github --name={{some_repo_name}} --repoUrl={{this_repo_url}} --priority=1
+```
+
 Finally, you can check if the repository has been imported correctly by executing the `rit list repo` command.
 
 ## Contribute to the repository
