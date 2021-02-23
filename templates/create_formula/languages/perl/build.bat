@@ -17,7 +17,7 @@ SET SH_FILE=%BIN_FOLDER%\run.sh
 :BAT_WINDOWS
     echo @ECHO OFF > %BAT_FILE%
     echo SET mypath=%%~dp0 >> %BAT_FILE%
-    echo start /B /D "%%mypath%%" /WAIT perl -I "%%mypath%%" main.pl >> %BAT_FILE%
+    echo start /B /D "%%mypath%%" /WAIT perl -I ./ main.pl >> %BAT_FILE%
 
 :SH_LINUX
     echo perl -I "$(dirname "$0")" "$(dirname "$0")"/main.pl > %SH_FILE%

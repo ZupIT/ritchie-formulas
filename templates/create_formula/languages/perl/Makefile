@@ -13,7 +13,7 @@ perl-build:
 
 	echo '@ECHO OFF' > $(BIN_FOLDER)/$(BINARY_NAME_WINDOWS)
 	echo 'SET mypath=%%~dp0' >> $(BIN_FOLDER)/$(BINARY_NAME_WINDOWS)
-	echo 'start /B /D "%%mypath%%" /WAIT perl -I "%%mypath%%" main.pl' >> $(BIN_FOLDER)/$(BINARY_NAME_WINDOWS)
+	echo 'start /B /D "%%mypath%%" /WAIT perl -I ./ main.pl' >> $(BIN_FOLDER)/$(BINARY_NAME_WINDOWS)
 	chmod +x $(BIN_FOLDER)/$(BINARY_NAME_UNIX)
 
 docker:
