@@ -18,6 +18,10 @@ import (
 	"k8s.io/client-go/tools/clientcmd"
 	"k8s.io/client-go/tools/portforward"
 	"k8s.io/client-go/transport/spdy"
+
+    "k8s.io/apimachinery/pkg/api/errors"
+    "k8s.io/client-go/util/homedir"
+    "k8s.io/client-go/plugin/pkg/client/auth"
 )
 
 func LoadClientSet(configBase64 string) (*kubernetes.Clientset, *rest.Config) {
