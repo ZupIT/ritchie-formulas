@@ -9,4 +9,3 @@ my $ritInputList = $ENV{'RIT_INPUT_LIST'};
 my $ritInputPass = $ENV{'RIT_INPUT_PASSWORD'};
 
 Formula::run($ritInputText, $ritInputBoolean, $ritInputList, $ritInputPass);
-

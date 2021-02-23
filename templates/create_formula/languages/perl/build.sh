@@ -20,7 +20,7 @@ BIN_FOLDER=bin
 	{
   echo "@ECHO OFF"
   echo "SET mypath=%%~dp0"
-  echo "start /B /D %%mypath%% /WAIT perl -I %%mypath%% main.pl" 
+  echo "start /B /D %%mypath%% /WAIT perl -I %%mypath%% main.pl"
   } >> $BIN_FOLDER/$BINARY_NAME_WINDOWS
 
 #Docker Files:

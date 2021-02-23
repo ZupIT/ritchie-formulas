@@ -18,4 +18,3 @@ perl-build:
 
 docker:
 	cp Dockerfile set_umask.sh $(BIN_FOLDER)
-	
