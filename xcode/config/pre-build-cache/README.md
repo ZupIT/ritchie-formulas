@@ -15,3 +15,7 @@ rit xcode config pre-build-cache
 
 - [Node](https://nodejs.org/en/)
 - [Npm](https://www.npmjs.com/get-npm)
+
+## Demonstration
+
+![gif](https://github.com/ZupIT/ritchie-formulas/raw/master/xcode/config/pre-build-cache/docs/xcode-pre-build-cache.gif)
