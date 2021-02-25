@@ -1,17 +1,16 @@
 # Description
 
-Template and demo formula in terraform that creates a bucket at aws.
+Formula description
 
 ## Command
 
 ```bash
-rit create formula
+#rit-replace{formulaCmd}
 ```
-
-Select `terraform` language
 
 ## Requirements
 
 - AWS Account.
-
 - Configured AWS credentials.
+
+## Demonstration
