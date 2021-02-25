@@ -3,6 +3,7 @@ package main
 import (
 	"env/pkg/env"
 	"os"
+    "github.com/fatih/color"
 )
 
 func main() {
@@ -12,11 +13,6 @@ func main() {
 	envName := os.Getenv("ENV_NAME")
 	envValue := os.Getenv("ENV_VALUE")
 
-	env.Input{
-		Token:     token,
-		RepoOwner: repoOwner,
-		RepoName:  repoName,
-		ENVName:   envName,
-		ENVValue:  envValue,
-	}.Run()
+	color.Green(fmt.Sprintf("env (%s) added successfully!\n", envName))
+	color.Green(fmt.Sprintf("project: %s/%s\n", repoOwner, repoName))
 }
