@@ -19,11 +19,4 @@ func main() {
     	ENVName: envName,
     	ENVValue: envValue,
     }.Run()
-		Token:     token,
-		RepoOwner: repoOwner,
-		RepoName:  repoName,
-		ENVName:   envName,
-		ENVValue:  envValue,
-	}.Run()
 }
-
