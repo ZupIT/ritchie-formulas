@@ -7,7 +7,7 @@ BIN_FOLDER=bin
 checkCommand () {
   if ! command -v "$1" >/dev/null; then
     echo "$1 required" >&2;
-		exit 1;    		
+		exit 1;
 	fi
 }
 
