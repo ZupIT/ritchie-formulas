@@ -6,7 +6,7 @@ SET BIN_FOLDER=bin
 SET SH_FILE=%BIN_FOLDER%\run.sh
 SET BAT_FILE=%BIN_FOLDER%\run.bat
 :build
-    call :checkCommand rust
+    call :checkCommand cargo
 
     mkdir %BIN_FOLDER%
     xcopy /E /I src %BIN_FOLDER%
