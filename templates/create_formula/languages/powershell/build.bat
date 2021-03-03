@@ -8,7 +8,7 @@ SET ENTRY_POINT=main.ps1
 
 :build
   call :checkCommand Powershell
-  
+
   mkdir %BIN_FOLDER%
   xcopy /E /I src %BIN_FOLDER%
   call :BAT_WINDOWS

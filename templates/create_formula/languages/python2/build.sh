@@ -8,7 +8,7 @@ BIN_FOLDER=bin
   mkdir -p $BIN_FOLDER
   cp -r src/* $BIN_FOLDER
   pip2 install -r $BIN_FOLDER/requirements.txt --user --disable-pip-version-check
-  
+
 #sh_unix:
   {
   echo "#!/bin/bash"
