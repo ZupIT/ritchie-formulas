@@ -8,7 +8,6 @@ SET SH_FILE=%BIN_FOLDER%\run.sh
 :build
     call checkCommand composer
     call checkCommand php
-    
     mkdir %BIN_FOLDER%
     xcopy /E /I src %BIN_FOLDER%
     cd %BIN_FOLDER%
