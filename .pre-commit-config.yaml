@@ -15,8 +15,8 @@ repos:
       - id: trailing-whitespace
       - id: detect-private-key
 
-      - id: flake8
-      - id: check-ast
+      # - id: flake8
+      # - id: check-ast
       - id: end-of-file-fixer
 
   - repo: git://github.com/igorshubovych/markdownlint-cli
