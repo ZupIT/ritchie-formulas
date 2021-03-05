@@ -4,7 +4,16 @@ BINARY_NAME=run.sh
 BINARY_NAME_WINDOWS=run.bat
 BIN_FOLDER=bin
 
+checkCommand () {
+  if ! command -v "$1" >/dev/null; then
+    echo "$1 required" >&2;
+		exit 1;
+	fi
+}
+
 #python-build:
+  checkCommand python2
+  checkCommand pip2
   mkdir -p $BIN_FOLDER
   cp -r src/* $BIN_FOLDER
   pip2 install -r $BIN_FOLDER/requirements.txt --user --disable-pip-version-check
