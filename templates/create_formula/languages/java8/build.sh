@@ -1,4 +1,5 @@
 #!/bin/sh
+# shellcheck disable=SC2086
 
 BIN_FOLDER=bin
 SH=$BIN_FOLDER/run.sh
@@ -8,7 +9,7 @@ TARGET=target
 
 # Check Dependencies
 	checkCommand () {
-		if ! $1 $2 | grep $3 >/dev/null; then
+		if ! $1 $2 | grep "$3" >/dev/null; then
             echo "$1 $3x required" >&2;
 			exit 1
         fi

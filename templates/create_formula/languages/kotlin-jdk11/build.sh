@@ -1,4 +1,5 @@
 #!/bin/sh
+# shellcheck disable=SC2086
 
 BIN_FOLDER=bin
 SH=$BIN_FOLDER/run.sh
