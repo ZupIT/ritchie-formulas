@@ -4,7 +4,6 @@
 BIN_FOLDER=bin
 SH=$BIN_FOLDER/run.sh
 BAT=$BIN_FOLDER/run.bat
-
 JAR_FILE=Main.jar
 TARGET=target
 
@@ -17,14 +16,14 @@ TARGET=target
 	}
 
 	checkCommand mvn --version " 3."
-	checkCommand java --version " 11."
-# Build
+	checkCommand java --version " 8."
+
 	mvn clean
 
 #java-build:
 	mkdir -p $BIN_FOLDER
 	mvn clean install
-	mv $TARGET/$JAR_FILE $BIN_FOLDER
+	cp $TARGET/$JAR_FILE $BIN_FOLDER
 	rm -Rf $TARGET
 
 #sh-unix:

@@ -6,6 +6,8 @@ SET BIN_NAME=Main.jar
 SET BAT_FILE=%BIN_FOLDER%\run.bat
 SET SH_FILE=%BIN_FOLDER%\run.sh
 :build
+    call :checkCommand mvn --version "maven 3"
+    call :checkCommand java --version "java 8"
     call mvn clean install 1>&2
     if %errorlevel% neq 0 exit /b %errorlevel%
     mkdir %BIN_FOLDER%
@@ -28,6 +30,11 @@ SET SH_FILE=%BIN_FOLDER%\run.sh
 :CP_DOCKER
     copy Dockerfile %BIN_FOLDER%
     copy set_umask.sh %BIN_FOLDER%
+    GOTO DONE
+
+:checkCommand
+    echo Cheking dependencie.
+    (%1 %2 2>&1) | findstr /c:%3 || echo Command: %1 not found, Version: %3 required & exit /b 0
     GOTO DONE
 
 :DONE
