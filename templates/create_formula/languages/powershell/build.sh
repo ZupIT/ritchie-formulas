@@ -4,6 +4,16 @@ BIN_FOLDER=bin
 SH=$BIN_FOLDER/run.sh
 BAT=$BIN_FOLDER/run.bat
 
+# check-dependencies
+	checkCommand () {
+		if ! command -v "$1" >/dev/null; then
+    		echo "$1 required" >&2;
+			exit 1;
+		fi
+	}
+
+	checkCommand pwsh
+
 # bash-build:
 	mkdir -p $BIN_FOLDER
 	cp -r src/* $BIN_FOLDER
