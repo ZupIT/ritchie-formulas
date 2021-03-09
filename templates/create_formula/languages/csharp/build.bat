@@ -8,6 +8,8 @@ SET BIN_WINDOWs=src.exe
 SET BAT_FILE=%BIN_FOLDER%\run.bat
 
 :build
+    call :checkCommand dotnet
+
     mkdir %BIN_FOLDER%
     xcopy /E /I src %BIN_FOLDER%
 	dotnet build %SOURCE_FILE% -o %BIN_FOLDER%/%BIN_FOLDER_WINDOWS% --configuration Release
@@ -24,5 +26,9 @@ SET BAT_FILE=%BIN_FOLDER%\run.bat
     copy Dockerfile %BIN_FOLDER%
     copy set_umask.sh %BIN_FOLDER%
     GOTO DONE
+
+:checkCommand
+    WHERE %1 >nul 2>nul
+    IF %ERRORLEVEL% NEQ 0 ECHO %1 required 1>&2 && exit 1
 
 :DONE
