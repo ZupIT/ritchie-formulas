@@ -1,4 +1,4 @@
 {
-	"short": "iam policies formula",
-	"long": "iam policies formula"
+	"short": "Generate AWS IAM policy documents",
+	"long": "Generate AWS IAM policy documents or SAM policy templates based on the JSON definition used in the AWS Policy Generator"
 }
