@@ -1,6 +1,7 @@
 # Description
 
-Generate AWS IAM policy documents or SAM policy templates based on the JSON definition used in the AWS Policy Generator
+Generate AWS IAM policy documents or SAM policy templates based on the
+JSON definition used in the AWS Policy Generator
 
 ## Command
 
