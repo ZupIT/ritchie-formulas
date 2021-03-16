@@ -1,5 +1,6 @@
 {
   "dockerImageBuilder": "ritclizup/rit-shell-bat-builder",
+  "templateRelease:": "{tag}",
   "inputs": [
     {
       "name": "aws_access_key_id",

@@ -1,5 +1,6 @@
 {
   "dockerImageBuilder": "ritclizup/rit-typescript-builder",
+  "templateRelease:": "{tag}",
   "inputs": [
     {
       "cache": {

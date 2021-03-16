@@ -1,5 +1,6 @@
 {
   "dockerImageBuilder": "ritclizup/rit-python2-builder",
+  "templateRelease:": "{tag}",
   "inputs": [
     {
       "cache": {
