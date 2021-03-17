@@ -1,5 +1,6 @@
 {
   "dockerImageBuilder": "ritclizup/rit-powershell-builder",
+  "template": "powershell",
   "templateRelease:": "{tag}",
   "inputs": [
     {

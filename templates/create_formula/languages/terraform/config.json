@@ -1,5 +1,6 @@
 {
   "dockerImageBuilder": "ritclizup/rit-shell-bat-builder",
+  "template": "terraform",
   "templateRelease:": "{tag}",
   "inputs": [
     {

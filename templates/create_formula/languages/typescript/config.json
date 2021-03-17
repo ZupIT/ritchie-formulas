@@ -1,5 +1,6 @@
 {
   "dockerImageBuilder": "ritclizup/rit-typescript-builder",
+  "template": "typescript",
   "templateRelease:": "{tag}",
   "inputs": [
     {

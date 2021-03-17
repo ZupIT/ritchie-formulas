@@ -1,5 +1,6 @@
 {
   "dockerImageBuilder": "ritclizup/rit-java11-builder",
+  "template": "java11",
   "templateRelease:": "{tag}",
   "inputs": [
     {

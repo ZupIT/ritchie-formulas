@@ -1,5 +1,6 @@
 {
   "dockerImageBuilder": "ritclizup/rit-kotlin-jdk8-builder",
+  "template": "kotlin-jdk8",
   "templateRelease:": "{tag}",
   "inputs": [
     {

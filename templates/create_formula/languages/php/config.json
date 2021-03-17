@@ -1,5 +1,6 @@
 {
   "dockerImageBuilder": "ritclizup/rit-php-builder",
+  "template": "php",
   "templateRelease:": "{tag}",
   "inputs": [
     {

@@ -1,5 +1,6 @@
 {
   "dockerImageBuilder": "ritclizup/rit-python2-builder",
+  "template": "python2",
   "templateRelease:": "{tag}",
   "inputs": [
     {

@@ -1,5 +1,6 @@
 {
   "dockerImageBuilder": "ritclizup/rit-ruby-builder",
+  "template": "ruby",
   "templateRelease:": "{tag}",
   "inputs": [
     {
