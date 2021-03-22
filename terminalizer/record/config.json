@@ -1,0 +1,157 @@
+{
+  "dockerImageBuilder": "ritclizup/rit-shell-bat-builder",
+  "inputs": [
+    {
+      "label": "Do you want to personalize your gif? ",
+      "name": "rit_personalize",
+      "required": true,
+      "type": "text",
+      "items": ["yes", "no"]
+    },
+    {
+      "condition": {
+        "variable": "rit_personalize",
+        "operator": "==",
+        "value": "yes"
+      },
+      "label": "How?",
+      "name": "rit_how",
+      "type": "text",
+      "items": ["wizard", "config file"]
+    },
+    {
+      "condition": {
+        "variable": "rit_how",
+        "operator": "==",
+        "value": "config file"
+      },
+      "label": "Path ro config file: ",
+      "name": "rit_config_path",
+      "type": "path"
+    },
+    {
+      "condition": {
+        "variable": "rit_how",
+        "operator": "==",
+        "value": "wizard"
+      },
+      "cache": {
+        "active": true,
+        "newLabel": "Type new value. ",
+        "qty": 3
+      },
+      "label": "Width: ",
+      "name": "rit_width",
+      "default": "auto",
+      "required": true,
+      "type": "text"
+    },
+    {
+      "condition": {
+        "variable": "rit_how",
+        "operator": "==",
+        "value": "wizard"
+      },
+      "cache": {
+        "active": true,
+        "newLabel": "Type new value. ",
+        "qty": 3
+      },
+      "label": "Height: ",
+      "name": "rit_height",
+      "default": "auto",
+      "required": true,
+      "type": "text"
+    },
+    {
+      "condition": {
+        "variable": "rit_how",
+        "operator": "==",
+        "value": "wizard"
+      },
+      "cache": {
+        "active": true,
+        "newLabel": "Type new value. ",
+        "qty": 3
+      },
+      "label": "Window title: ",
+      "name": "rit_title",
+      "required": true,
+      "type": "text"
+    },
+    {
+      "condition": {
+        "variable": "rit_how",
+        "operator": "==",
+        "value": "wizard"
+      },
+      "cache": {
+        "active": true,
+        "newLabel": "Type new value. ",
+        "qty": 3
+      },
+      "label": "CWD (default: current pwd): ",
+      "name": "rit_cwd",
+      "required": false,
+      "type": "text"
+    },
+    {
+      "condition": {
+        "variable": "rit_how",
+        "operator": "==",
+        "value": "wizard"
+      },
+      "label": "Cursos style: ",
+      "name": "rit_cursor_style",
+      "required": true,
+      "type": "text",
+      "items": ["block", "underline", "bar"],
+      "default": "block"
+    },
+    {
+      "label": "Gif name: ",
+      "name": "rit_gif_name",
+      "required": true,
+      "type": "text"
+    },
+    {
+      "cache": {
+        "active": true,
+        "newLabel": "Type new value. ",
+        "qty": 3
+      },
+      "condition": {
+        "variable": "rit_personalize",
+        "operator": "==",
+        "value": "yes"
+      },
+      "label": "Username (Ex.: ritchie): ",
+      "name": "rit_username",
+      "required": true,
+      "type": "text"
+    },
+    {
+      "cache": {
+        "active": true,
+        "newLabel": "Type new value. ",
+        "qty": 3
+      },
+      "condition": {
+        "variable": "rit_personalize",
+        "operator": "==",
+        "value": "yes"
+      },
+      "label": "Hostname (Ex.: zup): ",
+      "name": "rit_hostname",
+      "required": true,
+      "type": "text"
+    },
+    {
+      "label": "Render gif after record? ",
+      "name": "rit_render",
+      "required": true,
+      "type": "text",
+      "items": ["yes", "no"]
+    }
+  ]
+}
