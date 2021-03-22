@@ -13,4 +13,10 @@ rit aws update kubeconfig
 
 ## Requirements
 
-- AWS
+- AWS CLI
+- AWS Account
+- Kubectl
+
+## Demonstration
+
+![gif](https://github.com/ZupIT/ritchie-formulas/raw/master/aws/update/kubeconfig/doc/aws-update-kubeconfig.gif)

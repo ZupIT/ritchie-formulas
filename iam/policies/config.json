@@ -1,0 +1,25 @@
+{
+  "dockerImageBuilder": "ritclizup/rit-node-builder",
+  "inputs": [
+    {
+      "default": "json",
+      "items": [
+        "json",
+        "yaml"
+      ],
+      "label": "Format: ",
+      "name": "rit_format",
+      "type": "text"
+    },
+    {
+      "default": "console",
+      "items": [
+        "console",
+        "clipboard"
+      ],
+      "label": "Output: ",
+      "name": "rit_output",
+      "type": "text"
+    }
+  ]
+}

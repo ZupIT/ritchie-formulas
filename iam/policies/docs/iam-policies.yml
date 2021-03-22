@@ -1,0 +1,350 @@
+# The configurations that used for the recording, feel free to edit them
+config:
+  # Specify a command to be executed
+  # like `/bin/bash -l`, `ls`, or any other commands
+  # the default is bash for Linux
+  # or powershell.exe for Windows
+  command: bash -l
+
+  # Specify the current working directory path
+  # the default is the current working directory path
+  cwd: /demo
+
+  # Export additional ENV variables
+  env:
+    recording: true
+
+  # Explicitly set the number of columns
+  # or use `auto` to take the current
+  # number of columns of your shell
+  cols: 150
+
+  # Explicitly set the number of rows
+  # or use `auto` to take the current
+  # number of rows of your shell
+  rows: 25
+
+  # Amount of times to repeat GIF
+  # If value is -1, play once
+  # If value is 0, loop indefinitely
+  # If value is a positive number, loop n times
+  repeat: 0
+
+  # Quality
+  # 1 - 100
+  quality: 100
+
+  # Delay between frames in ms
+  # If the value is `auto` use the actual recording delays
+  frameDelay: auto
+
+  # Maximum delay between frames in ms
+  # Ignored if the `frameDelay` isn't set to `auto`
+  # Set to `auto` to prevent limiting the max idle time
+  maxIdleTime: 2000
+
+  # The surrounding frame box
+  # The `type` can be null, window, floating, or solid`
+  # To hide the title use the value null
+  # Don't forget to add a backgroundColor style with a null as type
+  frameBox:
+    type: floating
+    title: Ritchie Cli
+    style:
+      border: 0px black solid
+      # boxShadow: none
+      # margin: 0px
+
+  # Add a watermark image to the rendered gif
+  # You need to specify an absolute path for
+  # the image on your machine or a URL, and you can also
+  # add your own CSS styles
+  watermark:
+    imagePath: null
+    style:
+      position: absolute
+      right: 15px
+      bottom: 15px
+      width: 100px
+      opacity: 0.9
+
+  # Cursor style can be one of
+  # `block`, `underline`, or `bar`
+  cursorStyle: block
+
+  # Font family
+  # You can use any font that is installed on your machine
+  # in CSS-like syntax
+  fontFamily: 'Monaco, Lucida Console, Ubuntu Mono, Monospace'
+
+  # The size of the font
+  fontSize: 14
+
+  # The height of lines
+  lineHeight: 1
+
+  # The spacing between letters
+  letterSpacing: 0
+
+  # Theme
+  theme:
+    background: 'transparent'
+    foreground: '#afafaf'
+    cursor: '#c7c7c7'
+    black: '#232628'
+    red: '#fc4384'
+    green: '#b3e33b'
+    yellow: '#ffa727'
+    blue: '#75dff2'
+    magenta: '#ae89fe'
+    cyan: '#708387'
+    white: '#d5d5d0'
+    brightBlack: '#626566'
+    brightRed: '#ff7fac'
+    brightGreen: '#c8ed71'
+    brightYellow: '#ebdf86'
+    brightBlue: '#75dff2'
+    brightMagenta: '#ae89fe'
+    brightCyan: '#b1c6ca'
+    brightWhite: '#f9f9f4'
+
+# Records, feel free to edit them
+records:
+  - delay: 849
+    content: "\e]0;ritchie@zup:/demo\e\\\e]7;file://zup-2583/demo\e\\\e]0;ritchie@zup: /demo\a\e[01;32mritchie@zup\e[00m:\e[01;34m/demo\e[00m$ "
+  - delay: 1030
+    content: r
+  - delay: 102
+    content: i
+  - delay: 126
+    content: t
+  - delay: 149
+    content: ' '
+  - delay: 650
+    content: i
+  - delay: 91
+    content: a
+  - delay: 127
+    content: m
+  - delay: 572
+    content: ' '
+  - delay: 275
+    content: p
+  - delay: 191
+    content: o
+  - delay: 699
+    content: l
+  - delay: 220
+    content: i
+  - delay: 122
+    content: c
+  - delay: 119
+    content: i
+  - delay: 107
+    content: e
+  - delay: 189
+    content: s
+  - delay: 836
+    content: "\r\n"
+  - delay: 887
+    content: ⣷ Building formula...
+  - delay: 151
+    content: "\e[2K\r\n\e[1A⣯ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⣟ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⡿ Building formula..."
+  - delay: 151
+    content: "\e[2K\r\n\e[1A⢿ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⣻ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⣽ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⣾ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⣷ Building formula..."
+  - delay: 152
+    content: "\e[2K\r\n\e[1A⣯ Building formula..."
+  - delay: 149
+    content: "\e[2K\r\n\e[1A⣟ Building formula..."
+  - delay: 151
+    content: "\e[2K\r\n\e[1A⡿ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⢿ Building formula..."
+  - delay: 151
+    content: "\e[2K\r\n\e[1A⣻ Building formula..."
+  - delay: 149
+    content: "\e[2K\r\n\e[1A⣽ Building formula..."
+  - delay: 151
+    content: "\e[2K\r\n\e[1A⣾ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⣷ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⣯ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⣟ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⡿ Building formula..."
+  - delay: 151
+    content: "\e[2K\r\n\e[1A⢿ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⣻ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⣽ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⣾ Building formula..."
+  - delay: 151
+    content: "\e[2K\r\n\e[1A⣷ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⣯ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⣟ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⡿ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⢿ Building formula..."
+  - delay: 151
+    content: "\e[2K\r\n\e[1A⣻ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⣽ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⣾ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⣷ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⣯ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⣟ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⡿ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⢿ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⣻ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⣽ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⣾ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⣷ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⣯ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⣟ Building formula..."
+  - delay: 151
+    content: "\e[2K\r\n\e[1A⡿ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⢿ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⣻ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⣽ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⣾ Building formula..."
+  - delay: 151
+    content: "\e[2K\r\n\e[1A⣷ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⣯ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⣟ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⡿ Building formula..."
+  - delay: 151
+    content: "\e[2K\r\n\e[1A⢿ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⣻ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⣽ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⣾ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⣷ Building formula..."
+  - delay: 151
+    content: "\e[2K\r\n\e[1A⣯ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⣟ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⡿ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⢿ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⣻ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⣽ Building formula..."
+  - delay: 150
+    content: "\e[2K\r\n\e[1A⣾ Building formula..."
+  - delay: 9
+    content: "\e[2K\r\n\e[1A\e[1;32mFormula was successfully built!\e[0m\r\n"
+  - delay: 271
+    content: "\e[0G\e[2K\e[1;92m? \e[0m\e[1;99mFormat: \e[0m  \e[36m[Use arrows to move, type to filter]\e[0m\r\n\e[1;36m> json\e[0m\r\n\e[39m  yaml\e[0m\r\n\e[?25l"
+  - delay: 1976
+    content: "\e[?25h\e[0G\e[2K\e[1F\e[2K\e[1F\e[2K\e[1F\e[2K\e[1;92m? \e[0m\e[1;99mFormat: \e[0m\e[36m json\e[0m\r\n\e[0G\e[2K\e[1;92m? \e[0m\e[1;99mOutput: \e[0m  \e[36m[Use arrows to move, type to filter]\e[0m\r\n\e[1;36m> console\e[0m\r\n\e[39m  clipboard\e[0m\r\n\e[?25l"
+  - delay: 1999
+    content: "\e[?25h\e[0G\e[2K\e[1F\e[2K\e[1F\e[2K\e[1F\e[2K\e[1;92m? \e[0m\e[1;99mOutput: \e[0m\e[36m console\e[0m\r\n"
+  - delay: 1648
+    content: "\e[32m?\e[39m \e[1mBuild statement for\e[22m\e[0m \e[0m\e[2m(Use arrow keys or type to search)\e[22m\r\n\e[36m❯ API Gateway\e[39m \r\n  Accounts \r\n  Activate \r\n  Alexa for Business \r\n  Amplify \r\n  Amplify Admin \r\n  App Mesh \r\n\e[2m(Move up and down to reveal more choices)\e[22m\e[8A\e[41D\e[56C"
+  - delay: 1395
+    content: "\e[8B\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mBuild statement for\e[22m\e[0m \e[0m\r\n  API Gateway \r\n\e[36m❯ Accounts\e[39m \r\n  Activate \r\n  Alexa for Business \r\n  Amplify \r\n  Amplify Admin \r\n  App Mesh \r\n\e[2m(Move up and down to reveal more choices)\e[22m\e[8A\e[41D\e[22C"
+  - delay: 504
+    content: "\e[8B\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mBuild statement for\e[22m\e[0m \e[0m\r\n  API Gateway \r\n  Accounts \r\n\e[36m❯ Activate\e[39m \r\n  Alexa for Business \r\n  Amplify \r\n  Amplify Admin \r\n  App Mesh \r\n\e[2m(Move up and down to reveal more choices)\e[22m\e[8A\e[41D\e[22C"
+  - delay: 245
+    content: "\e[8B\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mBuild statement for\e[22m\e[0m \e[0m\r\n  Accounts \r\n  Activate \r\n\e[36m❯ Alexa for Business\e[39m \r\n  Amplify \r\n  Amplify Admin \r\n  App Mesh \r\n  App Mesh Preview \r\n\e[2m(Move up and down to reveal more choices)\e[22m\e[8A\e[41D\e[22C"
+  - delay: 770
+    content: "\e[8B\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mBuild statement for\e[22m\e[0m \e[0m\e[36mAlexa for Business\e[39m\e[40D\e[40C\r\n"
+  - delay: 534
+    content: "\e[?25l\e[32m?\e[39m \e[1mAdd action(s)\e[22m\e[0m \e[0m(Press \e[36m\e[1m<space>\e[22m\e[39m to select, \e[36m\e[1m<a>\e[22m\e[39m to toggle all, \e[36m\e[1m<i>\e[22m\e[39m to invert selection)\r\n\e[36m❯◯ ApproveSkill\e[39m\r\n ◯ AssociateContactWithAddressBook\r\n ◯ AssociateDeviceWithRoom\r\n ◯ AssociateSkillGroupWithRoom\r\n ◯ AssociateSkillWithSkillGroup\r\n ◯ AssociateSkillWithUsers\r\n ◯ CompleteRegistration\r\n\e[2m(Move up and down to reveal more choices)\e[22m\e[41D\e[41C"
+  - delay: 687
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mAdd action(s)\e[22m\e[0m \e[0m\r\n\e[36m❯\e[32m◉\e[39m\e[36m ApproveSkill\e[39m\r\n ◯ AssociateContactWithAddressBook\r\n ◯ AssociateDeviceWithRoom\r\n ◯ AssociateSkillGroupWithRoom\r\n ◯ AssociateSkillWithSkillGroup\r\n ◯ AssociateSkillWithUsers\r\n ◯ CompleteRegistration\r\n\e[2m(Move up and down to reveal more choices)\e[22m\e[41D\e[41C"
+  - delay: 378
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mAdd action(s)\e[22m\e[0m \e[0m\r\n \e[32m◉\e[39m ApproveSkill\r\n\e[36m❯◯ AssociateContactWithAddressBook\e[39m\r\n ◯ AssociateDeviceWithRoom\r\n ◯ AssociateSkillGroupWithRoom\r\n ◯ AssociateSkillWithSkillGroup\r\n ◯ AssociateSkillWithUsers\r\n ◯ CompleteRegistration\r\n\e[2m(Move up and down to reveal more choices)\e[22m\e[41D\e[41C"
+  - delay: 383
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mAdd action(s)\e[22m\e[0m \e[0m\r\n \e[32m◉\e[39m ApproveSkill\r\n\e[36m❯\e[32m◉\e[39m\e[36m AssociateContactWithAddressBook\e[39m\r\n ◯ AssociateDeviceWithRoom\r\n ◯ AssociateSkillGroupWithRoom\r\n ◯ AssociateSkillWithSkillGroup\r\n ◯ AssociateSkillWithUsers\r\n ◯ CompleteRegistration\r\n\e[2m(Move up and down to reveal more choices)\e[22m\e[41D\e[41C"
+  - delay: 252
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mAdd action(s)\e[22m\e[0m \e[0m\r\n \e[32m◉\e[39m ApproveSkill\r\n \e[32m◉\e[39m AssociateContactWithAddressBook\r\n\e[36m❯◯ AssociateDeviceWithRoom\e[39m\r\n ◯ AssociateSkillGroupWithRoom\r\n ◯ AssociateSkillWithSkillGroup\r\n ◯ AssociateSkillWithUsers\r\n ◯ CompleteRegistration\r\n\e[2m(Move up and down to reveal more choices)\e[22m\e[41D\e[41C"
+  - delay: 211
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mAdd action(s)\e[22m\e[0m \e[0m\r\n \e[32m◉\e[39m ApproveSkill\r\n \e[32m◉\e[39m AssociateContactWithAddressBook\r\n ◯ AssociateDeviceWithRoom\r\n\e[36m❯◯ AssociateSkillGroupWithRoom\e[39m\r\n ◯ AssociateSkillWithSkillGroup\r\n ◯ AssociateSkillWithUsers\r\n ◯ CompleteRegistration\r\n\e[2m(Move up and down to reveal more choices)\e[22m\e[41D\e[41C"
+  - delay: 408
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mAdd action(s)\e[22m\e[0m \e[0m\r\n \e[32m◉\e[39m ApproveSkill\r\n \e[32m◉\e[39m AssociateContactWithAddressBook\r\n ◯ AssociateDeviceWithRoom\r\n\e[36m❯\e[32m◉\e[39m\e[36m AssociateSkillGroupWithRoom\e[39m\r\n ◯ AssociateSkillWithSkillGroup\r\n ◯ AssociateSkillWithUsers\r\n ◯ CompleteRegistration\r\n\e[2m(Move up and down to reveal more choices)\e[22m\e[41D\e[41C"
+  - delay: 1421
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mAdd action(s)\e[22m\e[0m \e[0m\e[36mApproveSkill, AssociateContactWithAddressBook, AssociateSkillGroupWithRoom\e[39m\e[90D\e[90C\r\n\e[?25h"
+  - delay: 7
+    content: "\e[32m?\e[39m \e[1mSelect effect\e[22m\e[0m \e[0m\e[2m(Use arrow keys or type to search)\e[22m\r\n\e[36m❯ Allow\e[39m \r\n  Deny \e[2A\e[7D\e[50C"
+  - delay: 1784
+    content: "\e[2B\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mSelect effect\e[22m\e[0m \e[0m\e[36mAllow\e[39m\e[21D\e[21C\r\n"
+  - delay: 7
+    content: "\e[32m?\e[39m \e[1mInput ARN\e[22m\e[0m \e[0m\e[2m() \e[22m\e[15D\e[15C"
+  - delay: 1454
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mInput ARN\e[22m\e[0m \e[0m\e[2m() \e[22m1\e[16D\e[16C"
+  - delay: 137
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mInput ARN\e[22m\e[0m \e[0m\e[2m() \e[22m12\e[17D\e[17C"
+  - delay: 199
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mInput ARN\e[22m\e[0m \e[0m\e[2m() \e[22m123\e[18D\e[18C"
+  - delay: 650
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mInput ARN\e[22m\e[0m \e[0m\e[36m123\e[39m\e[15D\e[15C\r\n"
+  - delay: 5
+    content: "\e[32m?\e[39m \e[1mInvalid ARN. Add anyway?\e[22m\e[0m \e[0m\e[2m(Y/n) \e[22m\e[33D\e[33C"
+  - delay: 1133
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mInvalid ARN. Add anyway?\e[22m\e[0m \e[0m\e[2m(Y/n) \e[22my\e[34D\e[34C"
+  - delay: 460
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mInvalid ARN. Add anyway?\e[22m\e[0m \e[0m\e[36mYes\e[39m\e[30D\e[30C\r\n\e[32m?\e[39m \e[1mAdd more resources?\e[22m\e[0m \e[0m\e[2m(y/N) \e[22m\e[28D\e[28C"
+  - delay: 808
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mAdd more resources?\e[22m\e[0m \e[0m\e[2m(y/N) \e[22mn\e[29D\e[29C"
+  - delay: 371
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mAdd more resources?\e[22m\e[0m \e[0m\e[36mNo\e[39m\e[24D\e[24C\r\n"
+  - delay: 5
+    content: "\e[32m?\e[39m \e[1mAdd conditions?\e[22m\e[0m \e[0m\e[2m(y/N) \e[22m\e[24D\e[24C"
+  - delay: 771
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mAdd conditions?\e[22m\e[0m \e[0m\e[2m(y/N) \e[22mn\e[25D\e[25C"
+  - delay: 387
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mAdd conditions?\e[22m\e[0m \e[0m\e[36mNo\e[39m\e[20D\e[20C\r\nGenerated policy:\r\n*****************\r\n{\r\n  \"Version\": \"2012-10-17\",\r\n  \"Statement\": [\r\n    {\r\n      \"Sid\": \"Statement1\",\r\n      \"Effect\": \"Allow\",\r\n      \"Action\": [\r\n        \"a4b:ApproveSkill\",\r\n        \"a4b:AssociateContactWithAddressBook\",\r\n        \"a4b:AssociateSkillGroupWithRoom\"\r\n      ],\r\n      \"Resource\": [\r\n        \"123\"\r\n      ]\r\n    }\r\n  ]\r\n}\r\n"
+  - delay: 6
+    content: "\e[32m?\e[39m \e[1mPlease select\e[22m\e[0m \e[0m\e[2m(Use arrow keys or type to search)\e[22m\r\n\e[36m❯ Add statement\e[39m \r\n  done \e[2A\e[7D\e[50C"
+  - delay: 1210
+    content: "\e[2B\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mPlease select\e[22m\e[0m \e[0m\r\n  Add statement \r\n\e[36m❯ done\e[39m \e[2A\e[7D\e[16C"
+  - delay: 811
+    content: "\e[2B\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mPlease select\e[22m\e[0m \e[0m\e[36mdone\e[39m\e[20D\e[20C\r\n\e[?25h"
+  - delay: 148
+    content: "\e]0;ritchie@zup:/demo\e\\\e]7;file://zup-2583/demo\e\\\e]0;ritchie@zup: /demo\a\e[01;32mritchie@zup\e[00m:\e[01;34m/demo\e[00m$ "
+  - delay: 1558
+    content: "logout\r\n"

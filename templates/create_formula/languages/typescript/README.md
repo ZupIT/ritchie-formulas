@@ -1,4 +1,6 @@
-# Ritchie Formula
+# Description
+
+Formula description
 
 ## Command
 
@@ -6,6 +8,6 @@
 #rit-replace{formulaCmd}
 ```
 
-## Description
+## Requirements
 
-Formula description
+## Demonstration

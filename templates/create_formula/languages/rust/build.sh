@@ -5,7 +5,15 @@ BIN_FOLDER=bin
 UNIX_SH=run.sh
 WINDOWS_BAT=run.bat
 
+checkCommand () {
+  if ! command -v "$1" >/dev/null; then
+    echo "$1 required" >&2;
+		exit 1;
+	fi
+}
+
 # rust-build:
+	checkCommand rust
 	mkdir -p $BIN_FOLDER
 	cp -r src/* $BIN_FOLDER
 	cargo build --manifest-path $BIN_FOLDER/Cargo.toml --release

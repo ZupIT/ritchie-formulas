@@ -12,3 +12,9 @@ rit circleci add env
 ## Requirements
 
 - Golang
+- Circle CI Project
+- Circle CI Account
+
+## Demonstration
+
+![gif](https://github.com/ZupIT/ritchie-formulas/raw/master/circleci/add/env/doc/circleci-add-env.gif)
