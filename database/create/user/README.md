@@ -8,4 +8,4 @@ rit database create user
 
 ## Description
 
-Formula description
+Use this formula to create database users on MySQL, Postgres and MSSQL
