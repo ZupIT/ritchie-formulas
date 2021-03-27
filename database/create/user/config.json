@@ -1,0 +1,60 @@
+{
+  "dockerImageBuilder": "ritclizup/rit-go-builder",
+  "inputs": [
+    {
+      "label": "Server login: ",
+      "name": "rit_input_login",
+      "required": true,
+      "tutorial": "Your prefer name",
+      "type": "text"
+    },
+    {
+      "label": "Server credential: ",
+      "name": "rit_input_credential",
+      "required": true,
+      "tutorial": "Type a secret",
+      "type": "password"
+    },
+    {
+      "default": "mysql",
+      "items": [
+        "mysql",
+        "pgsql",
+        "mssql"
+      ],
+      "label": "Choose a database type:",
+      "name": "rit_input_type",
+      "required": false,
+      "tutorial": "Choose one option",
+      "type": "text"
+    },
+    {
+      "label": "Hostname: ",
+      "name": "rit_input_host",
+      "required": true,
+      "tutorial": "Your prefer name",
+      "type": "text"
+    },
+    {
+      "label": "Port: ",
+      "name": "rit_input_port",
+      "required": true,
+      "tutorial": "Your prefer name",
+      "type": "text"
+    },
+    {
+      "label": "Username: ",
+      "name": "rit_input_text",
+      "required": true,
+      "tutorial": "Your prefer name",
+      "type": "text"
+    },
+    {
+      "label": "Set a password: ",
+      "name": "rit_input_password",
+      "required": true,
+      "tutorial": "Type a secret",
+      "type": "password"
+    }
+  ]
+}
