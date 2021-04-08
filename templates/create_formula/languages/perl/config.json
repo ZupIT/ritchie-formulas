@@ -1,5 +1,7 @@
 {
   "dockerImageBuilder": "ritclizup/rit-perl-builder",
+  "template": "perl",
+  "templateRelease:": "{tag}",
   "inputs": [
     {
       "cache": {

@@ -1,5 +1,7 @@
 {
   "dockerImageBuilder": "ritclizup/rit-node-builder",
+  "template": "node",
+  "templateRelease:": "{tag}",
   "inputs": [
     {
       "cache": {

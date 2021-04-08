@@ -1,5 +1,7 @@
 {
   "dockerImageBuilder": "ritclizup/rit-go-builder",
+  "template": "go",
+  "templateRelease:": "{tag}",
   "inputs": [
     {
       "cache": {

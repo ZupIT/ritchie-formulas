@@ -1,5 +1,7 @@
 {
   "dockerImageBuilder": "ritclizup/rit-python3-builder",
+  "template": "python3",
+  "templateRelease:": "{tag}",
   "inputs": [
     {
       "cache": {

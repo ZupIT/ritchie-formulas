@@ -1,5 +1,7 @@
 {
   "dockerImageBuilder": "ritclizup/rit-csharp-builder",
+  "template": "csharp",
+  "templateRelease:": "{tag}",
   "inputs": [
     {
       "cache": {

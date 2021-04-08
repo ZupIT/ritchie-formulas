@@ -1,5 +1,7 @@
 {
   "dockerImageBuilder": "ritclizup/rit-rust-builder",
+  "template": "rust",
+  "templateRelease:": "{tag}",
   "inputs": [
     {
       "cache": {
