@@ -1,11 +1,19 @@
-# Ritchie Formula
+# Description
 
-## command
+This formula helps to record a personalized terminalizer gif.
+
+## Command
 
 ```bash
 rit terminalizer record
 ```
 
-## description
+## Requirements
 
-description of formula
+- [Terminalizer installed](https://terminalizer.com/install)
+
+## Demonstration
+
+- Command execution
+
+![Alt Text](https://github.com/ZupIT/ritchie-formulas/raw/master/terminalizer/record/docs/terminalizer-record.gif)
