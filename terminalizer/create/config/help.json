@@ -1,4 +1,4 @@
 {
-	"short": "terminalizer create config formula",
-	"long": "terminalizer create config formula"
+  "short": "This formula helps to create a terminalizer local config.",
+  "long": "This formula helps to create a terminalizer local config."
 }

@@ -1,11 +1,19 @@
-# Ritchie Formula
+# Description
 
-## command
+This formula helps to create a terminalizer local config.
+
+## Command
 
 ```bash
 rit terminalizer create config
 ```
 
-## description
+## Requirements
 
-description of formula
+- [Terminalizer installed](https://terminalizer.com/install)
+
+## Demonstration
+
+- Command execution
+
+![Alt Text](https://github.com/ZupIT/ritchie-formulas/raw/master/terminalizer/create/config/docs/terminalizer-config.gif)
