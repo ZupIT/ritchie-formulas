@@ -7,7 +7,7 @@ runFormula() {
   sed -i -e "s/rows: auto/rows: $RIT_HEIGHT/" config.yml
   sed -i -e "s/title: Terminalizer/title: $RIT_TITLE/" config.yml
 
-  if [ $RIT_CWD ]; then
+  if [ "$RIT_CWD" ]; then
     sed -i -e "s,cwd: null,cwd: $RIT_CWD," config.yml
   fi
 

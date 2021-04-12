@@ -7,9 +7,9 @@
         "newLabel": "Type new value. ",
         "qty": 3
       },
+      "default": "auto",
       "label": "Width: ",
       "name": "rit_width",
-      "default": "auto",
       "required": true,
       "type": "text"
     },
@@ -19,9 +19,9 @@
         "newLabel": "Type new value. ",
         "qty": 3
       },
+      "default": "auto",
       "label": "Height: ",
       "name": "rit_height",
-      "default": "auto",
       "required": true,
       "type": "text"
     },
@@ -48,16 +48,16 @@
       "type": "text"
     },
     {
-      "label": "Cursos style: ",
-      "name": "rit_cursor_style",
-      "required": true,
-      "type": "text",
+      "default": "block",
       "items": [
         "block",
         "underline",
         "bar"
       ],
-      "default": "block"
+      "label": "Cursos style: ",
+      "name": "rit_cursor_style",
+      "required": true,
+      "type": "text"
     }
   ]
 }
