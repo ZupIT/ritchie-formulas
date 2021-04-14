@@ -11,6 +11,8 @@
     ]
   },
   "tags": [
-    "aws", "delete", "sqs-item"
+    "aws",
+    "delete",
+    "sqs-item"
   ]
 }
