@@ -17,4 +17,4 @@ jobs:
           HORUSEC_CLI_REPOSITORY_AUTHORIZATION: ${{ secrets.HORUSEC_CLI_REPOSITORY_AUTHORIZATION }}
         run: |
           curl -fsSL https://horusec.io/bin/install.sh | bash
-          horusec start -p ./ -a "$HORUSEC_CLI_REPOSITORY_AUTHORIZATION" -G "true" -u "https://api-horusec.zup.com.br" -n "ritchie-formulas"
+          horusec start -p ./ -a "$HORUSEC_CLI_REPOSITORY_AUTHORIZATION" -G "true" -u "https://api-horusec.zup.com.br" -n "${GITHUB_REPOSITORY}_${GITHUB_REF##*/}"
