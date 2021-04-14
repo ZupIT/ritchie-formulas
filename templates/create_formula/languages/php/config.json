@@ -1,7 +1,5 @@
 {
   "dockerImageBuilder": "ritclizup/rit-php-builder",
-  "template": "php",
-  "templateRelease:": "{tag}",
   "inputs": [
     {
       "cache": {
@@ -48,5 +46,7 @@
       "tutorial": "Type a secret",
       "type": "password"
     }
-  ]
+  ],
+  "template": "php",
+  "templateRelease:": "{tag}"
 }
