@@ -1,7 +1,5 @@
 {
   "dockerImageBuilder": "ritclizup/rit-shell-bat-builder",
-  "template": "shell-bat",
-  "templateRelease:": "{tag}",
   "inputs": [
     {
       "cache": {
@@ -48,5 +46,7 @@
       "tutorial": "Type a secret",
       "type": "password"
     }
-  ]
+  ],
+  "template": "shell-bat",
+  "templateRelease:": "{tag}"
 }

@@ -1,7 +1,5 @@
 {
   "dockerImageBuilder": "ritclizup/rit-powershell-builder",
-  "template": "powershell",
-  "templateRelease:": "{tag}",
   "inputs": [
     {
       "cache": {
@@ -48,5 +46,7 @@
       "tutorial": "Type a secret",
       "type": "password"
     }
-  ]
+  ],
+  "template": "powershell",
+  "templateRelease:": "{tag}"
 }

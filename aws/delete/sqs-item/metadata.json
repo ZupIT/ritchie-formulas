@@ -6,14 +6,13 @@
   "os": {
     "deps": [],
     "support": [
-      "windows",
       "mac",
       "linux"
     ]
   },
   "tags": [
-    "database",
-    "create",
-    "user"
+    "aws",
+    "delete",
+    "sqs-item"
   ]
 }

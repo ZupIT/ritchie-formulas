@@ -1,7 +1,5 @@
 {
   "dockerImageBuilder": "ritclizup/rit-shell-bat-builder",
-  "template": "terraform",
-  "templateRelease:": "{tag}",
   "inputs": [
     {
       "name": "aws_access_key_id",
@@ -77,5 +75,7 @@
       "tutorial": "Enter the name of the bucket where you want to store your state",
       "type": "text"
     }
-  ]
+  ],
+  "template": "terraform",
+  "templateRelease:": "{tag}"
 }
