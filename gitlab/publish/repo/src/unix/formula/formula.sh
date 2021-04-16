@@ -92,8 +92,10 @@ runFormula() {
 
   echo "---------------------------------------------------------------------------"
   echo "📁 Removing local build"
-  cd ..
-  rm -rf ~/.rit/repos/local
+  (
+    cd ..
+    rm -rf ~/.rit/repos/local
+  )
   if [ $? != 0 ]; then
       echo -e "✘️ Fail removing local build";
       exit 1;
