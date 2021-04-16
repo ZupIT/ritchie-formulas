@@ -42,5 +42,7 @@
       "required": true,
       "type": "password"
     }
-  ]
+  ],
+  "template": "kotlin-jdk8",
+  "templateRelease:": "{tag}"
 }

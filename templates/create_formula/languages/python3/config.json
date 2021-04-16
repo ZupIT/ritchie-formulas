@@ -46,5 +46,7 @@
       "tutorial": "Type a secret",
       "type": "password"
     }
-  ]
+  ],
+  "template": "python3",
+  "templateRelease:": "{tag}"
 }

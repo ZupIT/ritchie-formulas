@@ -1,0 +1,22 @@
+{
+  "dockerImageBuilder": "ritclizup/rit-shell-bat-builder",
+  "inputs": [
+    {
+      "cache": {
+        "active": true,
+        "newLabel": "Type new value. ",
+        "qty": 3
+      },
+      "label": "Queue URL: ",
+      "name": "RIT_QUEUE_URL",
+      "required": true,
+      "type": "text"
+    },
+    {
+      "label": "Receipt Handle",
+      "name": "RIT_RECEIPT_HANDLE",
+      "required": true,
+      "type": "text"
+    }
+  ]
+}

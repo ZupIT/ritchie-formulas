@@ -46,5 +46,7 @@
       "tutorial": "Type a secret",
       "type": "password"
     }
-  ]
+  ],
+  "template": "ruby",
+  "templateRelease:": "{tag}"
 }

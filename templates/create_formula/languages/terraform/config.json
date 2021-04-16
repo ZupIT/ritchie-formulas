@@ -75,5 +75,7 @@
       "tutorial": "Enter the name of the bucket where you want to store your state",
       "type": "text"
     }
-  ]
+  ],
+  "template": "terraform",
+  "templateRelease:": "{tag}"
 }
