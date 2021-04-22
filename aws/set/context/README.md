@@ -1,7 +1,6 @@
 # Description
 
-This formula to set the context
-
+Formula to switch between different AWS CLI credential contexts.
 ## Command
 
 ```bash
@@ -11,3 +10,6 @@ rit aws set context
 ## Requirements
 
 - AWS
+
+## Demonstration
+
