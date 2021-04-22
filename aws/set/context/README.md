@@ -1,6 +1,7 @@
 # Description
 
 Formula to switch between different AWS CLI credential contexts.
+
 ## Command
 
 ```bash
