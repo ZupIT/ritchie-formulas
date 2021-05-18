@@ -51,6 +51,15 @@ services:`
       - POSTGRES_PASSWORD={{POSTGRES_PASSWORD}}
       - MAX_CONNECTIONS=300`
 
+	mysqlYml = `  mysql:
+    image: mysql:8.0
+    ports:
+      - "3307:3306"
+    environment:
+      - MYSQL_DATABASE={{MYSQL_DB}}
+      - MYSQL_USER={{MYSQL_USER}}
+      - MYSQL_ROOT_PASSWORD={{MYSQL_PASSWORD}}`
+
 	mongoYml = `  mongo:
     image: mongo
     restart: always
@@ -163,6 +172,12 @@ func GenerateYml(items []string, extParams map[string]string) {
 				postgresYmlString = strings.Replace(postgresYmlString, "{{POSTGRES_USER}}", extParams["postgresUser"], -1)
 				postgresYmlString = strings.Replace(postgresYmlString, "{{POSTGRES_PASSWORD}}", extParams["postgresPassword"], -1)
 				ymlString = fmt.Sprintf("%s%s\n\n", ymlString, postgresYmlString)
+			case "mysql":
+				mysqlYmlString := mysqlYml
+				mysqlYmlString = strings.Replace(mysqlYmlString, "{{MYSQL_DB}}", extParams["mysqlDB"], -1)
+				mysqlYmlString = strings.Replace(mysqlYmlString, "{{MYSQL_USER}}", extParams["mysqlUser"], -1)
+				mysqlYmlString = strings.Replace(mysqlYmlString, "{{MYSQL_PASSWORD}}", extParams["mysqlPassword"], -1)
+				ymlString = fmt.Sprintf("%s%s\n\n", ymlString, mysqlYmlString)
 			case "mongo":
 				mongoYmlString := mongoYml
 				mongoYmlString = strings.Replace(mongoYmlString, "{{MONGO_WEBCLIENT_USER}}", extParams["mongoWebClientUser"], -1)
