@@ -1,0 +1,78 @@
+{
+  "dockerImageBuilder": "ritclizup/rit-shell-bat-builder",
+  "inputs": [
+    {
+      "cache": {
+        "active": false,
+        "newLabel": "Type new value. ",
+        "qty": 3
+      },
+      "label": "Which command do you want to run in cron?: ",
+      "name": "rit_input_command",
+      "required": true,
+      "tutorial": "Example: tar -zcf /var/backups/home.tgz /home/",
+      "type": "text"
+    },
+    {
+      "default": "daily",
+      "items": [
+        "Daily",
+        "Monthly",
+        "Weekly"
+      ],
+      "label": "How often should this command be executed? ",
+      "name": "rit_input_frequency",
+      "required": true,
+      "tutorial": "The command can be executed monthly, weekly or daily",
+      "type": "text"
+    },
+    {
+      "items": [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+      ],
+      "condition": {
+            "variable": "rit_input_frequency",
+            "operator": "==",
+            "value": "Weekly"
+      },
+      "label": "Which day of the week?",
+      "name": "rit_input_day_of_week",
+      "type": "text"
+    },
+    {
+      "condition": {
+            "variable": "rit_input_frequency",
+            "operator": "==",
+            "value": "Monthly"
+      },
+      "label": "Which day of the month?",
+      "name": "rit_input_day_of_month",
+      "type": "text",
+      "required": true,
+      "pattern": {
+        "regex": "^([0-2]?[1-9]|3[01]|10|20)$",
+        "mismatchText": "Only a valid day of month is allowed here (ex: 31)"
+      }
+    },
+    {
+      "label": "What time the command should be executed? (ex: 23:05) ",
+      "name": "rit_input_hour",
+      "required": true,
+      "tutorial": "Example: 20:15",
+      "type": "text",
+      "pattern": {
+        "regex": "^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$",
+        "mismatchText": "Please insert a time in the format HH:MM (ex: 23:05)"
+      }
+      
+    }
+  ],
+  "template": "shell-bat",
+  "templateRelease:": "2.15.2"
+}
