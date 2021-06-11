@@ -1,97 +1,97 @@
 {
   "dockerImageBuilder": "ritclizup/rit-python3-builder",
   "inputs": [
-    {
-      "label": "What cron action you want to perform?",
-      "items": [
-        "Create cron job",
-        "List cron jobs",
-        "Remove cron job"
-      ],
-      "required": true,
-      "type": "text",
-      "name": "rit_input_action"
-    },
-    {
-      "label": "Which job do you want to run in cron?: ",
-      "name": "rit_input_job",
-      "required": false,
-      "tutorial": "Example: tar -zcf /var/backups/home.tgz /home/",
-      "type": "text",
-      "condition": {
-        "operator": "==",
-        "variable": "rit_input_action",
-        "value": "Create cron job"
-      }
-    },
-    {
-      "default": "Daily",
-      "items": [
-        "Daily",
-        "Monthly",
-        "Weekly"
-      ],
-      "label": "How often should this job be executed? ",
-      "name": "rit_input_frequency",
-      "required": true,
-      "tutorial": "The job can be executed monthly, weekly or daily",
-      "type": "text",
-      "condition": {
-        "operator": "==",
-        "variable": "rit_input_action",
-        "value": "Create cron job"
-      }
-    },
-    {
-      "items": [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday"
-      ],
-      "condition": {
-            "variable": "rit_input_frequency",
-            "operator": "==",
-            "value": "Weekly"
+      {
+          "label": "What cron action you want to perform?",
+          "items": [
+              "Create cron job",
+              "List cron jobs",
+              "Remove cron job"
+          ],
+          "required": true,
+          "type": "text",
+          "name": "rit_input_action"
       },
-      "label": "Which day of the week?",
-      "name": "rit_input_day_of_week",
-      "type": "text"
-    },
-    {
-      "condition": { 
-            "variable": "rit_input_frequency",
-            "operator": "==",
-            "value": "Monthly"
+      {
+          "label": "Which job do you want to run in cron?: ",
+          "name": "rit_input_job",
+          "required": false,
+          "tutorial": "Example: tar -zcf /var/backups/home.tgz /home/",
+          "type": "text",
+          "condition": {
+              "operator": "==",
+              "variable": "rit_input_action",
+              "value": "Create cron job"
+          }
       },
-      "label": "Which day of the month?",
-      "name": "rit_input_day_of_month",
-      "type": "text",
-      "required": true,
-      "pattern": {
-        "regex": "^([0-2]?[1-9]|3[01]|10|20)$",
-        "mismatchText": "Only a valid day of month is allowed here (ex: 31)"
-      }
-    },
-    {
-      "label": "What time the job should be executed? (ex: 23:05) ",
-      "name": "rit_input_hour",
-      "required": true,
-      "tutorial": "Example: 20:15",
-     "type": "text",
-      "pattern": {
-        "regex": "^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$",
-        "mismatchText": "Please insert a time in the format HH:MM (ex: 23:05)"
+      {
+          "default": "Daily",
+          "items": [
+              "Daily",
+              "Monthly",
+              "Weekly"
+          ],
+          "label": "How often should this job be executed? ",
+          "name": "rit_input_frequency",
+          "required": true,
+          "tutorial": "The job can be executed monthly, weekly or daily",
+          "type": "text",
+          "condition": {
+              "operator": "==",
+              "variable": "rit_input_action",
+              "value": "Create cron job"
+          }
       },
-      "condition": {
-        "operator": "==",
-        "variable": "rit_input_action",
-        "value": "Create cron job"
+      {
+          "items": [
+              "Sunday",
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday"
+          ],
+          "condition": {
+              "variable": "rit_input_frequency",
+              "operator": "==",
+              "value": "Weekly"
+          },
+          "label": "Which day of the week?",
+          "name": "rit_input_day_of_week",
+          "type": "text"
+      },
+      {
+          "condition": {
+              "variable": "rit_input_frequency",
+              "operator": "==",
+              "value": "Monthly"
+          },
+          "label": "Which day of the month?",
+          "name": "rit_input_day_of_month",
+          "type": "text",
+          "required": true,
+          "pattern": {
+              "regex": "^([0-2]?[1-9]|3[01]|10|20)$",
+              "mismatchText": "Only a valid day of month is allowed here (ex: 31)"
+          }
+      },
+      {
+          "label": "What time the job should be executed? (ex: 23:05) ",
+          "name": "rit_input_hour",
+          "required": true,
+          "tutorial": "Example: 20:15",
+          "type": "text",
+          "pattern": {
+              "regex": "^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$",
+              "mismatchText": "Please insert a time in the format HH:MM (ex: 23:05)"
+          },
+          "condition": {
+              "operator": "==",
+              "variable": "rit_input_action",
+              "value": "Create cron job"
+          }
       }
-    }
   ],
   "template": "python3",
   "templateRelease:": "2.15.2"

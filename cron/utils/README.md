@@ -8,11 +8,11 @@ To shcedule a cron job, a user has to inform:
 
 - The frequency with which this job should be performed
 
-    - Daily
-    - Monthly
-        - The day of the month
-    - Weekly
-        - The day of week
+  - Daily
+  - Monthly
+    - The day of the month
+  - Weekly
+    - The day of week
 
 - What time the job should be performed
 

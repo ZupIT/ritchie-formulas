@@ -1,15 +1,16 @@
 {
   "execution": [
-    "local",
-    "docker"
+      "local",
+      "docker"
   ],
   "os": {
-    "deps": [],
-    "support": [
-      "linux"
-    ]
+      "deps": [],
+      "support": [
+          "linux"
+      ]
   },
   "tags": [
-    "cron", "utils"
+      "cron",
+      "utils"
   ]
 }
