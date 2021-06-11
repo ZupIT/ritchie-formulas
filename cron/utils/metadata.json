@@ -6,11 +6,10 @@
   "os": {
     "deps": [],
     "support": [
-      "mac",
       "linux"
     ]
   },
   "tags": [
-    "cron", "schedule"
+    "cron", "utils"
   ]
 }
