@@ -16,7 +16,8 @@ To shcedule a cron job, a user has to inform:
 
 - What time the job should be performed
 
-To remove a sceduled job the program will list all scheduled cron jobs ask the user to select a job to remove.
+To remove a sceduled job the program will list all scheduled cron jobs ask the user
+to select a job to remove.
 
 The list function will simply show all scheduled cron jobs
 

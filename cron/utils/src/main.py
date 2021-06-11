@@ -11,4 +11,3 @@ month = os.environ.get("RIT_INPUT_DAY_OF_MONTH")
 time = os.environ.get("RIT_INPUT_HOUR")
 
 formula.Run(action, params=(job, freq, weekday, month, time))
-
