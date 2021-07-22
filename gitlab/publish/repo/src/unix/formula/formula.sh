@@ -37,14 +37,13 @@ runFormula() {
   cd $WORKSPACE_PATH
 
   if [ $? != 0 ]; then
-   cd -
-   exit 1
+    cd -
+    exit 1
   fi
 
   echo "---------------------------------------------------------------------------"
 
-  branch=$(parse_git_branch)
-  echo "🌱 Using branch: $branch"
+  git config --global init.defaultBranch main
 
   if git rev-parse --git-dir > /dev/null 2>&1; then
     echo "🚧 This repository already exists. Preparing new commit..."
@@ -68,7 +67,9 @@ runFormula() {
     git remote add origin https://oauth2:$TOKEN@gitlab.com/$USERNAME/$slug_name.git
   fi
 
-  git push origin $branch > /dev/null
+  branch=`echo | git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
+  echo "🌱 Using branch: $branch"
+  git push -u origin $branch > /dev/null
 
   if [[ $DOCKER_EXECUTION ]]; then
     chown 1000:1000 -R $CURRENT_PWD/$slug_name
