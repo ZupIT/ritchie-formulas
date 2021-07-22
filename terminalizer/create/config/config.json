@@ -1,0 +1,63 @@
+{
+  "dockerImageBuilder": "ritclizup/rit-shell-bat-builder",
+  "inputs": [
+    {
+      "cache": {
+        "active": true,
+        "newLabel": "Type new value. ",
+        "qty": 3
+      },
+      "default": "auto",
+      "label": "Width: ",
+      "name": "rit_width",
+      "required": true,
+      "type": "text"
+    },
+    {
+      "cache": {
+        "active": true,
+        "newLabel": "Type new value. ",
+        "qty": 3
+      },
+      "default": "auto",
+      "label": "Height: ",
+      "name": "rit_height",
+      "required": true,
+      "type": "text"
+    },
+    {
+      "cache": {
+        "active": true,
+        "newLabel": "Type new value. ",
+        "qty": 3
+      },
+      "label": "Window title: ",
+      "name": "rit_title",
+      "required": true,
+      "type": "text"
+    },
+    {
+      "cache": {
+        "active": true,
+        "newLabel": "Type new value. ",
+        "qty": 3
+      },
+      "label": "CWD (default: current pwd): ",
+      "name": "rit_cwd",
+      "required": false,
+      "type": "text"
+    },
+    {
+      "default": "block",
+      "items": [
+        "block",
+        "underline",
+        "bar"
+      ],
+      "label": "Cursos style: ",
+      "name": "rit_cursor_style",
+      "required": true,
+      "type": "text"
+    }
+  ]
+}

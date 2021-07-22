@@ -9,7 +9,7 @@ ENTRY_POINT_WINDOWS=main.bat
 build: bash-build bat-build docker
 
 bash-build:
-	mkdir $(BIN_FOLDER)
+	mkdir -p $(BIN_FOLDER)
 	cp -r src/* $(BIN_FOLDER)
 	mv $(BIN_FOLDER)/$(ENTRY_POINT_UNIX) $(BIN_FOLDER)/$(BINARY_NAME_UNIX)
 	chmod +x $(BIN_FOLDER)/$(BINARY_NAME_UNIX)

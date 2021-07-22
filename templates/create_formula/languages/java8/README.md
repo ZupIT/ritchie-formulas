@@ -1,11 +1,13 @@
-# Ritchie Formula
+# Description
 
-## command
+Formula description
+
+## Command
 
 ```bash
 #rit-replace{formulaCmd}
 ```
 
-## description
+## Requirements
 
-description of formula
+## Demonstration

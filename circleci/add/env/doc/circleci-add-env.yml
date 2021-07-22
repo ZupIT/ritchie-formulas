@@ -1,0 +1,163 @@
+# The configurations that used for the recording, feel free to edit them
+config:
+
+  # Specify a command to be executed
+  # like `/bin/bash -l`, `ls`, or any other commands
+  # the default is bash for Linux
+  # or powershell.exe for Windows
+  command: bash -l
+
+  # Specify the current working directory path
+  # the default is the current working directory path
+  cwd: /demo
+
+  # Export additional ENV variables
+  env:
+    recording: true
+
+  # Explicitly set the number of columns
+  # or use `auto` to take the current
+  # number of columns of your shell
+  cols: 150
+
+  # Explicitly set the number of rows
+  # or use `auto` to take the current
+  # number of rows of your shell
+  rows: 25
+
+  # Amount of times to repeat GIF
+  # If value is -1, play once
+  # If value is 0, loop indefinitely
+  # If value is a positive number, loop n times
+  repeat: 0
+
+  # Quality
+  # 1 - 100
+  quality: 100
+
+  # Delay between frames in ms
+  # If the value is `auto` use the actual recording delays
+  frameDelay: auto
+
+  # Maximum delay between frames in ms
+  # Ignored if the `frameDelay` isn't set to `auto`
+  # Set to `auto` to prevent limiting the max idle time
+  maxIdleTime: 2000
+
+  # The surrounding frame box
+  # The `type` can be null, window, floating, or solid`
+  # To hide the title use the value null
+  # Don't forget to add a backgroundColor style with a null as type
+  frameBox:
+    type: floating
+    title: Ritchie Cli
+    style:
+      border: 0px black solid
+      # boxShadow: none
+      # margin: 0px
+
+  # Add a watermark image to the rendered gif
+  # You need to specify an absolute path for
+  # the image on your machine or a URL, and you can also
+  # add your own CSS styles
+  watermark:
+    imagePath: null
+    style:
+      position: absolute
+      right: 15px
+      bottom: 15px
+      width: 100px
+      opacity: 0.9
+
+  # Cursor style can be one of
+  # `block`, `underline`, or `bar`
+  cursorStyle: block
+
+  # Font family
+  # You can use any font that is installed on your machine
+  # in CSS-like syntax
+  fontFamily: "Monaco, Lucida Console, Ubuntu Mono, Monospace"
+
+  # The size of the font
+  fontSize: 14
+
+  # The height of lines
+  lineHeight: 1
+
+  # The spacing between letters
+  letterSpacing: 0
+
+  # Theme
+  theme:
+    background: "transparent"
+    foreground: "#afafaf"
+    cursor: "#c7c7c7"
+    black: "#232628"
+    red: "#fc4384"
+    green: "#b3e33b"
+    yellow: "#ffa727"
+    blue: "#75dff2"
+    magenta: "#ae89fe"
+    cyan: "#708387"
+    white: "#d5d5d0"
+    brightBlack: "#626566"
+    brightRed: "#ff7fac"
+    brightGreen: "#c8ed71"
+    brightYellow: "#ebdf86"
+    brightBlue: "#75dff2"
+    brightMagenta: "#ae89fe"
+    brightCyan: "#b1c6ca"
+    brightWhite: "#f9f9f4"
+
+# Records, feel free to edit them
+records:
+  - delay: 509
+    content: "\e]0;ritchie@zup:/demo\a\e]7;file://zup-1338/demo\a\e]0;ritchie@zup: /demo\a\e[01;32mritchie@zup\e[00m:\e[01;34m/demo\e[00m$ "
+  - delay: 2000
+    content: "rit"
+  - delay: 149
+    content: ' '
+  - delay: 200
+    content: "circleci"
+  - delay: 181
+    content: ' '
+  - delay: 611
+    content: "add"
+  - delay: 135
+    content: ' '
+  - delay: 160
+    content: "env"
+  - delay: 200
+    content: "\r\n"
+  - delay: 36
+    content: "\e[1mFormula running on env: \e[36mDefault\e[0m\r\n\e[0m\r\n\e[0G\e[2K\e[1;92m? \e[0m\e[1;99mType the repository owner:  \e[0m\e[36m[? for help]\e[0m \e[?25l\e7\e[999;999f\e[6n"
+  - delay: 20
+    content: "\e8\e[?25h\e[6n"
+  - delay: 200
+    content: "ritchie-admin"
+  - delay: 200
+    content: "\e[1D\e[1D\e[1D\e[1D\e[1D\e[1D\e[1D\e[1D\e[1D\e[1D\e[1D\e[1D\e[1D\e[1E\e[1F\e[0G\e[2K\e[1;92m? \e[0m\e[1;99mType the repository owner:  \e[0m\e[36mritchie-admin\e[0m\r\n\e[0G\e[2K\e[1;92m? \e[0m\e[1;99mType repository name:  \e[0m\e[36m[? for help]\e[0m \e[?25l\e7\e[999;999f\e[6n"
+  - delay: 10
+    content: "\e8\e[?25h\e[6n"
+  - delay: 200
+    content: "ritchie-cli"
+  - delay: 500
+    content: "\e[1D\e[1D\e[1D\e[1D\e[1D\e[1D\e[1D\e[1D\e[1D\e[1D\e[1D\e[1E\e[1F\e[0G\e[2K\e[1;92m? \e[0m\e[1;99mType repository name:  \e[0m\e[36mritchie-cli\e[0m\r\n\e[0G\e[2K\e[1;92m? \e[0m\e[1;99mType the ENV name :  \e[0m\e[36m[? for help]\e[0m \e[?25l\e7\e[999;999f\e[6n"
+  - delay: 11
+    content: "\e8\e[?25h\e[6n"
+  - delay: 500
+    content: "horus-token"
+  - delay: 500
+    content: "\e[1D\e[1D\e[1D\e[1D\e[1D\e[1D\e[1D\e[1D\e[1D\e[1D\e[1D\e[1E\e[1F\e[0G\e[2K\e[1;92m? \e[0m\e[1;99mType the ENV name :  \e[0m\e[36mhorus-token\e[0m\r\n\e[1;92m? \e[0m\e[1;99mType the ENV value :  \e[0m\e[36m[? for help]\e[0m \e[?25l\e7\e[999;999f\e[6n"
+  - delay: 11
+    content: "\e8\e[?25h\e[6n"
+  - delay: 500
+    content: '****************************************************'
+  - delay: 500
+    content: "\e[1D\e[1D\e[1D\e[1D\e[1D\e[1D\e[1E"
+  - delay: 14
+    content: "\e[32menv (horus-token) added successfully!\r\n\e[0m\e[32mproject: ritchie-admin/ritchie-cli\r\n\e[0m"
+  - delay: 17
+    content: "\e]0;ritchie@zup:/demo\a\e]7;file://zup-1338/demo\a\e]0;ritchie@zup: /demo\a\e[01;32mritchie@zup\e[00m:\e[01;34m/demo\e[00m$ "
+  - delay: 5000
+    content: "sair\r\n"

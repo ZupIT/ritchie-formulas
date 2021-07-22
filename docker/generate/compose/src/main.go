@@ -9,13 +9,18 @@ func main() {
 	var selectItems []string
 	selectItem := ""
 	var extParams = make(map[string]string)
-	items := []string{"awsclivl", "consul", "dynamoDB", "jaeger", "kafka", "mongo", "postgres", "redis", "stubby4j", "rabbitmq", "finish!"}
+	items := []string{"awsclivl", "consul", "dynamoDB", "jaeger", "kafka", "mongo", "postgres", "mysql", "redis", "stubby4j", "rabbitmq", "finish!"}
 	for selectItem != "finish!" {
 		selectItem, _ = prompt.List("Select docker image: ", items)
 		if selectItem == "postgres" {
 			extParams["postgresDB"], _ = prompt.String("Type DB name: ", true)
 			extParams["postgresUser"], _ = prompt.String("Type DB user: ", true)
 			extParams["postgresPassword"], _ = prompt.StringPwd("Type DB password: ")
+		}
+		if selectItem == "mysql" {
+			extParams["mysqlDB"], _ = prompt.String("Type DB name: ", true)
+			extParams["mysqlUser"], _ = prompt.String("Type DB user: ", true)
+			extParams["mysqlPassword"], _ = prompt.StringPwd("Type DB password: ")
 		}
 		if selectItem == "mongo" {
 			extParams["mongoWebClientUser"], _ = prompt.String("Type Mongo WebClient user: ", true)
