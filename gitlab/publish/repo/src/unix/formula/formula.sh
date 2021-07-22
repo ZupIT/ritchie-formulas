@@ -67,7 +67,7 @@ runFormula() {
     git remote add origin https://oauth2:$TOKEN@gitlab.com/$USERNAME/$slug_name.git
   fi
 
-  branch=`echo | git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
+  branch=$(echo | git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
   echo "🌱 Using branch: $branch"
   git push -u origin $branch > /dev/null
 
