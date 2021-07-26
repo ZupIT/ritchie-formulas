@@ -30,10 +30,6 @@ formatPackageName() {
   echo "$1" | tr "." "/"
 }
 
-parse_git_branch() {
-  echo | git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
-}
-
 runFormula() {
 
   slug_name=$(createSlug "$PROJECT_NAME")
@@ -48,8 +44,7 @@ runFormula() {
 
   echo "---------------------------------------------------------------------------"
 
-  branch=$(parse_git_branch)
-  echo "🌱 Using branch: $branch"
+  git config --global init.defaultBranch main
 
   if git rev-parse --git-dir > /dev/null 2>&1; then
     echo "🚧 This repository already exists. Preparing new commit..."
@@ -72,10 +67,12 @@ runFormula() {
     git remote add origin https://$USERNAME:$TOKEN@github.com/$USERNAME/$slug_name.git
   fi
 
-  git push origin $branch > /dev/null
+  branch=$(echo | git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
+  echo "🌱 Using branch: $branch"
+  git push -u origin $branch > /dev/null
 
   if [[ $DOCKER_EXECUTION ]]; then
-    chown 1000:1000 -R $CURRENT_PWD/$slug_name
+    chown 1000:1000 -R $CURRENT_PWD/$slug_name > /dev/null
   fi
 
   echo "---------------------------------------------------------------------------"
