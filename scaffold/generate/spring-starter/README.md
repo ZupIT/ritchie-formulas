@@ -22,4 +22,4 @@ rit scaffold generate spring-starter
 
 ## Demonstration
 
-<img src="https://github.com/ZupIT/ritchie-formulas/raw/master/scaffold/generate/spring-starter/demo.gif">
+<img src="https://github.com/ZupIT/ritchie-formulas/blob/main/scaffold/generate/spring-starter/demo.gif">
