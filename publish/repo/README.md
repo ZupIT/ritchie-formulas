@@ -39,6 +39,6 @@ rit publish repo
 
 - Command execution
 
-<img class="special-img-class" src="https://github.com/ZupIT/ritchie-formulas/blob/master/publish/repo/docs/img/Github.png" />
+<img class="special-img-class" src="https://github.com/ZupIT/ritchie-formulas/blob/main/publish/repo/docs/img/Github.png" />
 
-<img class="special-img-class" src="https://github.com/ZupIT/ritchie-formulas/blob/master/publish/repo/docs/img/Gitlab.png" />
+<img class="special-img-class" src="https://github.com/ZupIT/ritchie-formulas/blob/main/publish/repo/docs/img/Gitlab.png" />
