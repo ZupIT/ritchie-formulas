@@ -48,5 +48,5 @@
     }
   ],
   "template": "rust",
-  "templateRelease:": "{tag}"
+  "templateRelease": "{tag}"
 }

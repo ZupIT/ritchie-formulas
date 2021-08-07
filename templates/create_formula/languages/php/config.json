@@ -48,5 +48,5 @@
     }
   ],
   "template": "php",
-  "templateRelease:": "{tag}"
+  "templateRelease": "{tag}"
 }

@@ -48,5 +48,5 @@
     }
   ],
   "template": "python2",
-  "templateRelease:": "{tag}"
+  "templateRelease": "{tag}"
 }
