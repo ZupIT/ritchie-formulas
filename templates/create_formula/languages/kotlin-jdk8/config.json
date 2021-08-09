@@ -44,5 +44,5 @@
     }
   ],
   "template": "kotlin-jdk8",
-  "templateRelease:": "{tag}"
+  "templateRelease": "{tag}"
 }

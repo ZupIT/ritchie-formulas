@@ -44,5 +44,5 @@
     }
   ],
   "template": "typescript",
-  "templateRelease:": "{tag}"
+  "templateRelease": "{tag}"
 }

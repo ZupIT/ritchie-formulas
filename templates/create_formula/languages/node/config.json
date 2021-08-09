@@ -48,5 +48,5 @@
     }
   ],
   "template": "node",
-  "templateRelease:": "{tag}"
+  "templateRelease": "{tag}"
 }

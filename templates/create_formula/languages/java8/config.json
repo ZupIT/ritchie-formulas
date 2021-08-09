@@ -44,5 +44,5 @@
     }
   ],
   "template": "java8",
-  "templateRelease:": "{tag}"
+  "templateRelease": "{tag}"
 }

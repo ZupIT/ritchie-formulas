@@ -44,5 +44,5 @@
     }
   ],
   "template": "csharp",
-  "templateRelease:": "{tag}"
+  "templateRelease": "{tag}"
 }
