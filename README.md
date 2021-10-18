@@ -4,12 +4,22 @@
 
 <img class="special-img-class" src="/docs/img/ritchie-banner.png" />
 
+## **Table of contents**
+
+1. [**Ritchie's commons formula repository**](#BRitchie's-commons-formula-repository)
+    1. [**Create a new formula**](#Create-a-new-formula)
+    2. [**Add support to other languages on create formula command**](#Add-support-to-other-languages-on-create-formula-command)
+2. [**Documentation**](#Documentation)
+3. [**Contributing**](#Contributing)
+    1. [**Developer Certificate of Origin - DCO**](#Developer-Certificate-of-Origin-DCO)
+4.  [**Community**](#Community)
+
 # **Ritchie's commons formula repository**
 
 This repository contains the community formulas [**ritchie-cli**](https://github.com/ZupIT/ritchie-cli) executes.
 
 ## **Create a new formula**
-You can create your own formula, follow the steps below to create one: 
+You can create your own formula by following these steps: 
 
 **Step 1.** Fork the repository;
 
@@ -17,7 +27,7 @@ You can create your own formula, follow the steps below to create one:
 
 **Step 3.** Create a new formula, using the forked repository as a Ritchie
 workspace: **`rit create formula`**
-If you need help check out [**how to create formulas on Ritchie**](https://docs.ritchiecli.io/getting-started/creating-formulas) on documentation.
+If you need help check out [**how to create formulas on Ritchie**](https://docs.ritchiecli.io/getting-started/creating-formulas) on our documentation.
 
 **Step 4.** Build and use the new formula: **`rit build formula`** or use **--watch** to keep observing changes on formula code live: **`rit build formula --watch`**
 
@@ -35,7 +45,7 @@ If you need help check out [**how to create formulas on Ritchie**](https://docs.
 
 The rit create formula command uses the **`/templates/create_formula`** folder
 to list the languages options. If you like to edit a language template
-or to add more language to create formula command please access the
+or to add more language to create formula command, please access the
 [**Languages Template Tutorial**](https://github.com/ZupIT/ritchie-formulas/tree/master/templates/create_formula) tutorial. 
 
 ## [**Documentation**](https://docs.ritchiecli.io)
@@ -47,7 +57,29 @@ For more information, access [**Ritchie's documentation**](https://docs.ritchiec
 
 Feel free to use, recommend improvements, or contribute to new implementations.
 
-Check out our [**contributing guide**](https://github.com/ZupIT/ritchie-cli/blob/master/CONTRIBUTING.md) to learn about our development process, how to suggest bugfixes and improvements. 
+Check out our [**contributing guide**](https://github.com/ZupIT/ritchie-cli/blob/master/CONTRIBUTING.md) to learn about our development process, how to suggest bug fixes and improvements. 
+
+### **Developer Certificate of Origin - DCO**
+
+ This is a security layer for the project and for the developers. It is mandatory.
+ 
+ There are two ways to use DCO, see them below: 
+ 
+**1. Command line**
+ Follow the steps: 
+ **Step 1:** Check out your local git:
+
+ ```
+git config --global user.name “Name”
+git config --global user.email “email@domain.com.br”
+```
+**Step 2:** When you commit, add the sigoff via `-s` flag:
+
+```
+$ git commit -s -m "This is my commit message"
+```
+### **Choose a branch**
+One of the first things to decide is which branch to base your work on. If you get confused, just ask and we will help you. If a reviewer realizes you have based your work on the wrong branch, we'll let you know so that you can rebase it.
 
 ## **Community**
 
