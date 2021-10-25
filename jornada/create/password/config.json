@@ -1,0 +1,25 @@
+{
+  "dockerImageBuilder": "ritclizup/rit-python3-builder",
+  "inputs": [
+    {
+      "label": "How many letters would you like in your password? ",
+      "name": "rit_input_letters",
+      "required": true,
+      "type": "text"
+    },
+    {
+      "label": "How many symbols would you like?",
+      "name": "rit_input_symbols",
+      "required": true,
+      "type": "text"
+    },
+    {
+      "label": "How many numbers would you like?",
+      "name": "rit_input_numbers",
+      "required": true,
+      "type": "text"
+    }
+  ],
+  "template": "python3",
+  "templateRelease": "2.17.0"
+}
