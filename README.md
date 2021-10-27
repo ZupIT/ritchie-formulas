@@ -6,13 +6,13 @@
 
 ## **Table of contents**
 
-1. [**Ritchie's commons formula repository**](#BRitchie's-commons-formula-repository)
-    1. [**Create a new formula**](#Create-a-new-formula)
-    2. [**Add support to other languages on create formula command**](#Add-support-to-other-languages-on-create-formula-command)
-2. [**Documentation**](#Documentation)
-3. [**Contributing**](#Contributing)
-    1. [**Developer Certificate of Origin - DCO**](#Developer-Certificate-of-Origin-DCO)
-4.  [**Community**](#Community)
+### 1. [**Ritchie's commons formula repository**](#BRitchie's-commons-formula-repository)
+> #### i. [**Create a new formula**](#Create-a-new-formula)
+> #### ii. [**Add support to other languages on create formula command**](#Add-support-to-other-languages-on-create-formula-command)
+### 2. [**Documentation**](#Documentation)
+### 3. [**Contributing**](#Contributing)
+> #### i. [**Developer Certificate of Origin - DCO**](#Developer-Certificate-of-Origin-DCO)
+### 4.  [**Community**](#Community)
 
 # **Ritchie's commons formula repository**
 
@@ -61,23 +61,37 @@ Check out our [**contributing guide**](https://github.com/ZupIT/ritchie-cli/blob
 
 ### **Developer Certificate of Origin - DCO**
 
- This is a security layer for the project and for the developers. It is mandatory.
- 
- There are two ways to use DCO, see them below: 
+This is a security layer for the project and for the developers. It is mandatory.
+Follow one of these two methods to add DCO to your commits:
  
 **1. Command line**
- Follow the steps: 
- **Step 1:** Check out your local git:
+
+Follow the steps: 
+ 
+ **Step 1:** Configure your local git environment adding the same name and e-mail configured at your GitHub account. It helps to sign commits manually during reviews and suggestions.
 
  ```
 git config --global user.name “Name”
 git config --global user.email “email@domain.com.br”
 ```
-**Step 2:** When you commit, add the sigoff via `-s` flag:
+**Step 2:** Add the Signed-off-by line with the `'-s -S'` flag in the git commit command: 
 
 ```
-$ git commit -s -m "This is my commit message"
+$ git commit -s -S -m "This is my commit message"
 ```
+**2. GitHub website**
+
+You can also manually sign your commits during GitHub reviews and suggestions, follow the steps below: 
+
+**Step 1:** When the commit changes box opens, manually type or paste your signature in the comment box, see the examples:
+```
+e.g: Signed-off-by: Name < e-mail address >
+```
+```
+$ git commit -m “My signed commit” Signed-off-by: username <email address>
+```
+For this method, your name and e-mail must be the same registered to your GitHub account.
+
 ### **Choose a branch**
 One of the first things to decide is which branch to base your work on. If you get confused, just ask and we will help you. If a reviewer realizes you have based your work on the wrong branch, we'll let you know so that you can rebase it.
 
