@@ -42,7 +42,7 @@ func createRules() map[string]Rule {
 		"py": {
 			Language:   "Python",
 			Extensions: "py",
-			Files:      []string{"main.py", "README.md", "config.json", "Makefile", "help.json"},
+			Files:      []string{"main.py", "README.md", "config.json", "help.json"},
 			Folders:    []string{"src"},
 		},
 		"js": {
