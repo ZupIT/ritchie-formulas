@@ -42,7 +42,7 @@ repos:
     rev: stable
     hooks:
       - id: black
-        language_version: python3.10.0
+        language_version: python3.8.5
 
 #  - repo: git://github.com/macisamuele/language-formatters-pre-commit-hooks
 #    rev: v1.5.0
