@@ -41,7 +41,7 @@ BIN_WINDOWS=$BIN_FOLDER_WINDOWS/$BIN_NAME.exe
 	{
 	echo "@ECHO OFF"
 	echo "SET mypath=%~dp0"
-	echo "start /B /D "%mypath%" /WAIT windows\main.exe"
+	echo "start /B /D %mypath% /WAIT windows\main.exe"
 	} >> $BAT
 
 #docker:
