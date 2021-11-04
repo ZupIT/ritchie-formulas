@@ -33,7 +33,7 @@ Please follow the [**Code of Conduct**](https://github.com/ZupIT/ritchie-cli/blo
 ### **Legal**
 - Ritchie is licensed over [**ASF - Apache License**](https://www.apache.org/licenses/LICENSE-2.0), version 2, so new files must have the ASF version 2 header. For more information, please check out [**Apache license**](https://www.apache.org/licenses/LICENSE-2.0).
 
-- All contributions are subject to the [**Developer Certificate of Origin (DCO)**](https://developercertificate.org). 
+- All contributions are subject to the [**Developer Certificate of Origin (DCO)**](https://developercertificate.org).
 When you commit, use the ```**-s** ``` option to include the Signed-off-by line at the end of the commit log message.
 
 ## **Prerequisites**
@@ -43,25 +43,25 @@ Check out the requisites before contributing to Ritchie:
 
 This is a security layer for the project and for the developers. It is mandatory.
 Follow one of these two methods to add DCO to your commits:
- 
+
 **1. Command line**
 
-Follow the steps: 
- 
+Follow the steps:
+
  **Step 1:** Configure your local git environment adding the same name and e-mail configured at your GitHub account. It helps to sign commits manually during reviews and suggestions.
 
  ```
 git config --global user.name “Name”
 git config --global user.email “email@domain.com.br”
 ```
-**Step 2:** Add the Signed-off-by line with the `'-s -S'` flag in the git commit command: 
+**Step 2:** Add the Signed-off-by line with the `'-s -S'` flag in the git commit command:
 
 ```
 $ git commit -s -S -m "This is my commit message"
 ```
 **2. GitHub website**
 
-You can also manually sign your commits during GitHub reviews and suggestions, follow the steps below: 
+You can also manually sign your commits during GitHub reviews and suggestions, follow the steps below:
 
 **Step 1:** When the commit changes box opens, manually type or paste your signature in the comment box, see the examples:
 ```
@@ -79,17 +79,17 @@ One of the first things to decide is which branch to base your work on. If you g
 To contribute code to Ritchie projects, see the
 - [**Ritchie Community Guidelines**](https://docs.ritchiecli.io/faq#community)
 - [**Open source contribution guidelines**](https://opensource.guide/how-to-contribute/)
-## **How to contribute?** 
-See the guidelines to submit your changes: 
+## **How to contribute?**
+See the guidelines to submit your changes:
 
 ### **Add new feature, bug fix or improvement**
-If you want to add an improvement, a new feature or a bug fix, follow the steps to contribute: 
+If you want to add an improvement, a new feature or a bug fix, follow the steps to contribute:
 
-**Step 1:** **Fork the project**. 
+**Step 1:** **Fork the project**.
 
 **Step 2:** Always base your work on the project's **`main`** branch, naming your new branch according to the following guide:
 
-<img class="special-img-class" src="/docs/img/git-branchs.png" /> 
+<img class="special-img-class" src="/docs/img/git-branchs.png" />
 
 **Examples : `feature/name` or `fix/name`**
 
@@ -97,7 +97,7 @@ If you want to add an improvement, a new feature or a bug fix, follow the steps 
 
 ### **Pull request guidelines**
 
-Follow these guidelines to help us review your PRs quicker: 
+Follow these guidelines to help us review your PRs quicker:
 
 - Try not to touch a large number of files in a single PR if possible.
 
@@ -120,7 +120,7 @@ If you want to contribute on the quality of the incoming code,we would appreciat
 
 - Be suggestive, never impose a correction or criticize your peer. Instead of "change this code", go for "what do you think about implementing it this way?"
 
-- Explain why you suggested such a correction, a change without meaning might not be productive. 
+- Explain why you suggested such a correction, a change without meaning might not be productive.
 The author has all the right to counterargue a comment if they think it is the best for the project. Provide a clear technical or business justification and even links or references if possible. Everybody loves to learn something new about coding.
 
 - Sometimes the literal answer might not be necessary. Instead of pasting the solution _verbatim_, provide the right direction and let the author figure out the solution.
@@ -136,7 +136,7 @@ The author has all the right to counterargue a comment if they think it is the b
 Unless the PR author specifically disables it, you can push commits into another
 contributor's PR. See how you can do it:
 - From the command line by adding and fetching their remote;
-- Check out their branch, and add commits to it; 
+- Check out their branch, and add commits to it;
 - You can add commits from the Github web UI, by clicking the pencil icon for a
 given file in the **Files** view.
 
@@ -157,13 +157,13 @@ make functional-test:<name-of-test>
 ## **Opening a new issue**
 
 If you want to contribute with something that doesn't have any **issue** yet, you can:
-- Create a new detailed **issue** [**in the repository**](https://github.com/ZupIT/ritchie-cli/issues/new/choose). 
+- Create a new detailed **issue** [**in the repository**](https://github.com/ZupIT/ritchie-cli/issues/new/choose).
 - Choose one template to fill in:
   - Bug Report
   - Feature request
   - Improvement
   - Support request
-  - Report a security vulnerability 
+  - Report a security vulnerability
 Then, you are able to solve it.
 
 - Our team will evaluate and add a **Hackoberfest** label, this will allow you to participate in the event to solve your own **issue**.
@@ -174,4 +174,4 @@ Then, you are able to solve it.
 
 Thank you for your contribution!
 
-**Ritchie team** 
+**Ritchie team**
