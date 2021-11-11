@@ -1,0 +1,44 @@
+{
+  "dockerImageBuilder": "ritclizup/rit-shell-bat-builder",
+  "inputs": [
+    {
+      "default": "Windows",
+      "items": [
+        "Mac",
+        "Windows"
+      ],
+      "label": "Informe seu Sistema Operacional",
+      "name": "rit_input_so",
+      "required": true,
+      "tutorial": "Escolha uma opção de S.O.",
+      "type": "text"
+    },
+    {
+      "default": "Java",
+      "items": [
+        "Java",
+        "Python"
+      ],
+      "label": "Informe o nome do(s) projeto(s) que esta atuando:",
+      "name": "rit_input_project",
+      "required": true,
+      "tutorial": "Escolha uma opção de Projeto",
+      "type": "text"
+    },
+    {
+      "cache": {
+        "active": true,
+        "newLabel": "Informe um novo Usuário. ",
+        "qty": 2
+      },
+      "label": "Informe o nome do seu usuarioType your name: ",
+      "name": "rit_input_user",
+      "required": true,
+      "tutorial": "O nome do seu usuario, exemplo: \"patrick.farias\"",
+      "type": "text"
+    }
+    
+  ],
+  "template": "shell-bat",
+  "templateRelease": "2.17.0"
+}
