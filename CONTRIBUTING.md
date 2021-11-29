@@ -8,22 +8,21 @@ This is Ritchie contributing guide. Please read the following sections to learn 
 
 ## **Table of contents**
 
-### 1. [**Before you contribute**](#Before-you-contribute)
-> #### i. [**Code of Conduct**](#Code-of-Conduct)
-> #### ii. [**Legal**](#Legal)
-### 3. [**Prerequisites**](#Prerequisites)
-> #### i. [**Developer Certificate of Origin - DCO**](#Developer-Certificate-of-Origin-DCO)
-> #### ii. [**Choose a branch**](#Choose-a-branch)
-> #### iii. [**Check out the guidelines**](#Check-out-the-guidelines)
-### 4. [**How to contribute?**](#How-to-contribute?)
-> #### i. [**Add new feature, bug fixing or improvement**](#Add-new-feature-bugfixing-or-improvement)
-> #### ii. [**Pull request guidelines**](#Pull-request-guidelines)
-> #### iii. [**Pull request review guidelines**](#Pull-request-review-guidelines)
-> #### iv. [**Collaborate on a pull request**](#Collaborate-on-a-pull-request)
-> #### v. [**Tests guide**](#Tests-guide)
-> #### vi. [**Opening a new issue**](#Opening-a-new-issue)
-### 5. [**Community**](#Community)
-
+### 1. [**Before you contribute**](#before-you-contribute)
+> #### 1.1 [**Code of Conduct**](#code-of-conduct)
+> #### 1.2 [**Legal**](#legal)
+### 2. [**Prerequisites**](#prerequisites)
+> #### 2.1. [**Developer Certificate of Origin - DCO**](#developer-certificate-of-origin)
+> #### 2.2  [**Choose a branch**](#choose-a-branch)
+> #### 2.3. [**Check out the guidelines**](#check-out-the-guidelines)
+### 3. [**How to contribute?**](#how-to-contribute?)
+> #### 3.1. [**Add new feature, bug fixing or improvement**](#add-new-feature-bugfixing-or-improvement)
+> #### 3.2. [**Pull request guidelines**](#pull-request-guidelines)
+> #### 3.3. [**Pull request review guidelines**](#pull-request-review-guidelines)
+> #### 3.4. [**Collaborate on a pull request**](#collaborate-on-a-pull-request)
+> #### 3.5. [**Tests guide**](#tests-guide)
+> #### 3.6. [**Opening a new issue**](#opening-a-new-issue)
+### 4. [**Community**](#community)
 
 ### **Before you contribute**
 
@@ -70,7 +69,7 @@ e.g: Signed-off-by: Name < e-mail address >
 ```
 $ git commit -m “My signed commit” Signed-off-by: username <email address>
 ```
-For this method, your name and e-mail must be the same registered to your GitHub account.
+For this method, your name and e-mail must be the same registered on your GitHub account.
 
 ### **Choose a branch**
 One of the first things to decide is which branch to base your work on. If you get confused, just ask and we will help you. If a reviewer realizes you have based your work on the wrong branch, we'll let you know so that you can rebase it.
