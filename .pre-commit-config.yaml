@@ -19,11 +19,11 @@ repos:
       # - id: check-ast
       - id: end-of-file-fixer
 
-  - repo: git://github.com/igorshubovych/markdownlint-cli
-    rev: v0.22.0
-    verbose: true
-    hooks:
-      - id: markdownlint
+  # - repo: git://github.com/igorshubovych/markdownlint-cli
+  #   rev: v0.22.0
+  #   verbose: true
+  #   hooks:
+  #     - id: markdownlint
 
   - repo: git://github.com/detailyang/pre-commit-shell
     rev: 1.0.5
