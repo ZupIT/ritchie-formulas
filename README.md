@@ -15,7 +15,6 @@
 ### 5. [**Community**](#community)
 
 # **Ritchie's commons formula repository**
-
 This repository contains the community formulas [**ritchie-cli**](https://github.com/ZupIT/ritchie-cli) executes.
 
 ## **Create a new formula**
@@ -42,32 +41,25 @@ If you need help check out [**how to create formulas on Ritchie**](https://docs.
 **Step 9.** Open a pull request on the repository for analysis.
 
 ## **Add support to other languages on create formula command**
+The rit create formula command uses the **`/templates/create_formula`** folder to list the languages options. If you like to edit a language template or to add more language to create formula command, please access the [**Languages Template Tutorial**](https://github.com/ZupIT/ritchie-formulas/tree/master/templates/create_formula) tutorial.
 
-The rit create formula command uses the **`/templates/create_formula`** folder
-to list the languages options. If you like to edit a language template
-or to add more language to create formula command, please access the
-[**Languages Template Tutorial**](https://github.com/ZupIT/ritchie-formulas/tree/master/templates/create_formula) tutorial.
-
-## [**Documentation**](https://docs.ritchiecli.io)
+## **Documentation**
 For more information, access [**Ritchie's documentation**](https://docs.ritchiecli.io).
 
-[![Documentation](/docs/img/documentation-ritchie.png)](https://docs.ritchiecli.io)
-
 ## **Contributing**
-
 Feel free to use, recommend improvements, or contribute to new implementations.
 
 Check out our [**contributing guide**](https://github.com/ZupIT/ritchie-cli/blob/master/CONTRIBUTING.md) to learn about our development process, how to suggest bug fixes and improvements.
 
 ### **Developer Certificate of Origin - DCO**
+This is a security layer for the project and for the developers. It is mandatory.
+ 
+Follow one of these two methods to add DCO to your commits:
+ 
+### **1. Command line**
+Follow the steps: 
 
- This is a security layer for the project and for the developers. It is mandatory.
- 
- Follow one of these two methods to add DCO to your commits:
- 
-**1. Command line**
- Follow the steps: 
- **Step 1:** Configure your local git environment adding the same name and e-mail configured at your GitHub account. It helps to sign commits manually during reviews and suggestions.
+**Step 1:** Configure your local git environment adding the same name and e-mail configured at your GitHub account. It helps to sign commits manually during reviews and suggestions.
 
  ```
 git config --global user.name “Name”
@@ -76,24 +68,21 @@ git config --global user.email “email@domain.com.br”
 **Step 2:** Add the Signed-off-by line with the `'-s -S'` flag in the git commit command:
 
 ```
-$ git commit -s -m "This is my commit message"
+$ git commit -s -S -m "This is my commit message"
 ```
 
-**2. GitHub website**
+### **2. GitHub website**
 You can also manually sign your commits during GitHub reviews and suggestions, follow the steps below: 
 
 **Step 1:** When the commit changes box opens, manually type or paste your signature in the comment box, see the example:
 
 ```
-Signed-off-by: Name < e-mail address >
+Signed-off-by: Name <e-mail address>
 ```
-
 For this method, your name and e-mail must be the same registered on your GitHub account.
-
 
 ## **License**
 [**Apache License 2.0**](https://github.com/ZupIT/ritchie-formulas/blob/main/LICENSE).
 
 ## **Community**
-
 Do you have any question about Ritchie? Let's chat in our [**forum**](https://forum.zup.com.br/).

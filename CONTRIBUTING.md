@@ -24,7 +24,7 @@ This is Ritchie contributing guide. Please read the following sections to learn 
 > #### 3.6. [**Opening a new issue**](#opening-a-new-issue)
 ### 4. [**Community**](#community)
 
-### **Before you contribute**
+## **Before you contribute**
 
 ### **Code of Conduct**
 Please follow the [**Code of Conduct**](https://github.com/ZupIT/ritchie-cli/blob/master/CODE_OF_CONDUCT.md) in all your interactions with our project.
@@ -95,7 +95,6 @@ If you want to add an improvement, a new feature or a bug fix, follow the steps 
 **Step 3:** Make your changes and open a GitHub pull request;
 
 ### **Pull request guidelines**
-
 Follow these guidelines to help us review your PRs quicker:
 
 - Try not to touch a large number of files in a single PR if possible.
@@ -114,7 +113,6 @@ Follow these guidelines to help us review your PRs quicker:
 know**](https://forum.zup.com.br/c/en/9).
 
 ### **Pull request review guidelines**
-
 If you want to contribute on the quality of the incoming code,we would appreciate if you follow these suggestions:
 
 - Be suggestive, never impose a correction or criticize your peer. Instead of "change this code", go for "what do you think about implementing it this way?"
@@ -146,7 +144,6 @@ On occasion, this is not appropriate and all commits will be kept separate when 
 
 
 ## **Tests guide**
-
 To keep Ritchie easy to maintain we need to have tests. Use the following command to run:
 ```
 make unit-test:<name-of-test>
@@ -154,7 +151,6 @@ make functional-test:<name-of-test>
 ```
 
 ## **Opening a new issue**
-
 If you want to contribute with something that doesn't have any **issue** yet, you can:
 - Create a new detailed **issue** [**in the repository**](https://github.com/ZupIT/ritchie-cli/issues/new/choose).
 - Choose one template to fill in:
@@ -168,7 +164,6 @@ Then, you are able to solve it.
 - Our team will evaluate and add a **Hackoberfest** label, this will allow you to participate in the event to solve your own **issue**.
 
 ## **Community**
-
 - Do you have any questions about Ritchie? Let's chat in our [**forum**](https://forum.zup.com.br/c/en/9).
 
 Thank you for your contribution!
