@@ -33,7 +33,7 @@ Please follow the [**Code of Conduct**](https://github.com/ZupIT/ritchie-cli/blo
 - Ritchie is licensed over [**ASF - Apache License**](https://www.apache.org/licenses/LICENSE-2.0), version 2, so new files must have the ASF version 2 header. For more information, please check out [**Apache license**](https://www.apache.org/licenses/LICENSE-2.0).
 
 - All contributions are subject to the [**Developer Certificate of Origin (DCO)**](https://developercertificate.org).
-When you commit, use the ```**-s** ``` option to include the Signed-off-by line at the end of the commit log message.
+When you commit, use the ```**-s -S** ``` option to include the Signed-off-by line at the end of the commit log message.
 
 ## **Prerequisites**
 Check out the requisites before contributing to Ritchie:
