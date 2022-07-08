@@ -1,3 +1,7 @@
+# The Ritchie CLI project has been archived by Zup Innovation. It might start again eventually; however, we won't deliver support for now.
+
+
+
 <!-- markdownlint-disable MD041 MD033 MD013-->
 [![CircleCI](https://circleci.com/gh/ZupIT/ritchie-formulas/tree/ritchie-2.0.0.svg?style=shield)](https://circleci.com/gh/ZupIT/ritchie-formulas)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
@@ -73,7 +77,7 @@ Follow the steps:
  ```
 git config --global user.name “Name”
 git config --global user.email “email@domain.com.br”
-```
+ ```
 **Step 2:** Add the Signed-off-by line with the `'-s -S'` flag in the git commit command:
 
 ```
