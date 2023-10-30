@@ -4,22 +4,21 @@
 
 <!-- markdownlint-disable MD041 MD033 MD013-->
 [![CircleCI](https://circleci.com/gh/ZupIT/ritchie-formulas/tree/ritchie-2.0.0.svg?style=shield)](https://circleci.com/gh/ZupIT/ritchie-formulas)
-[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
+![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)
 
 <img class="special-img-class" src="/docs/img/ritchie-banner.png" />
 
 ## **Table of contents**
 
-### 1. [**Ritchie's commons formula repository**](#BRitchie's-commons-formula-repository)
-> #### i. [**Create a new formula**](#Create-a-new-formula)
-> #### ii. [**Add support to other languages on create formula command**](#Add-support-to-other-languages-on-create-formula-command)
-### 2. [**Documentation**](#Documentation)
-### 3. [**Contributing**](#Contributing)
-> #### i. [**Developer Certificate of Origin - DCO**](#Developer-Certificate-of-Origin-DCO)
-### 4.  [**Community**](#Community)
+### 1. [**Ritchie's commons formula repository**](#ritchie's-commons-formula-repository)
+> #### 1.1. [**Create a new formula**](#create-a-new-formula)
+> #### 1.2. [**Add support to other languages on create formula command**](#add-support-to-other-languages-on-create-formula-command)
+### 2. [**Documentation**](#documentation)
+### 3. [**Contributing**](#contributing)
+### 4. [**License**](#license)
+### 5. [**Community**](#community)
 
 # **Ritchie's commons formula repository**
-
 This repository contains the community formulas [**ritchie-cli**](https://github.com/ZupIT/ritchie-cli) executes.
 
 ## **Create a new formula**
@@ -46,33 +45,25 @@ If you need help check out [**how to create formulas on Ritchie**](https://docs.
 **Step 9.** Open a pull request on the repository for analysis.
 
 ## **Add support to other languages on create formula command**
+The rit create formula command uses the **`/templates/create_formula`** folder to list the languages options. If you like to edit a language template or to add more language to create formula command, please access the [**Languages Template Tutorial**](https://github.com/ZupIT/ritchie-formulas/tree/master/templates/create_formula) tutorial.
 
-The rit create formula command uses the **`/templates/create_formula`** folder
-to list the languages options. If you like to edit a language template
-or to add more language to create formula command, please access the
-[**Languages Template Tutorial**](https://github.com/ZupIT/ritchie-formulas/tree/master/templates/create_formula) tutorial.
-
-## [**Documentation**](https://docs.ritchiecli.io)
+## **Documentation**
 For more information, access [**Ritchie's documentation**](https://docs.ritchiecli.io).
 
-[![Documentation](/docs/img/documentation-ritchie.png)](https://docs.ritchiecli.io)
-
 ## **Contributing**
-
 Feel free to use, recommend improvements, or contribute to new implementations.
 
 Check out our [**contributing guide**](https://github.com/ZupIT/ritchie-cli/blob/master/CONTRIBUTING.md) to learn about our development process, how to suggest bug fixes and improvements.
 
 ### **Developer Certificate of Origin - DCO**
-
 This is a security layer for the project and for the developers. It is mandatory.
+ 
 Follow one of these two methods to add DCO to your commits:
+ 
+### **1. Command line**
+Follow the steps: 
 
-**1. Command line**
-
-Follow the steps:
-
- **Step 1:** Configure your local git environment adding the same name and e-mail configured at your GitHub account. It helps to sign commits manually during reviews and suggestions.
+**Step 1:** Configure your local git environment adding the same name and e-mail configured at your GitHub account. It helps to sign commits manually during reviews and suggestions.
 
  ```
 git config --global user.name “Name”
@@ -83,26 +74,19 @@ git config --global user.email “email@domain.com.br”
 ```
 $ git commit -s -S -m "This is my commit message"
 ```
-**2. GitHub website**
 
-You can also manually sign your commits during GitHub reviews and suggestions, follow the steps below:
+### **2. GitHub website**
+You can also manually sign your commits during GitHub reviews and suggestions, follow the steps below: 
 
-**Step 1:** When the commit changes box opens, manually type or paste your signature in the comment box, see the examples:
-```
-e.g: Signed-off-by: Name < e-mail address >
-```
-```
-$ git commit -m “My signed commit” Signed-off-by: username <email address>
-```
-For this method, your name and e-mail must be the same registered to your GitHub account.
+**Step 1:** When the commit changes box opens, manually type or paste your signature in the comment box, see the example:
 
-### **Choose a branch**
-One of the first things to decide is which branch to base your work on. If you get confused, just ask and we will help you. If a reviewer realizes you have based your work on the wrong branch, we'll let you know so that you can rebase it.
+```
+Signed-off-by: Name <e-mail address>
+```
+For this method, your name and e-mail must be the same registered on your GitHub account.
+
+## **License**
+[**Apache License 2.0**](https://github.com/ZupIT/ritchie-formulas/blob/main/LICENSE).
 
 ## **Community**
-
-Feel free to reach out to us at:
-
-### [**Zup Open Source Forum**](https://forum.zup.com.br/c/en/9)
-
-[![Zup forum](/docs/img/zup-forum-topics.png)](https://forum.zup.com.br/c/en/9)
+Do you have any question about Ritchie? Let's chat in our [**forum**](https://forum.zup.com.br/).

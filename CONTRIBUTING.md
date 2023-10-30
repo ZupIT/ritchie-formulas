@@ -8,24 +8,23 @@ This is Ritchie contributing guide. Please read the following sections to learn 
 
 ## **Table of contents**
 
-### 1. [**Before you contribute**](#Before-you-contribute)
-> #### i. [**Code of Conduct**](#Code-of-Conduct)
-> #### ii. [**Legal**](#Legal)
-### 3. [**Prerequisites**](#Prerequisites)
-> #### i. [**Developer Certificate of Origin - DCO**](#Developer-Certificate-of-Origin-DCO)
-> #### ii. [**Choose a branch**](#Choose-a-branch)
-> #### iii. [**Check out the guidelines**](#Check-out-the-guidelines)
-### 4. [**How to contribute?**](#How-to-contribute?)
-> #### i. [**Add new feature, bug fixing or improvement**](#Add-new-feature-bugfixing-or-improvement)
-> #### ii. [**Pull request guidelines**](#Pull-request-guidelines)
-> #### iii. [**Pull request review guidelines**](#Pull-request-review-guidelines)
-> #### iv. [**Collaborate on a pull request**](#Collaborate-on-a-pull-request)
-> #### v. [**Tests guide**](#Tests-guide)
-> #### vi. [**Opening a new issue**](#Opening-a-new-issue)
-### 5. [**Community**](#Community)
+### 1. [**Before you contribute**](#before-you-contribute)
+> #### 1.1 [**Code of Conduct**](#code-of-conduct)
+> #### 1.2 [**Legal**](#legal)
+### 2. [**Prerequisites**](#prerequisites)
+> #### 2.1. [**Developer Certificate of Origin - DCO**](#developer-certificate-of-origin)
+> #### 2.2  [**Choose a branch**](#choose-a-branch)
+> #### 2.3. [**Check out the guidelines**](#check-out-the-guidelines)
+### 3. [**How to contribute?**](#how-to-contribute?)
+> #### 3.1. [**Add new feature, bug fixing or improvement**](#add-new-feature-bugfixing-or-improvement)
+> #### 3.2. [**Pull request guidelines**](#pull-request-guidelines)
+> #### 3.3. [**Pull request review guidelines**](#pull-request-review-guidelines)
+> #### 3.4. [**Collaborate on a pull request**](#collaborate-on-a-pull-request)
+> #### 3.5. [**Tests guide**](#tests-guide)
+> #### 3.6. [**Opening a new issue**](#opening-a-new-issue)
+### 4. [**Community**](#community)
 
-
-### **Before you contribute**
+## **Before you contribute**
 
 ### **Code of Conduct**
 Please follow the [**Code of Conduct**](https://github.com/ZupIT/ritchie-cli/blob/master/CODE_OF_CONDUCT.md) in all your interactions with our project.
@@ -34,7 +33,7 @@ Please follow the [**Code of Conduct**](https://github.com/ZupIT/ritchie-cli/blo
 - Ritchie is licensed over [**ASF - Apache License**](https://www.apache.org/licenses/LICENSE-2.0), version 2, so new files must have the ASF version 2 header. For more information, please check out [**Apache license**](https://www.apache.org/licenses/LICENSE-2.0).
 
 - All contributions are subject to the [**Developer Certificate of Origin (DCO)**](https://developercertificate.org).
-When you commit, use the ```**-s** ``` option to include the Signed-off-by line at the end of the commit log message.
+When you commit, use the ```**-s -S** ``` option to include the Signed-off-by line at the end of the commit log message.
 
 ## **Prerequisites**
 Check out the requisites before contributing to Ritchie:
@@ -70,7 +69,7 @@ e.g: Signed-off-by: Name < e-mail address >
 ```
 $ git commit -m “My signed commit” Signed-off-by: username <email address>
 ```
-For this method, your name and e-mail must be the same registered to your GitHub account.
+For this method, your name and e-mail must be the same registered on your GitHub account.
 
 ### **Choose a branch**
 One of the first things to decide is which branch to base your work on. If you get confused, just ask and we will help you. If a reviewer realizes you have based your work on the wrong branch, we'll let you know so that you can rebase it.
@@ -96,7 +95,6 @@ If you want to add an improvement, a new feature or a bug fix, follow the steps 
 **Step 3:** Make your changes and open a GitHub pull request;
 
 ### **Pull request guidelines**
-
 Follow these guidelines to help us review your PRs quicker:
 
 - Try not to touch a large number of files in a single PR if possible.
@@ -115,7 +113,6 @@ Follow these guidelines to help us review your PRs quicker:
 know**](https://forum.zup.com.br/c/en/9).
 
 ### **Pull request review guidelines**
-
 If you want to contribute on the quality of the incoming code,we would appreciate if you follow these suggestions:
 
 - Be suggestive, never impose a correction or criticize your peer. Instead of "change this code", go for "what do you think about implementing it this way?"
@@ -147,7 +144,6 @@ On occasion, this is not appropriate and all commits will be kept separate when 
 
 
 ## **Tests guide**
-
 To keep Ritchie easy to maintain we need to have tests. Use the following command to run:
 ```
 make unit-test:<name-of-test>
@@ -155,7 +151,6 @@ make functional-test:<name-of-test>
 ```
 
 ## **Opening a new issue**
-
 If you want to contribute with something that doesn't have any **issue** yet, you can:
 - Create a new detailed **issue** [**in the repository**](https://github.com/ZupIT/ritchie-cli/issues/new/choose).
 - Choose one template to fill in:
@@ -169,7 +164,6 @@ Then, you are able to solve it.
 - Our team will evaluate and add a **Hackoberfest** label, this will allow you to participate in the event to solve your own **issue**.
 
 ## **Community**
-
 - Do you have any questions about Ritchie? Let's chat in our [**forum**](https://forum.zup.com.br/c/en/9).
 
 Thank you for your contribution!
